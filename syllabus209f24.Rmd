@@ -1,0 +1,113 @@
+---
+title: "syllabus209f24"
+author: "Nathan Friedrichsen"
+date: "2024-08-26"
+output: html_document
+---
+# Syllabus \- STA-209 (Fall 2024\)
+
+**Instructor**:
+
+* Nathan Friedrichsen, Noyce 2207, friedrichsen@grinnell.edu
+
+**Class Meetings**:
+
+* STA-209-03: HSSC N2170, MWF 1:00-2:20 PM
+
+**Office Hours**:
+
+* TBD
+
+**Gradescope Course numbers**
+
+* TBD
+
+**Course Description**:
+
+This course covers the application of basic statistical methods such as univariate graphics and summary statistics, basic statistical inference for one and two samples, linear regression, one- and two-way ANOVA, and categorical data analysis. Students will use statistical software to analyze data and conduct simulations. (You will learn all these terms throughout the semester\!)
+
+**Texts**:
+
+* [Introduction to Modern Statistics, 1st Edition](https://openintro-ims.netlify.app/) (Free online\!)
+
+All additional materials will be posted on the course website (currently under construction).
+
+There may be recommended readings from other sources which will be provided as necessary.
+
+### Aims and Objectives
+
+This course aims to introduce students to the field of statistics, including its vocabulary and fundamental principles. The course will prepare students to read, recognize, interpret, and discuss statistical concepts and their use in scientific applications. The course will provide students an understanding of the role of statistics within the scientific method, and provide students the tools to use data to make informed conclusions.
+
+#### Learning Objectives
+
+After completing this course, students should be able to:
+
+* Apply methods of exploration, visualization, and statistical analysis to data in order to illustrate key findings and make justifiable inferences using statistical software (R)  
+* Communicate the methods and results of statistical analyses succinctly and accurately in both writing and speaking  
+* Read, identify, and critique the statistical concepts and choices of data presentation used in various media publications (newspaper articles, reports, blogs, etc.)
+
+### Grading
+
+**Engagement, Participation, and Labs** \- 15%
+
+Participation in a lab-heavy course is absolutely critical. During labs you are expected to help your partner(s) learn the material (which goes beyond simply answering the lab questions), and they are expected to help you. Everyone will begin the semester with a baseline participation score of 80%, which will then move up or down depending on my subjective assessment of your behavior during class. You can very quickly raise this score to 100% by doing a superb job helping your lab partner(s), and working diligently to understand course material during class. Alternatively, you can lower this score by skipping class, letting your lab partner(s) do most of the work, using your phone or surfing the web during class, etc. If you are ever unsure of your participation standing, you can email me and I am happy to provide you with an interim assessment.
+
+**Individual Homework** \- 20%
+
+Homework will be assigned at most once per week. No late homework will be accepted, but your lowest two scores will be dropped. Homework is due at the beginning of class on the specified date due. We will use Gradescope to submit assignments, and a class code will be provided early in the semester. I will keep an updated course website with assignments listed in advance.
+
+I encourage you to work with other students or visit the Math Lab for help on homework questions, but you should clearly understand all your answers and your assignment should be entirely in your own words. The homework is intended primarily as an exercise to practice and develop your understanding and to assist in identifying weaknesses: you do yourself a disservice if you submit work that you do not fully understand.
+
+If you engage in significant collaboration with classmates or tutors, you must explicitly acknowledge that person(s) on the top of your assignment (again, you are encouraged to collaborate, and I want to emphasize that there is no penalty for doing so).
+
+**Exams (3)**\* \- 15%, 15%, 15%
+
+Exams will be announced at least two weeks in advance. Exams will be closed notes, but you will be permitted to bring a note sheet (size TBD) and basic scientific calculators (no cellphones or TI-8X calculators). Alternative exam arrangements need to be made at least one week in advance of the time you plan to take the exam; this includes taking the exam in a different location, or times going beyond the given class time. Alternative arrangements are not guaranteed unless proper notification is given.
+
+**Final Project** \- 20%
+
+There will be an ongoing group project throughout the semester. The project will include a few short progress reports before culminating in a short in-class presentation and a three (3) page written report in the last week of the semester. Details TBD.
+
+### Policies
+
+**Class Sessions**
+
+The core component of our class meetings will be working through hands-on labs in a paired programming environment. These pairs will be assigned during the first half of the semester. After the first project, you will have the freedom to choose your partner, or work independently near someone that you can occasionally consult with. During labs it is essential that you and your partner(s) work together, making certain that each of you understand your work equally well.
+
+Most labs will begin with a brief “preamble” section that we will go through together as class. The purpose of this section is to introduce the topic of the lab and ensure a smooth start to each class meeting.
+
+**Attendance**
+
+Because this course involves some amount of group work, absences impact not only yourself but also your classmates. That said, I understand that missing class is sometimes necessary. If you will be absent for any reason I ask to be notified as soon as possible. Showing up late or missing class more than twice without prior notice will negatively impact the participation component of your course grade.
+
+**Software**
+
+Software is increasingly an essential component of statistics and will play a role in this course. We will primarily use `R`, an open-source statistical software program.
+
+You are welcome to use your own personal laptop, or a Grinnell College laptop, during the course. `R` is freely available and you can download it and it’s UI companion, `R Studio`, here (note: `R` must be downloaded and installed before `R Studio`):
+
+1. Download `R` from [http://www.r-project.org/](http://www.r-project.org/)  
+2. Download `R Studio` from [http://www.rstudio.com/](http://www.rstudio.com/)
+
+You may also work on a classroom computer, all of which will have `R` and `R Studio` pre-installed.
+
+**Academic Honesty**
+
+At Grinnell College you are part of a conversation among scholars, professors, and students, one that helps sustain both the intellectual community here and the larger world of thinkers, researchers, and writers. The tests you take, the research you do, the writing you submit-all these are ways you participate in this conversation.
+
+The College presumes that your work for any course is your own contribution to that scholarly conversation, and it expects you to take responsibility for that contribution. That is, you should strive to present ideas and data fairly and accurately, indicate what is your own work, and acknowledge what you have derived from others. This care permits other members of the community to trace the evolution of ideas and check claims for accuracy.
+
+Failure to live up to this expectation constitutes academic dishonesty. Academic dishonesty is misrepresenting someone else’s intellectual effort as your own. Within the context of a course, it also can include misrepresenting your own work as produced for that class when in fact it was produced for some other purpose. A complete list of dishonest behaviors, as defined by Grinnell College, [can be found here](https://catalog.grinnell.edu/content.php?catoid=12\&navoid=2537\#alleged-violation).
+
+**Inclusive Classroom**
+
+Grinnell College makes reasonable accommodations for students with documented disabilities. To receive accommodations, students must provide documentation to the Coordinator for Disability Resources, information [can be found here](http://www.grinnell.edu/about/offices-services/accessibility-disability/disability-services). If you plan on using accommodations in this course, you should speak with me as early as possible in the semester so that we can discuss ways to ensure your full participation in the course.
+
+**Religious Holidays**
+
+Grinnell College encourages students who plan to observe holy days that coincide with class meetings or assignment due dates to consult with your instructor in the first three weeks of classes so that you may reach a mutual understanding of how you can meet the terms of your religious observance, and the requirements of the course.
+
+**Pregnancy Related Conditions**
+
+Grinnell College is committed to compliance with Title IX and to supporting the academic success of pregnant and parenting students and students with pregnancy related conditions. If you are a pregnant student, have pregnancy related conditions, or are a parenting student (child under 1-year needs documented medical care) who wishes to request reasonable related supportive measures from the College under Title IX, please email the Title IX Coordinator at [titleix@grinnel.edu](mailto:titleix@grinnel.edu). The Title IX Coordinator will work with Disability Resources and your professors to provide reasonable supportive measures in support of your education while pregnant or as a parent under Title IX. 
+
