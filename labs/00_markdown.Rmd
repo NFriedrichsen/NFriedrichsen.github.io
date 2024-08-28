@@ -1,0 +1,14 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Easy lab day
+
+```{r, eval = FALSE}
+pkgs <- c("dplyr", "ggplot2", "mosaic", "tinytex")
+install.packages(pkgs)
+```
