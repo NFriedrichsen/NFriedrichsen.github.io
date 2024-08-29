@@ -3,7 +3,7 @@ author: "Nathan Friedrichsen"
 date: "2024-08-26"
 output: html_document
 ---
-# Syllabus \- STA-209 (Fall 2024\)
+# Syllabus \- SST-115 (Fall 2024\)
 
 **Instructor**:
 
@@ -11,7 +11,7 @@ output: html_document
 
 **Class Meetings**:
 
-* STA-209-03: HSSC N2170, MWF 1:00-2:20 PM
+* SST-115-01: HSSC N2170, MWF 8:30-9:50 AM
 
 **Office Hours**:
 
@@ -51,11 +51,11 @@ After completing this course, students should be able to:
 
 Participation in a lab-heavy course is critical. During labs you are expected to help your partner(s) learn the material (which goes beyond simply answering the lab questions), and they are expected to help you. There is no formal attendance, but we will periodically have short, completion-based quizzes at the beginning of class. Failing to submit more than 70% of these will result in a 5% deduction in your final course grade.
 
-**Labs** \-15%
+**Labs** \- 20%
 
 In-class labs contain embedded questions that you and your lab partner(s) will answer together. Some lab questions will be scored for accuracy with feedback given, while others may be scored for effort/completion. Additionally, labs are to be completed collaboratively, and if it becomes clear that you or your partner(s) are using a “divide and conquer” approach to answering lab questions your score on that assignment will be penalized. Labs will be due at 10:00pm the day we do them in class unless otherwise noted, but my goal is for everyone to have them finished before class is over. Your two lowest lab scores will be dropped. 
 
-**Individual Homework** \- 15%
+**Individual Homework** \- 20%
 
 Homework will be assigned at most once per week. Absolutely no late homework will be accepted, but your lowest two scores will be dropped. Homework will be due on Gradescope, submitted as a pdf, generally due 10pm on Fridays. Gradescope requires that you indicate which problems appear on which page (we will go over an example) – failure to do this will result in a 25% deduction of that homework’s final score.
 
@@ -64,16 +64,16 @@ I encourage you to work with other students or visit the Math Lab for help on ho
 If you engage in significant collaboration with classmates or tutors, you must explicitly acknowledge that person(s) on the top of your assignment (again, you are encouraged to collaborate, and I want to emphasize that there is no penalty for doing so).
 
 
-**Exams (3)**\* \- 15%, 15%, 20%
+**Exams (3)**\* \- 20%, 15%, 10%
 
-There will be 2 midterms and a final exam. Each midterm will focus on a specific set of content, but because course topics are naturally cumulative there may be some questions involving earlier content. The final exam will be cumulative. The 2 midterm exams will each by worth 15%, and the final exam is worth 20%.
+There will be 2 midterms and a final exam. Each midterm will focus on a specific set of content, but because course topics are naturally cumulative there may be some questions involving earlier content. The 3 exams will contribute 20%, 15%, and 10% towards your end-of-semester grade, with your highest exam score (of the 3) contributing 20%, the second highest exam score contributing 15%, and the third highest exam score contributing 10%.
 
 Exams will be announced at least two weeks in advance. Exams will be closed notes, but you will be permitted to bring a note card (4in x 6in) and a calculator (no cellphone use allowed). You will not be responsible for writing your own R code on exams, but you should expect to encounter output from R as well as the code that produced it during each exam.
 
 Alternative exam arrangements need to be made at least one week in advance of the time you plan to take the exam; this includes taking the exam in a different location, or times going beyond the given class time. Alternative arrangements are not guaranteed unless proper notification is given.
 
 
-**Final Project** \- 15%
+**Final Project** \- 10%
 
 There will be an ongoing group project throughout the semester. The project will include a few short progress reports before culminating in a short in-class presentation and a three (3) page written report in the last week of the semester. More details will be announced later.
 
@@ -116,7 +116,7 @@ Grinnell College makes reasonable accommodations for students with documented di
 
 Grinnell College encourages students who plan to observe holy days that coincide with class meetings or assignment due dates to consult with your instructor in the first three weeks of classes so that you may reach a mutual understanding of how you can meet the terms of your religious observance, and the requirements of the course.
 
-**Pregnancy Related Conditions**
+**Pregnancy Related Conditions, Title IX**
 
 Grinnell College is committed to compliance with Title IX and to supporting the academic success of pregnant and parenting students and students with pregnancy related conditions. If you are a pregnant student, have pregnancy related conditions, or are a parenting student (child under 1-year needs documented medical care) who wishes to request reasonable related supportive measures from the College under Title IX, please email the Title IX Coordinator at [titleix@grinnel.edu](mailto:titleix@grinnel.edu). The Title IX Coordinator will work with Disability Resources and your professors to provide reasonable supportive measures in support of your education while pregnant or as a parent under Title IX. 
 

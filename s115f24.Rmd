@@ -1,5 +1,5 @@
 ---
-title: "STA-209 - Applied Statistics (Fall 2024)"
+title: "SST-115 - Introduction to Statistics (Fall 2024)"
 output:
   html_document:
     toc: true
@@ -16,7 +16,7 @@ Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
 
 Welcome to the course website for STA 209, Introduction to Applied Statistics. To begin, you can find the course syllabus linked below:
 
-- [Click here](syllabus209f24.html) to view the course syllabus
+- [Click here](syllabus115f24.html) to view the course syllabus
 
 You can locate course content by scrolling, or by using the navigation bar in the upper left.  
 
@@ -30,7 +30,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Fri 8/30 | [Syllabus](syllabus209f24.html) | - | - |
+| Fri 8/30 | [Syllabus](syllabus115f24.html) | - | - |
 
 **Assignments and Deadlines**: None
 
