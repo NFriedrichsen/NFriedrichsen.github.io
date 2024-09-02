@@ -29,7 +29,7 @@ This course covers the application of basic statistical methods such as univaria
 
 * [Introduction to Modern Statistics, 1st Edition](https://openintro-ims.netlify.app/) (Free online\!)
 
-All additional materials will be posted on the course website (currently under construction).
+All additional materials will be posted on the course website.
 
 There may be recommended readings from other sources which will be provided as necessary.
 
@@ -87,7 +87,7 @@ Most labs will begin with a brief “preamble” section that we will go through
 
 **Attendance**
 
-Because this course involves some amount of group work, absences impact not only yourself but also your classmates. That said, I understand that missing class is sometimes necessary. If you will be absent for any reason I ask to be notified as soon as possible. Showing up late or missing class more than twice without prior notice will negatively impact the participation component of your course grade.
+Because this course involves some amount of group work, absences impact not only yourself but also your classmates. That said, I understand that missing class is sometimes necessary. I will not take attendance directly, but labs and the short quizzes occasionally being missed can affect participation and lab scores. There is leeway built into these (see Participation and Labs above). If you must miss class, it would be polite and civil to let your lab partner know about it ahead of time if possible.
 
 **Software**
 

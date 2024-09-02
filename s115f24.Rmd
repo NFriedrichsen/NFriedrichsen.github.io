@@ -22,6 +22,8 @@ You can locate course content by scrolling, or by using the navigation bar in th
 
 Please note: material will not be posted until we've reached that point in the course.
 
+[Mathlab Help Hours](mathlab_hours.pdf) 
+
 # Course Materials
 
 ## Exam \#1 Content
@@ -34,6 +36,19 @@ Please note: material will not be posted until we've reached that point in the c
 
 **Assignments and Deadlines**: None
 
+### Week 2 (R / Data Visualization)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
+| Wed 9/04 | Intro to R | R Lab | - |
+| Fri 9/06 | Data Visualization | ggplot (maybe) | - |
+
+---
+
+**Assignments and Deadlines**
+
+1) Install R (https://cran.r-project.org/)
+2) Install RStudio (https://posit.co/download/rstudio-desktop/) 
 
 
 
