@@ -1,7 +1,9 @@
 ---
 author: "Nathan Friedrichsen"
 date: "2024-08-26"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 # Syllabus \- SST-115 (Fall 2024\)
 
@@ -19,7 +21,7 @@ output: html_document
 
 **Gradescope Course numbers**
 
-* TBD
+* 852233
 
 **Course Description**:
 

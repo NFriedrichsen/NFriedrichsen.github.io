@@ -40,7 +40,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
-| Wed 9/04 | Intro to R | R Lab | - |
+| Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [R Lab](labs/01_introR.html) | - |
 | Fri 9/06 | Data Visualization | ggplot (maybe) | - |
 
 ---
