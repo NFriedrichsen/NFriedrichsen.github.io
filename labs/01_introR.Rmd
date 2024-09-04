@@ -23,17 +23,17 @@ This is an R Markdown document.
 
 At present, you are reading it formatted as an HTML document, but as we have seen, it can also be rendered as a PDF -- when working with an .Rmd file, you can choose how it is presented by selecting the arrow next to the Knit ball of yarn an choose between "Knit to HTML" or "Knit to PDF". For most of the work in this class, we will be knitting to a PDF to facilitate submissions to [Gradescope](https://www.gradescope.com/).
 
-When you Knit an R Markdown file, it will ask you to first save and name your document. I recommend sticking to a consistent format throughout the semester: something like "lastname_firstname_lab/hwk#". For example, I would name this "nolte_collin_lab1.Rmd". After you knit, this will also be the name of your pdf.
+When you Knit an R Markdown file, it will ask you to first save and name your document. I recommend sticking to a consistent format throughout the semester: something like `lastname_firstname_[lab/hwk]#.Rmd`. For example, I would name this `friedrichsen_nathan_lab1.Rmd`. After you knit, this will also be the name of your pdf.
 
 For this lab, we will be following along with this document which we can begin by downloading the .Rmd file associated with it [here](01_introR.Rmd); this is allow us to see side-by-side how the .Rmd file looks compared to the finished output. 
 
-For example, reading this online we see that **this sentence is bold**, while in the .Rmd file we see that the sentence is a plain-text sentence surrounded by two asterisks (*) on each side. This is an example of using [Markdown](https://www.markdownguide.org/basic-syntax/) to format our documents. For this lab, we will be following along with the .Rmd file, filling bits in as prompted. Let's begin by introducing some of the more common markdown syntax that we will use in this class.
+For example, reading this online we see that **this sentence is bold**, while in the .Rmd file we see that the sentence is a plain-text sentence surrounded by two asterisks (**) on each side. This is an example of using [markdown](https://www.markdownguide.org/basic-syntax/) to format our documents. For this lab, we will be following along with the .Rmd file, filling bits in as prompted. Let's begin by introducing some of the more common markdown syntax that we will use in this class.
 
 ## Text Editing
 
 We can use .Rmd files to write text just as we would with a standard word processor. As we saw previously, using **two asterisks** creates bold text, whereas using *single asterisks* creates text that is italicized.
 
-Headers can be created using the # symbol. Using one creates a large header, two a smaller header, and so on. You can see examples of this in the text above. Take note that you need to leave a space between the # and the header text -- forgetting to do so will render the text exactly as you have written it.
+Headers can be created using the # symbol. Using one creates a large header, two a smaller header, and so on. You can see examples of this in the text above (this section on "Text Editing" uses two to create a header). Take note that you need to leave a space between the # and the header text -- forgetting to do so will render the text exactly as you have written it.
 
 #For example, this will not show up as a header
 
@@ -58,12 +58,14 @@ Things are more clear if I put my answers between bars, but I need to be sure to
 
 **Question 1:**
 
+Create a new R Markdown file and copy the entirety of this question over to the new file (we will do this for all questions in this lab). Then, proceed with the instructions below.
+
 Between the stars below, do the following:
 
 1. Use two # to create a header that says About Me
 2. Type your first name in bold and your last name in italics
 3. Create a bullet point list of the people sitting on either side of you
-4. Create a numbered list of your 3 favorite books or movies
+4. Create a numbered list of your 3 least favorite animals
 
 Once you have done this, Knit to PDF by clicking the bar of yarn above and verify that everything looks like it should.
 
@@ -78,7 +80,7 @@ Whereas R is the programming language responsible for doing our relevant computa
 
 ### Console
 
-The console makes up the entire left-hand side of the screen, and it is here that we can interact with R directly. Some information will appear on start-up, followed by a prompt (indicated with `>`). Try copying and pasting the following lines into your console one at a time and pressing enter
+The console makes up the entire left-hand side of the screen, and it is here that we can interact with R directly. Some information will appear on start-up, followed by a prompt (indicated with `>`). Try copying and pasting the following lines into your console one at a time and pressing enter:
 
 5 + 2
 
@@ -94,9 +96,9 @@ x <- 5
 
 The environment panel is located in the top right and includes all of the named variables that we have created in R. If you copied the lines above correctly, you should see a single line here, indicating that the variable `x` has the value `5`. When starting a new R session, this pane will be empty.
 
-### Files
+### Output/Files
 
-In the bottom right is the Files pane which, in addition to giving us information about our file system also includes tabs for Plots and Help. Copy each of the lines below to see how this pane changes
+In the bottom right is the Output pane which, in addition to giving us information about our file system also includes tabs for Plots and Help. Copy each of the lines below to see how this pane changes
 
 ?sqrt
 
@@ -166,11 +168,13 @@ w[3]
 
 **Question 2:**
 
+Again, copy the entirety of this question into the R Markdown file you created for Question 1. 
+
 Let's practice creating vectors and subsetting with a short exercise.
 
 1. First, create an R code chunk between the rows of stars below (Ctrl+Alt+I is quick way to do this)
-2. Next, create a vector called `x` that has all of the numbers from 1 to 10
-3. Use square brackets and subsetting to select all of the even numbers
+2. Next, create a vector called `x` that has all of the numbers from 11 to 20
+3. Use square brackets and subsetting to select the first five numbers of this vector.
 
 ****
 
@@ -188,10 +192,10 @@ Just as we saw in class that variables can be quantitative or categorical, so it
 
 Don't worry about memorizing everything -- we will continue to review them together as they appear in the course. For now, we will be satisfied with simply having made our introductions.
 
-As we mentioned in class, the type of a variable will often dictate what we are able to do with it. For example, it should make sense to take the mean of a numeric variable, but less so with a character vector:
+As we mentioned in class, the type of a variable will often dictate what we are able to do with it. For example, it should make sense to take the mean of a numeric variable, but less so with a character vector. We do this using the R function `mean()`:
 
 ```{r}
-# This will return a warning and NA
+# This will return a warning and NA (NA = Not Available/Missing Value)
 z <- c("a", "b", "c")
 mean(z)
 
@@ -199,36 +203,39 @@ x <- c(1, 2, 3)
 mean(x)
 ```
 
-Some situations can be confusing based on appearances. The `class()` function will tell us what type a vector is if we are not sure
+Some situations can be confusing based on appearances. The `class()` function will tell us what *type* a vector is if we are not sure
 
 ```{r}
 # This looks numeric
 z <- c("1", "2", "3")
 mean(z)
 
+# but actually, it is a character
 class(z)
 ```
 
-Usually in situations like this, we can *coerce* a vector to being a different type
+Usually in situations like this, we can *coerce* a vector to being a different type, though I will try to make you aware in advance when a situation like this will arise:
 
 ```{r}
+# coerce the z variable to be a numeric vector
 z_num <- as.numeric(z)
 class(z_num)
 
 mean(z_num)
 ```
 
-One important characteristic of a vector to note: all elements of a vector *must* be the same type. They are either all numeric, all logical, or all character.
+Deciding what class a vector should have is often context specific. For example, having numeric vectors is ideal if we plan on using them for mathematical operations (i.e., finding the mean, adding them together, taking a square root), which may make sense for things like age, population size, or temperature. Other times, a variable with numbers may make more sense as a character vector to represent categories: this could be things like room numbers, the year an automobile was manufactured, or group assignments. 
+
+One important characteristic of a vector to note: all elements of a vector *must* be the same type. They are either all numeric, all logical, or all character. R will force this by default:
+
+```{r}
+z_mix <- c("a", 1, TRUE)
+
+## They are all forced to be character
+class(z_mix)
+```
 
 
-**Question 3:**
-
-Can you think of a situation in which we start with a numeric vector that we would like to coerce to a character vector? Write your answer in the space below:
-
-****
-
-
-****
 
 ## Data Frames
 
@@ -236,7 +243,7 @@ Most of the data we will be working with in this class will be stored in objects
 
 ```{r}
 # Create two vectors of the same length
-x <- c("Alice", "Mary", "Bob")
+x <- c("red", "green", "blue")
 y <- c(1, 4, 10)
 
 # We can create a data frame with columns named `name` and `value`
@@ -259,33 +266,33 @@ While we can create data frames directly, it is far more likely that we will be 
 
 ```{r}
 # Use read.csv to pull Happy Planet data
-planet <- read.csv("https://remiller1450.github.io/data/HappyPlanet.csv")
+planet <- read.csv("https://collinn.github.io/data/HappyPlanet.csv")
 ```
 
-(Images in this next section will appear online but not on your own computer as you do not have these images)
+Once a data frame is read in, you will see it show up in your environment. Right away, we get two critical pieces of information: this data frame has 143 observations and 11 variables (recall that rows are observations and columns are variables).
 
-Once a data frame is read in, you will see it show up in your environment. Right away, we get two critical pieces of information: this data frame has 143 observations and 11 variables.
-
-![](planet_1.png)
+![](https://collinn.github.io/pics/planet_1.png)
 
 
 If we click on the blue arrow to the left, we will get a drop down showing us a more detailed description of the variables we do have. Note also the additional information given about the vectors (num = numeric, int = integer, chr = character).
 
-![](planet_2.png)
+![](https://collinn.github.io/pics/planet_2.png)
 
 Clicking on the white box pane to the right of `planet` brings us to the tabular view in R, giving us the opportunity to navigate and explore the data more directly
 
-![](planet_3.png)
+![](https://collinn.github.io/pics/planet_3.png)
 
-**Question 4:**
+**Question 3:**
 
-For this question, we will be using the `HappyPlanet` data that we have just read in:
+For this question, we will be using the `HappyPlanet` data that we have just looked at:
 
-  - **Part A** Looking at the Happy Planet data, explain in one or two sentences what consitutes an observation in this dataset
+  - **Part A** Copy the code above to read the Happy Planet data into your own R Markdown file, saving the dataset to a variable called `planet`
+
+  - **Part B** Looking at the Happy Planet data, explain in one or two sentences what constitutes an observation in this dataset (what is the data being recorded from)
   
-  - **Part B** Using `$` to extract columns from the dataset, what is average life expectancy of countries in the dataset?
+  - **Part C** Using `$` to extract columns from the dataset, find the mean life expectancy of all countries in the dataset? (Hint: what functions have we seen already in this lab?)
   
-  - **Part C** Are there any variables in this dataset that are stored as a numeric that would be better suited as a categorical variable? Explain your answer
+  - **Part D** Are there any variables in this dataset that are stored as a numeric that would be better suited as a categorical variable? Explain your answer
   
 ****
 
@@ -293,8 +300,10 @@ For this question, we will be using the `HappyPlanet` data that we have just rea
 
 ## Wrapping Up
 
-This concludes our first introduction to R! Once you have finished with your lab, make sure that you are able to successfully Knit to PDF. Once that is finished, we are ready to submit to [Gradescope](https://www.gradescope.com/).
+This concludes our first introduction to R. Once you have finished with your lab, make sure that you are able to successfully Knit to PDF. Once that is finished, we are ready to submit to [Gradescope](https://www.gradescope.com/).
 
-If you are in STA-115-01 (8:30-9:50), the Entry Code is 
 
-If you are in STA-209-03 (1-2:20), the Entry Code is 
+
+
+
+
