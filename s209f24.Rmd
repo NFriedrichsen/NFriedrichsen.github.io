@@ -6,6 +6,8 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
+  pdf_document:
+    toc: true
 ---
 
 $~$
@@ -41,14 +43,28 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
 | Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [Intro R Lab](labs/01_introR.html) | - |
-| Fri 9/06 | Data Visualization | ggplot (maybe) | - |
+| Fri 9/06 | [Data Visualization](lectures/02_DataVisualization.pdf) | Intro R cont'd | - |
 
 ---
 
 **Assignments and Deadlines**
 
 1) Install R (https://cran.r-project.org/)
-2) Install RStudio (https://posit.co/download/rstudio-desktop/) 
+2) Install RStudio (https://posit.co/download/rstudio-desktop/)
+3) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab.
+
+**Note:** Homework/Labs should be neatly formatted with questions specified as headers and with your R code and written solutions underneath. [Here is an example](homework/example_hw1.pdf) of how it should look (courtesy of Professor Nolte)
+
+### Week 3 (Data Visualization)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/09 | Numerical Summaries | Data Viz and Summaries | - |
+| Wed 9/11 | ggplot and aesthetics | ggplot | - |
+| Fri 9/13 | - | ggplot cont'd | - |
+
+**Assignments and Deadlines**
+1) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm.
+2) Homework 1 will be assigned Monday 9/09 and will be due the following Monday 9/16 at 10pm.
 
 
 
