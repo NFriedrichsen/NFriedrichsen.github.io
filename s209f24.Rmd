@@ -58,7 +58,7 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 3 (Data Visualization)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 9/09 | Numerical Summaries | Data Viz and Summaries | - |
+| Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | Data Viz | - |
 | Wed 9/11 | ggplot and aesthetics | ggplot | - |
 | Fri 9/13 | - | ggplot cont'd | - |
 
