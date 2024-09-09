@@ -1,0 +1,72 @@
+---
+title: "Homework 1"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center', fig.width = 4, fig.height = 4)
+```
+
+### Due: Monday Sept. 16, 2024 at 10pm
+
+This assignment has a total of 23 pts possible. Your score out of 20 will noted and scaled to 5 points (maximum of 5).
+
+**Question 1 -- Conceptual Questions:** (2pts each)
+
+  - **Part A** What does it mean to say two variables are *associated* with each other?
+
+  - **Part B** What does it mean to say two variables are *independent* of each other?
+  
+  - **Part C** What does the distribution of a variable tell us?
+
+**Question 2** For this question, we will be using the `iris` dataset, giving the measurements, in centimeters, of the variables for sepal and petal length and width. You can read more on the dataset [here](https://en.wikipedia.org/wiki/Iris_flower_data_set). An image of what these variables correspond to on a flower are provided below.
+
+**NOTE:** You will need to edit out the image from your document in order for it to knit to a .pdf doc. If your doc does not knit, this may be the cause.
+
+```{r, out.width = "400px", fig.align='center', echo = FALSE}
+knitr::include_graphics("https://ars.els-cdn.com/content/image/3-s2.0-B9780128147610000034-f03-01-9780128147610.jpg")
+```
+
+To load this data into R, simply copy and paste the following into your Rmd file in an R code chunk
+
+```{r}
+data(iris)
+```
+
+Use this data to answer the following questions:
+
+  - **Part A** How many observations and variables are in the `iris` dataset? In one sentence, briefly describe what constitutes an observation in this data. (2 pts)
+  
+  - **Part B** Use the code below to create the appropriate plot to visualize the relationship between the variables `Sepal.Width` and `Sepal.Length`. Do these two variables appear to be *associated*? If so, comment on the strength of this association. (2 pt)
+  
+```{r, echo=F}
+ggplot(iris, aes(Sepal.Width, Sepal.Length)) + geom_point()
+```
+  
+  - **Part C** Use the code below to create the plot again, this time adding additional information for the variable `Species`. Has anything changed in the association between `Sepal.Width` and `Sepal.Length`? Comment on the **strength**, **form**, and **direction** of any associations you see (1pt)
+
+```{r, echo = FALSE}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) + geom_point()
+```
+
+
+**Question 3:**
+
+From the [IMS Textbook](https://openintro-ims.netlify.app/), do the following exercises (you do not need to read anything from the textbook to answer these): 
+
+- Ch 4.8: #5, #6
+- Ch 5.10 #1, #2
+
+Write your answers to these exercises below:
+
+  - **IMS Ch 4.8, #5** (3pts)
+  
+  - **IMS Ch 4.8, #6** (4pts)
+  
+  - **IMS Ch 5.10, #1** (3pts)
+  
+  - **IMS Ch 5.10, #2** (2pts)
