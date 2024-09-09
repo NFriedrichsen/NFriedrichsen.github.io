@@ -18,7 +18,7 @@ Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
 
 Welcome to the course website for STAT 209, Introduction to Applied Statistics. To begin, you can find the course syllabus linked below:
 
-- [Click here](syllabus115f24.html) to view the course syllabus
+- [Click here](syllabus209f24.html) to view the course syllabus
 
 You can locate course content by scrolling, or by using the navigation bar in the upper left.  
 
