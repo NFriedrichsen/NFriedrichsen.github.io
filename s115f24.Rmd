@@ -1,5 +1,5 @@
 ---
-title: "Data Visualization Lab"
+title: "SST-115 Introduction to Statistics"
 output:
   html_document:
     toc: true
@@ -32,18 +32,18 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Fri 8/30 | [Syllabus](syllabus115f24.html) | - | - |
+| Fri 8/30 | [Syllabus](syllabus209f24.html) | - | - |
 
 **Assignments and Deadlines**: None
+
+---
 
 ### Week 2 (R / Data Visualization)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
-| Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [R Lab](labs/01_introR.html) | - |
+| Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [Intro R Lab](labs/01_introR.html) | - |
 | Fri 9/06 | [Data Visualization](lectures/02_DataVisualization.pdf) | Intro R cont'd | - |
-
----
 
 **Assignments and Deadlines**
 
@@ -52,6 +52,8 @@ Please note: material will not be posted until we've reached that point in the c
 3) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab.
 
 **Note:** Homework/Labs should be neatly formatted with questions specified as headers and with your R code and written solutions underneath. [Here is an example](homework/example_hw1.pdf) of how it should look (courtesy of Professor Nolte)
+
+---
 
 ### Week 3 (Data Visualization)
 | Date | Lecture | Lab | Reading |
