@@ -17,7 +17,13 @@ output:
 
 **Office Hours**:
 
-* TBD
+* In-person: Monday 2:30-3:30pm, Wednesday 12-1pm, Friday 11am-12pm
+* I am considering some virtual office hours via Webex, more on this TBA Tuesday
+
+**Mentor Information**:
+
+* Emma, whartonh@grinnell.edu
+* Mentor session: Monday 8-9pm, Noyce 2401
 
 **Gradescope Course numbers**
 
@@ -55,7 +61,9 @@ Participation in a lab-heavy course is critical. During labs you are expected to
 
 **Labs** \- 20%
 
-In-class labs contain embedded questions that you and your lab partner(s) will answer together. Some lab questions will be scored for accuracy with feedback given, while others may be scored for effort/completion. Additionally, labs are to be completed collaboratively, and if it becomes clear that you or your partner(s) are using a “divide and conquer” approach to answering lab questions your score on that assignment will be penalized. Labs will be due at 10:00pm the day we do them in class unless otherwise noted, but my goal is for everyone to have them finished before class is over. Your two lowest lab scores will be dropped. 
+In-class labs contain embedded questions that you and your lab partner(s) will answer together. Some lab questions will be scored for accuracy with feedback given, while others may be scored for effort/completion. Additionally, labs are to be completed collaboratively, and if it becomes clear that you or your partner(s) are using a “divide and conquer” approach to answering lab questions your score on that assignment will be penalized. 
+
+All labs are worth 5 points, and will be due at 10:00pm two days after we are no longer working on it in class, but my goal is for everyone to have them finished before class is over. Your two lowest lab scores will be dropped. 
 
 **Individual Homework** \- 20%
 
