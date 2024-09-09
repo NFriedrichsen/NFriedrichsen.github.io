@@ -2,8 +2,8 @@
 title: "Data Visualization Lab"
 date: "September 9, 2024"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -86,7 +86,22 @@ We may not always use all of these terms in our own descriptions, but they are u
 
 The *distribution* of a variable is a description of how frequently values of that variable show up. We saw that the way in which we describe the distribution of a variable is different depending on if the variable is categorical or quantitative. 
 
-**Question 1:** Below is a bar chart representing \_. Describe the distribution of the variable. 
+**Question 1:** Below is a bar chart representing the hair color of students in a statistics class (color may be exaggerated in the chart). Describe the distribution of the haircolor variable. 
+
+(In the graph code chunks I have put the term 'echo=FALSE' in the brackets. This stops RStudio from showing the code in the pdf to save a little bit of space). We will talk more about how to make these graphs on Wednesday.
+
+```{r, echo=F}
+data = data.frame(HairEyeColor)
+Hair = c("Black", "Blond", "Brown", "Red")
+Count = c(sum(data$Freq[data$Hair=="Black"]),
+          sum(data$Freq[data$Hair=="Blond"]),
+          sum(data$Freq[data$Hair=="Brown"]),
+          sum(data$Freq[data$Hair=="Red"]))
+new_data = data.frame(Hair, Count)
+ggplot(new_data, aes(x=Hair, y=Count, fill=Hair)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("black", "gold","tan4", "red"))
+```
 
 **Note:** We will come back to distributions of quantitative variables next week, after we have learned a bit more about describing histograms and box plots
 
@@ -94,13 +109,13 @@ The *distribution* of a variable is a description of how frequently values of th
 
 ### Part 4 - Relationships between Variables
 
-For this set of questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code. (Note: In the graph code chunks I have put the term 'echo=FALSE' in the brackets. This stops RStudio from showing the code in the pdf to save a little bit of space). We will talk more about how to make these graphs on Wednesday.
+For this set of questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code.
 
 ```{r}
 colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
 ```
 
-**Question 1:** How many observations and variables are there in the dataset? Also show the code you use to answer this question.
+**Question 1:** How many observations and variables are there in the dataset? Explain how you found this answer and show any code (if you used any). 
 
 ```{r}
 ```
