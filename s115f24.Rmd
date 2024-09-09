@@ -1,5 +1,5 @@
 ---
-title: "SST-115 - Introduction to Statistics (Fall 2024)"
+title: "Data Visualization Lab"
 output:
   html_document:
     toc: true
@@ -56,14 +56,14 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 3 (Data Visualization)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | Data Viz | - |
+| Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | [Data Viz](labs/DataVisualizationLab.html) and [Template](labs/DataVisualizationLab.Rmd) | - |
 | Wed 9/11 | ggplot and aesthetics | ggplot | - |
 | Fri 9/13 | - | ggplot cont'd | - |
 
 **Assignments and Deadlines**
 
 1) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm.
-2) Homework 1 will be assigned Monday 9/09 and will be due the following Monday 9/16 at 10pm.
+2) [Homework 1](homework/Homework1.html) is assigned Monday 9/09 and will be due the following Monday 9/16 at 10pm. The R markdown file for writing your answers can be found [here](homework/Homework1.Rmd)
 
 
 
