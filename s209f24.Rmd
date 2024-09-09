@@ -16,9 +16,9 @@ Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
 
 # Syllabus
 
-Welcome to the course website for STA 209, Introduction to Applied Statistics. To begin, you can find the course syllabus linked below:
+Welcome to the course website for STAT 209, Introduction to Applied Statistics. To begin, you can find the course syllabus linked below:
 
-- [Click here](syllabus209f24.html) to view the course syllabus
+- [Click here](syllabus115f24.html) to view the course syllabus
 
 You can locate course content by scrolling, or by using the navigation bar in the upper left.  
 
@@ -38,14 +38,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 **Assignments and Deadlines**: None
 
+---
+
 ### Week 2 (R / Data Visualization)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
 | Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [Intro R Lab](labs/01_introR.html) | - |
 | Fri 9/06 | [Data Visualization](lectures/02_DataVisualization.pdf) | Intro R cont'd | - |
-
----
 
 **Assignments and Deadlines**
 
@@ -54,6 +54,8 @@ Please note: material will not be posted until we've reached that point in the c
 3) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab.
 
 **Note:** Homework/Labs should be neatly formatted with questions specified as headers and with your R code and written solutions underneath. [Here is an example](homework/example_hw1.pdf) of how it should look (courtesy of Professor Nolte)
+
+---
 
 ### Week 3 (Data Visualization)
 | Date | Lecture | Lab | Reading |
@@ -65,7 +67,8 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Deadlines**
 
 1) [Intro R Lab](labs/01_introR.html) due Wednesday 9/11 at 10pm.
-2) [Homework 1](homework/Homework1.html) is assigned Monday 9/09 and will be due the following Monday 9/16 at 10pm. The R markdown file for writing your answers can be found [here](homework/Homework1.Rmd)
+2) [Data Viz Lab](labs/DataVisualizationLab.html) due Wednesday 9/11 at 10pm.
+3) [Homework 1](homework/Homework1.html) is assigned Monday 9/09 and will be due the following Monday 9/16 at 10pm. The R markdown file for writing your answers can be found [here](homework/Homework1.Rmd)
 
 
 
