@@ -59,8 +59,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | [Data Viz](labs/DataVisualizationLab.html) and [Template](labs/DataVisualizationLab.Rmd) | - |
-| Wed 9/11 | ggplot and aesthetics | ggplot | - |
-| Fri 9/13 | - | ggplot cont'd | - |
+| Wed 9/11 | - | [ggplot lab](labs/ggplot2_lab.html) | - |
+| Fri 9/13 | - | [ggplot lab](labs/ggplot2_lab.html) continued | - |
 
 **Assignments and Deadlines**
 
