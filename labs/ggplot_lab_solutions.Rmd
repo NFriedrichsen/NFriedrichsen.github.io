@@ -1,0 +1,149 @@
+---
+title: 'ggplot 2 lab solutions'
+output: html_document
+date: "2024-09-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+```{r, echo=F}
+# Make graphs look a bit nicer for ggplot2
+theme_set(theme_bw())
+
+# Load majors data
+majors <- read.csv("https://collinn.github.io/data/majors.csv")
+
+# Get mpg dataset from ggplot2 package and modify variables
+mpg <- as.data.frame(mpg)
+mpg$cyl <- factor(mpg$cyl)
+mpg$year <- factor(mpg$year)
+```
+
+```{r, echo=F}
+## Adding color = Category
+ggplot(majors, aes(Per_Male, Bach_Med_Income, color = Category)) + 
+  geom_point()
+```
+
+**Question 0** In a few short sentences, describe what you see here. How are the different variables represented in this plot? Are there any relationships that stand out to you?
+
+*The Per_Male variable is mapped to the x-axis, Bach_Med_Income is mapped to the y-axis. The observations are colored according to which Category they belong to.*
+
+**Question 1:** Looking at the multivariate plot above, what additional information is gleaned by including `Category` as a color as opposed to what we saw when we only had the x- and y-axes? (Similar to Question 0, but here pay attention specifically to the difference between the two.)
+
+*We can see if relationships between Per_Male and Bach_Med_Income are different for the four categories. We can also see that most observations with large values for Per_Male and Bach_Med_Income all belong to the 'Science' category.*
+
+---
+
+## Part 1 - Univariate Plots
+
+**Question 2:** The `class` variable in the `mpg` dataset details the "type" of car for each observation (pickup, SUV). Create the appropriate graph to demonstrate this distribution of this variable and comment on which class appears to be the most frequent.
+
+```{r}
+ggplot(mpg, aes(x=class)) +
+  geom_bar()
+```
+
+**Question 3:** The `cty` variable in the `mpg` dataset details the average fuel economy for the vehicle when driven in the city. Create the appropriate graph to represent this variable. Does this variable appear to be symmetric or skewed?
+
+```{r}
+ggplot(mpg, aes(cty)) + geom_histogram(bins = 10)
+```
+
+---
+
+## Part 2 - Bivariate Plots
+
+**Question 4:** Using the `mpg` dataset, we are interested in determining if either front wheel drive, rear wheel drive, or 4 wheel drive have better highway fuel economy. Create the appropriate plot to show the distribution of fuel economy for each of these types of vehicles. Which appears to have the best fuel economy?
+
+```{r}
+ggplot(mpg, aes(drv, hwy)) + geom_boxplot()
+```
+
+
+**Question 5:** In the `majors` dataset, the variable `Per_Masters` describes the percentage of the workforce within a particular field whose highest degree is a master's degree. Create a graph to assess whether or not there appears to be a relationship between the percentage of individuals who hold a master's degree and the percent that is unemployed. What do you find?
+
+```{r}
+ggplot(majors, aes(Per_Masters, Per_Unemployed)) + geom_point()
+```
+
+
+**Question 6:** Using the `mpg` dataset, create a plot to find which vehicle `class` produces the largest number of vehicles with 6 cylinder (`cyl`) engines. Which produces the largest proportion of 6 cylinder engines?
+
+```{r}
+ggplot(mpg, aes(class, fill = cyl)) + geom_bar(position = position_dodge(preserve = "single"))
+
+ggplot(mpg, aes(class, fill = cyl)) + geom_bar(position = "fill")
+```
+
+
+---
+
+## Part 3 - Multivariate Plots
+
+
+**Question 7** Below is code that reads in `tips` data that are used in the Example section of this lab. First identify the four variables from the `tips` data that are used to make this plot and then write code to reproduce it. (This plot uses *faceting* which has examples at the end of the lab)
+
+```{r}
+tips <- read.csv("https://collinn.github.io/data/tips.csv")
+```
+
+
+```{r}
+ggplot(tips, aes(total_bill, tip, color = sex)) +
+  geom_point() + 
+  facet_wrap(~day)
+```
+
+
+**Question 8** Using the full version of the `college` dataset (provided again below), create two different plots box plots with a `fill` aesthetic to illustrate the relationship between region, type, and admission rate. Which of your plots would be more useful in answering the question, "Do private or public schools generally have a higher admission rate?" 
+
+```{r}
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+```
+
+
+```{r}
+## Since this is categorical/categorical/quant, we should be thinking
+# boxplot plus color aesthetics
+
+## This plot would be more useful
+ggplot(college, aes(Adm_Rate, Region, fill = Type)) + 
+  geom_boxplot()
+
+## This plot is less useful
+ggplot(college, aes(Adm_Rate, Type, fill = Region)) + 
+  geom_boxplot()
+
+
+## They may also use faceting instead of fill, but these are less
+# ideal as they make direct comparisons more difficult.
+# ggplot(college, aes(Adm_Rate, Region)) +
+#   geom_boxplot() + 
+#   facet_wrap(~Type)
+# 
+# ggplot(college, aes(Adm_Rate, Type)) +
+#   geom_boxplot() + 
+#   facet_wrap(~Region)
+```
+
+**Question 9** The code below will load a data set containing 970 Hollywood films released between 2007 and 2011, then reduce these data to only include variables that could be known prior to a film’s opening weekend. The data are then simplified further to only include the four largest studios (Warner Bros, Fox, Paramount, and Universal) in the three most common genres (action, comedy, drama). You will use the resulting data for this question.
+
+```{r}
+## Read in data
+movies <- read.csv("https://collinn.github.io/data/hollywood.csv")
+
+## Simplify data
+movies <- subset(movies, LeadStudio %in% c("Warner Bros", "Fox", "Paramount", "Universal") & 
+                               Genre %in% c("Action", "Comedy", "Drama"),
+                       select = c("Movie", "LeadStudio", "Story", "Genre","Budget",
+                                  "TheatersOpenWeek","Year","OpeningWeekend"))
+```
+
+Your goal in this question is to create a graphic that effectively differentiates movies with high revenue on opening weekend from those with low revenue on opening weekend (the variable `OpeningWeekend` records this revenue in millions of US dollars). In other words, using the plotting methods included in this lab, we want to create a visual summary of the data that answers the question: which trends or attributes seem to predict a film having low or high opening weekend revenue.
+
+Your plot should include *at least* three variables from the dataset, either by including them in the axes, through color or fill, or through faceting. Finally, using the graph you have created, write 2-3 sentences explaining detailing what you have found.
+
