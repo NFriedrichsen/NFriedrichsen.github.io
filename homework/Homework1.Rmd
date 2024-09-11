@@ -34,6 +34,7 @@ knitr::include_graphics("https://ars.els-cdn.com/content/image/3-s2.0-B978012814
 To load this data into R, simply copy and paste the following into your Rmd file in an R code chunk
 
 ```{r}
+library(ggplot2)
 data(iris)
 ```
 
