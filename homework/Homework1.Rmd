@@ -43,13 +43,13 @@ Use this data to answer the following questions:
   
   - **Part B** Use the code below to create the appropriate plot to visualize the relationship between the variables `Sepal.Width` and `Sepal.Length`. Do these two variables appear to be *associated*? If so, comment on the strength of this association. (2 pt)
   
-```{r, echo=F}
+```{r}
 ggplot(iris, aes(Sepal.Width, Sepal.Length)) + geom_point()
 ```
   
   - **Part C** Use the code below to create the plot again, this time adding additional information for the variable `Species`. Has anything changed in the association between `Sepal.Width` and `Sepal.Length`? Comment on the **strength**, **form**, and **direction** of any associations you see (1pt)
 
-```{r, echo = FALSE}
+```{r}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) + geom_point()
 ```
 
