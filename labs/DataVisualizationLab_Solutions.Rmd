@@ -1,0 +1,175 @@
+---
+title: "Data Visualization Lab Solutions"
+author: "Nathan Friedrichsen"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+```{r,echo=F}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+In my solutions I will try to highlight the complete answer to a question using <span style="background-color: yellow;">yellow</span>. I may also include extra information to explain an answer or provide hints for similar questions we encounter in the future which I will highlight in <span style="background-color: orange;">orange</span>.
+
+# Part 1 - Conceptual Questions
+
+**Question 1:** In the Introduction slides, I stated that 'Statistics is about *variation*.' In your own words, explain what I meant by this statement.
+
+<span style="background-color: yellow;">*My answer: Most data exhibits variability in that not all of our observations have the same value for each variable. Statistics is about trying to find ways to explain `why` there are these differences, using info from other variables to help us.*</span>
+
+**Question 2:** What is a census? Give two reasons why we do not always want to conduct a census.
+
+<span style="background-color: yellow;">A census is the process of collecting data from *all* members of a population. Two reasons we don't always conduct a census:</span>
+
+* <span style="background-color: yellow;">a census can take a very long time for us to gather the data</span>
+
+* <span style="background-color: yellow;">it can be very expensive to collect data for the census</span>
+
+**Question 3:** What does it mean to say two variables are *associated* with each other?
+
+<span style="background-color: yellow;">Two variables are *associated* with each other if knowing something about one variable tells us more info about the other variable. Another way to phrase this: two variables are *associated* with each other if we notice a pattern occuring between the variables.</span>
+
+---
+
+# Part 2 - Describing Data & Including Context
+
+<span style="background-color: orange;">Notice in the following answers how I include location and time in descriptions when these things are known. Your answers to Population/Sample/Observation should all be similar, the difference between them being how big the group is. The sample should include the total number of observations we collected data from. An observation is an individual from the sample.</span>
+
+
+**Question 1:** (Healthcare Opinions) In 2009, the PEW research group wanted to learn more about public opinion on the idea of the public option for health coverage. One thing that they wanted to know was the percentage of adult U.S. residents who favored a public option for health coverage in October 2009. In a poll of 1500 randomly selected Adult residents in the United States, they found that 55% of adult residents favored a government health insurance plan to compete with private plans. [Source](https://www.pewresearch.org/politics/2009/10/08/section-2-opinions-of-health-care-proposals/) 
+
+* population: <span style="background-color: yellow;">all adult U.S. residents in 2009</span>
+
+* sample: <span style="background-color: yellow;">1500 adult U.S. residents in 2009</span>
+
+* observation: <span style="background-color: yellow;">an adult U.S. resident in 2009</span>
+
+What is the variable of interest in this study? Is it categorical or quantitative?
+
+<span style="background-color: yellow;">The variable of interest is 'Whether or not the adult favored a public option'. Categorical.</span>
+
+Do you think this data is useful for learning about healthcare opinions in 2024?
+
+<span style="background-color: yellow;">There are many correct answers to this question. My thought is that the data is probably not that useful for this question. Public opinion can change rapidly over time. This data is 15 years old and may not reflect current opinions about healthcare questions.</span>
+
+**Question 2:** (National household size) The American Community Survey (ACS) conducts yearly surveys. One thing that is of interest is the average household size. In April 2022, the ACS had surveyed 1,980,550 U.S. households and found the average household size to be 2.50. [Source](https://data.census.gov/table/ACSDP1Y2022.DP02) 
+
+* Describe the population in this study: <span style="background-color: yellow;">all US households in April 2022</span>
+
+* Describe the sample in this study: <span style="background-color: yellow;">1,980,500 US households in April 2022</span>
+
+* Describe an observation in this study: <span style="background-color: yellow;">a US household in April 2022</span>
+
+* What is the variable of interest in this study? Is it categorical or quantitative?
+
+<span style="background-color: yellow;">The variable of interest is 'household size'. Quantitative. </span>
+
+
+**Question 3:** (Real Life Engineering Example) Forty prismatic lithium-ion pouch cells were built at the University of Michigan Battery Laboratory. Cells were formed using two different formation protocols: "fast formation" and "baseline formation". After formation, the cells were put under cycle life testing at room temperature and 45degC. Cells were cycled until the discharge capacities dropped below 50% of the initial capacities and the number of cycles was recorded.
+
+
+* Describe an observation in this study: <span style="background-color: yellow;">a prismatic lithium ion cell built at this lab</span>
+
+* Describe the sample in this study: <span style="background-color: yellow;">40 prismatic lithium ion cells built at this lab</span>
+
+* Describe the population in this study: <span style="background-color: yellow;">All lithium ion cells.</span> <span style="background-color: orange;">For the purpose of defining the population we are looking at the big group we want to eventually say things about, so I am not limiting myself to just batteries produced in this lab for the population. We will talk more about this later.
+
+* What question do you think the researchers were trying to answer?:
+
+<span style="background-color: yellow;">Do the different formation protocols cause batteries to have different lifespans (in terms of # of cycles)?</span>
+
+---
+
+### Part 3 - Distributions
+
+**Question 1:** Below is a bar chart representing the hair color of students in a statistics class (color may be exaggerated in the chart). Describe the distribution of the haircolor variable. 
+
+```{r, echo=F}
+data = data.frame(HairEyeColor)
+Hair = c("Black", "Blond", "Brown", "Red")
+Count = c(sum(data$Freq[data$Hair=="Black"]),
+          sum(data$Freq[data$Hair=="Blond"]),
+          sum(data$Freq[data$Hair=="Brown"]),
+          sum(data$Freq[data$Hair=="Red"]))
+new_data = data.frame(Hair, Count)
+ggplot(new_data, aes(x=Hair, y=Count, fill=Hair)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("black", "gold","tan4", "red"))
+```
+
+<span style="background-color: yellow;">The most common hair color in this class is brown with just under 300 students. Blond and black hair color are the next most common with around 125 and 110 respectively. The least common hair color is red with around 75 students.</span> <span style="background-color: orange;">When making our description, we include context in terms of stating the variable again and also naming the categories we are using and including supporting numbers</span>
+
+---
+
+### Part 4 - Relationships between Variables
+
+For this set of questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code.
+
+```{r}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+**Question 1:** How many observations and variables are there in the dataset? Explain how you found this answer and show any code (if you used any). 
+
+<span style="background-color: yellow;">There are 1095 observations and 23 variables in the data set. One way to find this is to read in the data set and then chech 'Environment' at the top-right in RStudio.</span>
+
+
+**Question 2:** Look at the conditional bar chart below. Is there an *association* between the region and the type of college (public vs private) in our sample? Justify your answer using 1 or 2 sentences.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(y=Region, fill=Private)) +
+  geom_bar(position="fill") + labs(x="Proportion")
+```
+
+<span style="background-color: yellow;">Yes. There is a big difference in terms of the proportion of colleges that are Public for different regions. Nearly 75% of Rocky Mountain colleges are public, which is much higher than the other regions.</span> <span style="background-color: orange;">For bar charts like this, an association means that different regions have different proportions of public/private. If all the proportions were similar, there would not be an association. </span>
+
+**Question 3:** Using the side-by-side box plots below, answer the following questions.
+
+```{r, echo=FALSE}
+
+ggplot(colleges, aes(ACT_median, Region)) +
+  geom_boxplot() + labs(x="Median ACT") +
+  scale_x_continuous(breaks=seq(14,36,2)) +
+  theme_bw()
+```
+
+* What is the shape of 'South East's' box plot? What about 'Mid East'?
+
+<span style="background-color: yellow;">The boxplot for South East is skewed-right. The boxplot for Mid East is roughly symmetric.</span>
+
+* Which region's boxplot has the largest median and what is the value of the median? 
+
+<span style="background-color: yellow;">There are 3 regions tied for the largest median with a value of 24: Rocky Mountains, New England, and Mid East</span>
+
+* Which region has the largest IQR? Give an approximate value of the IQR for this region and show your calculation
+
+<span style="background-color: yellow;">The region with the largest IQR is New England. The value of the IQR is approximately 29-22=7.</span> <span style="background-color: orange;">The visual width of the box corresponds to IQR. When making quick comparisons we can just look at this width to determine the region with largest IQR.</span>
+
+**Question 4:** 
+
+* When we describe scatterplots, we need to talk about **form, strength, direction,** and **outliers**. Using the scatterplot below, describe the relationship between Average Faculty Salary and Median 10-year Salary (the median salary of graduates from the college 10 years after receiving their degree) for our sample of colleges. Use full sentences and include context.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+
+<span style="background-color: yellow;">There is a moderately strong, positive linear relationship between Average Faculty Salary and Median 10-yr Salary of graduates. There are a couple of outliers with large 10-yr median graduate salaries.</span> <span style="background-color: orange;">Strength is subjective at this point. We will learn how to be more precise in determining it in a few weeks. </span>
+
+**Question 5:** Below is another scatterplot similar to the one in Question 3, but I have added information on whether the colleges are public or private. Is the relationship between Average Faculty Salary and Median 10-year Salary different for public and private colleges? *Briefly* explain (1 or 2 sentences).
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median, color=Private)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+
+<span style="background-color: yellow;">The relationship between Average Faculty salary and Median 10-yr salary of graduates is very similar for both private and public colleges. Private colleges tend to have slightly higher median 10-yr salaries of graduates than public colleges for similar values of Average Faculty Salaries.</span><span style="background-color: orange;">Note: I am not asking to describe the relationship for both groups like in Question 4.</span>

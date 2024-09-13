@@ -128,7 +128,7 @@ ggplot(colleges, aes(y=Region, fill=Private)) +
   geom_bar(position="fill") + labs(x="Proportion")
 ```
 
-**Question 2:** Using the side-by-side box plots below, answer the following questions.
+**Question 3:** Using the side-by-side box plots below, answer the following questions.
 
 ```{r, echo=FALSE}
 
@@ -144,7 +144,7 @@ ggplot(colleges, aes(ACT_median, Region)) +
 
 * Which region has the largest IQR? Give an approximate value of the IQR for this region and show your calculation
 
-**Question 3:** 
+**Question 4:** 
 
 * When we describe scatterplots, we need to talk about **form, strength, direction,** and **outliers**. Using the scatterplot below, describe the relationship between Average Faculty Salary and Median 10-year Salary (the median salary of graduates from the college 10 years after receiving their degree) for our sample of colleges. Use full sentences and include context.
 
@@ -155,7 +155,7 @@ labs(x = "Average Faculty Salary",
 y = "Median 10-yr Salary")
 ```
 
-**Question 4:** Below is another scatterplot similar to the one in Question 3, but I have added information on whether the colleges are public or private. Is the relationship between Average Faculty Salary and Median 10-year Salary different for public and private colleges? *Briefly* explain (1 or 2 sentences).
+**Question 5:** Below is another scatterplot similar to the one in Question 3, but I have added information on whether the colleges are public or private. Is the relationship between Average Faculty Salary and Median 10-year Salary different for public and private colleges? *Briefly* explain (1 or 2 sentences).
 
 ```{r, echo=FALSE}
 ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median, color=Private)) +

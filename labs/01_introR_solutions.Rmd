@@ -1,0 +1,71 @@
+---
+title: 'Intro R Lab Solutions'
+author: "Nathan Friedrichsen"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In my solutions I will try to highlight the complete answer to a question using <span style="background-color: yellow;">yellow</span>. I may also include extra information to explain an answer or provide hints for similar questions we encounter in the future which I will highlight in <span style="background-color: orange;">orange</span>.
+
+---
+
+**Question 1:** Create a new R Markdown file and copy the entirety of this question over to the new file (we will do this for all questions in this lab). Then, proceed with the instructions below.
+
+Between the stars below, do the following:
+
+Use two # to create a header that says About Me
+Type your first name in bold and your last name in italics
+Create a bullet point list of the people sitting on either side of you
+Create a numbered list of your 3 least favorite animals
+
+---
+
+**Question 2:** Again, copy the entirety of this question into the R Markdown file you created for Question 1.
+
+Let’s practice creating vectors and subsetting with a short exercise.
+
+First, create an R code chunk between the rows of stars below (Ctrl+Alt+I is quick way to do this)
+Next, create a vector called x that has all of the numbers from 11 to 20
+Use square brackets and subsetting to select the first five numbers of this vecto
+
+```{r}
+# create vector x that has numbers 11 through 20
+x = 11:20
+
+# select first 5 numbers of this list
+x[1:5]
+```
+
+---
+
+**Question 3:**
+For this question, we will be using the `HappyPlanet` data that we have just looked at:
+
+  - **Part A** Copy the code above to read the Happy Planet data into your own R Markdown file, saving the dataset to a variable called `planet`
+  
+```{r}
+# Use read.csv to pull Happy Planet data
+planet <- read.csv("https://collinn.github.io/data/HappyPlanet.csv")
+```
+
+  - **Part B** Looking at the Happy Planet data, explain in one or two sentences what constitutes an observation in this dataset (what is the data being recorded from)
+  
+<span style="background-color: yellow;">An observation is a country. We don't know much more about each country in terms of when, how, or why the data was recorded.</span>
+  
+  - **Part C** Using `$` to extract columns from the dataset, find the mean life expectancy of all countries in the dataset? (Hint: what functions have we seen already in this lab?)
+  
+```{r}
+mean(planet$LifeExpectancy)
+```
+  
+  - **Part D** Are there any variables in this dataset that are stored as a numeric that would be better suited as a categorical variable? Explain your answer
+
+```{r}
+class(planet$Region)
+```
+
+
+<span style="background-color: yellow;">The `region` variable is quantitative according to R. The region a country belongs to should probably be categorical with a short name describing that region. Instead, the regions listed as 1 through 7 as they are do not tell us much for context.</span>
