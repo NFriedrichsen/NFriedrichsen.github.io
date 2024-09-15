@@ -2,6 +2,6 @@
 
 ## Teaching (Grinnell)
 
-Stat 115 (Fall 2024): 
+[Stat 115 (Fall 2024)](https://nfriedrichsen.github.io/s115f24.html)
 
-Stat 209 (Fall 2024): https://nfriedrichsen.github.io/s209f24.html
+[Stat 209 (Fall 2024)](https://nfriedrichsen.github.io/s209f24.html)
