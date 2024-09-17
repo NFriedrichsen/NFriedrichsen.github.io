@@ -61,8 +61,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | [Data Viz](labs/DataVisualizationLab.html) and [Template](labs/DataVisualizationLab.Rmd) [[solution]](labs/DataVisualizationLab_Solutions.html)| - |
-| Wed 9/11 | - | [ggplot lab](labs/ggplot2_lab.html) | - |
-| Fri 9/13 | - | [ggplot lab](labs/ggplot2_lab.html) continued | - |
+| Wed 9/11 | - | [ggplot lab](labs/ggplot2_lab.html) [[solution]](labs/ggplot_lab_solutions.html) | - |
+| Fri 9/13 | - | [ggplot lab](labs/ggplot2_lab.html) [[solution]](labs/ggplot_lab_solutions.html) continued | - |
 
 **Assignments and Deadlines**
 
@@ -77,7 +77,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/16 | [Numerical Summaries](lectures/04_NumericalSummaries.pdf) | - | IMS Sections 5.2, 5.4, and 5.6 |
-| Wed 9/18 | [Tables] | [Lab] | - |
+| Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Lab] | - |
 | Fri 9/20 | [Study Design] | [Lab] | - |
 
 **Assignments and Deadlines**
