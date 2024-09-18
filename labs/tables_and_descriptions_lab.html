@@ -437,10 +437,10 @@ x &lt;- rnorm(50)
 
 ## Without pipe
 sqrt(var(x))</code></pre>
-<pre><code>## [1] 0.9356416</code></pre>
+<pre><code>## [1] 0.9616707</code></pre>
 <pre class="r"><code>## With pipe
 var(x) %&gt;% sqrt()</code></pre>
-<pre><code>## [1] 0.9356416</code></pre>
+<pre><code>## [1] 0.9616707</code></pre>
 <hr />
 </div>
 </div>
@@ -505,9 +505,9 @@ individuals who survived or died on the Titanic. Similar to the
 <pre><code>## Survived
 ##       No      Yes 
 ## 0.676965 0.323035</code></pre>
-<p>Here we see that 68% of the passengers aboard the Titanic died while
-32% survived. This is the same information that we would have found had
-we computed the values by hand:</p>
+<p>Here we see that 68<span class="math inline">\(\%\)</span> of the
+passengers aboard the Titanic died while 32<span class="math inline">\(\%\)</span> survived. This is the same information
+that we would have found had we computed the values by hand:</p>
 <p><span class="math display">\[
 \text{% Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} =
 \frac{1490}{2201} = 0.677
@@ -622,8 +622,7 @@ proportions:</p>
 <p>By default, this returns <em>absolute proportions</em>, calculated by
 dividing each of the entries in the two-way table by its total of 2201.
 This table of proportions tells us, for example, that <em>of all of the
-passengers</em> who were on the Titanic, 62% of them were males who
-died.</p>
+passengers</em> who were on the Titanic, 62<span class="math inline">\(\%\)</span> of them were males who died.</p>
 <p>We can specify <em>conditional proportions</em> by passing in an
 additional argument called <code>margins</code> to the
 <code>proportions()</code> function. In R, 1 refers to rows and 2 refers
@@ -640,11 +639,13 @@ with(titanic, table(Sex, Survived)) %&gt;% proportions(margin = 1)</code></pre>
 <p>We can be sure that we are conditioning on the row margins because
 the sum of each row is equal to 1.</p>
 <p>From this, we see that <em>given that an individual was male</em>,
-21% survived while 79% did not. Similarly, <em>given that an individual
-was female</em>, we see that 27% were cast to a watery grave while 73%
-went to normal graves at some other point in their lives. In this
-example, we are <em>conditioning</em> on sex, our explanatory variable,
-with survival status serving as our response.</p>
+21% survived while 79<span class="math inline">\(\%\)</span> did not.
+Similarly, <em>given that an individual was female</em>, we see that
+27<span class="math inline">\(\%\)</span> were cast to a watery grave
+while 73<span class="math inline">\(\%\)</span> went to normal graves at
+some other point in their lives. In this example, we are
+<em>conditioning</em> on sex, our explanatory variable, with survival
+status serving as our response.</p>
 <p>The variable we condition on should also serve as the x-axis in any
 conditional plots we make</p>
 <pre class="r"><code>ggplot(titanic, aes(Sex, fill = Survived)) +

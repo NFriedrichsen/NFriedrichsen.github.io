@@ -122,7 +122,7 @@ We may also be interested in identifying the *proportion* of individuals who sur
 with(titanic, table(Survived)) %>% proportions()
 ```
 
-Here we see that 68% of the passengers aboard the Titanic died while 32% survived. This is the same information that we would have found had we computed the values by hand:
+Here we see that 68$\%$ of the passengers aboard the Titanic died while 32$\%$ survived. This is the same information that we would have found had we computed the values by hand:
 
 $$
 \text{% Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} = \frac{1490}{2201} = 0.677
@@ -203,7 +203,7 @@ Just as before, we can pass a two-way table to the `proportions()` function to r
 with(titanic, table(Sex, Survived)) %>% proportions()
 ```
 
-By default, this returns *absolute proportions*, calculated by dividing each of the entries in the two-way table by its total of 2201. This table of proportions tells us, for example, that *of all of the passengers* who were on the Titanic, 62% of them were males who died.
+By default, this returns *absolute proportions*, calculated by dividing each of the entries in the two-way table by its total of 2201. This table of proportions tells us, for example, that *of all of the passengers* who were on the Titanic, 62$\%$ of them were males who died.
 
 We can specify *conditional proportions* by passing in an additional argument called `margins` to the `proportions()` function. In R, 1 refers to rows and 2 refers to columns: so, in order to compute a table of proportions conditional on the row variable (meaning that proportions are taken *within* the row), we will pass the argument `margin = 1` to the `proportion()` function:
 
@@ -214,7 +214,7 @@ with(titanic, table(Sex, Survived)) %>% proportions(margin = 1)
 
 We can be sure that we are conditioning on the row margins because the sum of each row is equal to 1.
 
-From this, we see that *given that an individual was male*, 21% survived while 79% did not. Similarly, *given that an individual was female*, we see that 27% were cast to a watery grave while 73% went to normal graves at some other point in their lives. In this example, we are *conditioning* on sex, our explanatory variable, with survival status serving as our response.
+From this, we see that *given that an individual was male*, 21% survived while 79$\%$ did not. Similarly, *given that an individual was female*, we see that 27$\%$ were cast to a watery grave while 73$\%$ went to normal graves at some other point in their lives. In this example, we are *conditioning* on sex, our explanatory variable, with survival status serving as our response.
 
 The variable we condition on should also serve as the x-axis in any conditional plots we make
 
