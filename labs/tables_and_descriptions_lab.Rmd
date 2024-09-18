@@ -1,7 +1,8 @@
 ---
 title: "Tables Lab"
 output:
-  html_document:
+  html_document: null
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -214,7 +215,7 @@ with(titanic, table(Sex, Survived)) %>% proportions(margin = 1)
 
 We can be sure that we are conditioning on the row margins because the sum of each row is equal to 1.
 
-From this, we see that *given that an individual was male*, 21% survived while 79$\%$ did not. Similarly, *given that an individual was female*, we see that 27$\%$ were cast to a watery grave while 73$\%$ went to normal graves at some other point in their lives. In this example, we are *conditioning* on sex, our explanatory variable, with survival status serving as our response.
+From this, we see that *given that an individual was male*, 21$\%$ survived while 79$\%$ did not. Similarly, *given that an individual was female*, we see that 27$\%$ were cast to a watery grave while 73$\%$ went to normal graves at some other point in their lives. In this example, we are *conditioning* on sex, our explanatory variable, with survival status serving as our response.
 
 The variable we condition on should also serve as the x-axis in any conditional plots we make
 
