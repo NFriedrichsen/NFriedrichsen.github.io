@@ -437,10 +437,10 @@ x &lt;- rnorm(50)
 
 ## Without pipe
 sqrt(var(x))</code></pre>
-<pre><code>## [1] 0.9816114</code></pre>
+<pre><code>## [1] 1.102546</code></pre>
 <pre class="r"><code>## With pipe
 var(x) %&gt;% sqrt()</code></pre>
-<pre><code>## [1] 0.9816114</code></pre>
+<pre><code>## [1] 1.102546</code></pre>
 <hr />
 </div>
 </div>
@@ -509,7 +509,7 @@ individuals who survived or died on the Titanic. Similar to the
 passengers aboard the Titanic died while 32<span class="math inline">\(\%\)</span> survived. This is the same information
 that we would have found had we computed the values by hand:</p>
 <p><span class="math display">\[
-\text{% Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} =
+\% \text{ Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} =
 \frac{1490}{2201} = 0.677
 \]</span> Finally, let’s introduce the <code>sort()</code> function,
 which takes either a one-way table or a vector and sorts the values from

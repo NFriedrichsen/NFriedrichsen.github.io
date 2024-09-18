@@ -1,8 +1,8 @@
 ---
 title: "Tables Lab"
 output:
-  html_document: null
   pdf_document: default
+  html_document: null
 ---
 
 ```{r setup, include=FALSE}
@@ -126,7 +126,7 @@ with(titanic, table(Survived)) %>% proportions()
 Here we see that 68$\%$ of the passengers aboard the Titanic died while 32$\%$ survived. This is the same information that we would have found had we computed the values by hand:
 
 $$
-\text{% Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} = \frac{1490}{2201} = 0.677
+\% \text{ Dead} = \frac{\# \text{Dead}}{\text{Total Passengers}} = \frac{1490}{2201} = 0.677
 $$
 Finally, let's introduce the `sort()` function, which takes either a one-way table or a vector and sorts the values from smallest to largest (or in alphabetical order if they are character strings)
 
