@@ -76,7 +76,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/16 | [Numerical Summaries](lectures/04_NumericalSummaries.pdf) | - | IMS Sections 5.2, 5.4, and 5.6 |
 | Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Tables Lab](labs/tables_and_descriptions_lab.html) | - |
-| Fri 9/20 | [Study Design] | [Lab] | - |
+| Fri 9/20 | [Study Design](lectures/06_StudyDesign.pdf) | [Lab] | IMS Chapter 2 (pgs. 28-37) |
 
 **Assignments and Deadlines**
 
