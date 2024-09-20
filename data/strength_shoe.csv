@@ -1,0 +1,25 @@
+﻿Shoe Type,Name,Sex,Height,Gene?,BMI
+strength,Mary,female,71,yes,26
+strength,Andres,male,64,yes,22
+strength,Sassandra,female,68,yes,32
+strength,Jabari,male,72,yes,27
+strength,Davieon,male,65,no,23
+strength,Aryan,male,69,no,20
+strength,Daniel,male,72,yes,26
+strength,Tong,male,62,yes,23
+ordinary,Jihoon,male,64,yes,24
+strength,Alejandro,male,68,yes,25
+strength,Nailah,female,70,yes,30
+strength,Adah,female,63,yes,27
+ordinary,Jasmine,female,62,yes,24
+ordinary,Keyaina,female,70,no,26
+ordinary,John,male,66,no,21
+ordinary,Paul,male,61,no,20
+ordinary,Antonio,male,63,no,22
+strength,An,female,61,no,26
+ordinary,Rashidi,male,71,no,23
+ordinary,Ka Nong,female,66,yes,25
+ordinary,Shiwoo,male,70,no,23
+ordinary,Chao,male,67,no,12
+ordinary,Liu,male,68,no,17
+ordinary,Lucas,male,73,no,20
