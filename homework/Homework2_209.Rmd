@@ -1,0 +1,102 @@
+---
+title: "Homework 2"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Due: Friday Sept. 27, 2024 at 10pm
+
+This assignment has a total of 24 pts possible. Your score out of 22 will noted and scaled to 5 points (maximum of 5).
+  
+### Question 1 (5 pts)
+
+This question is Question 4.2 from the textbook and has been reproduced here. The dataset below contains the results from a poll based on a random sample with two variables: response, indicating their response to the poll question, and political, reporting their self-reported political ideology.
+
+Nine-hundred and ten (910) randomly sampled registered voters from Tampa, FL were asked if they thought workers who have illegally entered the US should be (i) allowed to keep their jobs and apply for US citizenship, (ii) allowed to keep their jobs as temporary guest workers but not allowed to apply for US citizenship, or (iii) lose their jobs and have to leave the country.
+  
+```{r, warning=F, message=FALSE}
+## Copy and run this code to create tables
+library(ggplot2)
+library(dplyr)
+immigration <- read.csv("https://collinn.github.io/data/immigrationpoll.csv")
+```
+
+Use the appropriate tables to answer the following questions:
+
+a) What percent of these Tampa, FL voters identify themselves as conservatives?
+
+b) What percent of these Tampa, FL voters are in favor of the citizenship option?
+
+c) What percent of these Tampa, FL voters identify themselves as conservatives and are in favor of the citizenship option?
+
+d) What percent of these Tampa, FL voters who identify themselves as conservatives are in favor of the citizenship option? What percent of moderates share this view? What percent of liberals share this view?
+
+e) Do political ideology and views on immigration appear to be associated? Explain your reasoning.
+
+---
+
+# Numerical Summaries
+
+### Question 2 -- Conceptual Questions (1 pt each)
+
+  - **Part A** How does outlier classification differ between boxplots and histograms?
+  
+  - **Part B** What does it mean to say a statistic is *robust*?
+  
+  - **Part C** Why do we use median and IQR (instead of mean and standard deviation) for the center and spread when we have skews, outliers, or both?
+  
+  - **Part D** If a distribution is right-skewed with no outliers, which of these will be larger: the median or the mean?
+  
+### Question 3 (4 pts)
+This question is 5.10-Question \#22 from the textbook and has been reproduced here. 
+
+The first histogram below shows the distribution of the yearly incomes of 40 patrons at a college coffee shop. Suppose two new people walk into the coffee shop: one making \$225,000 and the other $250,000. The second histogram shows the new income distribution. Summary statistics are also provided, rounded to the nearest whole number.
+ 
+```{r, fig.align='center', echo = FALSE}
+knitr::include_graphics("https://nfriedrichsen.github.io/homework/IMS_5-10_Q22a.jpg")
+```
+
+a) Would the mean or the median best represent what we might think of as a typical income for the 42 patrons at this coffee shop? What does this say about the robustness of the two measures?
+
+b) Describe the distribution of incomes for the coffee shop's 42 patrons using the bottom histogram ('After'). You may assume the value for Q3 is \$68,000 (this may or may not be necessary). 
+
+---
+
+# Study Design
+
+### Question 4 -- Conceptual Questions (1 pt each)
+
+  - **Part A** What does it mean for a sample to be *representative* of a population?
+
+  - **Part B** What is the difference between an Experiment and an Observational Study?
+
+  
+  - **Part C** What type of randomness do we need in a study in order to make cause-and-effect statements?
+  
+  - **Part D** What name do we give to variables that interfere with our ability to make cause-and-effect statements?
+  
+### Question 5 (4 pts)
+The following is Chapter 2.5, Q3 from the textbook recreated.
+
+Researchers collected data to examine the relationship between air pollutants and preterm births in Southern California. During
+the study air pollution levels were measured by air quality monitoring stations. Length of gestation data were collected on 143,196 births between the years 1989 and 1993, and air pollution
+exposure during gestation was calculated for each birth. (Ritz et al. 2000)
+
+  - **Part A** Identify the population of interest and the sample in this study.
+  
+  - **Part B** Comment on whether the results of the study can be generalized to the population, and if the findings of the study can be used to establish causal relationships.
+
+### Question 6 (3 pts)
+The following is Chapter 2.5, Q12 from the textbook recreated.
+
+A study that surveyed a random sample of otherwise healthy high school students found that they are more likely to get muscle cramps when they are stressed. The study also noted that students drink more coffee and sleep less when they are stressed.
+
+- **Part A** What type of study is this?
+
+- **Part B** Can this study be used to conclude a causal relationship between increased stress and muscle cramps?
+
+- **Part C** State possible confounding variables that might explain the observed relationship between increased stress and muscle cramps.
