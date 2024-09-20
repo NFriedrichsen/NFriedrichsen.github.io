@@ -84,7 +84,7 @@ Please note: material will not be posted until we've reached that point in the c
 2) [ggplot lab](labs/ggplot2_lab.html) due Monday 9/16 at 10pm.
 3) Exam 1 will be in-class Wednesday Oct 2.
 4) [Tables Lab](labs/tables_and_descriptions_lab.html) due Friday 9/20 at 10pm.
-5) [Homework 2](homework/homework2_209.html) due Friday 9/27 at 10pm.
+5) [Homework 2](Homework/homework2_209.html) due Friday 9/27 at 10pm.
 
 
 
