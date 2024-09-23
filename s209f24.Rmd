@@ -86,9 +86,21 @@ Please note: material will not be posted until we've reached that point in the c
 5) [Design Lab](labs/Design_lab.html) due Monday 9/23 at 10pm.
 6) [Homework 2](homework/Homework2_209.html) due Friday 9/27 at 10pm.
 
+---
+
+### Week 5 (Correlation and Regression)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) | - |
+| Wed 9/25 | [Regression] | [Regression Lab] | - |
+| Fri 9/27 | [Regression] | [Regression Lab cont'd] | - |
+
+**Assignments and Deadlines**
+
+1) [Design Lab](labs/Design_lab.html) due Monday 9/23 at 10pm.
+2) [Homework 2](homework/Homework2_115.html) due Friday 9/27 at 10pm.
+
 Exam 1 will be in-class Wednesday Oct 2.
-
-
 
 
 
