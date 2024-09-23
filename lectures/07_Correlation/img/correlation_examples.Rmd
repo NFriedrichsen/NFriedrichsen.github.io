@@ -1,0 +1,51 @@
+---
+title: "correlation_examples"
+author: "Nathan Friedrichsen"
+date: "2024-09-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,echo=F}
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+### Outliers
+
+```{r}
+# Plains colleges, ACT_median histogram
+filter(colleges, Region=="Plains") %>% ggplot(aes(ACT_median)) + geom_histogram(bins = 15, color= 'black', fill='gray')
+
+# Plains colleges, ACT_median boxplot
+filter(colleges, Region=="Plains") %>% ggplot(aes(ACT_median)) + geom_boxplot()
+
+# Plains colleges, Salary10yr_median
+filter(colleges, Region =="Plains") %>% ggplot(aes(Salary10yr_median)) +
+  geom_boxplot()
+
+# Plains colleges, ACT_median and 10-yr Salary scatterplot
+filter(colleges, Region=="Plains") %>% ggplot(aes(x=ACT_median, y=Salary10yr_median)) + geom_point()
+```
+
+```{r}
+which(colleges$ACT_median == 35)
+colleges$Name[456]
+```
+```{r}
+# non-linear relationship
+x <- seq(0, 5, length.out = 75)
+y = exp(x) + rnorm(75, 0, sd=8)
+
+df = data.frame(x, y)
+ggplot(df, aes(x, y)) + geom_point() + stat_cor(method="pearson", cor.coef.name = "r", aes(label = after_stat(r.label)))+ theme(axis.title.x=element_blank(),                                                     axis.title.y=element_blank())
+```
+
+
+
