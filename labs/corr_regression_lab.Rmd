@@ -1,0 +1,126 @@
+---
+title: "Correlation and Regression Lab"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Happy Planet Data
+
+According to the Happy Planet Index: 2024 Report, “The Happy Planet Index is a measure of sustainable wellbeing, evaluating countries by how efficiently they deliver long, happy lives for their residents using our limited environmental resources.” We are actually going to use the 2012 data from Happy Planet Index for formatting reasons (it's a pain to format the data set for this lab). A link to the site is available [here](https://happyplanetindex.org/).
+
+Make a new RMarkdown document and give it an appropriate name. I only want to see your questions and necessary code for this lab. Make sure to use appropriate formatting so your answers are easy to read and distinguish from the questions. Make sure to copy the questions wording themselves to the new document as you answer them.
+
+Copy the code below to read the 2012 Happy Planet data into R. Load the appropriate packages as well.
+
+```{r, warning=F, message=F}
+library(ggplot2)
+library(dplyr)
+
+data = read.table("https://nfriedrichsen.github.io/data/HappyPlanetIndex.txt", header=T, sep=",")
+Happy = data.frame(data)
+Happy$Region = as.factor(Happy$Region)
+```
+
+---
+
+We are going to examine the following variables:
+
+**Happiness:** Larger values indicate greater happiness, health, and well-being of the country’s citizens. Happiness does not have a measurement unit.
+
+**Footprint:** Ecological Footprint is a measure of the (per capita) ecological impact a country has. Larger values indicate a greater ecological impact.
+
+**Life Expectancy:** Life Expectancy refers to the average life expectancy (in years) for a country.
+
+**GDPperCapita:** The GDP (gross domestic product) of a country divided by its population, measured in US dollars.
+
+**Region:** Region of the country in the world.
+
+---
+
+# Correlation
+
+### Predicting `Happiness` with `Footprint`. 
+
+Suppose we want to answer the question "Is ecological footprint a linear predictor of happiness?" Look at the scatterplot below and answer the following questions.
+
+```{r, warning=F}
+# Scatterplot of Footprint vs Happiness
+theme_set(theme_bw())
+ggplot(Happy, aes(x=Footprint, y=Happiness)) + geom_point()
+```
+
+**Question 1**: Which is the explanatory variable and which is the response variable? Explain.
+
+**Question 2**: Describe the relationship between the happiness of a country and it's ecological footprint.
+
+**Question 3**: Is it appropriate to use Pearson's correlation to quantify the relationship between these two variables? Explain.
+
+---
+
+### Correlation Matrix
+
+Now let's change things up and try to find a variable that does a good job predicting happiness. One of the ways we can try to do this is look for variables that have a high correlation with Happiness. (This does not always work, but can be a good place to start). 
+
+Often times when we try to examine the correlation between many variables at the same time, it can be helpful to arrange them in a table or matrix. The output below computes the Pearson's correlation coefficient between the variables `Happiness`, `LifeExpectancy`, and `HDI`. We can look at the intersection of variables in the table to see the corresponding correlation between them. The correlation between a variable and itself is always 1, so we don't care about looking at these entries.
+
+```{r}
+Happy %>% select(Happiness, LifeExpectancy, GDPperCapita) %>%
+cor(use="complete.obs")
+```
+
+**Question 4:** Of the two other variables in the correlation matrix, which has the strongest correlation with Happiness?
+
+---
+
+### Predicting `Happiness` with `LifeExpectancy`
+
+Let's go ahead and try to use `LifeExpectancy` to predict `Happiness`. Use the scatterplot below and the correlation matrix above to answer the following questions.
+
+```{r}
+# Scatterplot of Happiness vs. LifeExpectancy
+ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point()
+```
+
+**Question 5:** Which of these is the explanatory and which is the response variable? Explain.
+
+**Question 6:** Describe the general relationship between `LifeExpectancy` and `Happiness`. 
+
+**Question 7:** Is it appropriate to use Pearson's correlation to quantify the relationship between these two variables? Explain.
+
+**Question 8:** State the value of the correlation between `LifeExpectancy` and `Happiness`. Interpret the value of this correlation.
+
+---
+
+# Linear Regression
+
+Next, we are going to fit the linear regression line to the `Happiness` and `LifeExpectancy` scatterplot we just saw a second ago. To do this, we are going to use the `lm()` function in R. It stands for Linear Model. The syntax that the function uses is variable1 \~ variable2 which means "predict variable1 using variable 2", and then we also need to tell R which data set these variables are coming from. Take a second to read the code that makes the linear regression line below, then use the output to answer the following questions.
+
+```{r, message=F}
+# Linear regression for HDI vs Happiness.
+fit = lm(data=Happy, Happiness~LifeExpectancy)
+fit
+
+# Plot regression on scatterplot
+ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point() +
+  geom_smooth(method='lm', se=F) + 
+  geom_label(x=55, y=8, label = paste("Predicted Happiness = -1.104 + 0.104*LifeExpectancy"))
+```
+
+**Question 9:** State the regression equation using the variable names.
+
+**Question 10:** What is the value of the slope? Interpret the value of the slope in context.
+
+**Question 11:** What is the value of the intercept? Would it be appropriate to interpret the y-intercept? If yes, interpret the value of the y-intercept. If not, explain why.
+
+**Question 12:** What is the predicted happiness for a country that has a life expectancy of 77.9 years? Show your calculation.
+
+**Question 13:** What is the value of the residual for the United States? Interpret the value of the residual. The value of the US's `LifeExpectancy` and `Happiness` variables are:
+
+```{r}
+Happy %>% filter(Country == "United States of America") %>% select(LifeExpectancy, Happiness)
+```
+
+**Question 14:** What is the value of the coefficient of determination (R^2) between the happiness of a country and its life expectancy? Interpret the value of R^2 (do not use correlation interpretation).
