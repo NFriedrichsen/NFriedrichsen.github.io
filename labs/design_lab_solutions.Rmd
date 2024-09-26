@@ -1,0 +1,84 @@
+---
+title: "Study Design Lab -- Solutions"
+author: "Nathan Friedrichsen"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=F, warning=F, include=F}
+library(ggplot2)
+library(dplyr)
+
+data = read.csv("https://nfriedrichsen.github.io/data/strength_shoe.csv")
+```
+
+# Strength Shoes
+
+**Question 1** -- Consider the scenario where participants in a study chose which type of shoe to wear. Suppose you find in this study that on average, the group who wears Strength Shoes® can jump much farther than the group who wears ordinary training shoes. Do you think this is compelling evidence that Strength Shoes® really increase jumping ability? Explain. 
+
+<span style="background-color: yellow;"> No. Since people are able to choose their group, it might be the case that better jumpers chose the Strength Shoes because they were interested in using them.</span>
+
+**Question 2** -- Can you think of other variables besides sex and height that might explain differences in jumping ability? If so, what are they? 
+
+<span style="background-color: yellow;">There are lots of things you could mention. A few: Athletic ability, muscle mass, genetics, practice</span>
+
+---
+
+### BMI
+
+```{r}
+# Mean BMI for Strength-Shoes group
+filter(data, Shoe.Type == "strength") %>% pull(BMI) %>% mean()
+
+# Mean BMI for Ordinary group
+filter(data, Shoe.Type == "ordinary") %>% pull(BMI) %>% mean()
+```
+
+**Question 3** -- After seeing the mean BMIs for each group, if the Strength Shoes group jumps further than the ordinary shoes group, is this still compelling evidence that Strength shoes are causing people to jump further?
+
+<span style="background-color: yellow;">No. The larger BMI for the strength shoes group may be the cause of the jumping further.</span>
+
+---
+
+### Genetic Factor
+
+```{r}
+filter(data, Shoe.Type == "strength") %>% pull(Gene.) %>% table() %>% prop.table()
+
+filter(data, Shoe.Type == "ordinary") %>% pull(Gene.) %>% table() %>% prop.table()
+```
+
+**Question 4** -- Suppose the Strengh Shoes group jumped much further than the ordinary shoes group on average. After seeing the difference in the groups in terms of the genetic factor, is this still compelling evidence that the Strength Shoes really did cause the difference?
+
+<span style="background-color: yellow;">No. The strength shoes group had a much larger proportion of people with the gene, so maybe the gene was actually the cause of them jumping further.</span>
+
+---
+
+## Random Assignment
+
+### Male/Female ratio
+
+**Question 5** -- Compute the difference in proportions of males in each group (group 1 - group 2).
+
+<span style="background-color: yellow;">Answers will vary.</span>
+
+**Question 6** -- Click 'Randomize' again. Compute the new difference in proportions of males in each group (group 1 - group 2). Is it the same as before?
+
+<span style="background-color: yellow;">Answers will vary.</span>
+
+**Question 7** -- Where is the distribution of 'differences in proportion of males' centered? What does this tell you about how similar the groups tended to be in terms of the number of males and females in each group?
+
+<span style="background-color: yellow;">The distribution is centered at zero. This tell us the proportion of males was usually very similar for both groups, so random assignment tends to balance the groups in terms of male/female proportions.</span>
+
+
+### Genetic Factor
+
+**Question 8** -- Use the distribution to comment on whether random assignment tended to balance out the gene between the groups.  
+
+<span style="background-color: yellow;">The distribution of differences in proportions of genetic factor was centered at zero. Random assignment tended to balance out the gene between the groups.</span>
+
+
+<span style="background-color: yellow;"> </span>

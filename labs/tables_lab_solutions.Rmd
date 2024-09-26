@@ -1,0 +1,158 @@
+---
+title: "Tables Lab -- Solutions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Titanic Data
+
+## One-way tables
+```{r, include=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+
+## Data for lab
+data(Titanic)
+titanic <- as.data.frame(Titanic)
+titanic <- titanic[rep(1:nrow(titanic), times = titanic$Freq), ]
+titanic$Freq <- NULL
+```
+
+#### Question 1
+
+**Part A** Create a *frequency table* using the `titanic` data set to find how many children and adults were on board the Titanic.
+
+```{r}
+with(titanic, table(Age))
+```
+
+**Part B** Determine what percentage of the passengers on-board the Titanic were adults.
+
+```{r}
+with(titanic, table(Age)) %>% proportions()
+```
+
+<span style="background-color: yellow;">The percentage of passengers that were adults is 95.0\%. You could also have used the previous table to get .95 = $\frac{2092}{2092 + 109}$. </span>
+
+**Part C** Determine what percentage of the passengers on-board the Titanic were members of the crew.
+
+```{r}
+with(titanic, table(Class)) %>% proportions()
+```
+
+<span style="background-color: yellow;">40.2% of passengers were members of the crew.</span>
+
+---
+
+## Two-way Tables
+
+#### Question 2
+
+**Part A** How many children were included in second class?
+
+```{r}
+with(titanic, table(Age, Class))
+```
+<span style="background-color: yellow;">24 children.</span>
+
+
+**Part B** What percentage of the crew survived? How about children?
+
+```{r}
+with(titanic, table(Survived, Class)) %>% proportions(margin = 2)
+with(titanic, table(Survived, Age)) %>% proportions(margin=2)
+```
+<span style="background-color: yellow;">24\% of the crew survived. 52\% of children survived.</span> <span style="background-color: orange;">These are conditional probabilities since we are narrowing our focus to one group for each table (crew and children). We need survived and not survived to add up to 100\% for each group. The way I arranged my tables with survived on the y-axis means I needed to use `margins=2` argument in the `proportions()` function. </span>
+
+
+**Part C** What proportion of individuals who survived were members of the crew? Construct the plot associated with the table you create.
+
+```{r}
+with(titanic, table(Survived, Class)) %>% proportions(margin=1) %>% addmargins(2)
+```
+
+<span style="background-color: yellow;">The proportion of passengers who survived that were members of the crew is .298.</span> <span style="background-color: orange;">This is a conditional probability since we are restricting ourselves to only looking at the Survived=Yes row. We need the rows to add to 100\% so I used `proportions(margin=1)`.</span>
+
+---
+
+## Three-way tables
+
+#### Question 3
+
+```{r}
+ggplot(titanic, aes(Class)) + 
+  geom_bar() + 
+  facet_grid(Survived ~ Sex)
+```
+
+
+
+**Part A**: Amongst female passengers, which class had the most who did not survive? How many female passengers in this class did not survive?
+
+<span style="background-color: yellow;">3rd class. 106 female passengers in 3rd class did not survive.</span>
+
+**Part B**: Amongst male passengers, which class had the fewest people survive? How many male passengers in this class survived?
+
+<span style="background-color: yellow;">2nd class. 25 male passengers in 2nd class survived.</span>
+
+---
+
+# Numerical Summaries
+
+#### Question 4 (Conceptual Questions)
+
+**Part A**: Where does the name 'order statistics' come from?
+
+<span style="background-color: yellow;">We need to order the data from smallest to largest to calculate them.</span>
+
+**Part B**: Why do we use median and IQR (instead of mean and standard deviation) for the center and spread when we have skews, outliers, or both?
+
+<span style="background-color: yellow;">Skews and outliers can change the mean and standard deviation a lot, so they are unreliable measures of center and spread when skews or outliers are present.</span>
+
+**Part C**: What is a reason one may want to use z-scores to compare variables?
+
+<span style="background-color: yellow;">If the variables use a different scale or unit, then z-scores still let us compare them when we otherwise couldn't.</span>
+
+---
+
+#### Question 5
+
+**Part A**: Describe the distribution of `Sepal.Length` for 'versicolor' iris flowers using the histogram and output below. (You will not need all of these numbers)
+
+```{r}
+iris[iris$Species=='versicolor',] %>% ggplot(aes(x=Sepal.Length)) + geom_histogram(bins = 8, color = 'black', fill = 'gray') +
+  ggtitle("Species = Versicolor")
+
+iris[iris$Species=='versicolor',]$Sepal.Length %>% summary()
+iris[iris$Species=='versicolor',]$Sepal.Length %>% sd()
+```
+
+<span style="background-color: yellow;">`Sepal.Length` for Versicolor iris flowers is roughly symmetric and unimodal, with a mean of 5.936 and standard deviation of .516 (units unclear). There are no outliers according to the histogram.</span> <span style="background-color: orange;">We prefer to use mean and standard deviation when we can. Since there is no skew or outliers, we can use mean and median.</span>
+
+**Part B**: Describe the distribution of `Petal.Length` for 'versicolor' iris flowers using the histogram and boxplot below. 
+
+```{r}
+iris[iris$Species=='versicolor',] %>% ggplot(aes(x=Petal.Length)) + geom_histogram(bins = 14, color = 'black', fill = 'gray')+ ggtitle("Species = Versicolor")
+
+iris[iris$Species=='versicolor',] %>% ggplot(aes(x=Petal.Length)) + geom_boxplot() + ggtitle("Species = Versicolor")
+```
+
+<span style="background-color: yellow;">Petal length for Versicolor iris flowers is skewed left with outliers at low values. The median is around 4.3 and IQR is about 1.6 (units unclear).</span> <span style="background-color: orange;"> Since the distribution is skewed with outliers, we want to use median and IQR for center and spread respectively. </span>
+
+**Part C**: Use the boxplot below to compare `Sepal.Length` of the various `Species` to each other in terms of center and spread. (Hint: What measures of center and spread are easiest to see in the boxplots?)
+
+```{r}
+ggplot(iris, aes(x=Sepal.Length, y=Species)) + geom_boxplot()
+```
+
+<span style="background-color: yellow;">Virginica has the largest median at 6.5, followed by Versicolor with a median around 5.9, then Setosa has the lowest median at 5. Virginica and Versicolor have similar IQRs with are larger than the IQR for Setosa.</span>
+
+**Part D**: Is there an association between `Sepal.Length` and `Species` of iris flower? 
+
+<span style="background-color: yellow;">There is an association between these two variables. If you know the species of flower, you can tell roughly what values of Sepal Length that species will have. This means Species provides info to tell us about Sepal length, so they are associated.</span>
