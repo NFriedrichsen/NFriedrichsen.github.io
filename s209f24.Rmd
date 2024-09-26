@@ -75,8 +75,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/16 | [Numerical Summaries](lectures/04_NumericalSummaries.pdf) | - | IMS Sections 5.2, 5.4, and 5.6 |
-| Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Tables Lab](labs/tables_and_descriptions_lab.html) | - |
-| Fri 9/20 | [Study Design](lectures/06_StudyDesign.pdf) | [Design Lab](labs/Design_lab.html) | IMS Chapter 2 (pgs. 28-37) |
+| Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Tables Lab](labs/tables_and_descriptions_lab.html) [[solution]](labs/tables_lab_solutions.html) | - |
+| Fri 9/20 | [Study Design](lectures/06_StudyDesign.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | IMS Chapter 2 (pgs. 28-37) |
 
 **Assignments and Deadlines**
 
@@ -91,7 +91,7 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 5 (Correlation and Regression)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) | - |
+| Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | - |
 | Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
 | Fri 9/27 | [Regression] | [Regression Lab cont'd] | - |
 
