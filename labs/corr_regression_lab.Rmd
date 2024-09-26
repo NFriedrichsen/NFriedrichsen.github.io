@@ -1,6 +1,7 @@
 ---
 title: "Correlation and Regression Lab"
-output: html_document
+output:
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +16,7 @@ Make a new RMarkdown document and give it an appropriate name. I only want to se
 
 Copy the code below to read the 2012 Happy Planet data into R. Load the appropriate packages as well.
 
-```{r, warning=F, message=F}
+```{r, warning=FALSE, message=FALSE}
 library(ggplot2)
 library(dplyr)
 
@@ -124,3 +125,54 @@ Happy %>% filter(Country == "United States of America") %>% select(LifeExpectanc
 ```
 
 **Question 14:** What is the value of the coefficient of determination (R^2) between the happiness of a country and its life expectancy? Interpret the value of R^2 (do not use correlation interpretation).
+
+---
+
+# Linear Regression (Categorical Predictor)
+
+We are going to use linear regression using a categorical predictor now. We will use a separate dataset for this, since the number of categories in the Happy Planet data set is too large to practice these ideas. Instead we will use the `Iris` dataset that we previously used for Homework 1. This dataset comes with the `ggplot2` package. The following code shows the first few rows of the dataset.
+
+```{r}
+head(iris)
+```
+
+### Predicting petal length with species
+
+We are going to use the `Species` variable to help us predict values of `Petal.Length` for the iris flowers. Use the following linear regression results and corresponding graph to answer the following questions.
+
+```{r, warning=F, message=F}
+ggplot(data=iris, aes(x=Species, y=Petal.Length)) + geom_jitter(width=.2) + geom_smooth(method="lm") + geom_segment(aes(x = 0.7, xend = 1.3, y = 1.462, yend=1.462), 
+               color = 'tomato', linewidth = 1) +
+  geom_segment(aes(x = 1.7, xend = 2.3, y = 4.26, yend=4.26), 
+               color = 'tomato', linewidth = 1) +
+  geom_segment(aes(x = 2.7, xend = 3.3, y = 5.552, yend=5.552), 
+               color = 'tomato', linewidth = 1)
+
+lm(Petal.Length ~ Species, data=iris)
+```
+
+**Question 15**: What are the categories of `Species`? How many indicator variables could we make with this variable?
+
+**Question 15**: What is reference variable in the linear regression output?
+
+**Question 16**: Write the equation for the line in two different ways (see slide 10/18 from Cat. Predictor notes).
+
+**Question 17**: What is the predicted petal length for a Setosa flower?
+
+**Question 18**: What is the predicted petal length for a Versicolor flower?
+
+**Question 19**: What is the predicted petal length for a Virginica flower?
+
+### Bonus (boxplots)
+
+We have already seen something very similar to the `jitter plot` with group means above. It was the side-by-side boxplots in the Tables lab! In the side-by-side boxplots usually we care about comparing medians. When we use linear regression we are comparing the means of the groups instead.
+
+```{r}
+ggplot(data=iris, aes(x = Species, y = Petal.Length)) + geom_boxplot()
+```
+
+
+
+
+
+
