@@ -93,7 +93,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | - |
 | Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
-| Fri 9/27 | [Regression] | [Regression Lab cont'd] | - |
+| Fri 9/27 | [Regression (Cat. Predictor)](lectures/09_LinearRegression_Categorical.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
 
 **Assignments and Deadlines**
 
