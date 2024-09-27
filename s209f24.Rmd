@@ -98,11 +98,17 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Deadlines**
 
 1) [Design Lab](labs/Design_lab.html) due Monday 9/23 at 10pm.
-2) [Homework 2](homework/Homework2_115.html) due Friday 9/27 at 10pm.
+2) [Homework 2](homework/Homework2_209.html) due Friday 9/27 at 10pm.
+3) [Homework 3](homework/Homework3.html) due Friday 10/04 at 10pm. (I recommend starting this early and finishing it before the exam on Wednesday as it is very good practice)
+
+### Exam Info
 
 Exam 1 will be in-class Wednesday Oct 2.
 
+Monday 9/30 will be a review day with practice problems and time set aside for HW questions.
 
+[[Exam 1 Topics Outline]](exams/topic_list_exam1.html)
 
+[[Practice Exam 1]](exams/practice_exam1.pdf)
 
 

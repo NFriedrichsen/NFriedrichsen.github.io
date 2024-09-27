@@ -1,0 +1,81 @@
+---
+title: ''
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Topics List
+
+Statistical framework (parameter vs statistic)
+
+Quantitative vs Categorical variables
+
+What is a distribution?
+
+- What values?
+- How frequently?
+
+Data visualizations
+
+- Explanatory/response variables
+- Univariate plots
+- Bivariate plots
+- Which plots associated with which variable types
+- Which bar chart appropriate for conditional proportions
+
+Numerical summaries
+
+- Measures of centrality
+- Measures of spread
+- Percentiles
+- When is each useful?
+
+Z-scores
+
+- What do the tell us about observations?
+- Be able to construct given mean and sd
+- Interpret
+
+Tables
+
+- Conditional statistics (row/column/total)
+- Associate plots with tables
+- Use quantitative variable as categorical (i.e., enrollment as large or small)
+
+Study Design
+
+- Experiment vs Observational study
+- prospective vs retrospective
+- representative samples
+  - random sampling
+  - generalization
+- random assignment
+  - causal relationships
+- census
+- biases
+  - response
+  - non-response
+  - sampling
+- intended vs actual population
+- label parts of experiment
+  - experimental units
+  - factors / levels / treatments
+
+Regression
+
+- Correlation (pearson/spearman)
+- Simple linear regression, interpret slope and intercept
+- Regression with categorical predictors/indicator variables
+- $R^2$ as summary statistic
+
+
+### Do not need to know
+
+Formulas or equations (except z-score)
+
+Ecological correlation
+
+R programming

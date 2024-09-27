@@ -1,0 +1,185 @@
+---
+title: "Practice Exam"
+# author: "Your Name:_____________________________________"
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.width = 5, fig.height = 5, 
+                      fig.align = 'center', message = FALSE, warning = FALSE)
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+titanic <- data.frame(Titanic)
+titanic <- titanic[rep(1:nrow(titanic), times = titanic$Freq), ]
+titanic$Freq <- NULL
+
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(knitr)
+library(kableExtra)
+library(data.table)
+library(nycflights13)
+
+## General social survey relating happieness to income
+m <- matrix(c(21,53,94,159,372,249,110,221,83), nrow = 3)
+rownames(m) <- c("Above Average", "Average", "Below Average")
+colnames(m) <- c("Not Too Happy", "Pretty Happy", "Very Happy")
+
+m <- as.table(m)
+
+## Job satisfaction
+tt <- expand.grid(Age = c("<30", "30-50", ">50"), 
+                  Satisfaction = c("Low", "Medium", "High"))
+tt$Freq <- c(34,80,29,53,174,75,88,304,172)
+tt <- tt[rep(1:nrow(tt), times = tt$Freq), ]
+
+theme_set(theme_bw())
+
+```
+
+
+$$
+\text{Name:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+$$
+\vspace{50pt}
+
+# Directions 
+
+\vspace{20pt}
+
+- You **do not** need to fill all the space provided. In many cases, large amounts of white space only exist to correct for general spacing of the exam \vspace{15pt}
+- You **do not** need to write in complete sentences for all questions: if I desire you to answer in a complete sentence I will indicate this \vspace{15pt}
+- The practice exam is shorter than the actual exam \vspace{15pt}
+- The actual exam will have at least one question about linear regression with a few sub-questions
+\vspace{15pt}
+- Have fun (please)
+
+
+
+\newpage
+
+# Question 1
+
+Answer the following questions in 1-2 sentences \vspace{25pt}
+
+**Part A** Briefly describe the *statistical framework*. In particular, what is a *parameter*, what is a *statistic*, and how are these two related to one another?
+
+\vspace{100pt}
+
+**Part B** What two things do a *distribution* tell us about a variable?
+
+\vspace{100pt}
+
+**Part C** What is the utility of using *z-scores*? In particular, how is a standardized score used for an individual observation?
+
+\vspace{100pt}
+
+**Part D** List 2 reasons for why a census is not always performed for a study.
+
+
+\newpage
+
+# Question 2
+
+
+A survey of incomes for 1000 individuals with graduate degrees in business was conducted five years following graduation, the distribution of which is demonstrated in the box plot below.
+
+```{r, fig.width = 8, fig.height = 4}
+set.seed(69)
+x <- rgamma(500, 2, 5)*100000 + 50000
+x <- c(x, sample(69494:83723, 100))
+x <- c(x, sample(86000:165000, 150))
+x <- c(x, sample(215000:235000, 50))
+
+x <- c(x, sample(80000:89000, 100), sample(115000:130000, 100))
+
+df <- data.frame(x)
+ggplot(df, aes(x)) + 
+  #geom_boxplot(outlier.size = 2, fill = 'gray') + 
+  #ylim(-1, 1) +
+  geom_histogram(color = "black", fill = "gray80") +
+  labs(x = "Income") +
+  theme(axis.text.y = element_blank())
+```
+
+**Part A:** Use the histogram to describe this variable in a complete sentence. Make sure to include context.
+
+
+\vspace{175pt}
+
+**Part B:** Do you suspect that the mean or median will be larger for this distribution? Clearly state "mean" or "median" and justify your answer.
+
+
+\newpage
+
+# Question 3
+
+The table below presents the results from the 2006 General Social Survey conducted by the National Opinion Research Center polling 1,009 respondents on their age and level of job satisfaction. Row totals have been added in the last column.
+
+**For the questions below, you do not need complete sentences but you must show the calculations used to derive your answer**
+
+```{r}
+## Job satisfaction
+tt <- expand.grid(Age = c("<30", "30-50", ">50"), 
+                  Satisfaction = c("Low", "Medium", "High"))
+tt$Freq <- c(34,80,29,53,174,75,88,304,172)
+tt <- tt[rep(1:nrow(tt), times = tt$Freq), ]
+
+
+with(tt, table(Age, Satisfaction)) %>% addmargins(2) %>%  kable() %>% 
+  kable_styling(latex_options = "hold_position", full_width = FALSE, font_size = 12) %>% 
+  add_header_above(c("Age","Job Satisfaction" = 3, "Total"), line_sep = 5)
+```
+
+**Part A:** What percentage of respondents were between 30-50 years old and indicated that they had *low* job satisfaction?
+
+\vspace{125pt}
+
+
+**Part B:** Which age demographic had the highest proportion of respondents indicate that they had *high* job satisfaction?
+
+\vspace{125pt}
+
+**Part C:** What proportion of respondents that were older than 50 had *low* job satisfaction?
+
+\newpage
+
+# Question 4
+
+A study is designed to test the effect of light level
+and noise level on exam performance of college students. The light treatments considered are fluorescent overhead lighting, yellow overhead lighting, no overhead lighting (only desk lamps). The noise treatments considered are no noise, construction noise, and human chatter noise. 
+
+The researcher contacted a local college and 200 students volunteered to participate in the study. These students were randomly assigned to the treatments.
+
+**Part A:** What is an experimental unit in this study?
+
+\vspace{25mm}
+
+**Part B:** Is this an experiment or an observational study?
+
+\vspace{25mm}
+
+**Part C:** How many factors are considered in this study? Identify them, and describe their levels.
+
+\vspace{25mm}
+
+**Part D:** Does this study employ random sampling? 
+
+\vspace{25mm}
+
+**Part E:** Are the results of this study generalizable to all college students? Explain your answer.
+
+\vspace{25mm}
+
+**Part F:** Can we draw causal conclusions from the results of this study? Explain your answer.
+
+
+
+
+
+
+\newpage
