@@ -128,4 +128,20 @@ Monday 9/30 will be a review day with practice problems and time set aside for H
 
 [[Practice Exam 1]](exams/practice_exam1.pdf)
 
+---
 
+### Solutions
+
+**Labs**
+
+[Intro to R Solutions](labs/01_introR_solutions.html)
+
+[Data Viz Lab Solutions](labs/DataVisualizationLab_Solutions.html)
+
+[ggplot lab Solutions](labs/ggplot_lab_solutions.html)
+
+[Design Lab Slutions](labs/design_lab_solutions.html)
+
+**Selected HWs**
+
+[Homework 2 Solutions](homework/Homework2_solutions.html)
