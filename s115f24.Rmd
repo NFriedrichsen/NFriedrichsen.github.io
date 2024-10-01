@@ -92,8 +92,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | - |
-| Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
-| Fri 9/27 | [Regression (Cat. Predictor)](lectures/09_LinearRegression_Categorical.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
+| Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) [[solutions]](labs/corr_regression_lab_solutions.html) | - |
+| Fri 9/27 | [Regression (Cat. Predictor)](lectures/09_LinearRegression_Categorical.pdf) | [Regression Lab](labs/corr_regression_lab.html) [[solutions]](labs/corr_regression_lab_solutions.html) | - |
 
 **Assignments and Deadlines**
 
@@ -140,7 +140,9 @@ Monday 9/30 will be a review day with practice problems and time set aside for H
 
 [ggplot lab Solutions](labs/ggplot_lab_solutions.html)
 
-[Design Lab Slutions](labs/design_lab_solutions.html)
+[Design Lab Solutions](labs/design_lab_solutions.html)
+
+[Regression Lab Solutions](labs/corr_regression_lab_solutions.html)
 
 **Selected HWs**
 
