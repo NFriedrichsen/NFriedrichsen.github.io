@@ -1,0 +1,489 @@
+---
+title: "Lab 4 -- `dplyr`"
+output:
+  html_document:
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scoll: no
+  pdf_document:
+    toc: yes
+date: "`r Sys.Date()`"
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+```
+
+This lab serves as our introduction to the `dplyr` (pronounced dee-ply-R) package in `R` which provides a cohesive framework for working with and manipulating data. Let's begin by creating a new R code block and copying the code down below. In particular, make note of the fact that we now need to include `library(dplyr)`, along with `library(ggplot2)`, at the top of our documents when we are ready to knit.
+
+Note also that we are using the `select()` function to keep only a portion of the entire `college` dataset. This is primarily to make our output easier to look at, but it is not at all necessary.
+
+```{r}
+## Copy and paste the code chunk below into the top of your R Markdown document
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## College data
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+
+## For this lab, we don't need all of the columns so we will  
+# select only a few of them
+college <- select(college, Name, State, Enrollment, Type, 
+                  Region, Adm_Rate, ACT_median, Cost, Net_Tuition, 
+                  Avg_Fac_Salary, Debt_median)
+
+## Load data from ggplot package
+data(mpg)
+
+# Happy Planet data
+data = read.table("https://nfriedrichsen.github.io/data/HappyPlanetIndex.txt", header=T, sep=",")
+Happy = data.frame(data)
+Happy$Region = as.factor(Happy$Region)
+```
+
+## Introduction
+
+Data manipulation can mean a lot of things. For this lab, we will focus on the four main operations we will be using on standard datasets. These operations are organized around verbs which will correspond to functions within the `dplyr` package. The verbs for today are:
+
+  1. **Filtering --** Filtering involves creating subsets of our data according to some criterion. For example, we may be interested in filtering our college dataset to only include private college or colleges located in Iowa
+  2. **Mutating --** Mutating is involved with the creation of new variables in our dataset or the transformation of existing one
+  3. **Summarizing --** Summarizing is used to calculate descriptive statistics
+  4. **Grouping --** Grouping allows us to specify groups of our data for the preceding functions rather than acting upon the entire dataset
+  
+The `dplyr` package contains a suite of functions that accommodate these procedures, often *chained together* in a sequence of operations, connected with our pipe operator, `%>%` (Ctrl+Shift+M for PC, Cmd+Shift+M for Mac). For example, if I wanted to find the average cost for public and private schools in Iowa, my code may look something like this:
+
+```{r}
+college %>% filter(State %in% "IA") %>% 
+  group_by(Type) %>% 
+  summarize(meanCost = mean(Cost))
+```
+
+Here, we first *filter* our data to include only schools in Iowa, then we *group by* the `Type` variable so that when I *summarize* my data by finding the mean, I am doing so within each of my defined groups.
+
+Along with some helper functions to facilitate these operations, the main functions we will be using from the `dplyr` package are as follows:
+
+Verb/Function         | Meaning
+--------------------- | -----------------------------------------------------
+`filter`              | pick specific observations (i.e. specific rows)
+`mutate`              | add new derived columns to a data frame
+`summarize`           | aggregate many rows into a summary measure
+`group_by`            | perform subsequent operations separately on the groups created by a categorical variable
+
+---
+
+## Logical Operators
+
+Before going further with `dplyr`, it will be helpful to introduce the idea of *logical operators*. A few common logical operators are described in the table below:
+
+| Operator | Description |
+|:-----|:---------------|
+| `==` | equal to |
+| `!=` | *not* equal to |
+| `%in%` | equal to *any element* in a given vector
+| `<` and `<=` | less than (strict) or less than or equal to |
+| `>` and `>=` | greater than (strict) or greater than or equal to|
+| `&` | and |
+| `|` | or |
+| `!` | not |
+
+
+### Subset Logic
+
+Briefly, a logical operator is an operator (like `+`) that evaluates if a particular statement is `TRUE` or `FALSE` and returns those logical values accordingly. Consider a simple case using single scalar values
+
+```{r}
+## Using less than operator
+3 < 4
+
+## Equality operator
+3 == 4
+```
+
+A common use of logical operators is to evaluate a *vector* against some condition, determining for which elements of a vector a logical statement is true or false. Consider a vector of length five, using logical operators to determine which values are greater than or equal to 3
+
+```{r}
+## Create a vector with values 1,2,3,4,5
+x <- 1:5
+x
+## Determine for which positions the value in the vector is greater than
+## or equal to 3
+x >= 3
+```
+
+In this case, the operation returns a logical vector indicating that our statement is `TRUE` in the third, fourth, and fifth positions. Generally speaking, the length of the logical vector returned with be the same length as the vector on the left hand side.
+
+A very common use of logical vectors is *subsetting*, whereby we retain only those elements of a vector for which a condition is true. We can do this by either assigning our logical values to a new vector, or by using them directly inside of the brackets, `[]`:
+
+```{r}
+## Create a vector of logical values
+lv <- x <= 3
+
+## Use this to subset x
+x[lv]
+
+## Subset directly
+x[x <= 3]
+```
+
+### Compound Statements and Negation
+
+There are two important ways in which we might want to modify our logical vectors. The first is to *negate* them, which involves swapping all of the TRUE/FALSE values.
+
+```{r}
+x <- 1:5
+
+## Where is x less than 4
+x < 4
+
+## Where is x not less than 4
+!(x < 4) 
+```
+
+Sometimes we need to express logical statements that are more complicated than a single logical check. For example, consider a vector with the numbers 1-10 where we want to take all of the numbers between 3 and 7. Typing this directly will result in an error:
+
+```{r, error = TRUE}
+x <- 1:10
+3 < x < 7
+```
+
+What we need instead is to combine logical statements with a compound operator like `&`:
+
+```{r}
+x <- 1:10
+(3 < x) & (x < 7)
+
+## We can use this to subset
+x[(3 < x) & (x < 7)]
+```
+
+### Value Matching with `%in%`
+
+The last operator worth exploring in some more detail is the the value matching operator, `%in%`. The value operator always asks the question: "what values on my *left hand side* (LHS) are also included on the *right hand side* (RHS). This distinction is important in specifying the order that we include things:
+
+```{r}
+## We see that the first and second position of LHS are also in RHS
+c("a", "a", "b", "c") %in% c("a", "d", "r")
+```
+
+Note: "a" is in the vector on the RHS so the operator returns "TRUE", but "b" and "c" are not in the RHS so the operator returns "FALSE".
+
+---
+
+## `filter`
+
+We now move on to investigating the `dplyr` functions. Each of the functions we will be working with today requires using a data frame. Additionally, each of the functions *returns* a data frame. Because everything will involve a data frame coming in and a data frame going out, we will make of the pipe operator to chain our operations together. As the sequence of our operations becomes more sophisticated, we will find that using the pipe makes the entire sequence much easier to understand.
+
+The first function we will cover is `filter()`, where we will now have a chance to make use of our logical operators from the previous section. `filter()` works by subsetting our data according to which observations (rows) satisfy a logical condition. For example, if I wanted to filter my entire `college` dataset to contain *only* schools with a median ACT greater than 29, I can do so with a logical operator  like this:
+
+```{r}
+act30 <- college %>% filter(ACT_median > 29)
+
+## The head() function allows me to see the first 6 rows of my data
+head(act30)
+```
+
+
+The `filter` function can take more than one expression if needed, either separated by commas or the logical operator `&`. Here, we illustrate filtering our dataset to include only those with median ACT of 30 or more *and* colleges located in Iowa (IA) or Minnesota (MN)
+
+```{r}
+act30_iamn <- college %>% filter(ACT_median > 29, 
+                            State %in% c("IA", "MN"))
+head(act30_iamn)
+```
+
+Notice how the `%in%` operator is used here: `State %in% c("IA", "MN")` first considers the variable `State` and then matches it to each of the values in the vector `c("IA", "MN")`
+
+**Question 1:** Filter the college dataset to include only schools located in the Plains and the Great Lakes regions and with enrollments less than 20,000. Using your filtered data, create a two-way table using the variables `Region` and `Type`
+
+```{r, include = FALSE, eval = FALSE}
+filter(college, Region %in% c("Plains", "Great Lakes"), 
+       Enrollment < 20000) %>% with(table(Region, Type))
+```
+
+
+## `mutate`
+
+The purpose of mutating is typically to create new variables out of old ones. For example, our college dataset contains variables for both cost and median debt, and it may be of interest to see for a given school what the typical ratio of debt to cost is
+
+```{r}
+## Use mutate to create new variable
+debt_cost <- college %>% 
+  mutate(debt_cost_ratio = Debt_median/Cost)
+```
+
+Within the `mutate` function, we see `debt_cost_ratio = Debt_median/Cost`; the left hand side of this indicates the new variable name that we are creating, while the right hand side shows us how we created it out of the existing variables `Debt_median` and `Cost`. We are often in creating new variables with the intent of analyzing them, which we can do easily with ggplot:
+
+```{r}
+ggplot(debt_cost, aes(debt_cost_ratio, Type)) + 
+  geom_boxplot()
+```
+
+From this, we see that students at public colleges take a generally much greater proportion of the total cost of college out as debt.
+
+---
+
+A very common trick in data analysis, and one that we have seen a few times in class, is that of changing a continuous variable into a categorical one. A very useful function for doing so is the `ifelse()` function. `ifelse()` takes three arguments:
+
+  1. A logical expression
+  2. What to return if `TRUE`
+  3. What to return if `FALSE`
+  
+For example, consider a variable `x` with the values 1-10 which we may want to assign to one of two groups, depending on its value. 
+
+```{r}
+x <- 1:10
+x
+# If x < 5, return "A", otherwise return "B"
+ifelse(x < 5, "A", "B")
+```
+
+This is saying "Everywhere where `x` is less than 5, return the value 'A', otherwise, return the value 'B'."
+
+Now consider our college dataset with the variable `Adm_Rate`, indicating the percentage of applicants that are admitted. This is a continuous variable by default, but we could use it to create a *new* variable indicating whether or not a school is considered *selective*:
+
+```{r}
+ia_select <- college %>% 
+  filter(State %in% "IA") %>% 
+  mutate(Selective = ifelse(Adm_Rate < 0.3, "selective", "not selective"))
+
+# How many selective schools are in Iowa?
+with(ia_select, table(Selective))
+```
+
+**Question 2:** Use the `mutate()` and `ifelse()` functions to create a new variable called "Size" that has the value "large" if enrollment is greater than 10,000 and "small" if enrollment is less than 10,000. Then, create an appropriate bar chart to determine which region has the greatest proportion of small schools
+
+```{r, include = FALSE, eval = FALSE}
+tt <- college %>% 
+  mutate(largeSize = ifelse(Enrollment > 10000, "large", "not large"))
+ggplot(tt, aes(fill = largeSize, Region)) + geom_bar(position = "fill")
+```
+
+---
+
+## `summarize`
+
+The `summarize()` function helps us calculate descriptive statistics requiring an aggregation of rows. As a result, we will nearly always end up with fewer rows than with which we begin. For example, I may be interested in a table of quantitative statistics describing the variable "Cost":
+
+```{r}
+college %>% summarize(meanCost = mean(Cost), 
+                      sdCost = sd(Cost), 
+                      minCost = min(Cost), 
+                      maxCost = max(Cost))
+```
+
+The general syntax for something like `meanCost = mean(Cost)` is such that the name of our new variable is on the left hand side, while the function of our original variable "Cost" is on the right hand side. You will also note that the data frame returned contains *only* the new variables that were created in the `summarize()` function.
+
+While the `summarize()` function is useful, it is most frequently used with `group_by()`, which we illustrate next.
+
+## `group_by`
+
+Typically when we are summarizing information in our data frame, we want to do so at a *group level*. We can indicate that we wish to do this using the `group_by()` function. The function works in two steps:
+
+  1. First, `group_by()` determines which categorical variables we wish to use to create groups and creates invisible tags so that other functions know these groups exist. Typically this is one variable, but it can also be several.
+  2. Whenever functions from the `dplyr` package see data that is grouped (typically with the `summarize()` function), it performs  whatever operations it intends to at the group level.
+  
+The application of this is straightforward enough. Here, we indicate that we  wish to group our college dataset by "Region" and then find the mean cost of attending
+
+```{r}
+college %>% group_by(Region) %>% 
+  summarize(meanCost = mean(Cost))
+```
+
+All of the functions that we have introduced in this lab form a cohesive framework for interactive data analysis. In particular, there were designed with the philosophy in mind that they should be able to be chained together to succinctly perform some of the most common applications. Consider for example the code below where we
+
+  1. First limit our colleges to those located in Iowa (IA), Missouri (MO), and Minnesota (MN) using `filter()`
+  2. We then compute the debt to cost ratio for each school just as we did before using `mutate()`
+  3. We indicate that we wish to group our data according to *both* State and Type, which we do with `group_by()`
+  4. Finally, we summarize our data to find the mean and standard deviation of the debt to cost ratio using `summarize()`
+  
+```{r}
+college %>% 
+  filter(State %in% c("IA", "MO", "MN")) %>% 
+  mutate(debt_cost_ratio = Debt_median / Cost) %>% 
+  group_by(State, Type) %>% 
+  summarize(mean_dcr = mean(debt_cost_ratio), 
+            sd_dcr = sd(debt_cost_ratio))
+```
+
+Very quickly we are able to see that public schools in Iowa have the largest debt to cost ratio, while private schools in Iowa have the lowest.
+
+### Mutate vs Summarize when grouping
+
+It is worth noting an important distinction between `mutate()` and `summarize()` when using `group_by()`, namely:
+
+  - `mutate()` will always create a new variable with the same number of rows
+  - `summarize()` will always reduce the number of rows to the number of groups. It will also *delete* any variables that are not a part of the grouping or the summarizing
+
+Consider this toy example to see how the behavior changes between each. We have a `group` column, specifying group, a `val` column, specifying a value, and an `extra` column which is here to be a place holder. This dataset is constructed so that group "A" has a mean value of 5, while group B has a mean value of 50.
+
+```{r}
+df <- data.frame(group = rep(c("A", "B"), each = 4), 
+                 val = c(rnorm(4, 5), rnorm(4, 50)), 
+                 extra = -1)
+df
+```
+
+If I first group and then mutate, it will add an additional column, returning the mean value for each group
+
+```{r}
+df %>% group_by(group) %>% 
+  mutate(meanVal = mean(val))
+```
+
+Contrast this with the summarize function
+
+```{r}
+df %>% group_by(group) %>% 
+  summarize(meanVal = mean(val))
+```
+
+Here, the "extra" column has been removed, and all of the rows have been reduced down to the number of values in the grouping variable. Both methods have their uses, depending on the context.
+
+---
+
+
+Finally, it is useful to be aware of the helper function `n()` which can be used in side of summarize -- this permits us to display the number of observations in our groups in addition to other statistical summaries
+
+```{r}
+college %>% 
+  filter(State %in% c("IA", "MO", "MN")) %>% 
+  mutate(debt_cost_ratio = Debt_median / Cost) %>% 
+  group_by(State, Type) %>% 
+  summarize(Count = n()) # helper function
+```
+
+
+
+**Question 3:** Use `filter()` to select `Plains` colleges from the dataset. Write the code to ake a table that displays the mean and median `Cost` for the both Private and Public colleges, as well as displaying the count for each group. Your table should look like the one below. Are the means and medians similar? What does this tell us about the skew of the distributions? 
+
+```{r, include = TRUE, eval = TRUE, echo=FALSE}
+college %>% filter(Region == "Plains") %>%
+  group_by(Type) %>% summarize(mean_cost = mean(Cost),
+                               med_cost = median(Cost),
+                               count=n())
+```
+
+# Returning to regression with cat data
+
+In HW3 we explored how to fit a linear regression to predict Heart-weight (grams) using body-weight (kg) and whether the cat was male or female.
+
+```{r}
+## Read in cat data
+cats <- read.csv("https://collinn.github.io/data/cats.csv")
+```
+
+Consider the linear regression fit below using both Male and Female cats' data and the associated scatterplot.
+
+```{r, message=F}
+# predict Hwt using both Bwt and Sex
+cats$predlm = predict(lm(Hwt ~ Bwt + Sex, data=cats))
+
+ggplot(cats, aes(x=Bwt, y=Hwt, color=Sex)) + geom_point() +geom_line(aes(y = predlm), linewidth = 1)
+lm(data=cats, Hwt ~ Bwt + Sex)
+```
+
+In order to fit this regression, R creates indicator variables for the Sex variable. We explored this a bit last week with the Iris data set. 
+
+**Question 4**: Use `mutate()` and `ifelse()` functions to create indicator variables for Male and Female in the dataset.
+
+```{r, include=F, eval=F, echo=F}
+cats %>% mutate(indicator_male = ifelse(Sex == "M", 1, 0),
+                indicator_female = ifelse(Sex == "F", 1, 0))
+```
+
+**Question 5**: Use `filter()` to select the Male cats and use this data to make a new linear regression. Do the same for Female cats. Do the regression equations have different values for slope and intercept compared to each other?
+
+```{r, include=F, eval=F, echo=F}
+catsF = cats %>% filter(Sex == "F")
+lm(data=catsF, Hwt ~ Bwt)
+
+catsM = cats %>% filter(Sex == "M")
+lm(data=catsM, Hwt ~ Bwt)
+```
+
+**Extra**: Why do we get different lines when we separate the M/F cats into their own groups compared to when we used the Sex variable in the regression equation? It's a bit complicated. 
+
+It turns out using `Sex` in the prediction equation as we have done so doesn't allow for the slopes of each group to be different, it only changes the intercept. If we want different slopes for the Male and Female cats, we need to fit the linear regressions separately to each group like we did in question 5.
+
+## Bonus
+
+(This is all FYI and can be safely skipped if you are not interested)
+
+A short bonus section -- the output of the `summary()` function is often something we want to present. We can turn this into an HTML table using a function from the `knitr` package, which should already be installed on your computer (it is used to knit these documents)
+
+```{r}
+## Load package
+library(knitr)
+
+## Create summary
+tab <- college %>% 
+  filter(State %in% c("IA", "MO", "MN")) %>% 
+  mutate(debt_cost_ratio = Debt_median / Cost) %>% 
+  group_by(State, Type) %>% 
+  summarize(Count = n())
+
+kable(tab)
+```
+
+You can see other ways to modify this by investigating `?kable` (stands for Knit tABLE)
+
+Finally, we can install one additional package that gives us even more options for presenting tables. Copy into your console (not in your rmarkdown document) and remember, this is something you only need to do once:
+
+```{r, eval = FALSE}
+install.packages("kableExtra")
+```
+
+This package includes the `kable_styling()` function which includes more formatting options. We use it by piping in a kable
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+kable(tab) %>% kable_styling(full_width = FALSE, font_size = 30)
+```
+
+You can learn more with `?kable_styling`
+
+# Extra Practice
+
+Intensive care units, or ICUs, are primary spaces in hospitals that are reserved for patients in critical condition. The data below is a random sample of n = 200 ICU patients from a research hospital affiliated with Carnegie Mellon University (CMU).
+
+```{r}
+icu <- read.csv("https://collinn.github.io/data/icuadmit.csv")
+```
+
+Descriptions of the relevant variables are indicated below:
+
+- **ID** - Patient ID number
+- **Status** - Patient status: 0=lived or 1=died
+- **Age** - Patient’s age (in years)
+- **Infection** - Is infection involved? 0=no or 1=yes
+- **Previous** - Previous admission to ICU within 6 months? 0=no or 1=yes
+
+Using the `icu` dataset and the functions described in this lab, complete the following stages:
+
+  1. Change the `Previous` variable to have values "no" and "yes" instead of 0 and 1
+  2. Filter the data to *only* include patients whose visit involves an infection
+  3. For the "Age" variable, find the mean, standard deviation, and group size (found using the function `n()`) of patients with and without a previous admission to the ICU in the prior 6 months.
+
+Your solution should indicate the total number of patients with and without previous admission, along with each group's mean age and standard deviation. It will contain two rows and four columns -- your final output should look like this:
+
+```{r, include = TRUE, eval = TRUE, echo = FALSE}
+icu %>% filter(Infection == 1) %>%
+  mutate(Previous = ifelse(Previous == 0, "no", "yes")) %>% 
+  group_by(Previous)  %>% 
+  summarize(MeanAge = mean(Age),
+            SDAge = sd(Age),
+            N = n()) %>% as.data.frame()
+```
