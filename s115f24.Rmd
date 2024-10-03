@@ -109,12 +109,13 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Fri 9/30 | Review | - | - |
 | Wed 10/02 | Exam | - | - |
-| Fri 10/04 | Content TBD | - | - |
+| Fri 10/04 | dplyr | [dplyr Lab](labs/dplyr_lab.html) | - |
 
 **Assignments and Deadlines**
 
 1) [Regression Lab](labs/corr_regression_lab.html) due Monday 9/30 at 10pm.
 2) [Homework 3](homework/Homework3.html) due Friday 10/04 at 10pm.
+3) [dplyr Lab](labs/dplyr_lab.html) due Monday 10/07 at 10pm.
 
 ---
 
