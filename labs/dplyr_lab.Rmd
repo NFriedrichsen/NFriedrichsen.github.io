@@ -1,5 +1,5 @@
 ---
-title: "Lab 4 -- `dplyr`"
+title: "`dplyr` Lab"
 output:
   html_document:
     toc: yes
