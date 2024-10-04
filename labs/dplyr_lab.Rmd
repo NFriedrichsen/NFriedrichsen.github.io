@@ -42,14 +42,6 @@ college <- read.csv("https://collinn.github.io/data/college2019.csv")
 college <- select(college, Name, State, Enrollment, Type, 
                   Region, Adm_Rate, ACT_median, Cost, Net_Tuition, 
                   Avg_Fac_Salary, Debt_median)
-
-## Load data from ggplot package
-data(mpg)
-
-# Happy Planet data
-data = read.table("https://nfriedrichsen.github.io/data/HappyPlanetIndex.txt", header=T, sep=",")
-Happy = data.frame(data)
-Happy$Region = as.factor(Happy$Region)
 ```
 
 ## Introduction

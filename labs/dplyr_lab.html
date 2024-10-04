@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2024-10-03" />
+<meta name="date" content="2024-10-04" />
 
 <title>Lab 4 – dplyr</title>
 
@@ -1703,7 +1703,7 @@ border-radius: 0px;
 
 
 <h1 class="title toc-ignore">Lab 4 – <code>dplyr</code></h1>
-<h4 class="date">2024-10-03</h4>
+<h4 class="date">2024-10-04</h4>
 
 </div>
 
@@ -1732,15 +1732,7 @@ college &lt;- read.csv(&quot;https://collinn.github.io/data/college2019.csv&quot
 # select only a few of them
 college &lt;- select(college, Name, State, Enrollment, Type, 
                   Region, Adm_Rate, ACT_median, Cost, Net_Tuition, 
-                  Avg_Fac_Salary, Debt_median)
-
-## Load data from ggplot package
-data(mpg)
-
-# Happy Planet data
-data = read.table(&quot;https://nfriedrichsen.github.io/data/HappyPlanetIndex.txt&quot;, header=T, sep=&quot;,&quot;)
-Happy = data.frame(data)
-Happy$Region = as.factor(Happy$Region)</code></pre>
+                  Avg_Fac_Salary, Debt_median)</code></pre>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>Data manipulation can mean a lot of things. For this lab, we will
@@ -2188,14 +2180,14 @@ of 50.</p>
                  extra = -1)
 df</code></pre>
 <pre><code>##   group       val extra
-## 1     A  4.729955    -1
-## 2     A  6.003295    -1
-## 3     A  4.379055    -1
-## 4     A  4.916074    -1
-## 5     B 50.993284    -1
-## 6     B 50.419658    -1
-## 7     B 50.177666    -1
-## 8     B 51.061072    -1</code></pre>
+## 1     A  4.975262    -1
+## 2     A  6.053814    -1
+## 3     A  5.317621    -1
+## 4     A  4.329609    -1
+## 5     B 51.091321    -1
+## 6     B 51.968253    -1
+## 7     B 48.237624    -1
+## 8     B 51.217355    -1</code></pre>
 <p>If I first group and then mutate, it will add an additional column,
 returning the mean value for each group</p>
 <pre class="r"><code>df %&gt;% group_by(group) %&gt;% 
@@ -2204,22 +2196,22 @@ returning the mean value for each group</p>
 ## # Groups:   group [2]
 ##   group   val extra meanVal
 ##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
-## 1 A      4.73    -1    5.01
-## 2 A      6.00    -1    5.01
-## 3 A      4.38    -1    5.01
-## 4 A      4.92    -1    5.01
-## 5 B     51.0     -1   50.7 
-## 6 B     50.4     -1   50.7 
-## 7 B     50.2     -1   50.7 
-## 8 B     51.1     -1   50.7</code></pre>
+## 1 A      4.98    -1    5.17
+## 2 A      6.05    -1    5.17
+## 3 A      5.32    -1    5.17
+## 4 A      4.33    -1    5.17
+## 5 B     51.1     -1   50.6 
+## 6 B     52.0     -1   50.6 
+## 7 B     48.2     -1   50.6 
+## 8 B     51.2     -1   50.6</code></pre>
 <p>Contrast this with the summarize function</p>
 <pre class="r"><code>df %&gt;% group_by(group) %&gt;% 
   summarize(meanVal = mean(val))</code></pre>
 <pre><code>## # A tibble: 2 × 2
 ##   group meanVal
 ##   &lt;chr&gt;   &lt;dbl&gt;
-## 1 A        5.01
-## 2 B       50.7</code></pre>
+## 1 A        5.17
+## 2 B       50.6</code></pre>
 <p>Here, the “extra” column has been removed, and all of the rows have
 been reduced down to the number of values in the grouping variable. Both
 methods have their uses, depending on the context.</p>
