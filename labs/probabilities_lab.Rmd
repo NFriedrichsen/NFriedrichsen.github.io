@@ -168,10 +168,6 @@ Use the following information to answer the question parts below:
 
 ---
 
-# Odds and Risk
-
----
-
 ## Intermittent Fasting and Heart Health
 
 The following information comes from [[this study]](https://newsroom.heart.org/news/8-hour-time-restricted-eating-linked-to-a-91-higher-risk-of-cardiovascular-death).
