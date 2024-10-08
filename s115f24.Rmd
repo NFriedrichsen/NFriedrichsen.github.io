@@ -124,7 +124,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/07 | [Probability](lectures/10_ProbabilityRules.pdf) | [Probability Lab](labs/probabilities_lab.html) | - |
-| Wed 10/09 | [Odds] | - | - |
+| Wed 10/09 | [Odds and Risk](lectures/11_Odds_Risk.pdf) | [Probability Lab Cont'd] | - |
 | Fri 10/11 | [Sampling] | - | - |
 
 **Assignments and Deadlines**
