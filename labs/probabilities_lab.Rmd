@@ -108,7 +108,9 @@ with(titanic, table(Survived, Class)) %>% addmargins()
 
 We can accomplish a lot with only a few probabilities given to us if we use the probability formulas, it's just more difficult and time consuming than using a table. For this problem we are going to start with data on heart attacks and medications similar to a study from the slides, but with different values.
 
-**Question 2**: Use the following information to answer the question parts below:
+### Question 2
+
+Use the following information to answer the question parts below:
 
 - The probability that a subject did not have a heart attack is 0.98
 - The probability that a subject took aspirin is 0.64
@@ -152,4 +154,59 @@ We can accomplish a lot with only a few probabilities given to us if we use the 
 # No. P(HA | aspirin) =/= P(HA) 
 ```
 
-**Part G**: Suppose your friend uses the probabilities P(heart attack and aspirin) = .01 and P(heart attack and placebo) = .01 and concludes that the aspirin doesn't have any effect on the probability of having a heart attack? Point out the flaw in their reasoning.
+**Part G**: Suppose your friend uses the probabilities P(heart attack and aspirin) = .01 and P(heart attack and placebo) = .01 and concludes that the aspirin doesn't have any effect on the probability of having a heart attack. Point out the flaw in their reasoning.
+
+### Question 3
+
+**Part A**: What are the overall odds of having a heart attack?
+
+**Part B**: What are the odds of having a heart attack while taking aspirin?
+
+**Part C**: Are the odds of having a heart attack while taking aspirin higher or lower than the odds of having a heart attack in general?
+
+**Part D**: Explain to someone who hasn't taken a statistics class whether aspirin helps reduce heart attacks.
+
+---
+
+# Odds and Risk
+
+---
+
+## Intermittent Fasting and Heart Health
+
+The following information comes from [[this study]](https://newsroom.heart.org/news/8-hour-time-restricted-eating-linked-to-a-91-higher-risk-of-cardiovascular-death).
+
+Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
+
+In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
+
+The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease. 
+
+**Question 4:**
+
+**Part A**: The study claims that those who follow the 8-hour time restricted diet had a 91\% increased risk of dying from cardiovascular disease. *Explain what this means in terms of comparing probability of dying from cardiovascular disease for those who follow the 8-hour diet and those who do not.*
+
+**Part B**: Just knowing about this increased risk is not enough for us to tell how likely someone is to die from cardiovascular disease if they follow this 8-hour diet. What else do we need to know to figure this out?
+
+**Part C**: As of 2022, there were 702,880 US adults who died of cardiovascular disease. In 2022, there were a total of 258.3million US adults. *Use these values to estimate the probability of a US adult dying from cardiovascular disease each year.*
+
+```{r, echo=F, include=F}
+702880 / 258300000
+```
+
+**Part D**: *Using the results from the study, that those using the 8-hour time restricted diet have a 91\% increased risk of cardiovascular disease and your answer to Part C, what is the probability of dying from cardiovascular disease for a US adult using the 8-hour diet? Is this probability large or small (subjective)?*
+
+**Part E**: Was this an observational study or an experiment? Explain how we know this.
+
+**Part F**: Are we able to say that following the 8-hour diet **caused** higher probability of dying from cardiovascular disease? Explain in terms of random assignment. 
+
+**Part G**: What are some other reasons why those using the 8-hour intermittent fasting had higher rates of death to cardiovascular disease that may not be from the diet method itself?
+
+
+
+
+
+
+
+
+
