@@ -209,11 +209,11 @@ data.frame(Treatment = c("Aspirin", "Placebo", "Total"),
 
 The following information comes from [[this study]](https://newsroom.heart.org/news/8-hour-time-restricted-eating-linked-to-a-91-higher-risk-of-cardiovascular-death).
 
-Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
+> Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
 
-In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
+> In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
 
-The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease. 
+> The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease. 
 
 ### Question 4
 
