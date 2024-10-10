@@ -130,7 +130,7 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Deadlines**
 
 1) [Exam 1 Corrections](homework/exam1_corrections.html) due Friday 10/11 at 10pm.
-
+2) [Probability Lab](labs/probabilities_lab.html) due Friday 10/11 at 10pm.
 
 
 
@@ -141,8 +141,6 @@ Please note: material will not be posted until we've reached that point in the c
 ### Exam Info
 
 Exam 1 will be in-class Wednesday Oct 2.
-
-Monday 9/30 will be a review day with practice problems and time set aside for HW questions.
 
 [[Exam 1 Topics Outline]](exams/topic_list_exam1.html)
 
