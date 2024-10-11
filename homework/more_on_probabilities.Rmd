@@ -1,0 +1,143 @@
+---
+title: "More on Probability"
+author: "Nathan Friedrichsen"
+date: "2024-10-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I am going to briefly mention some things related to probabilities that we are not going to go over in depth in class. I just want you to have seen these concepts, as they are important in future statistics applications you may encounter, but I won't test you on them explicitly outside of some short HW4 questions.
+
+# Variables in Statistics
+
+In algebra and calculus we often used variables as stand-ins for functions. Here are some basic examples.
+
+  - Polynomials: $y = a_n \times x^n + ... + a_1 \times x + a_0$
+  - Trig and exponential functions: $z = sin(cos^{-1}(x)) e^{3y}$
+  - Matrices: Ax = B
+
+We write functions this way because we often don't care about the specific values we use for x's, y's or z's. We care about the overall behavior of a function or relationship, things like what's the rate of change... does this matrix equation have a general solution...
+
+We started using these ideas in linear regression too, where sometimes we referred to explanatory variables and response variables as X and Y respectively. We could write a regression equation like:
+\begin{equation}
+\widehat{y} = b_0 + b_1 \times x,
+\end{equation}
+
+Where x and y are stand-in variables. This generalizes our equation. We can make interpretations about x and y regardless of the actual context of our data.
+
+We can label each value for these variables in our data set like $x_1, x_2, ..., x_n$ and $y_1, y_2, ..., y_n$, where n is the value for our sample size. Using this we can write the general equation for calculating Pearson's correlation:
+
+$$\begin{aligned}
+r &= \sum_{i=1}^{n}\frac{(x_i - \overline{x})}{s_x}\frac{(y_i - \overline{x})}{s_y} \\
+&= \sum_{i=1}^{n} Z_{x_i} \times Z_{y_i}
+\end{aligned}$$
+
+---
+
+# Random Variables
+
+A **random event** is an event where the outcome is not perfectly predictable. Like a coin flip. Every time we flip a fair coin we do not know whethere we will get a heads or tails until we actually flip the coin.
+
+A **Random Variable** is a variable in which the value is determined by a random event. Often these are labeled with capital letter like X and Y.
+
+The values the variable can have will be determined by the events and the values we assign to them. The set of outcomes is sometimes called the **Domain** of a random variable. There are actually two scenarios we can find ourselves in. Either the outcomes of the random variable are discrete (finite outcomes or countably infinite) or continuous (uncountably infinite like Real numbers)
+
+---
+
+*Example 1:* Roll a 6-sided die and record the value on the top of the die. Let X be the recorded value on the top of the die. The possible outcomes for the random variable X are the set $\{1, 2, 3, 4, 5, 6\}$. X is a discrete random variable because the number of outcomes is countable.
+
+---
+
+*Example 2:* Roll a 6-sided die and record whether the outcome is an odd-number or and even-number. The possible outcomes are $\{\text{Even}, \text{Odd}\}$, so this is another example of a discrete random variable.
+
+We could record this as success or failure like we did when working with probabilities. We could also instead label the outcomes as $\{0, 1\}$ and just make a note that 1 stands for "the die roll was odd" and 0 stands for "the die roll was even". We could also switch this order around if you really care about it, just so long as we keep track.
+
+If we set up our outcomes using 1s and 0s we can define a random variable as the following.
+
+ \begin{equation}
+ Y =
+   \left\{\begin{array}{lr}
+       1, & \text{the die result is even} \\
+       0, & \text{the die result is odd} 
+    \end{array}\right.
+ \end{equation}
+
+---
+
+*Example 3:* Pick a random person in the world and record their height. Let X be the resulting height. The domain of the random variable X is the closed interval [a, b] where a is the height of the world's shortest person and b is the height of the worlds tallest person at the time you picked someone at random. This is a continuous random variable as there are an uncountably infinite amount of real numbers between these values.
+
+---
+
+Why do we care about defining variables in this way? It allows us to make more general statements and answer questions like "what is the most common outcome" or "how much variability is associated with this process?"
+
+Often we will want to define random variables in a way that gives us a numerical outcome, but this is not always necessary.
+
+---
+
+# Probabilities
+
+At their most basic interpretation, a probability is a value between 0 and 1 that quantifies how likely an event is to happen.
+
+In terms of mathematical definition...
+
+A probability is a function that maps a random variable to the unit interval, i.e.) $f: X \rightarrow [0,1]$.
+
+Often we use the notation P() to represent the probability function for discrete random variables, but may use $F_X()$ to denote the probability function for a continuous variable X.
+
+---
+
+#### Discrete Probabilities
+
+There is one more condition that discrete probabilities need to satisfy to be adequately defined. The sum of probabilities for all outcomes of a random variable needs to add to 1. Stated in math notation, we need:
+\begin{equation}
+\sum_{x} P(X=x) = 1
+\end{equation}
+
+
+Below are some examples of discrete random variables and corresponding probabilities.
+
+*Example 1*: Flip a fair coin. Let X = 1 if the result is heads, otherwise X = 0. Since both events have equal outcome, intuitively they should both have probability of 0.5. Thus P(X=1) = .5 (read as "probability that X equals 1 is 0.5) and P(X=0) = .5. We could also write this as:
+
+ \begin{equation}
+ P(X) =
+   \left\{\begin{array}{lr}
+       0.5, & \text{if X=1} \\
+       0.5, & \text{if X=0} 
+    \end{array}\right.
+ \end{equation}
+
+Most of the time we will use capital letters to denote the random variable when we don't care about a specific value, and a lowercase letter to denote when we are looking at the random variable actually having that value. We could write the previous equation as:
+
+\begin{equation}
+ P(X=x) =
+   \left\{\begin{array}{lr}
+       0.5, & \text{if x=1} \\
+       0.5, & \text{if x=0} 
+    \end{array}\right.
+ \end{equation}
+
+#### Discrete Probability Distribution
+
+We can compare how likely different events are. We can also make graphs that show the random variable values paired with their probabilities. This is called the **distribution** of the random variable, and it looks very similar to distributions we've seen before, but now we are using the possible outcomes of a random variable instead of data collected on a variable in a study.
+
+*Example 1*. Lets say you have a bag of 20 marbles. 2 of them are red, 6 of them are blue, and 12 of them are green.
+If you randomly pick a marble, we can write the probability of the corresponding outcomes as
+
+- P(pick a red marble) = P(Red) = 2/20 = 0.1
+- P(Blue) = 6/20 = 0.3
+- P(Green) = 12/20 = 0.6
+
+```{r, echo=F, message=F, warning=F}
+library(ggplot2)
+theme_set(theme_bw())
+
+marbles = c(rep("Red", 2), rep("Blue", 6), rep("Green", 12))
+marbles = data.frame(marbles)
+
+ggplot(marbles, aes(x=marbles, fill=marbles)) + 
+    geom_bar(aes(y = (..count..)/sum(..count..)), fill=c("blue", "green", "red")) + scale_y_continuous(n.breaks = 10) + 
+  labs(y="Probability", x="Color")
+```

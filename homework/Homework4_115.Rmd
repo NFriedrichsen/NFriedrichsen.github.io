@@ -1,0 +1,61 @@
+---
+title: "Homework 4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 10/18 at 10pm.
+Your score will be calculated out of 23 points and scaled to be out of 5 points.
+
+# Question 1 -- Conceptual (6 pts)
+
+**Part A**: Explain what a probability is in your own words.
+
+**Part B**: How are probabilities and odds similar?
+
+**Part C**: How are probabilities and odds different?
+
+**Part D**: Why does an odds-ratio of 1 indicate no association between variables?
+
+**Part E**: What is the difference between empirical and theoretical probabilities?
+
+**Part F**: What does it mean to say 2 events are disjoint?
+
+---
+
+# Question 2 (11 points)
+
+Researchers recruited 451 patients with a high level of risk for strokes (when bloodflow gets cut off to the brain due to blocked blood vessels). They split these patients into two groups, a treated group that received stents (small mesh tube placed inside of vulnerable arteries) and medical management (medications, lifestyle coaching, etc.), and a control group that only received medical management. Of the 224 patients in the treatment group, 45 suffered a stroke within the first year of the study, while only 28 patients in the control group had a stroke during this time. (Hint: making a table of this data may be helpful)
+
+**Part A:** Find the probability of having a heart attack *given* someone is in the treatment group and also the probability of having a heart attack *given* someone is in the control group.
+
+**Part B:** Find the probability of someone in our data having a stroke *and* being in the treatment group. Are these two events disjoint?
+
+**Part C:** Find the odds of having a stroke for each group.
+
+**Part D:** Find the odds ratio comparing the odds of stroke in the treatment (stent) group with the odds of a stroke in the control group.
+
+**Part E:** Is there an association between stent use and the prevalence of strokes? Use any of your answers from Parts A, C, or D to justify your answer.
+
+**Part F:** Explain your findings to Part E to someone who hasn't taken a statistics class and has a high risk of having a stroke.
+
+---
+
+# Question 3 (6 points)
+
+The following is a description of the same Intermittent Fasting study we covered in the probabilities lab:
+
+> Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
+
+> In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
+
+> The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease. 
+
+**Part A**: Was this an observational study or an experiment? Explain how we know this.
+
+**Part B**: Are we able to say that following the 8-hour diet **caused** higher probability of dying from cardiovascular disease? Explain in terms of random assignment.
+
+**Part C**: What are some other reasons why those using the 8-hour intermittent fasting had higher rates of death to cardiovascular disease that may not be from the diet method itself? (Hint: Think about who is likely to use the intermittent fasting diet)
