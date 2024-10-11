@@ -64,7 +64,7 @@ The following is a description of the same Intermittent Fasting study we covered
 
 ### Question 4 (3pts)
 
-Read through the Week 7 reading called [More on Probability](homework/more_on_probabilities.html) on the course page. You do not need to take notes, I am just trying to introduce these concepts to you. Below are some very low stakes questions related to the reading. Give these questions your best shot, and you will receive credit for them.
+Read through the Week 7 reading called [More on Probability](more_on_probabilities.html) on the course page. You do not need to take notes, I am just trying to introduce these concepts to you. Below are some very low stakes questions related to the reading.
 
 **Part A**: Explain what a random event is in your own words.
 
