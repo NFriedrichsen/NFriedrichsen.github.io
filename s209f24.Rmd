@@ -119,18 +119,21 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam \#2 Content
+
 ### Week 7 (Probability and Sampling)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/07 | [Probability](lectures/10_ProbabilityRules.pdf) | [Probability Lab](labs/probabilities_lab.html) | - |
 | Wed 10/09 | [Odds and Risk](lectures/11_Odds_Risk.pdf) | [Probability Lab Cont'd] | - |
-| Fri 10/11 | [Sampling] | - | - |
+| Fri 10/11 | [Sampling Distributions](lectures/12_SamplingDistributions.pdf) | - | - |
 
 **Assignments and Deadlines**
 
 1) [Exam 1 Corrections](homework/exam1_corrections.html) due Friday 10/11 at 10pm.
 2) [Probability Lab](labs/probabilities_lab.html) due Friday 10/11 at 10pm.
+3) [Homework 4] to be posted -- due Friday 10/18 at 10pm.
 
 ---
 
