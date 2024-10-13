@@ -135,7 +135,13 @@ Please note: material will not be posted until we've reached that point in the c
 2) [Probability Lab](labs/probabilities_lab.html) due Friday 10/11 at 10pm.
 3) [Homework 4](homework/Homework4_115) due Friday 10/18 at 10pm.
 
+### Week 8 (Normal Distribution and Intervals)
 
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 10/14 | [Normal Distribution](lectures/NormalDistribution.pdf) | [Lab](labs/normal_and_confidence_intervals.html) | - |
+| Wed 10/16 | [Intervals] | - | - |
+| Fri 10/18 | [More Intervals] | - | - |
 
 
 ---
