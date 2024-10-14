@@ -65,6 +65,8 @@ sqrt(.02)
 pnorm(.46, mean=.354, sd=.14, lower.tail = FALSE)
 ```
 
+**Part C:** Suppose the standard deviation is acutally .03. Find the probability of catching a yellowfin tuna with an unsafe amount of mercury. Does this change your answer to whether or not you would frequently eat yellowfin tuna?
+
 ---
 
 # Useful Website Stuff
