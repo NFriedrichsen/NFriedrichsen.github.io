@@ -30,7 +30,7 @@ Your score will be calculated out of 26 points and scaled to be out of 5 points.
 
 Researchers recruited 451 patients with a high level of risk for strokes (when bloodflow gets cut off to the brain due to blocked blood vessels). They split these patients into two groups, a treated group that received stents (small mesh tube placed inside of vulnerable arteries) and medical management (medications, lifestyle coaching, etc.), and a control group that only received medical management. Of the 224 patients in the treatment group, 45 suffered a stroke within the first year of the study, while only 28 patients in the control group had a stroke during this time. (Hint: making a table of this data may be helpful)
 
-**Part A:** Find the probability of having a heart attack *given* someone is in the treatment group and also the probability of having a heart attack *given* someone is in the control group.
+**Part A:** Find the probability of having a stroke *given* someone is in the treatment group and also the probability of having a stroke *given* someone is in the control group.
 
 **Part B:** Find the probability of someone in our data having a stroke *and* being in the treatment group. Are these two events disjoint?
 
