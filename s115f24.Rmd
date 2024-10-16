@@ -140,7 +140,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/14 | [Normal Distribution](lectures/NormalDistribution.pdf) | [Lab](labs/normal_and_confidence_intervals.html) | - |
-| Wed 10/16 | [Confidence Intervals](lectures/ConfidenceIntervals.pdf) | [Lab cont'd] | - |
+| Wed 10/16 | [Confidence Intervals for Pop. Mean](lectures/ConfidenceIntervals.pdf) | [Lab cont'd] | - |
 | Fri 10/18 | [More Intervals] | - | - |
 
 **Assignments and Deadlines**
