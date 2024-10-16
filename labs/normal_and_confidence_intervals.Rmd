@@ -62,7 +62,7 @@ sqrt(.02)
 **Part B**: What is the probability of catching a yellowfin tuna with an unsafe amount of mercury? Would you frequently eat yellowfin tuna knowing this?
 
 ```{r, include=F, echo=F}
-pnorm(.46, mean=.354, sd=.14, lower.tail = FALSE)
+pnorm(.46, mean=.354, sd=.03, lower.tail = FALSE)
 ```
 
 **Part C:** Suppose the standard deviation is acutally .03. Find the probability of catching a yellowfin tuna with an unsafe amount of mercury. Does this change your answer to whether or not you would frequently eat yellowfin tuna?
@@ -82,3 +82,68 @@ Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNo
 Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/CLT.htm)] and go through the tutorial and associate examples. It will help explain what the CLT is all about.
 
 **Question 4:** What are some things you learned from this example?
+
+---
+
+# Confidence Intervals
+
+## Florida Mercury Levels
+
+This is using the info from a study similar to the Florida lakes fish data we saw in the slides.
+
+Data was collected from 107 lakes in Florida. For each lake, the mercury level (ppm) was computed for a large mouth bass. The average mercury level in the sample was 0.554 ppm.
+
+### Question 5
+
+**Part A:** Describe the parameter in context. If we know the value, provide it. 
+
+```{r, echo=F, include=F}
+# Mu = mean mercury levels of large mouth bass in all florida lakes
+```
+
+**Part B:** Describe the statistic in context. If we know the value, provide it.
+
+```{r, echo=F, include=F}
+# x-bar = sample mean mercury level of large mouth bass from 107 florida lakes
+```
+
+**Part C:** The standard error for this statistic is 0.051. What is the 95\% confidence interval? (Show your work)
+
+```{r, echo=F, include=F}
+0.554 - 2*.051
+0.554 + 2*.051
+```
+
+**Part D:** Interpret the confidence interval.
+
+```{r, echo=F, include=F}
+# We are 95% confident the mean mercury level of large mouth bass in all
+# florida lakes is between 0.452 and 0.656 ppm
+```
+
+**Part E:** In the U.S., the FDA action level is 1 ppm. Is this safely below the U.S. limit?
+
+```{r, echo=F, include=F}
+# Yes. 1 is not within our interval
+```
+
+**Part F:** In Canada, the safety limit is 0.5 ppm. Is this clearly above the Canadian limit?
+
+```{r, echo=F, include=F}
+# No. 0.5 is within our interval
+```
+
+**Part G:** Suppose we didn't know the standard error value in part C, but instead we knew the population standard deviation is 0.20. Create a new 95\% confidence interval using this info. Does your answer to Part F change?
+
+```{r, echo=F, include=F}
+0.554 - 2*0.2/sqrt(107)
+0.554 + 2*0.2/sqrt(107)
+```
+
+### Question 6 (Conceptual)
+
+**Part A:** What is the purpose of a confidence interval?
+
+**Part B:** What does "95\% confidence" actually mean?
+
+**Part C:** Do confidence intervals account for biased samples?
