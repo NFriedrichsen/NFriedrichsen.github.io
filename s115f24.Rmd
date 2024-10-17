@@ -145,7 +145,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 **Assignments and Deadlines**
 
-1) [Homework 4](homework/Homework4_209.html) -- due Friday 10/18 at 10pm.
+1) [Homework 4](homework/Homework4_115.html) -- due Friday 10/18 at 10pm.
 2) [Lab](labs/normal_and_confidence_intervals.html) due Friday 10/18 at 10pm.
 
 ---
