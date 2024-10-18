@@ -1,0 +1,98 @@
+---
+title: "Homework 5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 11/01 at 10pm.
+
+Your score will be calculated out of 19 points and scaled to be out of 5 points. 
+
+Answers to Questions 2b+c, and 3a+b+c will be marked as entirely correct or entirely incorrect (no partial credit). If you have doubts about your answers to these questions, please see me during class or office hours. Confidence intervals shown without work will not receive credit.
+
+---
+
+# Question 1 -- Conceptual (4 pts)
+
+**Part A:** Why do we use confidence intervals instead of just providing a point estimate of a parameter?
+
+**Part B:** Explain the purpose of a sampling distribution. 
+
+**Part C:** What does a dot on a sampling distribution for the mean represent?
+
+**Part D:** What is the relationship between confidence \% and interval width for a confidence interval?
+
+---
+
+# Question 2 -- Normal Distribution (4 pts)
+
+**Part A**: Explain the 68-95-99.7\% Rule for the Normal Distribution.
+
+**Part B**: What is the probability of selecting a value greater than 25 on a N($\mu=18$, $\sigma = 6$) distribution (use `pnorm()`)? Sketching the problem out can be helpful to visualize the probability, but is not necessary.
+
+```{r, include=F, echo=F}
+pnorm(25, mean=18, sd=6, lower.tail=F)
+```
+
+**Part C**: What is the cutoff value associated with the 95th quantile of a standard normal distribution distribution (use `qnorm()`)? Sketching the problem out can be helpful to visualize the cutoff, but is not necessary.
+
+```{r, include=F, echo=F}
+qnorm(.95, mean=18, sd=6)
+```
+
+---
+
+# Question 3 -- t-distribution (3 pts)
+
+For this question, assume we have a sample of size 35.
+
+**Part A**: What is the value for $\alpha$ for a 90\% confidence interval?
+
+**Part B:** Use Part A to determine the value of the quantile we need to plug in to the `qt()` function to get the correct ME of a 90\% confidence interval.
+
+**Part C:** Use `qt()` to find out how many SE's we need to add and subtract to create a 90\% CI for this sample.
+
+---
+
+# Question 4 -- Chips Ahoy (8pts)
+
+In 1998, as an advertising campaign, the Nabisco Company announced a “1000 Chips Challenge” claiming that every 18-ounce bag of their Chips Ahoy cookies contained at least 1000 chocolate chips. Statistics students at the Air Force Academy purchased 53 randomly selected bags and counted the number of chocolate chips.
+
+The sample average number of chocolate chips per bag was 1238.1875 and sample standard deviation was 94.2820.
+
+*Goal:* We want to estimate the pop. mean number of cookies in all 18-oz Chips Ahoy bags
+
+**Part A:** Describe the parameter in context. Do we know the value?
+
+**Part B:** Describe the statistic of interest in context. What is the value?
+
+**Part C:** Are the conditions met to create a 95\% confidence interval for the mean using the t-distribution for this sample? Explain.
+
+**Part D:** What is the value of the SE for this sample?
+
+```{r, echo=F, include=F}
+94.282 / sqrt(53)
+```
+
+
+**Part E:** How many SE's do we need to add and subtract to make a 95\% CI using the t-distribution for this sample?
+
+```{r, echo=F, include=F}
+qt(.975, df=52)
+```
+
+
+**Part F:** Create a 95\% confidence interval for the population mean. (show work or no credit will be given)
+
+```{r, echo=F, include=F}
+1238.1875 - qt(.975, df=52)*94.282 / sqrt(53)
+1238.1875 + qt(.975, df=52)*94.282 / sqrt(53)
+```
+
+
+**Part G:** Interpret the confidence interval in context.
+
+**Part H:** Use the confidence interval to justify whether the company seems honest in their advertising claim.
