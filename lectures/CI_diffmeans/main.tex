@@ -1,0 +1,230 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Boadilla}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{beaver} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  
+} 
+
+\usepackage{xcolor,colortbl}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{courier}
+\usepackage{dsfont}
+\usepackage{verbatim} 
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{venndiagram}
+\usepackage{epigraph} 
+%\usepackage{xcolor}
+\usepackage{makecell}
+
+%\usepackage{enumitem}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% R stuff!
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},    
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{black},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}[triangle]
+
+%\setitemize{label=\usebeamerfont*{itemize item}%
+%  \usebeamercolor[fg]{itemize item}
+%  \usebeamertemplate{itemize item}}
+
+
+
+\title[STAT-209]{Confidence Intervals}
+\subtitle{Difference in Means}
+\author{Grinnell College}
+\date{October 18, 2024}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+We saw when looking at histograms or boxplots we could compare means or medians to see if groups were different.
+\begin{itemize}
+    \item maybe try to estimate the \textit{difference} between 2 pop. means?
+\end{itemize}
+\vspace{15mm}
+
+We just saw how to estimate a single pop. mean, let's take what we know to figure this out.
+\end{frame}
+
+\begin{frame}{Example -- Waggle Dance}
+Honeybee scouts investigate new home or food source options; the scouts communicate the
+information to the hive with a “waggle dance.”
+\vspace{3mm}
+
+Scientists took bees to an island with only two possible options for nesting: one of very high quality and one of low quality.
+\vspace{3mm}
+
+They recorded:
+\begin{itemize}
+    \item \underline{quality of the sites}
+    \item \underline{number of times a bee performed the dance (circuits)}
+    \item distance to the nesting sites
+    \item duration of waggle dance
+\end{itemize} \vspace{3mm}
+
+\textbf{Research question}: How is the number of waggle circuits related to quality of a nesting site?
+\begin{itemize}
+    \item estimate the difference in pop. mean number of waggle circuits for each nesting site
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Notation}
+2 groups $\rightarrow$ need to keep track of info separately for each of them \vspace{2mm}
+
+\textbf{Group 1:}
+\begin{itemize}
+    \item $\mu_1$ = pop. mean for group 1
+    \item $\overline{x}_1$ = sample mean for group 1
+    \item $s_1$ = std. dev. for group 1
+    \item $n_1$ = sample size for group 1
+\end{itemize} \vspace{3mm}
+
+\textbf{Group 2:}
+\begin{itemize}
+    \item $\mu_2$ = pop. mean for group 2
+    \item $\overline{x}_2$ = sample mean for group 2
+    \item $s_2$ = std. dev. for group 2
+    \item $n_2$ = sample size for group 2
+\end{itemize} \vspace{4mm}
+
+\textbf{Note:} Sometimes we may use A/B for subscripts or use letters that include more context about the groups
+\end{frame}
+
+\begin{frame}{CI for Difference in Means}
+Our \textbf{point estimate} for $\mu_1 - \mu_2$ is unsurprisingly $\overline{x}_1 - \overline{x}_2$ \vspace{6mm}
+
+Our \textbf{SE} formula is more complicated: \vspace{-4mm}
+
+\begin{align*}
+\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+\end{align*} \vspace{6mm}
+
+Our \textbf{df} value is a little different too
+\begin{itemize}
+    \item df = min($n_1$, $n_2$) - 1
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{CI for Difference in Means}
+Putting this all together... \vspace{2mm}
+
+\textbf{95\% CI for difference in population means:}
+\begin{align*}
+\overline{x}_1 - \overline{x}_2 \pm t_{(.975, df)} \times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+\end{align*} \vspace{6mm}
+
+\textbf{100(1-$\alpha$)\% CI for difference in population means:}
+\begin{align*}
+\overline{x}_1 - \overline{x}_2 \pm t_{(1-\alpha/2, df)} \times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+\end{align*} \vspace{4mm}
+
+\textbf{Note:} df = min($n_1$, $n_2$) - 1
+\end{frame}
+
+\begin{frame}{Difference in Means -- Interpretation}
+\textbf{CI Interpretation} is a little more involved when we are looking for a difference in means
+
+\begin{itemize}
+    \item include context
+    \item mention in some way the order we are comparing means
+    \item a positive value for the CI indicates $\mu_1$ is larger than $\mu_2$
+    \begin{itemize}
+        \item $\mu_1 - \mu_2 > 0 \rightarrow \mu_1 > \mu_2$
+    \end{itemize}
+    \item a negative value for the CI indicates $\mu_1$ is larger than $\mu_2$
+    \begin{itemize}
+        \item $\mu_1 - \mu_2 < 0 \rightarrow \mu_1 < \mu_2$
+    \end{itemize}
+\end{itemize} \vspace{6mm}
+
+"We are 100(1-$\alpha$)\% confident that (the difference in population means) is between (lower value) and (upper value)."
+\end{frame}
+
+\begin{frame}{Difference in Means -- Interpretation}
+"We are 100(1-$\alpha$)\% confident that (the difference in population means) is between (lower value) and (upper value)." \vspace{10mm}
+
+Example: Suppose we have a 90\% CI of (-12.3, 24.8) \vspace{2mm}
+
+"We are 90\% confident that the difference in population means is between -12.3 and 24.8." \vspace{2mm}
+
+\textbf{OR} \vspace{2mm}
+
+"We are 90\% confident that the $\mu_1$ is between 12.3 \textit{lower} and 24.8 \textit{higher} than $\mu_2$" \vspace{2mm}
+
+\textbf{OR} \vspace{2mm}
+
+"We are 90\% confident that the pop. mean for group 1 is between 12.3 \textit{lower} and 24.8 
+\textit{higher} than the pop. mean for group 2."
+\end{frame}
+
+\begin{frame}{Difference in Means -- Conditions}
+In order to make a 100(1-$\alpha$)\% CI for the difference in pop. means we need the following to all be true:
+\begin{itemize}
+    \item There was a random sample for both groups
+    \item $n_1 \geq 30$
+    \item $n_2 \geq 30$
+    \item the \textit{groups} must be independent of each other
+    \begin{itemize}
+        \item ask: do the values from one group influence values for another?
+        \item this is not the same thing as saying both groups behave differently
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
+
