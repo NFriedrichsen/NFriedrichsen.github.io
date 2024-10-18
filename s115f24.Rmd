@@ -147,6 +147,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Homework 4](homework/Homework4_115.html) -- due Friday 10/18 at 10pm.
 2) [CI Lab 1](labs/normal_and_confidence_intervals.html) due Friday 10/18 at 10pm.
+3) [Homework 5](homework/Homework5_115.html) -- due Friday 11/01 after break at 10pm
 
 ---
 
