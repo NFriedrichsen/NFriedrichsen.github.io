@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Your score will be calculated out of 19 points and scaled to be out of 5 points. 
 
-Answers to Questions 2b+c, and 3a+b+c will be marked as entirely correct or entirely incorrect (no partial credit). If you have doubts about your answers to these questions, please see me during class or office hours.
+Answers to Questions 2b+c, and 3a+b+c will be marked as entirely correct or entirely incorrect (no partial credit). If you have doubts about your answers to these questions, please see me during class or office hours. Confidence intervals shown without work will not receive credit.
 
 ---
 
