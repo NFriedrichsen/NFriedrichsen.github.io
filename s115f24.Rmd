@@ -141,7 +141,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 10/14 | [Normal Distribution](lectures/NormalDistribution.pdf) | [CI Lab 1](labs/normal_and_confidence_intervals.html) | - |
 | Wed 10/16 | [Confidence Intervals for Pop. Mean](lectures/ConfidenceIntervals.pdf) | [CI Lab 1 cont'd] | - |
-| Fri 10/18 | [More on CIs](lectures/CI_t_adjustments.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_115.html) | - |
+| Fri 10/18 | [More on CIs](lectures/CI_t_adjustments.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_115.html) | [CI for Means -- Quick Guide](CI_for_means_quickguide.html) |
 
 **Assignments and Deadlines**
 

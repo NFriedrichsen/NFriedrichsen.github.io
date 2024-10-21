@@ -1,0 +1,80 @@
+---
+title: "CI for Means - Quick Guide"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Goal
+
+The purpose of confidence intervals lies in estimating things for our population. The basic train of logic is that our estimate (the corresponding sample statistic) will not be exactly right; it will be off a bit due to one or both of the following:
+
+1) sampling bias
+2) sampling variability
+
+Confidence intervals take into account the sampling variability -- the fact that each sample is slightly different and gives us a different statistic to estimate the population parameter. CIs provide a range of estimates that are 'plausible' for the parameter value.
+
+# Confidence Interval for a Single Mean
+
+### Conditions
+
+1) The *population* is Normal **OR** the sample size $n \geq 30$
+2) There was a random sample
+
+If the population is normal, even with small sample sizes, CIs will work well. Most of the time we won't know this is the case, so we check sample size. Random samples help remove bias.
+
+**Note:** When we know the std. dev. of the population ($\sigma$), then we can just use the Normal distribution for our CIs. Otherwise, we must use the t-distribution.
+
+### 95\% Confidence Interval Formula ($\sigma$ known)
+
+### $\overline{x} \pm 1.96 \times \frac{\sigma}{\sqrt{n}}$
+
+### 100(1-$\alpha$)\% Confidence Interval Formula ($\sigma$ known)
+
+### $\overline{x} \pm z^* \times \frac{\sigma}{\sqrt{n}}$
+
+value of $z^*$ determined by confidence level.
+
+Common values of $z^*$:
+
+- 95\% confidence $\rightarrow z^*$ = 1.96
+- 80\% confidence $\rightarrow z^*$ = 1.28
+- 90\% confidence $\rightarrow z^*$ = 1.64
+- 99\% confidence $\rightarrow z^*$ = 2.58
+
+### 100(1-$\alpha$)\% Confidence Interval Formula ($\sigma$ unknown)
+
+### $\overline{x} \pm t_{(1-\alpha/2, df=n-1)} \times \frac{s}{\sqrt{n}}$
+
+where $t_{(1-\alpha/2, df=n-1)}$ is the $1-\alpha/2$ quantile for a t-distribution with n-1 degrees of freedom (use `qt()` to get final values).
+
+Common values of $1-\alpha/2$:
+
+- 95\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.05/2 = .975$
+- 80\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.2/2 = .90$
+- 90\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.1/2 = .95$
+- 99\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.01/2 = .995$
+
+# Confidence Interval for Difference in Means
+
+### Conditions
+
+1) The *populations* are Normal **OR** the both sample sizes $n_1 \geq 30$ and $n_2 \geq 30$
+2) There was a random sample for both groups.
+
+If the population is normal, even with small sample sizes, CIs will work well. Most of the time we won't know this is the case, so we check sample size. Random samples help remove bias. We will pretty much never work with a scenario where $\sigma$ for both groups is known, so I won't post the formulas for that case.
+
+### 100(1-$\alpha$)\% Confidence Interval Formula ($\sigma$ unknown)
+
+### ($\overline{x}_1 - \overline{x}_2) \pm t_{(1-\alpha/2, df)} \times \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$
+
+where $t_{(1-\alpha/2, df)}$ is the $1-\alpha/2$ quantile for a t-distribution with degrees of freedom $df=min(n_1, n_2)-1$ (use `qt()` to get final values).
+
+Common values of $1-\alpha/2$:
+
+- 95\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.05/2 = .975$
+- 80\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.2/2 = .90$
+- 90\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.1/2 = .95$
+- 99\% confidence $\rightarrow 1-\alpha/2 = 1 - 0.01/2 = .995$
