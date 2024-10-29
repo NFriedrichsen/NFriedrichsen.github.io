@@ -156,8 +156,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/28 | [CI for Diff. in Means](lectures/CI_diffmeans.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_115.html) cont'd | IMS Section 19.2.1-19.2.5 (pg. 325-333), 20.4 (pg. 351-352) |
-| Wed 10/30 | - | - | - |
-| Fri 11/01 | - | - | - |
+| Wed 10/30 | [CIs for Proportions](lectures/CI_proportions.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_115.html) cont'd | IMS 16.2.1-16.2.4 (pg. 261-264), 17.3.1-17.3.2 (pg. 285-288) |
+| Fri 11/01 | [Elections and Polling Stuff] | - | - |
 
 **Assignments and Deadlines**
 
