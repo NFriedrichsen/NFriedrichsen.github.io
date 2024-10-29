@@ -166,8 +166,6 @@ SE
 
 **Part F:** According to the confidence interval, is it plausible there is actually no difference in pop. mean mercury levels?
 
-###
-
 # Proportions
 
 The dataset below contains the results from a poll based on a random sample with two variables: response, indicating their response to the poll question, and political, reporting their self-reported political ideology.

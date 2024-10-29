@@ -165,3 +165,83 @@ SE
 **Part E:** Interpret the confidence interval in context.
 
 **Part F:** According to the confidence interval, is it plausible there is actually no difference in pop. mean mercury levels?
+
+# Proportions
+
+The dataset below contains the results from a poll based on a random sample with two variables: response, indicating their response to the poll question, and political, reporting their self-reported political ideology.
+
+A number of randomly sampled registered voters from Tampa, FL were asked if they thought workers who have illegally entered the US should be (i) allowed to keep their jobs and apply for US citizenship, (ii) allowed to keep their jobs as temporary guest workers but not allowed to apply for US citizenship, or (iii) lose their jobs and have to leave the country.
+
+```{r}
+## Copy and run this code to create table
+immigration <- read.csv("https://collinn.github.io/data/immigrationpoll.csv")
+```
+
+### Question 4
+
+We will make a confidence interval to answer the question "What proportion of conservative Tampa voters support workers being 'allowed to keep their jobs and apply for US citizenship.'
+
+**Part A**: Describe the parameter of interest, including which symbol we use for it.
+
+**Part B**: What is the corresponding value of the statistic and what symbol do we use for it? (making a table may help)
+
+```{r, echo=F, include=F}
+library(ggplot2)
+library(dplyr)
+
+with(immigration, table(response, political)) %>% addmargins(1)
+# p-hat
+57 / 372
+```
+
+**Part C**: What is the sample size for the group of conservatives?
+
+```{r, echo=F, include=F}
+372
+```
+
+**Part D**: Check the conditions for making a confidence interval.
+
+```{r, echo=F, include=F}
+# Random sample: met
+# Success condition: 57 successes (met)
+# Failure condition: 315 failures (met)
+372 - 57
+```
+
+
+**Part E**: Create a 95\% confidence interval for the parameter.
+
+```{r, echo=F, include=F}
+p_hat = (57/352)
+n = 372
+p_hat - 1.96 * sqrt(p_hat * (1-p_hat) / n)
+p_hat + 1.96 * sqrt(p_hat * (1-p_hat) / n)
+```
+
+
+**Part F**: Interpret the confidence interval. 
+
+### Question 5
+
+Let's see if there is a difference between conservatives and liberals in terms of proportions that support workers being 'allowed to keep their jobs and apply for US citizenship.'
+
+**Part A**: What is the value of the statistic of interest? (Make 'Liberal' the first group)
+
+**Part B**: Check the conditions to make a confidence interval.
+
+**Part C**: Make a 90\% confidence interval.
+
+```{r, echo=F, include=F}
+p1 = (101/175)
+p2 = (57/372)
+n1 = 175
+n2 = 372
+
+(p1 - p2) - 1.645 * sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
+(p1 - p2) + 1.645 * sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
+```
+
+**Part D**: Interpret the confidence interval
+
+**Part E**: According to the CI, is it plausible there is no difference between the groups?
