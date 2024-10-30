@@ -157,7 +157,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/28 | [CIs for Proportions](lectures/CI_proportions.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_209.html) cont'd | IMS Section 19.2.1-19.2.5 (pg. 325-333), 20.4 (pg. 351-352), 16.2.1-16.2.4 (pg. 261-264), 17.3.1-17.3.2 (pg. 285-288) |
-| Wed 10/30 | [Bootstrapping](lectures/Bootstrapping.pdf) | [Bootstrapping Lab](labs/Bootstrapping_Lab.html) | IMS Chapter 12 (pg. 197-207) |
+| Wed 10/30 | [Bootstrapping](lectures/Bootstrapping.pdf) | [Bootstrapping Lab](labs/Bootstrapping_Lab.html) | [[CI for Proportions - Quick Guide]](CI_for_props_quickguide.html), IMS Chapter 12 (pg. 197-207) |
 | Fri 11/01 | [Elections and Polling Stuff] | - | - |
 
 **Assignments and Deadlines**
@@ -165,6 +165,8 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Homework 5](homework/Homework5_209.html) due Friday 11/01 at 10pm.
 2) [CI Lab 2](labs/Confidence_Intervals_Lab_209.html) due Wednesday 10/30 at 10pm.
 3) [Bootstrapping Lab](labs/Bootstrapping_Lab.html) due Friday 11/01 at 10pm.
+4) Exam 2 will be on Wednesday 11/13 during normal class time.
+
 
 ---
 
