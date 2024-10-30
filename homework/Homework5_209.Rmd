@@ -1,6 +1,8 @@
 ---
 title: "Homework 5"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -40,7 +42,7 @@ pnorm(25, mean=18, sd=6, lower.tail=F)
 **Part C**: What is the cutoff value associated with the 95th quantile of a standard normal distribution distribution (use `qnorm()`)? Sketching the problem out can be helpful to visualize the cutoff, but is not necessary.
 
 ```{r, include=F, echo=F}
-qnorm(.95, mean=18, sd=6)
+qnorm(.95)
 ```
 
 ---
@@ -51,7 +53,7 @@ For this question, assume we have a sample of size 35.
 
 **Part A**: What is the value for $\alpha$ for a 90\% confidence interval?
 
-**Part B:** Use Part A to determine the value of the quantile we need to plug in to the `qt()` function to get the correct ME of a 90\% confidence interval.
+**Part B:** Use Part A to determine the value of the probability we need to plug in to the `qt()` function to get the correct ME of a 90\% confidence interval.
 
 **Part C:** Use `qt()` to find out how many SE's we need to add and subtract to create a 90\% CI for this sample.
 

@@ -1,6 +1,8 @@
 ---
 title: "Homework 5"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -40,7 +42,7 @@ pnorm(25, mean=18, sd=6, lower.tail=F)
 **Part C**: What is the cutoff value associated with the 95th quantile of a standard normal distribution distribution (use `qnorm()`)? Sketching the problem out can be helpful to visualize the cutoff, but is not necessary.
 
 ```{r, include=F, echo=F}
-qnorm(.95, mean=18, sd=6)
+qnorm(.95)
 ```
 
 ---
@@ -51,9 +53,22 @@ For this question, assume we have a sample of size 35.
 
 **Part A**: What is the value for $\alpha$ for a 90\% confidence interval?
 
-**Part B:** Use Part A to determine the value of the quantile we need to plug in to the `qt()` function to get the correct ME of a 90\% confidence interval.
+```{r, echo=F, include=F}
+# alpha = .1
+```
+
+**Part B:** Use Part A to determine the value of the probability we need to plug in to the `qt()` function to get the correct ME of a 90\% confidence interval.
+
+```{r, echo=F, include=F}
+# 1 - (alpha/2) = 1 - (.1/2) = .95
+```
 
 **Part C:** Use `qt()` to find out how many SE's we need to add and subtract to create a 90\% CI for this sample.
+
+```{r, echo=F, include=F}
+qt(.95, df=34)
+```
+
 
 ---
 
@@ -93,6 +108,6 @@ qt(.975, df=52)
 ```
 
 
-**Part G:** Interpret the confidence interval in context.
+**Part G:** Interpret the confidence interva    l in context.
 
 **Part H:** Use the confidence interval to justify whether the company seems honest in their advertising claim.
