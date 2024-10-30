@@ -1,12 +1,14 @@
 ---
-title: "Lab 6 -- Bootstrapping"
-output: 
+title: "Bootstrapping Lab"
+output:
   html_document:
     toc: true
     toc_float:
       collapsed: true
       smooth_scoll: false
-editor_options: 
+  pdf_document:
+    toc: true
+editor_options:
   chunk_output_type: console
 ---
 

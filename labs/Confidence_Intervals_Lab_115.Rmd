@@ -1,6 +1,8 @@
 ---
-title: "Confidence Intervals Lab"
-output: html_document
+title: "Confidence Intervals Lab 2"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
