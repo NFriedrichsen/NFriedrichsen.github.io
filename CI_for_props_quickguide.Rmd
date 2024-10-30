@@ -1,0 +1,69 @@
+---
+title: "CI for Proportions - Quick Guide"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# CI for a single population proportion (p)
+
+### Notation
+
+- p is the population proportion we are trying to estimate
+- $\widehat{p}$ is the sample proportion
+- n is the sample size
+
+### Conditions
+
+1) The data comes from a random sample.
+2) $n * \widehat{p} \geq 10$ (Success Condition)
+3) $n * (1-\widehat{p}) \geq 10$ (Failure Condition)
+
+**Note:** Success and Failure conditions count the \# of successes and \# of failures respectively.
+
+### Formula
+
+$\widehat{p} \pm z^* \times \sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}}$
+
+$z^*$ is the appropriate value from the normal distribution that gives us the Confidence \% that we want
+
+- 95% Confidence → $z^*$ = 1.96
+- 80% Confidence → $z^*$ = 1.282
+- 90% Confidence → $z^*$ = 1.645
+- 99% Confidence → $z^*$ = 2.576
+
+--- 
+
+# CI for a difference in population proportions ($p_1 - p_2$)
+
+### Notation
+
+- $p_1$ is the population proportion for group 1
+- $p_2$ is the population proportion for group 2
+- $\widehat{p}_1$ is the sample proportion for group 1
+- $\widehat{p}_2$ is the sample proportion for group 2
+- $n_1$ is the sample size for group 1
+- $n_2$ is the sample size for group 2
+
+### Conditions
+
+1) Data for both groups comes from a random sample.
+2) $n_1 * \widehat{p}_1 \geq 10$ (Success Condition Grp 1)
+3) $n_1 * (1-\widehat{p}_1) \geq 10$ (Failure Condition Grp 1)
+2) $n_2 * \widehat{p}_2 \geq 10$ (Success Condition Grp 2)
+3) $n_2 * (1-\widehat{p}_2) \geq 10$ (Failure Condition Grp 2)
+
+**Note:** Success and Failure conditions count the \# of successes and \# of failures respectively.
+
+### Formula
+
+$(\widehat{p}_1 - \widehat{p}_2) \pm z^* \times \sqrt{\frac{\widehat{p}_1(1-\widehat{p}_1)}{n_1}+\frac{\widehat{p}_2(1-\widehat{p}_2)}{n_2}}$
+
+$z^*$ is the appropriate value from the normal distribution that gives us the Confidence \% that we want
+
+- 95% Confidence → $z^*$ = 1.96
+- 80% Confidence → $z^*$ = 1.282
+- 90% Confidence → $z^*$ = 1.645
+- 99% Confidence → $z^*$ = 2.576
