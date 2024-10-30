@@ -163,6 +163,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Homework 5](homework/Homework5_115.html) due Friday 11/01 at 10pm.
 2) [CI Lab 2](labs/Confidence_Intervals_Lab_115.html) due Friday 11/01 at 10pm.
+3) Exam 2 will be on Wednesday 11/13 during normal class time.
 
 ---
 
