@@ -1,8 +1,8 @@
 ---
 title: "Homework 5"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -65,7 +65,7 @@ In 1998, as an advertising campaign, the Nabisco Company announced a “1000 Chi
 
 The sample average number of chocolate chips per bag was 1238.1875 and sample standard deviation was 94.2820.
 
-*Goal:* We want to estimate the pop. mean number of cookies in all 18-oz Chips Ahoy bags
+*Goal:* We want to estimate the pop. mean number of chocolate chips in all 18-oz Chips Ahoy bags
 
 **Part A:** Describe the parameter in context. Do we know the value?
 
