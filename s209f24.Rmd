@@ -158,7 +158,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 10/28 | [CIs for Proportions](lectures/CI_proportions.pdf) | [CI Lab 2](labs/Confidence_Intervals_Lab_209.html) cont'd | IMS Section 19.2.1-19.2.5 (pg. 325-333), 20.4 (pg. 351-352), 16.2.1-16.2.4 (pg. 261-264), 17.3.1-17.3.2 (pg. 285-288) |
 | Wed 10/30 | [Bootstrapping](lectures/Bootstrapping.pdf) | [Bootstrapping Lab](labs/Bootstrapping_Lab.html) | [[CI for Proportions - Quick Guide]](CI_for_props_quickguide.html), IMS Chapter 12 (pg. 197-207) |
-| Fri 11/01 | [Elections and Polling Stuff] | - | - |
+| Fri 11/01 | [Elections and Polling Stuff](lectures/PollingMethods.pdf) | - | EXTRA: [[PRC Info about elections]](https://www.pewresearch.org/short-reads/2024/08/28/key-things-to-know-about-us-election-polling-in-2024/) and [[Tied Polls]](https://www.nbcnews.com/politics/2024-election/state-poll-results-show-ties-are-tied-voters-pollsters-rcna177703?utm_source=substack&utm_medium=email) |
 
 **Assignments and Deadlines**
 
