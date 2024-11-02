@@ -165,6 +165,7 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Homework 5](homework/Homework5_209.html) due Friday 11/01 at 10pm.
 2) [CI Lab 2](labs/Confidence_Intervals_Lab_209.html) due Wednesday 10/30 at 10pm.
 3) [Bootstrapping Lab](labs/Bootstrapping_Lab.html) due Friday 11/01 at 10pm.
+4) [Homework 6](homework/Homework6_209.html) due Friday 11/08 at 10pm.
 4) Exam 2 will be on Wednesday 11/13 during normal class time.
 
 
