@@ -168,6 +168,20 @@ Please note: material will not be posted until we've reached that point in the c
 4) [Homework 6](homework/Homework6_209.html) due Friday 11/08 at 10pm.
 4) Exam 2 will be on Wednesday 11/13 during normal class time.
 
+---
+
+### Week 10 (Hypothesis Testing)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/04 | [Hypothesis Testing](lectures/HypothesisTesting_209.pdf) | [Testing Lab 1] | - |
+| Wed 11/06 | TBD | - | - |
+| Fri 11/07 | TBD | - | - |
+
+**Assignments and Deadlines**
+
+1) [Homework 6](homework/Homework6_209.html) due Friday 11/08 at 10pm.
+
 
 ---
 
