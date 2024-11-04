@@ -1,0 +1,214 @@
+---
+title: "Hypothesis Testing Lab 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1 -- (Conceptual)
+
+**Part A**: What different types of questions do CIs and Hypothesis testing answer?
+
+**Part B**: Describe the difference between the Null hypothesis and the Alternate hypothesis. Which one are we trying to show is true?
+
+**Part C**: What is a Null distribution?
+
+**Part D**: What does the p-value tell us for a hypothesis test?
+
+**Part E**: Where do the names 'left-tail', 'right-tail', and 'two-tail' tests come from?
+
+**Part F**: Looking at the formula for the test-statistic for p, what happens if $\widehat{p}$ and $p_0$ are fixed, but n increases. What happens to the p-value?
+
+```{r, echo=F, include=F}
+# the magnitude of the test-statistic increases
+# the p-value decreases 
+```
+
+---
+
+# P-values for Hypothesis Tests for a proportion
+
+To get p-values, we are going to use the `pnorm()` function. We will do so with the following steps
+
+1) write down the null and alternate hypothesis
+2) calculate the test-statistic (Z for proportion)
+3) the sign in H$_A$ will determine how we use `pnorm()`
+
+#### H$_A$: parameter $<$ 'hypothesized value' (left-tail test)
+
+We will put the value of the test-statistic directly into the `pnorm()` function.
+
+```{r, eval=F}
+pnorm(Z)
+```
+
+#### H$_A$: parameter $>$ 'hypothesized value' (right-tail test)
+
+We will put the value of the test-statistic into the `pnorm()` function but we will need to specify lower.tail=FALSE because R by default finds 'less than' probabilities and we want a 'greater than' probability.
+
+```{r, eval=F}
+pnorm(Z, lower.tail=FALSE)
+```
+
+#### H$_A$: parameter $\neq$ 'hypothesized value' (two-tail test)
+
+The p-value will be the sum of two `pnorm()` arguments added together, however since the Normal distribution is symmetric, both `pnorm()'s` will return the same value, so...
+
+If Z is positive the p-value is 
+
+```{r, eval=F}
+2*pnorm(Z, lower.tail=FALSE)
+```
+
+If Z is negative the p-value is
+
+```{r, eval=F}
+2*pnorm(Z)
+```
+
+### Test-statistic for a Population Proportion
+
+The formula for the test-statistic "Z" is:
+
+$Z := \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0 \times (1-p_0)}{n}}}$
+
+---
+
+# Smelling Parkinson's?
+
+The following is related to a statistics activity I participated in last week at ISU. 
+
+A Scottish woman who astonished doctors with her ability to detect Parkinson's disease through smell has helped scientists find what causes the odour. She first noticed the "musky" smell on her husband Les, who was years later diagnosed with Parkinson's disease.
+
+Joy's husband Les, who died in 2015, was told he had Parkinson's at the age of 45 but Joy said she detected the unusual musky smell about a decade earlier.
+
+The retired nurse only linked the odour to the disease after meeting people with the same distinctive smell at a Parkinson's UK support group.
+
+[[Source]](https://www.theguardian.com/society/2022/sep/07/woman-who-can-smell-parkinsons-helps-scientists-develop-test)
+
+Humans do not have a particulary acute sense of smell (barring a few chemicals like [Petrichor](https://www.acs.org/content/dam/acsorg/education/students/highschool/chemistryclubs/infographics/petrichor-the-smell-of-rain.pdf)). At first glance, it is probably reasonable to assume someone *cannot* smell Parkinson's disease, without them giving us evidence that they can. 
+
+To test this, researchers used 12 shirts put into plastic bags so that Joy could smell them and see if she could classify them as belonging to someone that had Parksinson's disease, or someone who did not. There were 6 shirts worn by someone with Parkinson's, and 6 shirts worn by those without the disease. Joyce got 11 out of 12 of the shirts correct. The one she got wrong she claimed to belong to someone with Parkinson's, but they did not have the disease.
+
+**Research Question**: Can Joy smell Parkinson's disease?
+
+
+### Question 2
+
+**Part A**: Describe the parameter in context and provide the appropriate symbol.
+
+**Part B**: Describe the statistic in context, provide the appropriate symbol and value. 
+
+```{r, echo=F, include=F}
+# sample proportion of shirts Joy classified correctly = p_hat
+11/12
+```
+
+**Part C**: What value should the parameter have if Joy was just randomly guessing?
+
+```{r, echo=F, include=F}
+# p = 0.5
+```
+
+**Part d**: State the null and alternate hypothesis using the notation in the slides.
+
+```{r, echo=F, include=F}
+# H0: p = .5
+# HA: p > .5
+```
+
+**Part e**: Is this a left-tail, right-tail, or two-tail test?
+
+**Part F**: Are the conditions met to conduct a hypothesis test using the Normal distribution? State the conditions and whether they are met or not met. Whether they are met or not we will still proceed.
+
+```{r, echo=F, include=F}
+# No, this is not a random sample.
+# n*p0 = 6 < 10
+# n(1-p0) = 6 < 10
+```
+
+**Part G**: What is the value of the test-statistic?
+
+```{r, echo=F, include=F}
+Z = (11/12 - 0.5) / sqrt(0.5 * .5 / 12)
+Z
+```
+
+
+**Part H**: Find the p-value using `pnorm()`.
+
+```{r, echo=F, include=F}
+pnorm(Z, lower.tail=F)
+```
+
+
+**Part I**: Interpret the confidence interval (hint: use p-value definition)
+
+**Part J**: Write up a conclusion to answer the research question (include strength of evidence).
+
+---
+
+**Extra**: It turns out the shirt Joy got incorrect belonged to someone who went on to develop Parkinson's disease. She actually got all 12 shirts right, and before anyone else even knew that person had the disease.
+
+---
+
+# Monday Breakups
+
+The following is an example from Dr. Laura Ziegler's intro statistics class at ISU.
+
+Facebook is a social networking website. One piece of data that members of Facebook often report is their relationship status: single, in a relationship, married, it’s complicated, etc.
+
+With the help of Lee Byron of Facebook, David McCandless examined changes in peoples’ relationship status, in particular, breakups. A plot of the results showed that there were repeated peaks on Mondays. Based on this initial examination of data, McCandless speculated that breakups are reported at higher frequency on Mondays.
+
+To test this research hypothesis, McCandless collected a random sample of 75 breakups reported on Facebook within the last year. Of these sampled breakups, 20 occurred on a Monday.
+
+**Research Question**: Are people more likely to break up on Mondays than other days of the week?
+
+### Question 3
+
+**Part A**: Describe the parameter in context and provide the appropriate symbol.
+
+**Part B**: What is the value of the statistic?
+
+```{r, echo=F, include=F}
+20/75
+```
+
+**Part C**: Is this an observational study or an experiment?
+
+**Part D**: What types of inferences we will be able to draw? Causal claims? Generalizations?
+
+**Part E**: State the null and alternate hypothesis using the notation in the slides.
+
+```{r, echo=F, include=F}
+# H0: p = 1/7
+# HA: p > 1/7
+```
+
+**Part F**: Are the conditions met to conduct a hypothesis test using the Normal distribution? State the conditions and whether they are met or not met.
+
+```{r, echo=F, include=F}
+# Yes. We have a random sample.
+# n*p0 = 75 / 7 > 10 [met]
+# n*p0 = 75 * (6 / 7) > 10 [met]
+```
+
+**Part G**: What is the value of the test-statistic?
+
+```{r, echo=F, include=F}
+Z = (20/75 - 1/7) / sqrt((1/7)*(6/7)/75)
+Z
+```
+
+**Part H**: Find the p-value using `pnorm()`.
+
+```{r, echo=F, include=F}
+pnorm(Z, lower.tail=F)
+```
+
+**Part I**: Write up a conclusion to answer the research question.
+
+
+
