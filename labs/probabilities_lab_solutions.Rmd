@@ -1,0 +1,280 @@
+---
+title: "Probabilities Lab"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Probability Rules
+
+**Disjoint Events** are events that can't happen at the same time.
+
+Disjoint events A and B satisfy P(A and B) = 0
+
+**Complement Rule**: P(not A) = 1 - P(A)
+
+**Additive Rule**: P(A or B) = P(A) + P(B) - P(A and B)
+
+Special: A and B disjoint $\rightarrow$ P(A or B) = P(A) + P(B)
+
+**Multiplicative Rule**: P(A and B) = P(A if B)$\times$P(B) = P(B if A)$\times$P(A)
+
+Special: A and B are independent $\rightarrow$ P(A and B) = P(A)$\times$P(B)
+
+**Conditional Probabilities**: P(A if B) = $\frac{\text{P(A and B)}}{\text{P(B)}}$
+
+**Independent Events**: A and B are independent if P(A if B) = P(A)
+
+---
+
+# Probabilities using Tables
+
+For this question we will be return to using the Titanic dataset built into R, providing information on the fate of the passengers on the fatal maiden voyage of the ocean liner Titanic summarized according to economic status (class), sex, age, and survival. As you will hopefully see in the next set of questions, having access to a table of data can make answering probability questions a lot easier.
+
+```{r, message=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Data for lab
+data(Titanic)
+titanic <- as.data.frame(Titanic)
+titanic <- titanic[rep(1:nrow(titanic), times = titanic$Freq), ]
+titanic$Freq <- NULL
+```
+
+A review of functions we've seen before:
+
+- The `table()` function which returns a count of categorical data
+- The `proportions()` function which takes a table as an argument and returns a (optionally conditional) table of proportions
+- The `addmargins()` function will sum the margins of a table
+
+Use the following table of Titanic data to answer the questions below. You can change the table to proportions using the `proportions()` function if it helps you (but be careful with overall/row/column proportions). Practice using the probability short notation as your write your answers. For example: P(Survived) in **Part A**.
+
+```{r}
+with(titanic, table(Survived, Class)) %>% addmargins()
+```
+### Question 1
+
+**Part A:** For a randomly selected passenger, what is the probability they survived?
+
+```{r}
+711 / 2201
+```
+
+**Part B:** For a randomly selected passenger, what is the probability they were in 1st class?
+
+```{r}
+325 / 2201
+```
+
+**Part C:** For a randomly selected passenger, what is the probability they were in 1st class *and* survived?
+
+```{r}
+203 / 2201
+```
+
+**Part D:** Given that a passenger was in 1st class, what is the probability they survived?
+
+```{r}
+203 / 325
+```
+
+**Part E:** Given that a passenger survived, what is the probability they were in 1st class?
+
+```{r}
+203 / 711
+```
+
+**Part F:** Are the events "Survived" and "1st class" disjoint? Explain.
+
+```{r}
+# No. There are 203 instances of both events occurring at the same time.
+```
+
+**Part G:** Are the events "Survived" and "1st class" independent? Justify your answer by comparing appropriate probabilities from Parts A through E. (There are many such comparisons)
+
+```{r}
+# No. One example:
+# P(survived | first class) =/= P(survived)
+```
+
+---
+
+# Heart Attack Study
+
+We can accomplish a lot with only a few probabilities given to us if we use the probability formulas, it's just more difficult and time consuming than using a table. For this problem we are going to start with data on heart attacks and medications similar to a study from the slides, but with different values.
+
+### Question 2
+
+Use the following information to answer the question parts below:
+
+- The probability that a subject did not have a heart attack is 0.98
+- The probability that a subject took aspirin is 0.64
+- The probability that a subject got the placebo is 0.36
+- The probability that a subject took aspirin *and* had a heart attack is 0.01
+- The probability that a subject had a heart attack *given* they were using the placebo is 0.028
+
+**Part A**: What is P(heart attack)?
+
+```{r}
+1 - 0.98
+```
+
+**Part B**: What is P(heart attack if taking aspirin)?
+
+```{r}
+.01 / .64
+```
+
+**Part C**: What is P(heart attack and taking placebo)?
+
+```{r}
+.028 * .36
+```
+
+**Part D**: What is P(heart attack or aspirin)?
+
+```{r}
+0.02 + .54 - .01
+```
+
+**Part E**: According to the data, is it more likely someone has a heart attack while taking aspirin or taking no medication (placebo)? 
+
+```{r}
+# P(HA | placebo) > P(HA | aspirin)
+```
+
+**Part F**: Are the events "Heart Attack" and "Taking aspirin" independent according to our data?
+
+```{r}
+# No. P(HA | aspirin) =/= P(HA) 
+```
+
+**Part G**: Suppose your friend uses the probabilities P(heart attack and aspirin) = .01 and P(heart attack and placebo) = .01 and concludes that the aspirin doesn't have any effect on the probability of having a heart attack. Point out the flaw in their reasoning.
+
+```{r}
+# When checking for independence we need to compare conditional probabilities
+# to appropriate marginal probabilities. Comparing P(HA and Placebo) with
+# P(HA and Aspirin) only tells you we had the same number of people in those groups
+# in our data, it doesn't compare the *rate* of HA's between the groups
+```
+
+
+---
+
+### Question 3
+
+This is the table of data for heart attacks.
+
+```{r, echo=F, message=F}
+library(kableExtra)
+options(knitr.kable.NA = '')
+data.frame(Treatment = c("Aspirin", "Placebo", "Total"),
+           Heart_Attack = c(24, 25, 49),
+           No_Heart_Attack = c(1533, 851, 2384)) |>
+  knitr::kable()
+```
+
+**Part A:** What are the odds for having a heart attack in the aspirin group? Simplify the result so it looks like 1:X.
+
+```{r}
+# 24:1533 or roughly 1:64
+```
+
+**Part B:** What are the overall odds for having a heart attack? Simplify the result so it looks like 1:X.
+
+```{r}
+# 49:2384
+# or roughly 1:49
+```
+
+**Part C:** What is the odds ratio for heart attacks for the aspirin group and overall?
+
+```{r}
+(24 / 1533) / (49 / 2384)
+```
+
+**Part D:** According to the odds ratio, are aspirin use and heart attack occurence associated?
+
+```{r}
+# Yes. The odds ratio is less than 1.
+```
+
+
+**Part E:** Explain to someone who has never taken a statistics class what the odds ratio value we got tells us about aspirin's effect on heart attack rates.
+
+```{r}
+# Aspirin reduces the rate that people get heart attacks.
+```
+
+---
+
+# Intermittent Fasting and Heart Health
+
+The following information comes from [[this study]](https://newsroom.heart.org/news/8-hour-time-restricted-eating-linked-to-a-91-higher-risk-of-cardiovascular-death).
+
+> Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
+
+> In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
+
+> The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease. 
+
+### Question 4
+
+**Part A**: The study claims that those who follow the 8-hour time restricted diet had a 91\% increased risk of dying from cardiovascular disease. *Explain what this means in terms of comparing probability of dying from cardiovascular disease for those who follow the 8-hour diet and those who do not.*
+
+```{r}
+# The probability of dying from cardiovascular disease for intermittent fasters is 1.91 times the probability of dying from cardiovascular disease for non-fasters
+```
+
+
+**Part B**: Just knowing about this increased risk is not enough for us to tell how likely someone is to die from cardiovascular disease if they follow this 8-hour diet. What else do we need to know to figure this out?
+
+```{r}
+# We need to know how likely it is to die from cardiovascular disease in general
+```
+
+
+**Part C**: As of 2022, there were 702,880 US adults who died of cardiovascular disease. In 2022, there were a total of 258.3million US adults. *Use these values to estimate the probability of a US adult dying from cardiovascular disease each year.*
+
+```{r}
+702880 / 258300000
+```
+
+**Part D**: *Using the results from the study, that those using the 8-hour time restricted diet have a 91\% increased risk of cardiovascular disease and your answer to Part C, what is the probability of dying from cardiovascular disease for a US adult using the 8-hour diet? Is this probability large or small (subjective)?*
+
+```{r}
+1.91 * 702880 / 258300000
+
+# (Subjective) the probability is still low per person, but the individual events can add up quickly when we are working with large populations (millions of people)
+```
+
+
+
+
+
+
+
+
+
+<!-- **Part A**: What are the overall odds of having a heart attack? -->
+
+<!-- **Part B**: What are the odds of having a heart attack while taking aspirin? -->
+
+<!-- **Part C**: Are the odds of having a heart attack while taking aspirin higher or lower than the odds of having a heart attack in general? -->
+
+<!-- **Part D**: Explain to someone who hasn't taken a statistics class whether aspirin helps reduce heart attacks. -->
+
+
+<!-- **Part E**: Was this an observational study or an experiment? Explain how we know this. -->
+
+<!-- **Part F**: Are we able to say that following the 8-hour diet **caused** higher probability of dying from cardiovascular disease? Explain in terms of random assignment.  -->
+
+<!-- **Part G**: What are some other reasons why those using the 8-hour intermittent fasting had higher rates of death to cardiovascular disease that may not be from the diet method itself? -->
+
+
