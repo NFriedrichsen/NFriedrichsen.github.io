@@ -173,7 +173,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/04 | [Bootstrapping](lectures/Bootstrapping.pdf) | [Bootstrapping Lab](labs/Bootstrapping_Lab.html) | IMS Chapter 12 (pg. 197-207) |
-| Wed 11/06 | TBD | - | - |
+| Wed 11/06 | HW Day + Maybe Something Short | - | - |
 | Fri 11/07 | TBD | - | - |
 
 **Assignments and Deadlines**
