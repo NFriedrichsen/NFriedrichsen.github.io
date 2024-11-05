@@ -209,6 +209,12 @@ Exam 1 will be in-class Wednesday Oct 2.
 
 [Regression Lab Solutions](labs/corr_regression_lab_solutions.html)
 
+[Probabily Lab Solutions](labs/probabilities_lab_solutions.html)
+
+[CI Lab 1 Solutions](labs/normal_and_confidence_intervals_solutions.html)
+
+[CI Lab 2 Solutions](labs/Confidence_Intervals_Lab_2_solutions.html)
+
 **Selected HWs**
 
 [Homework 2 Solutions](homework/Homework2_solutions.html)
