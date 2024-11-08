@@ -1,0 +1,183 @@
+---
+title: "Homework6_115"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 11/08 at 10pm.
+
+This assignment has 25 points possible. Your score will be calculated out of 22 points and scaled to be out of 5 points. 
+
+You may use the solutions to answer your questions but you may not just copy them. Put them in your own words.
+
+# Question 1 -- Sex Equality (4 pts)
+
+The General Social Survey asked a random sample of 1,390 Americans the following question: “On the whole, do you think it should or should not be the government’s responsibility to promote equality between men and women?” 82\% of the respondents said it “should be”. At a 95\% confidence level, this sample has 2\% margin of error. Based on this
+information, determine if the following statements are true or false, and explain your reasoning. (NORC 2016)
+
+**Part A**: We are 95% confident that 80\% to 84\% of Americans in this sample think it’s the government’s responsibility to promote equality between men and women.
+
+```{r}
+# False. We are 100% confident the 'sample proportion' is within the CI because we defined it to be the middle
+```
+
+**Part B**: We are 95% confident that 80\% to 84\% of all Americans think it’s the government’s responsibility to promote equality between men and women.
+
+```{r}
+# True. This is just the interpretation of the CI
+```
+
+**Part C**: If we considered many random samples of 1,390 Americans, and we calculated 95\% confidence intervals for each, 95\% of these intervals would include the true population proportion of Americans who think it’s the government’s responsibility to promote equality between
+men and women.
+
+```{r}
+# True. This is what '95% confidence' means
+```
+
+**Part D**: In order to decrease the margin of error to 1\%, we would need to quadruple (multiply by 4) the sample size.
+
+```{r}
+# True
+1.96 * sqrt(.82 * (1-.82)/1390)
+1.96 * sqrt(.82 * (1-.82)/(4*1390))
+```
+
+---
+
+# Question 2 -- Proof of COVID-19 vaccination (6 pts)
+
+In the US, businesses and schools shut down due to the COVID-19 pandemic in March 2020, and a vaccine became publicly available for the first time in April 2021. That month, a Gallup poll surveyed a random sample of 3,731 US adults, asking how they felt about the COVID-19 vaccine requirement for air travel. The poll found that 57\% said they would favor it. (Gallup 2021b)
+
+**Part A**: Describe the population parameter of interest.
+
+```{r}
+# p = population proportion of all US adults that favor the vaccine requirement
+```
+
+**Part B**: Construct a 95% confidence interval for the proportion of US adults who favored requiring proof of COVID-19 vaccination for travel by airplane. (Show work and final value)
+
+```{r}
+# n = 3731, p_hat = .57
+.57 - 1.96 * sqrt(.57 * (1-.57) / 3731)
+.57 + 1.96 * sqrt(.57 * (1-.57) / 3731)
+```
+
+**Part C**: Interpret the confidence interval.
+
+```{r}
+# We are 95% confidence the population proportion of all US adults that favor the vaccine requirement is between .554 and .586
+```
+
+**Part D**: Without doing any calculations, describe what would happen to the confidence interval if we decided to use a higher confidence level.
+
+```{r}
+# The interval gets wider. (value of z* gets bigger)
+```
+
+**Part E**: Without doing any calculations, describe what would happen to the confidence interval if we used a larger sample.
+
+```{r}
+# The interval gets narrower. (dividing by bigger number in the SE)
+```
+
+---
+
+# Question 3 -- Is Yawning Contagious? (3 pts)
+
+Is yawning contagious? An experiment conducted by the MythBusters, a science entertainment TV program on the Discovery Channel, tested if a person can be subconsciously influenced into yawning if another person near them yawns. 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a group where there wasn’t a person yawning near them (control). The visualization below displays how many participants yawned in each group.
+
+
+```{r, include=F, echo=F}
+knitr::include_graphics("https://nfriedrichsen.github.io/homework/mythbusters-chart.jpg")
+```
+
+Suppose we are interested in estimating the difference in yawning rates between the control and treatment groups using a confidence interval. Explain why we cannot construct such an interval using the normal approximation. What might go wrong if we constructed the confidence interval despite this problem?
+
+```{r}
+# Pick one group to be group 1 (I'm picking treatment group)
+```
+
+```{r}
+# Random Sample (not met)
+# n1*P-hat1 = # of yawns trt grp = 10 >= 10 (met)
+# n1*(1-P-hat1) = # of 'not yawns' trt grp = 24 >= 10 (met)
+# n2*P-hat2 = # of yawns ctrl grp = 4 (not met)
+# n2*(1-P-hat2) = # of 'not yawns' ctrl grp = 12 >= 10 (met)
+```
+
+```{r}
+# If we construct a CI with the conditions not met, the confidence will actually be less than we wanted. Also there is no random sample, so the sample is probably biased.
+```
+
+---
+
+# Question 4 -- Sleep deprivation (5 pts)
+
+A CDC report on sleep deprivation rates shows that the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0%, while this proportion is 8.8% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+Construct a 90\% confidence interval for the difference in proportions (Oregon - California) and interpret the interval in context.
+
+```{r}
+# p-hat_oregeon = .088, n_oregon = 4691
+# p-hat_california = .08, n_california = 11545
+```
+
+```{r}
+(.088 - .08) - 1.645 * sqrt(.088*(1.-0.088)/4691 + .08*(1-.08)/11545)
+(.088 - .08) + 1.645 * sqrt(.088*(1.-0.088)/4691 + .08*(1-.08)/11545)
+```
+```{r}
+# We are 90% confident the population proportion of all Oregon residents that reported insufficient rest or sleep during the last 30 days is between 0 and .016 higher than for California
+```
+
+
+
+---
+
+# Question 5 -- Rainbow Trout (7 pts)
+
+Rainbow trout were captured using 2 different types of nets; Sinking Net and Floating Net. It is hypothesized that the Sinking Net will be more effective in catching smaller fish. Out of all of the rainbow trout caught, a random sample of 71 fish caught using the sinking net was examined and a random sample of 52 fish caught using the floating net was examined.
+
+**Research Question:** Estimate the difference in pop. mean length (mm) for fish caught with the floating net vs. the sinking net
+
+#### Sinking Net Fish
+
+The average length (mm) for the fish caught in the Sinking Net was 254.972 with a standard deviation of 73.619.
+
+#### Floating Net Fish
+
+The average length (mm) for the fish caught in the Floating Net was 278.846 with a standard deviation of 70.653.
+
+**Part A**: Are the conditions met to make a 90\% CI for difference in means for these samples? Explain.
+
+```{r}
+# Yes. We have random samples and both sample sizes are greater than 30
+```
+
+**Part B**: Regardless of your answer to Part A, create a 90\% CI for the difference in pop. means. (show work for credit). The $t^*$ value needed is
+```{r}
+qt(.95, df=51)
+```
+
+```{r}
+(278.846 - 254.972) - 1.675285*sqrt(73.619^2 / 71 + 70.653^2 / 52)
+(278.846 - 254.972) + 1.675285*sqrt(73.619^2 / 71 + 70.653^2 / 52)
+```
+
+**Part C**: Interpret the confidence interval in context. 
+
+```{r}
+# We are 90% confident the true difference in population mean length of fish caught in nets (floating - sinking) is between 1.88 and 45.87mm
+```
+
+**Part D**: Is it plausible there is no difference in the pop. means according to the CI?
+
+```{r}
+# No. 0 is not within our interval.
+```
+
