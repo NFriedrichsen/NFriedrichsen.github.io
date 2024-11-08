@@ -181,7 +181,7 @@ ggplot(mean_boot, aes(x=Statistic)) + gh(bins=10)
 **Part B**: Use the `quantile()` function and the bootstrap distribution to make a 90\% CI for the mean
 
 ```{r}
-quantile(x=mean_boot$Statistic, probs=c(.1, .9))
+quantile(x=mean_boot$Statistic, probs=c(.05, .95))
 ```
 
 **Part C**: Suppose the true mean length of fish caught with the *floating net* is 300mm. According the bootstrap CI, is there a difference in mean lengths for fish caught with the different net types?
