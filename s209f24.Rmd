@@ -175,8 +175,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/04 | [Hypothesis Testing](lectures/HypothesisTesting_209.pdf) | [Testing Lab 1](labs/HypothesisTestLab1.html) | - |
-| Wed 11/06 | Lab and HW Day | - | - |
-| Fri 11/07 | TBD | - | - |
+| Wed 11/06 | - | - | - |
+| Fri 11/07 | HW Day + Review | - | - |
 
 **Assignments and Deadlines**
 
