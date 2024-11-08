@@ -218,3 +218,5 @@ Exam 1 will be in-class Wednesday Oct 2.
 **Selected HWs**
 
 [Homework 2 Solutions](homework/Homework2_solutions.html)
+
+[Homework 6 Solutions](homework/Homework6_209_solutions.html)
