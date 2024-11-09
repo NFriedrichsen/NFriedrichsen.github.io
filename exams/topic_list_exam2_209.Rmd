@@ -1,0 +1,65 @@
+---
+title: "Exam 2 Study Guide - STAT209"
+author: "Nathan Friedrichsen"
+date: "2024-11-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Probability Rules
+
+**Practice:** Look over and understand the probabilities lab. Questions will be *mostly* extremely similar to the labs
+
+- Notation P()
+- Disjoint events
+- Conditional Probabilities
+- How to check for Independence 
+- Algebra
+    - Complement
+    - Additive Rule
+    - Multiplicative Rule
+- **BIG**: Get probabilities from Tables
+- Calculate Odds
+- Odds-Ratio
+  - calculate
+  - Interpret
+  - association?
+
+---
+
+# Confidence Intervals
+
+**Practice:** Look over the CI labs and understand the solutions. Questions will *mostly* be extremely similar to labs
+
+**Practice:** Go through the CI quick-guides and know how to use formulas, use correct t or z values, and check conditions
+
+- Sampling Distributions
+- Standard Error
+- Margin of Error
+- 68-95-99.7\% Rule
+- Central Limit Theorem (CLT)
+- Goal for CIs
+- **HUGE**: define/describe parameters and statistics in context
+- 'confidence' meaning
+- Make CI's for the 4 scenarios (formulas will be given)
+- Check conditions
+- Know which z* or t* value to use in CI
+- Interpret CIs
+- Check if certain values are plausible
+- When and why do we use t-distribution instead of Normal
+
+---
+
+# Hypothesis Test
+
+**Note:** I am not going to put much emphasis on this. I will make a few easy questions related to the following.
+
+- What is the goal of hypothesis testing?
+- What is a null hypothesis?
+- What is an alternative hypothesis?
+- Broadly, how does hypothesis testing work?
+- Define H0 and HA in context of a study
+- Define/describe parameters and statistics
