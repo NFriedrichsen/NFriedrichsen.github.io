@@ -183,13 +183,23 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
-### Exam Info
+### Exam 1 Info
 
 Exam 1 will be in-class Wednesday Oct 2.
 
 [[Exam 1 Topics Outline]](exams/topic_list_exam1.html)
 
 [[Practice Exam 1]](exams/practice_exam1.pdf)
+
+---
+
+### Exam 2 Info
+
+Exam 2 will be in-class Wednesday 11/13.
+
+[[Exam 2 Topics Outline]](exams/topic_list_exam2_115.html)
+
+Practice Exam In-progress
 
 ---
 
