@@ -1,0 +1,161 @@
+---
+title: "Exam 2 -- Practice"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exploding Batteries
+
+The following info is from a made up study.
+
+A group of engineers is trying to figure out how to make better, longer-lasting batteries for electrical vehicles. They have run into a bit of a problem recently, in that a rather large proportion of the two types of batteries they've developed seem to sometimes *just explode* when being used. They are unhappy with this result and so have been testing many of their batteries to figure out what's going on. 
+
+The engineers tested 300 different batteries and gathered data into the following table.
+
+### Exploding Battery Results
+
+| Battery | Exploded | Unexploded | Sum |
+|:-------:|:--------:|:----------:|:---:|
+|  Type 1 |    41    |     103    | 144 |
+|  Type 2 |    14    |     142    | 156 |
+|   Sum   |    55    |     245    | 300 |
+
+### Question 1
+
+**Part A**: What is the probability of a battery exploding?
+
+```{r, echo=F, include=F}
+41 / 144
+```
+
+**Part B**: What is the probability of Exploding given that a battery is Type 1?
+
+```{r, echo=F, include=F}
+14 / 156
+```
+
+**Part C**: What is the probability of Exploding given that a battery is Type 2?
+
+```{r, echo=F, include=F}
+55 / 300
+```
+
+**Part D**: Are the battery type and whether a battery explodes independent? Justify your answer using appropriate probabilities from A, B, or C. 
+
+**Part E**: Are the events "Type 2" and "Unexploded" disjoint? Explain.
+
+**Part F**: Compute the odds-ratio for this table. (Show work)
+
+```{r, echo=F, include=F}
+41 * 142 / (14 * 103)
+```
+
+**Part G**: Use the odds-ratio value to explain whether or not there is an association between battery type and whether a battery explodes. (use a value of 2 if you didn't get part E)
+
+**Part H**: Do your answers to D and G agree? Explain.
+
+---
+
+# Dragon Actuaries
+
+A fictitious pre-industrial kingdom has been having a string of bad luck recently: their villages and farmland keep getting attacked by fire-breathing dragons.
+
+The ruler of this kingdom is trying to figure out if it is worth the money to hire mercenaries to guard the villages from dragons.
+
+Damage assessors and actuaries have been running the data and they have come up with the following info to figure out how much damage to expect when a dragon attacks with or without mercenaries defending a village.
+
+- The probability of a dragon burning down the village is 0.4
+- The probability of mercenaries defend the village is 0.34
+- The probability of mercenaries defending the village AND it burns down is 0.11
+- The probability of the village burning down *given* there were no mercenaries to defend it is 0.44
+
+### Question 2
+
+Answer the following, providing values for probabilities. Show work using probability formulas to receive credit.
+
+**Part A**: What is P(village not burning down)?
+
+**Part B**: What is P(village burns AND no mercenaries defend)
+
+**Part C**: What is P(village burns | mercenaries defend)
+
+**Part D**: What is P(village burns down OR mercenaries defend the village)
+
+**Part E**: According to the data are the events 'mercenaries defend the town' and 'village burns down' independent? Justify answer using appropriate probabilities.
+
+**Part F**: Suppose you are a resident of a village in this kingdom. According to the data, would you want mercenaries to defend the village or not?
+
+---
+
+# Alien Abductions
+
+Many people believe that there are alien lifeforms that exist in places other than Earth throughout the universe. A potentially smaller subset of these people believe that alien life has visited earth, and an even smaller subset believe that aliens have abducted humans to study them.
+
+In a survey that I just made up, 240 US adults were asked whether they had been abducted by aliens. 9 people in the sample said they had been, 231 said they had not been abducted by aliens.
+
+**Research Question**: What proportion of US adults believe they have been abducted by aliens?
+
+### Question 3
+
+**Part A**: Describe the parameter in context. 
+
+**Part B**: State the value of the statistic and the symbol we use to denote it.
+
+**Part C**: Check the conditions for making a confidence interval using the Normal distribution. (We will proceed regardless)
+
+**Part D**: Make a 90\% confidence interval for the parameter
+
+**Part E**: Interpret the confidence interval in context. (leave values blank if you don't get part D)
+
+---
+
+# Alien Abductions Pt 2.
+
+Turns out aliens are real and they've been abducting people to learn about us. They want to eat us, but are concerned that humans may contain too many microplastics.
+
+An alien scientist abducted a random sample of 37 humans from all over the world and measured the concentration of micro-plastics in their blood. In the sample the mean micro-plastic concentration was 14 parts-per-million (ppm) with a standard deviation of 3.1 ppm.
+
+The appropriate $t^*$ value is one of the following:
+
+```{r}
+# qt(.95, df=37) = 1.687094
+# qt(.95, df=36) = 1.688298
+# qt(.90, df=37) = 1.304854
+# qt(.90, df=36) = 1.305514
+# qt(.975, df=37) = 2.026192
+# qt(.975, df=36) = 2.028094
+```
+
+
+### Question 4
+
+**Part A**: Describe the parameter the alien scientist is trying to estimate.
+
+**Part B**: Are the conditions met to construct a 95\% CI using a t-distribution?
+
+**Part C**: State the correct value for $t^*$ we want to use for a 95\% CI to 6 decimal places.
+
+**Part D**: Make a 95\% CI for the parameter (show work)
+
+**Part E**: Interpret this confidence interval in context. (leave values blank if you don't get part D)
+
+---
+
+# CI Conceptual Questions
+
+I am going to put a selection of these on the exam. Know your answers ahead of time.
+
+- What is the purpose of a confidence interval?
+- What does “confidence” actually mean?
+- What type of variability do CIs account for?
+- Explain the relationship between confidence level and interval width
+- Explain the relationship between sample size and interval width
+- How do width of CIs using the normal distribution compare to t-distribution CIs for the same confidence level
+- Why do we use the t-distribution when the $\sigma$ is not known?
+- Explain the 68-95-99.7% Rule
+- What is a sampling distribution?
+- What is the Margin of Error?
+- Briefly explain what the CLT tells us
