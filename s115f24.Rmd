@@ -199,7 +199,7 @@ Exam 2 will be in-class Wednesday 11/13.
 
 [[Exam 2 Topics Outline]](exams/topic_list_exam2_115.html)
 
-Practice Exam In-progress
+[Practice Exam](practice_exam2_115.html)
 
 ---
 
