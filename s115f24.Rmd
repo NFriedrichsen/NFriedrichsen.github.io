@@ -183,6 +183,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 11 (Exam 2)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/11 | Review Day | [Practice Exam] | - |
+| Wed 11/13 | Exam Day | - | - |
+| Fri 11/15 | TBD | - | - |
+
+---
+
 ### Exam 1 Info
 
 Exam 1 will be in-class Wednesday Oct 2.
