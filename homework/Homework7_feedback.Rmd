@@ -1,0 +1,42 @@
+---
+title: "Homework 7 - Feedback"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is really meant to be more of an informal assignment, but will count as a homework assignment for your grade. Consider it kind of like 'free points' for just telling me your opinion on some things.
+
+"The power and benefits of intentional reflection are impactful! Sometimes it can be difficult to spend time reflecting on certain situations as we can become stuck in a repetitive, even negative thought process. This is because many people don’t know how to reflect in a way that is helpful for individual growth. When done correctly, continued reflection can improve self-awareness, lead to personal and professional growth, assist with increasing problem-solving and decision-making skills, improve emotional intelligence and help with goal setting and achievement." [Source](https://www.deltazeta.org/blog/the-power-of-reflection/)
+
+### Question 1
+
+What are some things you have done that have helped you to be successful in this course?
+
+### Question 2
+
+If you could go back in time to the beginning of the semester and make a change to your habits related to this class, what change would you make?
+
+### Question 3
+
+Were there any specific tools, resources, or examples that helped solidify your understanding?
+
+### Question 4
+
+Were there any parts of the class that felt unclear or confusing?
+
+### Question 5
+
+What teaching methods or activities didn't work as well for you?
+
+### Question 6
+
+Do you think having the labs due 2 weekdays after we last worked on them in lab is helpful, or would it be more helpful to have them due earlier to encourage timely completion?
+
+### Question 7
+
+What moments in class have you enjoyed the most, and why?
