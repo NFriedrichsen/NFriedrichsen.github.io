@@ -188,7 +188,11 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 11/11 | Review Day | [Practice Exam] | - |
 | Wed 11/13 | Exam Day | - | - |
-| Fri 11/15 | TBD | - | - |
+| Fri 11/15 | Hypothesis Testing Review | [Testing Lab 1](labs/HypothesisTestLab1.html) cont'd | [How to Lie with Stats Book](https://www.horace.org/blog/wp-content/uploads/2012/05/How-to-Lie-With-Statistics-1954-Huff.pdf) Chapter 5 -- "The Gee-Whiz Graph" (pg. 60-65) |
+
+**Assignments and Deadlines**
+
+1) [Final Project Info](exams/STA209_project.html)
 
 ---
 
