@@ -46,6 +46,7 @@ colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.
 
 ggplot(colleges, aes(x=Net_Tuition)) + geom_histogram()
 ```
+
 **Question 1**: Let's say I wanted to convince people college is a waste of time. Maybe I think it's too expensive for what students get out of it. Using the Net Tuition, how would I exaggerate how expensive college is? Would I report the mean or the median? Which of these is a better indicator of 'typical debt'?
 
 **Note:** This idea applies to lots of right-skewed data, *especially* in economics or things related to money/income. Do not trust people who tell you averages of things without letting you see the actual distribution.
