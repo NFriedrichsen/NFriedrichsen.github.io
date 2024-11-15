@@ -1,4 +1,4 @@
-# Friedrichsen Home
+# Nathan Friedrichsen - Home Page
 
 ## Teaching (Grinnell)
 
