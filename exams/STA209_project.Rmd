@@ -86,7 +86,6 @@ Examples of the type of studies and data you might collect, consider:
       - Frequency over time (i.e., 15 cars in 5 minutes)
       - Vehicle class (car, truck, SUV)
  <br> <br>
-  6. Survey data using Qualtrics
 
 
 I will not strictly require that you collect your own data. If you find a dataset that you wish to use and have an interesting research question, I will be happy to consider it with you. That being said, my expectations for analysis on a pre-curated dataset will necessarily be higher than for those who have gone through the study design process themselves.

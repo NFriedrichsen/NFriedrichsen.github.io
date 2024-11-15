@@ -86,7 +86,6 @@ Examples of the type of studies and data you might collect, consider:
       - Frequency over time (i.e., 15 cars in 5 minutes)
       - Vehicle class (car, truck, SUV)
  <br> <br>
-  6. Survey data using Qualtrics
 
 
 I will not strictly require that you collect your own data. If you find a dataset that you wish to use and have an interesting research question, I will be happy to consider it with you. That being said, my expectations for analysis on a pre-curated dataset will necessarily be higher than for those who have gone through the study design process themselves.
@@ -115,7 +114,7 @@ Recognize that keeping this report within the 3-page limit means you will have t
 
 ### Final Presentation -- EXTRA CREDIT
 
-Presentations will be limited to 10 minutes from each of the groups and delivered during the scheduled final exam time (**Friday Dec 20, 2-5pm**). The presentation should clearly outline 
+Presentations will be limited to 10 minutes from each of the groups and delivered during the scheduled final exam time (**Tues Dec 17, 9am-12pm**). The presentation should clearly outline 
 
   - Research question
   - How the data were collected
