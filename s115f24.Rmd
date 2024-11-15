@@ -194,7 +194,8 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Deadlines**
 
 1) [Final Project Info](exams/SST115_project.html)
-2) [How to Lie with Stats Lab](labs/HowtoLiewithStatsLab.html) due Monday, Nov. 18 at 10pm
+2) [How to Lie with Stats Lab](labs/HowtoLiewithStatsLab.html) due Monday 11/18 at 10pm.
+3) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
 
 ---
 
