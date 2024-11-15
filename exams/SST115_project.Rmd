@@ -1,0 +1,128 @@
+---
+title: "SST-115 Final Project (Fall 2024)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side an in-class presentation (optional, extra credit).
+
+## Objectives
+
+During our projects, we should aim to demonstrate the following competencies:
+
+  1. Utilize Statistical Framework to identify population of interest and collect a representative sample
+  2. Use data visualizations and descriptive statistics appropriate for the data collected
+  3. Appropriately integrate methods of statistical inference (regression, confidence intervals, hypothesis testing) in pursuit of answering research question
+  4. Ability to recognize and communicate practical significance and limitations of your findings.
+  
+## Timeline
+
+  - **Wednesday, Nov 20 at 10pm** -- Email me members of group (2-3). 
+    * If you do not have a group and would like to be assigned one, please email  me and let me know
+    <br> <br>
+  - **Friday, Nov 29 at 10pm** -- Submit a 1-2 paragraph proposal that briefly describes the following:
+    1. The research question you plan on answering
+    2. The data you plan to include in your analysis and how it will be collected
+    3. A short justification on why this project has the appropriate difficulty for this class with consideration for the objectives listed above
+    <br> <br>
+  - **Friday, Dec 6 at 10pm** -- A PDF documenting an *exploratory analysis* due. This should include
+    1. A list and short description of all of your variables
+    2. At least *two* data visualizations that are relevant to your research question
+    3. A *qualitative* description of each data visualization and what we can learn from each
+    4. At least one relevant set of descriptive statistics or a regression model, and a quantitative description of what these statistics or model coefficients tell you in regard to your research question
+    <br> <br>
+  - **Tues, Dec 17, 9am-12pm** -- Presentations during scheduled final exam time
+  
+  - **Friday, Dec 20 at 10pm** -- Final report is due
+  
+## Details
+
+### Research Question and Data Collection
+
+The first part of this project involves establishing a research question (framed as a hypothesis) and a plan on how to answer it. This will involve clearly defining a population of interest, articulating an unambiguous hypothesis about this population, and then establishing a plan to go about investigating it. Study design will be an important aspect of this project, and you will want to be sure to collect as much relevant information about your research question as possible, especially if there are any confounding variables that might influence your results.
+
+Our priority for this project is to find a research question and collected data *pertaining to Grinnell*. That is, to the extent possible, I will encourage everyone to go about collecting data yourself rather than finding data from an external website (such as Kaggle). Your data should contain a *minimum* of three variables, though it is preferable that you find more if you can. Additionally, you should aim to have at least 30 observations in your dataset.
+
+The motivation for hands-on data collection is two-fold. First, this provides an opportunity to consider different aspects and limitations related to study design. Second, and perhaps more compelling, is that it is instructive to see just how broadly the tools we have learned in class can be used to quantify information in the world.
+
+Examples of the type of studies and data you might collect, consider:
+
+  1. Collecting leaves, where you measure
+  
+      - Location
+      - Length of stem
+      - Width of petal
+      - Weight in milligrams
+     <br> <br>
+  2. Determine if people prefer to buy prepacked or behind-the-counter meat
+  
+      - Which grocery store you survey at
+      - Sex
+      - Age
+      - Their Response
+     <br> <br>
+  3. Blind taste test (i.e., differentiate taste of Coke and Pepsi)
+  
+      - Sex
+      - Country of origin
+      - STEM or Humanities student
+      - Response
+     <br> <br>
+  4. How much salt/sugar/spice could be added to a beverage before it is detected (see [$\text{LD}_{50}$](https://en.wikipedia.org/wiki/Median_lethal_dose))
+  
+      - Amount of added substance
+      - Sex
+      - Country of origin
+      - Type of beverage
+     <br> <br>
+  5. Do more cars go east/west or north/south at intersection of 6th and 146th
+  
+      - Direction of travel
+      - Time of day
+      - Frequency over time (i.e., 15 cars in 5 minutes)
+      - Vehicle class (car, truck, SUV)
+ <br> <br>
+  6. Survey data using Qualtrics
+
+
+I will not strictly require that you collect your own data. If you find a dataset that you wish to use and have an interesting research question, I will be happy to consider it with you. That being said, my expectations for analysis on a pre-curated dataset will necessarily be higher than for those who have gone through the study design process themselves.
+
+Finally, there are often situations in which it may not be feasible to collect all of the data listed here (3+ vars, 30 observations). If you have an idea and are not sure on the practicality of it, feel free to talk to me and we can brainstorm solutions together.
+  
+
+### Intermediate Documents
+
+To help encourage consistent progress in the project, intermediate documents will be submitted at various points between now and the rest of the semester. Together, these will make up a portion of your final project grade and they *must be submitted on time for full credit*. Late documents will still be accepted, however (and in fact are required for the successful completion of the project).
+
+
+### Final Paper
+
+You group's final report should be no more than three (3) pages *including* embedded figures and tables, generated in R Markdown. The report should include the following information:
+
+  - Title
+  - Background section detailing research question
+  - Methods section, how data was collected, what steps were taken to make it representative of population, what other considerations were made
+  - A results section including summary statistics, visualizations, and the outcomes of statistical tests
+  - A discussion section, offering conclusions and limitations of your study
+  
+This report **will** be assessed on both content and form: messages, warnings, and the code used to generate plots and test statistics should not be displayed, sections should be clearly labeled with headers, and the overall presentation of the document should look professional.
+
+Recognize that keeping this report within the 3-page limit means you will have to plan and be deliberate in deciding what is important to include and what is not. Indeed, most statistical analyses *do not* report everything that was explored in the final write up.
+
+### Final Presentation -- EXTRA CREDIT
+
+Presentations will be limited to 10 minutes from each of the groups and delivered during the scheduled final exam time (**Friday Dec 20, 2-5pm**). The presentation should clearly outline 
+
+  - Research question
+  - How the data were collected
+  - Patterns and trends you identified in your investigation
+  - Methods used
+  - Conclusions drawn from the analysis
+  
+Groups with multiple members should do their best to maintain an equitable distribution of speaking/presentation time
+
+**Note:** How exactly this will factor into your grade for extra credit I am going to figure out over the next few days.
