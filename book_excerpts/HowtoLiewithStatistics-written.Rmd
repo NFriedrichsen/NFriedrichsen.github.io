@@ -1,0 +1,62 @@
+---
+title: "How to Lie with Statistics"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Chapter 5 -- The Gee-Whiz Graph
+
+There is terror in numbers. Humpty Dumpty’s confidence in telling Alice that he was master of the words he used would not be extended by many people to numbers. Perhaps we suffer from a trauma induced by grade-school arithmetic.
+
+Whatever the cause, it creates a real problem for the writer who yearns to be read, the advertising man who expects his copy to sell goods, the publisher who wants his books or magazines to be popular. When numbers in tabular form are taboo and words will not do the work well, as is often the case, there is one answer left: Draw a picture.
+
+About the simplest kind of statistical picture, or graph, is the line variety. It is very useful for showing trends, something practically everybody is interested in showing or knowing about or spotting or deploring or forecasting. We’ll let our graph show how national income increased ten per cent in a year.
+
+Begin with paper ruled into squares. Name the months along the bottom. Indicate billions of dollars up on the side. Plot your points and draw your line, and your graph will look like this:
+
+\begin{center}
+\includegraphics[]{GeeWhizGraph1.jpg}
+\end{center}
+
+Now that’s clear enough. It shows what happened during the year and it shows it month by month. He who runs may see and understand, because the whole graph is in proportion and there is a zero line at the bottom for comparison. Your ten per cent looks like ten per cent—an upward trend that is substantial by perhaps not overwhelming.
+
+\newpage
+
+That is very well if all you want to do is convey information. But suppose you wish to win an argument, shock a reader, move him into action, sell him something. For that, this chart lacks schmaltz. Chop off the bottom.
+
+\begin{center}
+\includegraphics[]{GeeWhizGraph2.jpg}
+\end{center}
+
+Now that’s more like it. (You’ve saved paper too, something to point out if any carping fellow objects to your misleading graphics.) The figures are the same and so is the curve. It is the same graph. Nothing has been falsified—except the impression that it gives. But what the hasty reader sees now is a national-income line that has climbed halfway up the paper in twelve months, all because most of the chart isn’t there any more. Like the missing parts of speech in sentences that you met in grammar classes, it is “understood.” Of course, the eye doesn’t “understand” what isn’t there, and a small rise has become, visually, a big one.
+
+Now that you have practiced to deceive, why stop with truncating? You have a further trick available that’s worth a dozen of that. It will make your modest rise of ten per cent look livelier than one hundred per cent is entitled to look. Simply change the proportion between the ordinate and the abscissa. There’s no rule against it, and it does give your graph a prettier shape. All you have to do is let each mark up the side stand for only one-tenth as many dollars as before. 
+
+\begin{center}
+\includegraphics[]{GeeWhizGraph3.jpg}
+\end{center}
+
+That I impressive, isn’t it? Anyone looking at it can just feel prosperity throbbing in the arteries of the country. It is a subtler equivalent of editing “National income rose ten per cent” into “… climbed a whopping ten per cent.” It is vastly more effective however, because it contains no adjectives or adverbs to spoil the illusion of objectivity. There’s nothing anyone can pin on you.
+
+And you’re in good, or at least respectable, company. Newsweek magazine used this method to show that “Stocks Hit a 21-Year High” in 1951, truncating the graph at the eighty mark. A Columbia Gas System advertisement in Time in 1952 reproduced a char “from our new Annual Report.” If you read the little numbers and analyzed them you found that during a ten-year period living costs went up about sixty per cent and the cost of gas dropped four per cent. This is a favorable picture, but it was apparently was not favorable enough for Columbia Gas. They chopped off their chart at ninety per cent (with no gap or other indication to warn you) so that this was what your eye told you: Living costs have more than tripled, and gas has gone down one-third!
+
+Steel companies have used similarly misleading graphic methods in attempts to line up public opinion against wage increases. Yet the method is far from new, and its impropriety was shown up long ago—not just in technical publications for statisticians either. An editorial writer in Dun’s review in 1938 reproduced a chart from an advertisement advocating advertising in Washington, D.C., the argument being nicely expressed in the headline over the chart: GOVERNMENT PAY ROLLS UP! The line in the graph went along with the exclamation point even though the figures behind it did not. What they showed was an increase from about \$19,500,000 to \$20,200,000. But the red line shot from near the bottom of the graph clear to the top, making an increase of under four per cent look like more than 400. The magazine gave its own graphic version of the same figures alongside— an honest red line that rose just four per cent, under this caption: 
+
+\begin{center}
+\textbf{GOVERNMENT PAY ROLLS STABLE}
+\end{center}
+
+\begin{center}
+\includegraphics[]{GeeWhizGraph5.jpg}
+\end{center}
+
+Collier’s has used this same treatment with a bar chart in newspaper advertisements. Note especially that the middle of the chart has been cut out:
+
+\begin{center}
+\includegraphics[]{GeeWhizGraph6.jpg}
+\end{center}
