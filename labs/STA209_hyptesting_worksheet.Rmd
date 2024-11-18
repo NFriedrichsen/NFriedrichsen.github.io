@@ -73,7 +73,17 @@ with an unknown standard deviation. Find the p-value for the given sample size a
 
 **Part A**: n = 26, T = 2.485, two-tail test
 
+```{r, echo=F, eval=F}
+2*pt(2.485, df=25, lower.tail=F)
+```
+
+
 **Part B**: n = 18, T = 0.5, right-tail test
+
+```{r, echo=F, eval=F}
+pt(.5, df=17, lower.tail=F)
+```
+
 
 ---
 
