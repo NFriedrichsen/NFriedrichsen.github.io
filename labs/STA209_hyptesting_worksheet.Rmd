@@ -1,0 +1,112 @@
+---
+title: "STA-209 - Hypothesis Testing Worksheet"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1 -- Conceptual
+
+**Part A**: What different types of questions do CIs and Hypothesis testing answer? \vspace{20mm}
+
+**Part B**: Describe the difference between the Null hypothesis and the Alternate hypothesis. Which one are we trying to show is true? \vspace{20mm}
+
+**Part C**: What is a Null distribution? \vspace{20mm}
+
+**Part D**: What does the p-value tell us for a hypothesis test? \vspace{20mm}
+
+---
+
+# Question 2 -- Identify the Parameters
+
+For each of the following situations, state whether the parameter of interest is a mean or a proportion. 
+
+**Part A**: A poll shows that 64% of Americans personally worry a great deal about federal spending and the budget deficit. \vspace{10mm}
+
+**Part B**: A survey reports that local TV news has shown a 17% increase in revenue within a two year period while newspaper revenues decreased by 6.4% during this time period. \vspace{10mm}
+
+**Part C**: In a survey, high school and college students are asked whether they use geolocation services on their smart phones. \vspace{10mm}
+
+**Part D**: In a survey, smart phone users are asked whether they use a web-based taxi service. \vspace{10mm}
+
+**Part E**: In a survey, smart phone users are asked how many times they used a web-based taxi service over the last year. \vspace{10mm}
+
+---
+
+# Question 3 -- Writing Hypotheses
+
+Write the null and alternative hypotheses in words and then symbols
+for each of the following situations.
+
+**Part A** New York is known as “the city that never sleeps”. A random sample of 25 New Yorkers were asked how much sleep they get per night. Do these data provide convincing evidence that New Yorkers on average sleep less than 8 hours a night? \vspace{40mm}
+
+**Part B** Employers at a firm are worried about the effect of March Madness, a basketball championship held each spring in the US, on employee productivity. They estimate that on a regular business day employees spend on average 15 minutes of company time checking personal email, making personal phone calls, etc. They also collect data on how much company time employees spend on such non- business activities during March Madness. They want to determine if these data provide convincing evidence that employee productivity decreases during March Madness. \vspace{40mm}
+
+\newpage
+
+# Question 4 -- Sleep deprivation, CA vs. OR
+
+A CDC report on sleep deprivation rates shows that the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0\%, while this proportion is 8.8\% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+**Goal:** Conduct a hypothesis test to determine if these data provide strong evidence that the rate of sleep deprivation is different for the two states.
+
+**Part A**: What type of hypothesis test is this? (proportion / diff. in proportions/ mean / diff. in means) \vspace{20mm}
+
+**Part B**: Compute $\widehat{p}_{pool}$. \vspace{40mm}
+
+**Part C**: Compute the test-statistic Z. \vspace{40mm}
+
+**Part D**: Compute the p-value using `pnorm()`. \vspace{20mm}
+
+**Part E**: Write a conclusion to this question using 'strength of evidence'.
+
+\newpage
+
+# Question 5 -- Find the P-value
+
+A random sample is selected from an approximately normal population
+with an unknown standard deviation. Find the p-value for the given sample size and test statistic using `qt()`.
+
+**Part A**: n = 26, T = 2.485, two-tail test
+
+**Part B**: n = 18, T = 0.5, right-tail test
+
+---
+
+# Question 6 -- Piano
+
+Georgianna claims that in a small city renowned for its music school, the average child takes less than 5 years of piano lessons. We have a random sample of 35 children from the city, with a sample mean of 4.6 years of piano lessons and a sample standard deviation of 2.2 years.
+
+Evaluate Georgianna’s claim using a hypothesis test.
+
+- state hypotheses
+- check conditions
+- calculate test-statistic
+- p-value
+- conclusion
+
+\newpage
+
+# Question 7 -- Diamonds
+
+We have data on two random samples of diamonds: one with diamonds that weigh 0.99 carats and one with diamonds that weigh 1 carat. Each sample has 23 diamonds. Sample statistics for the price per carat of diamonds in each sample are provided below. 
+
+---
+
+### 0.99 Carats
+
+Sample mean = \$44.51, s.d. = \$13.32, n=23
+
+### 1 Carat
+
+Sample mean = \$57.20, s.d. = \$18.19, n=23
+
+---
+
+Assuming that the conditions for conducting inference using a mathematical model are satisfied, perform a hypothesis test to see if there is a difference in population prices per carat of diamonds that weigh 0.99 carats and 1 carat. (Wickham 2016)
+
+
