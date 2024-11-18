@@ -196,6 +196,8 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Final Project Info](exams/SST115_project.html)
 2) [How to Lie with Stats Lab](labs/HowtoLiewithStatsLab.html) due Monday 11/18 at 10pm.
 3) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
+4) Read [HTLWS](book_excerpts/HTLWS-GeeWhizGraph.pdf) Chapter 5 -- "The Gee-Whiz Graph" (pg. 60-65) 
+
 
 ---
 
@@ -207,6 +209,12 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 11/20 | TBD | - | - |
 | Fri 11/22 | TBD | - | - |
 
+**Assignments and Deadlines**
+
+1) [Testing Worksheet](labs/sst115_hyptesting_worksheet.pdf) due _.
+2) [Final Project Info](exams/SST115_project.html) groups due Wednesday 11/20 at 10pm.
+3) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
+4) [Testing Worksheet (PDF)](labs/sst115_hyptesting_worksheet.pdf) scanned and uploaded to Gradescope by Wednesday 11/20 at 10pm.
 
 ---
 

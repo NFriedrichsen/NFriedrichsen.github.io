@@ -202,9 +202,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 11/18 | [HT - Null Distributions](lectures/HypothesisTesting2_209.pdf) and [HT - Props and Means](lectures/HypothesisTesting3_209.pdf) | - | - |
+| Mon 11/18 | [HT - Null Distributions](lectures/HypothesisTesting2_209.pdf) and [HT - Props and Means](lectures/HypothesisTesting3_209.pdf) | [Testing Worksheet](labs/STA209_hyptesting_worksheet.pdf) [Webpage Format](labs/STA209_hyptesting_worksheet.html) | - |
 | Wed 11/20 | TBD | - | - |
 | Fri 11/22 | TBD | - | - |
+
+**Assignments and Deadlines**
+
+2) [Final Project Info](exams/STA209_project.html) groups due Wednesday 11/20 at 10pm.
+3) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
 
 ---
 
