@@ -198,6 +198,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 12 (Hypothesis Testing)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/18 | [HT - Null Distributions](lectures/HypothesisTesting2_209.pdf) and [HT - Props and Means](lectures/HypothesisTesting3_209.pdf) | - | - |
+| Wed 11/20 | TBD | - | - |
+| Fri 11/22 | TBD | - | - |
+
+---
+
 ### Exam Info
 
 Exam 1 will be in-class Wednesday Oct 2.
