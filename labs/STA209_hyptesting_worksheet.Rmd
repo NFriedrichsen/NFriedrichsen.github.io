@@ -1,8 +1,8 @@
 ---
 title: "STA-209 - Hypothesis Testing Worksheet"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -69,7 +69,7 @@ A CDC report on sleep deprivation rates shows that the proportion of California 
 # Question 5 -- Find the P-value
 
 A random sample is selected from an approximately normal population
-with an unknown standard deviation. Find the p-value for the given sample size and test statistic using `qt()`.
+with an unknown standard deviation. Find the p-value for the given sample size and test statistic using `pt()`.
 
 **Part A**: n = 26, T = 2.485, two-tail test
 
