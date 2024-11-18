@@ -1,0 +1,251 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Boadilla}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{beaver} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  
+} 
+
+\usepackage{xcolor,colortbl}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{courier}
+\usepackage{dsfont}
+\usepackage{verbatim} 
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{venndiagram}
+\usepackage{epigraph} 
+%\usepackage{xcolor}
+\usepackage{makecell}
+
+%\usepackage{enumitem}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% R stuff!
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},    
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{black},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}[triangle]
+
+%\setitemize{label=\usebeamerfont*{itemize item}%
+%  \usebeamercolor[fg]{itemize item}
+%  \usebeamertemplate{itemize item}}
+
+
+
+\title[Introduction to Statistics]{Hypothesis Testing pt. 2}
+\subtitle{More on Null Distributions and Test-statistics}
+\author{Grinnell College}
+\date{}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Review}
+\textbf{Hypothesis Testing:} formal technique for answering a question with two competing possibilities \vspace{6mm}
+
+\textbf{Null Hypothesis:} represents a skeptical view or a perspective of no difference
+\begin{itemize}
+    \item H$_0$: 'parameter' = (some value)
+\end{itemize}\vspace{6mm}
+
+\textbf{Alternate Hypothesis:} what the researchers actually want to show with the study
+\begin{itemize}
+    \item H$_A$: 'parameter'  [$</>/\neq$]  (some value)
+    \item choose the sign to match the research question
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Review}
+This is the general outline we will follow for Hypothesis Testing \vspace{1mm}
+\begin{enumerate}
+    \item Define hypotheses
+    \item Simulate what the parameter looks like under H$_A$
+    \item See how our statistic compares to this
+    \item Compute a p-value
+    \begin{itemize}
+        \item do the results look unlikely if H$_A$ is true?
+    \end{itemize}
+    \item Interpretations / Conclusions
+\end{enumerate} \vspace{12mm}
+
+\textbf{Note:} Points 2 and 3 can be combined with the creation of a 'test-statistic'
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Null Distribution}
+\textbf{Null Distribution} 
+
+The distribution of the statistics if the null hypothesis is true
+\begin{itemize}
+    \item simulates what the null hypothesis looks like
+    \item use this to compute p-values
+\end{itemize} \vspace{2mm}
+
+We looked at the coin-flip scenario.
+
+\begin{center}
+    \includegraphics[scale=.42]{img/coin_null_distr.jpg}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Null Distribution}
+What if we flipped 100 coins instead of 10
+\begin{itemize}
+    \item Would getting $\hat{p} = .8$ be more common or less common?
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Null Distribution}
+This represents '$H_0$: p = 0.5', when the sample size (\# of flips) is 100
+\begin{center}
+    \includegraphics[scale=.55]{img/coin_null_distr2.jpg}
+\end{center}
+\begin{itemize}
+    \item What do we see?
+    \item Are large or small values of $\hat{p}$ more/less common?
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Null Distribution}
+The \textbf{null distribution} will look very similar to the sampling distribution stuff we saw before
+\begin{itemize}
+    \item this time it is simulating the null hypothesis
+    \item is \textbf{not} tell us what the population parameter looks like
+    \item for means and proportions this looks like a Normal curve
+\end{itemize} \vspace{8mm}
+
+These distributions looks Normal when certain conditions are met. Very similar to what we had when we were using confidence intervals.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Null Distribution -- Proportion}
+Conditions for a proportion hypothesis test:
+\begin{itemize}
+    \item Random Sample
+    \begin{itemize}
+        \item this doesn't affect our null distr. but makes sure answers are accurate
+    \end{itemize}
+    \item np$_0 >$ 10
+    \item n(1 - p$_0) >$ 10
+\end{itemize} \vspace{4mm}
+
+With the conditions met, the null distribution for $\widehat{p}$ looks like this:
+\begin{align*}
+    \widehat{p} \sim N(p_0, \sqrt{\frac{p_0(1 - p_0)}{n}})
+\end{align*}
+\textbf{Note:} we have p$_0$'s in the distribution because we are simulating what the null hypothesis looks like
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Test Statistics}
+\begin{align*}
+    \widehat{p} \sim N(p_0, \sqrt{\frac{p_0(1 - p_0)}{n}})
+\end{align*}
+
+The test-statistic saves us from having to plot this Normal distribution every time. We will \textit{standardize} $\hat{p}$ to make the distribution simpler.
+
+\begin{align*}
+    \underbrace{\frac{\widehat{p}-p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}}_{\text{Test Statistic}} \sim N(0,1)
+\end{align*}
+\begin{itemize}
+    \item the whole term on the left is the Test-statistic
+    \item we can compute this value and we know it follows N(0,1)
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Coin Flip Example}
+For our scenario of 10 flips...
+\begin{itemize}
+    \item $\hat{p} = 8 / 10 = 0.8$
+    \item $p_0$ = 0.5
+    \item $\sqrt{\frac{p_0(1 - p_0)}{n}} = \sqrt{\frac{0.5(1 - 0.5)}{10}} = 0.158$
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=.65]{img/coin_null_distr3.jpg}
+\end{center}
+\begin{itemize}
+    \item can use Null distr. and $\hat{p}$ to get p-value
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Coin Flip Example}
+For our scenario of 10 flips...
+\begin{itemize}
+    \item $\hat{p} = 8 / 10 = 0.8$, $p_0$ = 0.5
+    \item Z = $\frac{\widehat{p}-p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0.8-0.5}{\sqrt{\frac{0.5(1 - 0.5)}{10}}} = 1.897$
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=.75]{img/coin_null_distr4.jpg}
+\end{center}
+\begin{itemize}
+    \item can use N(0,1) and Test-statistic Z to get p-value
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Test-statistics}
+From here on out, we will place almost all of our emphasis on Test-statistics instead of elaborately detailing what the null distribution should look like.
+\end{frame}
+
+
+\end{document}
+
