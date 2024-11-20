@@ -203,7 +203,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/18 | [HT - Null Distributions](lectures/HypothesisTesting2_209.pdf) and [HT - Props and Means](lectures/HypothesisTesting3_209.pdf) | [Testing Worksheet](labs/STA209_hyptesting_worksheet.pdf) [Webpage Format](labs/STA209_hyptesting_worksheet.html) | - |
-| Wed 11/20 | [HT - Strength of Evidence](lectures/HypothesisTesting4_209.pdf) and [HT - Decision Making](lectures/HypothesisTesting5_209.pdf) | - | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Wed 11/20 | [HT - Strength of Evidence](lectures/HypothesisTesting4_209.pdf) and [HT - Decision Making](lectures/HypothesisTesting5_209.pdf) | [Testing Worksheet 2 (PDF)](labs/STA209_hyptesting_worksheet2.pdf) [Webpage Format](labs/STA209_hyptesting_worksheet2.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
 | Fri 11/22 | TBD | - | - |
 
 **Assignments and Deadlines**
