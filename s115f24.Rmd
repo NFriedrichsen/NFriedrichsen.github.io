@@ -206,7 +206,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/18 | [Hypothesis Testing 1](lectures/HypothesisTesting1_115.pdf) | [Testing Worksheet (PDF)](labs/sst115_hyptesting_worksheet.pdf) [Webpage Format](labs/sst115_hyptesting_worksheet.html) | - |
-| Wed 11/20 | TBD | - | - |
+| Wed 11/20 | [HT - P-values and Test-stats](lectures/HypothesisTesting2_115.pdf) | [Testing Worksheet 2 (PDF)](labs/sst115_hyptesting_worksheet2.pdf) [Webpage Format](labs/sst115_hyptesting_worksheet2.html) | - |
 | Fri 11/22 | TBD | - | - |
 
 **Assignments and Deadlines**
