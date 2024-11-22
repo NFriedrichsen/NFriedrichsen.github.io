@@ -112,14 +112,14 @@ mean(hawks$Weight)
 mean(hawks2$Weight)
 ```
 
-**Hawk 2B:** Using the average weight of the Red-tailed's hawks, perform a t-test on each dataset to test the hypothesis that $\mu = 1050$. If you were testing at the $\alpha = 0.05$ level, which would you conclude?
+**Hawk 2B:** Using the average weight of the Red-tailed's hawks, perform a t-test on each dataset to test the hypothesis that $\mu = 1050$. If you were testing at the $\alpha = 0.05$ level, what would you conclude?
   
 ```{r, echo=F, eval=F}
 t.test(hawks$Weight, mu=1050, conf.level=.95)
 t.test(hawks2$Weight, mu=1050, conf.level=.95)
 ```
 
-**Hawk 2C:** Explain why the conclusions you came to were different in Part C.
+**Hawk 2C:** Explain why the conclusions you came to were different in Part B.
 
 ---
 
