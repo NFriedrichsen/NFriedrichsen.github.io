@@ -1,0 +1,60 @@
+---
+title: "STA209 - Homework 8"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 11/29 at 10pm.
+
+This assignment has 25 points possible. Your score will be scaled to be out of 5 points.
+
+# Question 1 - Decision Error (8 pts)
+
+**Part A**: What are the benefits of the 'strength of evidence' approach to hypothesis testing?
+
+**Part B**: For the following, state whether an error is made and if so state a name for the error that we discussed in class
+
+- $H_0$ is false, and we reject it
+- $H_0$ is false, and we fail to reject it
+- $H_0$ is true, and we reject it
+- $H_0$ is true, and we fail to reject it
+
+**Part C**: Suppose you are a statistician working with medical professionals to develop a test to see if someone has a disease. Explain what false-positives and false-negatives are in the context of determining if someone has the disease.
+
+---
+
+# Question 2 -- Testing for food safety (6 pts)
+
+A food safety inspector is called upon to investigate a restaurant with a few customer reports of poor sanitation practices. The food safety inspector uses a hypothesis testing framework to evaluate whether regulations are not being met. If she decides the restaurant is in gross violation, its license to serve food will be revoked.
+
+a. Write the hypotheses in words.
+b. What is a Type I error in this context?
+c. What is a Type II error in this context?
+d. Which error is more problematic for the restaurant owner? Why?
+e. Which error is more problematic for the diners? Why?
+f. As a diner, would you prefer that the food safety inspector requires strong evidence or very strong evidence of health concerns before revoking a restaurant’s license? Explain your reasoning.
+
+---
+
+# Question 3 -- Online communication (4 pts)
+
+A study suggests that 60% of college students spend 10 or more hours
+per week communicating with others online. You believe that this is incorrect and decide to collect your own sample for a hypothesis test. You randomly sample 160 students from your dorm and find that 70% spent 10 or more hours a week communicating with others online. A friend of yours, who offers to help you with the hypothesis test, comes up with the following
+set of hypotheses. Indicate any errors you see.
+
+\begin{align*}
+H_0: \hat{p} < 0.6, \hspace{3mm} H_A: \hat{p} > 0.7
+\end{align*}
+
+---
+
+# Question 4 -- Gaming, distracted eating, and intake (7 pts)
+
+A group of researchers who are interested in the possible effects of distracting stimuli during eating, such as an increase or decrease in the amount of food consumption, monitored food intake for a group of 44 patients who were randomized into two equal groups. The treatment group ate lunch while playing solitaire, and the control group ate lunch without any added distractions. Patients in the treatment group ate 52.1 grams of biscuits, with a standard deviation of 45.1 grams, and patients in the control group ate 27.1 grams of biscuits, with a standard deviation of 26.4 grams. 
+
+Do these data provide convincing evidence that the average food intake (measured in amount of biscuits consumed) is different for the patients in the treatment group compared to the control group? Assume that conditions for conducting inference using the t-distribution are satisfied. State the hypotheses, compute a T test-statistic, and find a p-value to justify your answer to this research question. (Oldham-Cooper et al. 2011)
