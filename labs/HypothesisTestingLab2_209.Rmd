@@ -29,7 +29,7 @@ This lab will introduce the idea of hypothesis testing using functions in R. We 
 
 ## One sample tests
 
-In R, we can create perform hypothesis testing and create standard confidence intervals based on the $t$-distribution using the function `t.test()`. While the `t.test()` function will take a number of useful arguments that we will use in the future, for now we only concern ourselves with three:
+In R, we can perform hypothesis testing and create standard confidence intervals based on the $t$-distribution using the function `t.test()`. While the `t.test()` function will take a number of useful arguments that we will use in the future, for now we only concern ourselves with three:
 
   - `x`, a numeric vector of data we wish to construct a confidence interval for
   - `mu`, a single number indicating the null hypothesis value
