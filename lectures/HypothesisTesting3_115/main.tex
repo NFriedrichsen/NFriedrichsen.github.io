@@ -1,0 +1,309 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Boadilla}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{beaver} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  
+} 
+
+\usepackage{xcolor,colortbl}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{courier}
+\usepackage{dsfont}
+\usepackage{verbatim} 
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{multirow}
+\usepackage{venndiagram}
+\usepackage{epigraph} 
+%\usepackage{xcolor}
+\usepackage{makecell}
+
+%\usepackage{enumitem}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% R stuff!
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},    
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{black},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}[triangle]
+
+%\setitemize{label=\usebeamerfont*{itemize item}%
+%  \usebeamercolor[fg]{itemize item}
+%  \usebeamertemplate{itemize item}}
+\tikzstyle{startstop} = [rectangle, rounded corners, 
+minimum width=3cm, 
+minimum height=1cm,
+text centered, 
+draw=black, 
+fill=red!30]
+
+\tikzstyle{io} = [trapezium, 
+trapezium stretches=true, % A later addition
+trapezium left angle=70, 
+trapezium right angle=110, 
+minimum width=3cm, 
+minimum height=1cm, text centered, 
+draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, 
+minimum width=3cm, 
+minimum height=1cm, 
+text centered, 
+text width=3cm, 
+draw=black, 
+fill=orange!30]
+
+\tikzstyle{decision} = [diamond, 
+minimum width=3cm, 
+minimum height=1cm, 
+text centered, 
+draw=black, 
+fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\title[Introduction to Statistics]{Hypothesis Testing pt. 3}
+\subtitle{More Types of Hypothesis Tests}
+\author{Grinnell College}
+\date{}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Hypothesis Test -- Single Proportion}
+H$_0$: p = p$_0$ \vspace{4mm}
+
+Under the null hypothesis we have:
+\begin{equation*}
+    Z := \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \sim \textbf{N(0,1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pnorm() with value of Z
+\end{itemize} \vspace{4mm}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item Random Sample
+    \item $n \times p_0 \geq 10$
+    \item $n \times (1-p_0) \geq 10$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hypothesis Test -- Difference of Proportions}
+H$_0$: $p_1 - p_2$ = 0 \vspace{4mm}
+
+If $p_1 = p_2$, then both are estimating the same thing.
+\begin{equation*}
+    \text{Let} \hspace{3mm} \widehat{p}_{pool} = \frac{x_1 + x_2}{n_1 + n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1 + n_2}
+\end{equation*}
+
+If we are simulating what the null hypothesis looks like, then
+\begin{equation*}
+    Z := \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\frac{\widehat{p}_{pool}(1-\widehat{p}_{pool})}{n_1}+\frac{\widehat{p}_{pool}(1-\widehat{p}_{pool})}{n_2}}} = \frac{(\hat{p}_1 - \hat{p}_2)}{\sqrt{\widehat{p}_{pool}(1-\widehat{p}_{pool})(\frac{1}{n_1}+\frac{1}{n_2})}} \sim \textbf{N(0,1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pnorm() with value of Z
+\end{itemize}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item Random Samples
+    \item $n_1 \times \widehat{p}_1 \geq 10$ and $n_1 \times (1-\widehat{p}_1) \geq 10$
+    \item $n_1 \times \widehat{p}_2 \geq 10$ and $n_1 \times (1-\widehat{p}_2) \geq 10$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Difference in Proportions -- Example}
+H$_0$: $p_C - p_H$ = 0, difference in proportions burnt to ash
+\vspace{4mm}
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        People & Burnt & Frozen & Sum\\
+        \hline
+        Citizens & 270 & 75 & 345\\
+        \hline
+        Heroes & 33 & 40 & 73\\
+        \hline
+        Sum & 303 & 115 & 418\\
+        \hline
+    \end{tabular}
+\end{table}
+
+$\widehat{p}_C$ = 270/345 = .78, $\widehat{p}_H$ = 33/73 = .45 \vspace{2mm}
+
+weighted average of $\hat{p}$'s, $\widehat{p}_{pooled}$ = $\frac{345\times.78 + 73\times.45}{345+73}$ = $\frac{270+33}{418}$ = $\frac{303}{418} = .72$
+
+\end{frame}
+
+\begin{frame}{Difference in Proportions -- Example}
+H$_0$: $p_C - p_H$ = 0, difference in proportions burnt to ash
+\vspace{4mm}
+
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        People & Burnt & Frozen & Sum\\
+        \hline
+        Citizens & 270 & 75 & 345\\
+        \hline
+        Heroes & 33 & 40 & 73\\
+        \hline
+        Sum & 303 & 115 & 418\\
+        \hline
+    \end{tabular}
+\end{table}
+
+$\widehat{p}_C$ = 270/345 = .78, $\widehat{p}_H$ = 33/73 = .45 \vspace{2mm}
+
+weighted average of $\hat{p}$'s, $\widehat{p}_{pooled}$ = $\frac{345\times.78 + 73\times.45}{345+73}$ = $\frac{270+33}{418}$ = $\frac{303}{418} = .72$ \vspace{4mm}
+
+Z = $\frac{\widehat{p}_C - \widehat{p}_H}{\sqrt{\widehat{p}_{pool}(1-\widehat{p}_{pool})(\frac{1}{n_1}+\frac{1}{n_2})}} = \frac{.78 - .45}{\sqrt{.72\times(1-.72)\times(\frac{1}{345}+\frac{1}{73})}} = 5.70$
+\begin{itemize}
+    \item can find p-value using Z = 5.70 and pnorm()
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Hypothesis Test -- Single Mean}
+H$_0$: $\mu = \mu_0$ \vspace{4mm}
+
+The CLT says that $\bar{x} \sim$ N($\mu$, $\frac{\sigma}{\sqrt{n}}$) \vspace{4mm}
+
+If we are simulating what the null hypothesis looks like $\rightarrow$ $\bar{x} \sim$ N($\mu_0$, $\frac{\sigma}{\sqrt{n}}$) \vspace{4mm}
+
+Think back to standardizing. If we standardize a Normal distribution it becomes a Standard Normal distribution N(0,1). So...\vspace{2mm}
+
+\begin{equation*}
+    Z := \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim \textbf{N(0,1)}
+\end{equation*}
+
+If we define Z in this way, then we know it follows a Standard Normal distribution and we have a way to calculate p-values.
+\begin{itemize}
+    \item use pnorm() function with value of Z
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hypothesis Test -- Single Mean}
+H$_0$: $\mu = \mu_0$ \vspace{4mm}
+
+Issue: We probably don't know $\sigma$ \vspace{2mm}
+
+\begin{equation*}
+    T := \frac{\bar{x}-\mu_0}{s / \sqrt{n}} \sim \textbf{t(df = n-1)}
+\end{equation*}
+\begin{itemize}
+    \item use pt() function with value of T and df
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hypothesis Test -- Single Mean}
+H$_0$: $\mu = \mu_0$ \vspace{3mm}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item Random Sample
+    \item Normal population \textbf{OR} n $\geq$ 30
+\end{itemize} \vspace{3mm}
+
+\textbf{If $\sigma$ is known}:
+\begin{equation*}
+    Z := \frac{\bar{x}-\mu_0}{\sigma / \sqrt{n}} \sim \textbf{N(0,1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pnorm() function with value of Z
+\end{itemize} \vspace{2mm}
+
+\textbf{If $\sigma$ is not known:}
+\begin{equation*}
+    T := \frac{\bar{x}-\mu_0}{s / \sqrt{n}} \sim \textbf{t(df = n-1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pt() function with value of T and df
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Hypothesis Test -- Difference of Means}
+H$_0$: $\mu_1 - \mu_2 = \mu_0$ = 0 \vspace{3mm}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item Random Sample
+    \item Normal population \textbf{OR} $n_1 \geq$ 30 and $n_2 \geq 30$
+\end{itemize} \vspace{3mm}
+
+\textbf{If $\sigma$ is known}:
+\begin{equation*}
+    Z := \frac{\bar{x}_1-\bar{x}_2}{\sqrt{\frac{\sigma^2}{n_1}+\frac{\sigma^2}{n_2}}} \sim \textbf{N(0,1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pnorm() function with value of Z
+\end{itemize} \vspace{2mm}
+
+\textbf{If $\sigma$ is not known:}
+\begin{equation*}
+    T := \frac{\bar{x}_1-\bar{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}} \sim \textbf{t(df = min($n_1$, $n_2$) - 1)}
+\end{equation*} \vspace{-4mm}
+\begin{itemize}
+    \item use pt() function with value of T and df
+\end{itemize}
+\end{frame}
+
+\end{document}
+
