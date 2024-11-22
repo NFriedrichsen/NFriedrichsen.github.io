@@ -1,15 +1,17 @@
 ---
-title: "SST-115 - Hypothesis Testing Worksheet"
+title: "SST-115 - HT Worksheet 3 / HW 8"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Question 1 -- Sleep deprivation, CA vs. OR
+This assignment will count as HW8 instead of a lab score. It will be worth 5 points. Either write your answers in Rmarkdown or upload a copy of your handwritten answers to gradescope for the HW8 submission. Due Friday 11/29 at 10pm. 
+
+# Question 1 -- Sleep deprivation, CA vs. OR (2 pts)
 
 A CDC report on sleep deprivation rates shows that the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0\%, while this proportion is 8.8\% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
 
@@ -17,9 +19,9 @@ A CDC report on sleep deprivation rates shows that the proportion of California 
 
 **Part A**: What type of hypothesis test is this? (proportion / diff. in proportions/ mean / diff. in means) \vspace{20mm}
 
-**Part B**: Compute $\widehat{p}_{pool}$. \vspace{40mm}
+**Part B**: Compute $\widehat{p}_{pool}$. \vspace{30mm}
 
-**Part C**: Compute the test-statistic Z. \vspace{40mm}
+**Part C**: Compute the test-statistic Z. \vspace{30mm}
 
 **Part D**: Compute the p-value using `pnorm()`.
 
@@ -27,7 +29,7 @@ A CDC report on sleep deprivation rates shows that the proportion of California 
 
 \newpage
 
-# Question 2 -- Find the P-value (t-distribution)
+# Question 2 -- Find the P-value with t-distribution (.5 pts)
 
 A random sample is selected from an approximately normal population
 with an unknown standard deviation. Find the p-value for the given sample size and test statistic using `pt()`.
@@ -48,7 +50,7 @@ pt(.5, df=17, lower.tail=F)
 
 ---
 
-# Question 3 -- Piano
+# Question 3 -- Piano (1 pt)
 
 Georgianna claims that in a small city renowned for its music school, the average child takes less than 5 years of piano lessons. We have a random sample of 35 children from the city, with a sample mean of 4.6 years of piano lessons and a sample standard deviation of 2.2 years.
 
@@ -62,7 +64,7 @@ Evaluate Georgianna’s claim using a hypothesis test.
 
 \newpage
 
-# Question 4 -- Diamonds
+# Question 4 -- Diamonds (1.5 pts)
 
 We have data on two random samples of diamonds: one with diamonds that weigh 0.99 carats and one with diamonds that weigh 1 carat. Each sample has 23 diamonds. Sample statistics for the price per carat of diamonds in each sample are provided below. 
 
