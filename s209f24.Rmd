@@ -204,7 +204,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 11/18 | [HT - Null Distributions](lectures/HypothesisTesting2_209.pdf) and [HT - Props and Means](lectures/HypothesisTesting3_209.pdf) | [Testing Worksheet](labs/STA209_hyptesting_worksheet.pdf) [Webpage Format](labs/STA209_hyptesting_worksheet.html) | - |
 | Wed 11/20 | [HT - Strength of Evidence](lectures/HypothesisTesting4_209.pdf) and [HT - Decision Making](lectures/HypothesisTesting5_209.pdf) | [Testing Worksheet 2 (PDF)](labs/STA209_hyptesting_worksheet2.pdf) [Webpage Format](labs/STA209_hyptesting_worksheet2.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
-| Fri 11/22 | TBD | - | - |
+| Fri 11/22 | [HT - More on Differences](lectures/HypothesisTesting6_209.pdf) | [Hypothesis Testing Lab 2](labs/HypothesisTestingLab2_209.html) | - |
 
 **Assignments and Deadlines**
 
@@ -212,6 +212,8 @@ Please note: material will not be posted until we've reached that point in the c
 2) [Testing Worksheet](labs/STA209_hyptesting_worksheet.pdf) scanned and uploaded to Gradescope by Wednesday 11/20 at 10pm.
 3) [Testing Worksheet 2](labs/STA209_hyptesting_worksheet2.pdf) scanned and uploaded to Gradescope by Friday 11/22 at 10pm.
 4) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
+5) Homework 8 will be posted Friday night 11/22.
+6) Exam corrections (date TBD)
 
 ---
 
