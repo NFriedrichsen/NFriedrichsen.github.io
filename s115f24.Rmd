@@ -215,10 +215,28 @@ Please note: material will not be posted until we've reached that point in the c
 2) [Testing Worksheet (PDF)](labs/sst115_hyptesting_worksheet.pdf) scanned and uploaded to Gradescope by Wednesday 11/20 at 10pm.
 3) [Testing Worksheet 2 (PDF)](labs/sst115_hyptesting_worksheet2.pdf) scanned and uploaded to Gradescope by Friday 11/22 at 10pm.
 4) [Homework 7 - Course Feedback](homework/Homework7_feedback.html) due Friday 11/22 at 10pm.
-5) HT Worksheet 3 will also serve as HW 8 due Friday 11/29 at 10pm.
-6) Exam corrections (date TBD)
+5) [Testing Worksheet 3](labs/sst115_hyptesting_worksheet3.pdf) will also serve as HW 8 due Friday 11/29 at 10pm.
+6) Exam corrections due Monday 12/2 at 10pm.
 
 ---
+
+### Week 13
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/25 | [HT - Decision Making](lectures/HypothesisTesting4_115.pdf) | [Testing Worksheet 4 (PDF)](labs/sst115_hyptesting_worksheet4.pdf) [Webpage Format](labs/labs/sst115_hyptesting_worksheet4.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Wed 11/27 | Project Workday | Worksheets cont'd | - |
+| Fri 11/29 | Break (No Class) | - | - |
+
+**Assignments and Deadlines**
+
+1) [Final Project Info](exams/SST115_project.html) project proposals due Friday 11/29 at 10pm. 
+2) [Testing Worksheet 3](labs/sst115_hyptesting_worksheet3.pdf) will also serve as HW 8 due Friday 11/29 at 10pm.
+3) Exam corrections due Monday 12/2 at 10pm.
+
+---
+
+
 
 ### Exam 1 Info
 
