@@ -227,7 +227,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 **Assignments and Deadlines**
 
-1) [Final Project Info](exams/SST115_project.html) project proposals due Friday 11/29 at 10pm. 
+1) [Final Project Info](exams/STA209_project.html) project proposals due Friday 11/29 at 10pm. 
 2) [Homework 8](homework/Homework8_209.html) due Friday 11/29 at 10pm.
 3) Exam corrections due Monday 12/2 at 10pm.
 
