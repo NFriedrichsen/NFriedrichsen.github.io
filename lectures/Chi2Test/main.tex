@@ -77,7 +77,7 @@
 
 
 
-\title[Introduction to Statistics]{$\Chi^2$ Tests}
+\title[Introduction to Statistics]{$\chi^2$ Tests}
 \subtitle{}
 \author{Grinnell College}
 \date{}
@@ -213,9 +213,9 @@ A bit more general -- we can test if all the proportions are equal to different 
 
 
 \begin{frame}{Problem}
-The 'final' exam is coming up. Suppose (hypothetically), that I am lazy and want to write an exam that is particularly easy to grade, so I make 5 questions that are true/false. But, also suppose (hypothetically) that I am mean and make the questions incredibly difficult. \vspace{6mm}
+The 'final' exam is coming up. Suppose (hypothetically), that I am lazy and want to write an exam that is particularly easy to grade, so I make 1 question with 5 multiple-choice answers. But, also suppose (hypothetically) that I am mean and make the questions incredibly difficult. \vspace{6mm}
 
-Given that there are 26 students in this class, I can look through the results and make the following table to compare how many people got a question right (Observed) and compare that to how many I would expect to get the question right by guessing (Expected).
+Given that there are 25 students in this class, I can look through the results and make the following table to compare how many people got a question right (Observed) and compare that to how many I would expect to get the question right by guessing (Expected).
 \vspace{6mm}
 
 % latex table generated in R 4.4.2 by xtable 1.8-4 package
@@ -224,10 +224,10 @@ Given that there are 26 students in this class, I can look through the results a
 \centering
 \begin{tabular}{rrrrrr}
   \hline
-Question & 1 & 2 & 3 & 4 & 5 \\ 
+Answer & A & B & C & D & E \\ 
   \hline
-Expected & 13 & 13 & 13 & 13 & 13 \\ 
-  Observed & 10 & 14 & 15 & 11 & 9 \\ 
+Expected & 5 & 5 & 5 & 5 & 5 \\ 
+  Observed & 6 & 7 & 6 & 2 & 5 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -247,46 +247,46 @@ Under the null hypothesis (equality of proportions to 'expected' proportions), f
 \end{frame}
 
 \begin{frame}
-% latex table generated in R 4.4.2 by xtable 1.8-4 package
-% Tue Nov 19 15:47:57 2024
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrr}
   \hline
-Question & 1 & 2 & 3 & 4 & 5 \\ 
+Answer & A & B & C & D & E \\ 
   \hline
-Expected & 13 & 13 & 13 & 13 & 13 \\ 
-  Observed & 10 & 14 & 15 & 11 & 9 \\  
+Expected & 5 & 5 & 5 & 5 & 5 \\ 
+  Observed & 6 & 7 & 6 & 2 & 4 \\ 
    \hline
 \end{tabular}
 \end{table}
 
 \begin{align*}
 \chi^2 &= \sum_{i=1}^k \frac{(\text{Expected}_i - \text{Observed}_i)^2}{\text{Expected}_i} \\[1em]
-&= \frac{(10-13)^2}{13} + \frac{(14-13)^2}{13} + \frac{(15-13)^2}{13} + \frac{(11-13)^2}{13}+\frac{(9-13)^2}{13} \\[1em]
-&= \frac{9 + 1 + 4 + 4 + 16}{13} \approx 2.62
+&= \frac{(5-6)^2}{5} + \frac{(5-7)^2}{5} + \frac{(5-6)^2}{5} + \frac{(5-2)^2}{5}+\frac{(5-4)^2}{5} \\[1em]
+&= \frac{1 + 4 + 1 + 9 + 1}{5} = \frac{16}{5} = 3.2
 \end{align*}
 
 \end{frame}
 
 \begin{frame}{Samples}
 
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Mon Nov 25 11:54:45 2024
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrr}
   \hline
  & A & B & C & D & E \\ 
   \hline
-Sample 1 &  14 &  14 &  11 &  11 &  15 \\ 
-  Sample 2 &  13 &  13 &  14 &  11 &  14 \\ 
-  Sample 3 &  15 &  15 &  15 &  13 &   7 \\ 
-  Sample 4 &  12 &  15 &  10 &  15 &  13 \\ 
-  Sample 5 &  13 &  16 &  10 &   7 &  19 \\ 
-  Sample 6 &  15 &  11 &  17 &   8 &  14 \\ 
-  Sample 7 &  10 &  10 &  14 &  16 &  15 \\ 
-  Sample 8 &   7 &  17 &  14 &  12 &  15 \\ 
-  Sample 9 &  15 &   5 &  13 &  14 &  18 \\ 
-  Sample 10 &  13 &  15 &  17 &  14 &   6 \\ 
+Sample 1 & 6 & 8 & 5 & 3 & 3 \\ 
+  Sample 2 & 3 & 2 & 2 & 10 & 8 \\ 
+  Sample 3 & 2 & 6 & 3 & 3 & 11 \\ 
+  Sample 4 & 6 & 5 & 3 & 4 & 7 \\ 
+  Sample 5 & 5 & 7 & 5 & 4 & 4 \\ 
+  Sample 6 & 4 & 4 & 6 & 4 & 7 \\ 
+  Sample 7 & 3 & 5 & 7 & 3 & 7 \\ 
+  Sample 8 & 5 & 7 & 4 & 3 & 6 \\ 
+  Sample 9 & 5 & 5 & 5 & 6 & 4 \\ 
+  Sample 10 & 5 & 2 & 10 & 3 & 5 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -294,22 +294,24 @@ Sample 1 &  14 &  14 &  11 &  11 &  15 \\
 \end{frame}
 
 \begin{frame}{Samples}
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Mon Nov 25 11:54:17 2024
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
   \hline
  & A & B & C & D & E & chi \\ 
   \hline
-Sample 1 & 14 & 14 & 11 & 11 & 15 & 1.08 \\ 
-  Sample 2 & 13 & 13 & 14 & 11 & 14 & 0.46 \\ 
-  Sample 3 & 15 & 15 & 15 & 13 & 7 & 3.69 \\ 
-  Sample 4 & 12 & 15 & 10 & 15 & 13 & 1.38 \\ 
-  Sample 5 & 13 & 16 & 10 & 7 & 19 & 6.92 \\ 
-  Sample 6 & 15 & 11 & 17 & 8 & 14 & 3.85 \\ 
-  Sample 7 & 10 & 10 & 14 & 16 & 15 & 2.46 \\ 
-  Sample 8 & 7 & 17 & 14 & 12 & 15 & 4.46 \\ 
-  Sample 9 & 15 & 5 & 13 & 14 & 18 & 7.23 \\ 
-  Sample 10 & 13 & 15 & 17 & 14 & 6 & 5.38 \\ 
+Sample 1 & 6 & 8 & 5 & 3 & 3 & 4 \\ 
+  Sample 2 & 3 & 2 & 2 & 10 & 8 & 11 \\ 
+  Sample 3 & 2 & 6 & 3 & 3 & 11 & 11 \\ 
+  Sample 4 & 6 & 5 & 3 & 4 & 7 & 2 \\ 
+  Sample 5 & 5 & 7 & 5 & 4 & 4 & 1 \\ 
+  Sample 6 & 4 & 4 & 6 & 4 & 7 & 2 \\ 
+  Sample 7 & 3 & 5 & 7 & 3 & 7 & 3 \\ 
+  Sample 8 & 5 & 7 & 4 & 3 & 6 & 2 \\ 
+  Sample 9 & 5 & 5 & 5 & 6 & 4 & 0 \\ 
+  Sample 10 & 5 & 2 & 10 & 3 & 5 & 8 \\ 
    \hline
 \end{tabular}
 \end{table}

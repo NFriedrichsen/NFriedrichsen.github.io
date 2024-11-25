@@ -18,26 +18,39 @@ createShadeRegion <- function(x, df, ub = 15) {
   df1 <- data.frame(x = x1, y = y1)
 }
 
-pv <- createShadeRegion(2.62, 4)
+pv <- createShadeRegion(3, 4)
 
 x <- seq(0, 15, by = 0.01)
 x4 <- dchisq(x, 4)
 df <- data.frame(x, y = x4)
 
-1 - pchisq(2.62, df = 4)
+1 - pchisq(3.2, df = 4)
 
 
 ggplot(df, aes(x, y)) + geom_line(linewidth = 1.2) +
   geom_polygon(data = pv, fill = "hotpink", alpha = 0.6) + 
-  geom_segment(aes(x = 10, y = 0.17, xend = 2.62, yend = 0), 
+  geom_segment(aes(x = 10, y = 0.17, xend = 3.2, yend = 0), 
                arrow = arrow(length = unit(0.5, "cm"))) + 
   annotate("text", x = 10, y = 0.18, 
-           label = expression(chi^2 == 2.62), parse = TRUE, size = 8) +
-  annotate("text", x = 12, y = 0.1, label = "p-value = 0.623", size = 8) + 
+           label = expression(chi^2 == 3.2), parse = TRUE, size = 8) +
+  annotate("text", x = 12, y = 0.1, label = "p-value = 0.53", size = 8) + 
   ggtitle("Chi-squared distribution with df = 4")  + 
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), 
         axis.title.y = element_blank()) + 
   xlab(expression(chi^2))
+
+# simulated tables
+tab <- rmultinom(10, 25, rep(1/5, 5)) %>% t()
+colnames(tab) <- LETTERS[1:5]
+rownames(tab) <- paste0("Sample ", 1:10)
+
+xtable(tab, digits=0)
+
+chi <- sapply(split(tab, row(tab)), function(x) chisq.test(x)[["statistic"]])
+
+xtable(cbind(tab, chi), digits=0)
+
+
 
 ### Example in Class
 obs <- c(780, 117, 114, 384, 58)
