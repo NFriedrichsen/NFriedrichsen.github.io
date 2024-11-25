@@ -1,5 +1,5 @@
 ---
-title: "STA209 - Hypothesis Testing Lab"
+title: "STA209 - Hypothesis Testing Lab 2"
 output: html_document
 ---
 
@@ -216,3 +216,155 @@ Use the following code to create a new variable in the `french` dataset called `
 french <- french %>% mutate(diff = post-pre)
 head(french)
 ```
+
+---
+
+## $\chi^2$ Tests
+
+This portion of the labs deals with tests of goodness-of-fit for categorical variables. Both tests are performed with the construction of the $\chi^2$ test statistic, computed as
+
+$$
+\chi^2 = \sum_{i=1}^k \frac{(\text{Observed}_i - \text{Expected}_i)^2}{\text{Expected}_i}
+$$
+
+where $i = 1, \dots, k$ iterates through each of the groups and where the expected counts are what we should expect to see under the null hypothesis. The resulting test statistic follows a $\chi^2$ distribution, with degrees of freedom calculated to be:
+
+  - In the one categorical case, $df = k-1$ where $k$ is the number of unique categories
+  
+We can compute this test statistic in R using the `chisq.test()` function which will give us a value for the test statistic, the degrees of freedom, and the resulting p-value under the null hypothesis.
+
+### Goodness-of-fit Tests (1 Variable)
+
+The one categorical variable cases, in the context of a $\chi^2$ test (note: you can write in rmarkdown by typing $\text{\$\\chi^2\$}$), is the goodness-of-fit test. To use the `chisq.test()` function, all we need is a vector that includes the counts of each of our categories, along with the proportions we should expect to see under the null hypothesis.
+
+```{r, echo = FALSE}
+obs <- c(6,7,6,2,4)
+names(obs) <- LETTERS[1:5]
+```
+
+For example, consider again our example from class in which we wish to create a standardized exam with 1 question, but with 5 answers. If we wish to test whether people were effectively randomly guessing, we would have a null hypothesis of the form
+
+$$
+H_0: p_A = p_B = p_C = p_D = p_E = 0.2
+$$
+where the expected counts should be (under the null):
+
+```{r, echo = FALSE}
+nul <- rep(5, 5)
+names(nul) <- names(obs)
+kable(t(nul)) %>% kable_styling(full_width = FALSE)
+```
+
+In class, we considered an example where the *observed* distribution had the following counts:
+
+```{r, echo = FALSE}
+kable(t(obs)) %>% kable_styling(full_width = FALSE)
+```
+
+To conduct a $\chi^2$ test that our observed values where drawn from the null distribution, we would create our vector with these values, along with the associated probabilities:
+
+```{r}
+## Create obs variable with the observed counts
+obs <- c(6,7,6,2,4)
+
+## Pass this into chisq.test, with null probabilities
+chisq.test(obs, p = c(0.2,0.2,0.2,0.2,0.2))
+```
+
+By default, `chisq.test()` will assign an equal probability to each of the outcomes. In this case, because our null hypothesis sets each of these probabilities to be equal, we can omit the probability argument when calling the function:
+
+```{r}
+chisq.test(obs)
+```
+
+In each case, we find a test statistic of $\chi^2 = 3.2$ and a $p$-value of 0.52.
+
+Contrast this with the example we gave for Alameda county, where we were investigating the observed counts of each race/ethnicity in the jury pooled which we compared against proportions estimated from US Census data. Because our null hypothesis in this case no longer assumes that our expected proportions are equal, we will have to pass them in ourselves. The values here are taken from the lecture slides:
+
+```{r}
+jury <- c(780, 117,114,384,58)
+chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01))
+```
+
+Again, we get the value of the $\chi^2$ statistic, along with degrees of freedom and a $p$-value.
+
+### Question 6
+
+Just as a normal distribution describes phenomenon in which observations tend to fall symmetrically about the mean, the *Poisson* distribution is a probability distribution that is used to describe the number of discrete events we should expect to occur within a period of time (i.e., how many students walk into the student union each hour). This question involves assessing whether or not a particular collection of data is consistent with a Poisson distribution.
+
+In 1898, Ladislaus von Bortkiewicz collected data on the number of soldiers in the Prussian army that got kicked to death by mules (mules were frequently used to haul army equipment). The data collected follows 10 corps, each observed for 20 years, resulting in a total of 200 "corp-years". In 109 corp-years, there were no deaths from mule kicks, in 65 corp-years, there was one death, and so on. Below is a table with all of the observed data
+
+```{r, echo = FALSE}
+df <- data.frame(dead = c("0", "1", "2", "3+"),
+                 num = c(109,65,22,4))
+names(df) <- c("Number of Deaths", "Number of Corps-Years")
+kable(df) %>% kable_styling(full_width = FALSE)
+```
+
+If the number of death via mules *did* match a Poisson distribution, the expected number of corps-years with each death count should have the following proportions:
+
+```{r, echo = FALSE}
+vals <- c(0.55,0.33,0.1,0.02)
+names(vals) <- paste0(c("0", "1", "2", "3+"), " deaths")
+kable(t(vals)) %>% kable_styling(full_width = FALSE)
+```
+
+Briefly skim the [Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution) info linked here, then conduct a $\chi^2$ test to determine whether or not the observed data is consistent with what we should expect to see if death-by-mule-kick truly did follow a Poisson distribution. What $p$-value do you find, and what does this say about your null hypothesis? (note: you may ignore the warning about expected counts)
+
+```{r, echo=F, eval=F}
+deaths = c(109, 65, 22, 4)
+chisq.test(deaths, p=c(.55, .33, .1, .02))
+```
+
+
+<!-- ```{r} -->
+<!-- dpois(0:5, 0.61) -->
+<!-- obs <- c(109, 65,22,3,1,0) -->
+<!-- obs <- c(109, 65,22,4) -->
+<!-- obs/200 -->
+
+<!-- chisq.test(c(109,65,22,4), p = c(0.55,0.33,0.1,0.02)) -->
+<!-- ``` -->
+
+
+<!-- ### Tests for independence (2 Variable) -->
+
+<!-- When considering two categorical variables, we are (usually) less interested in assessing goodness-of-fit in the expected counts of two variables and more interested in determining if there is any sort of *association* between the two variables. In other words, for a single observation, does knowing the value of one categorical variable give us information about the other? -->
+
+<!-- To an extent, we have seen this already when considering two-way tables with categorical variables. Consider, for example, the data we had seen on auto accidents in Florida recording the number of fatal and non-fatal fatalities, along with seatbelt use. That data is summarized again here in the following table: -->
+
+<!-- ```{r, echo = FALSE} -->
+<!-- seatbelt <- matrix(c(1085,703,55623,441239), nrow = 2) -->
+<!-- rownames(seatbelt) <- c("No Seatbelt", "Seatbelt") -->
+<!-- colnames(seatbelt) <- c("Fatal", "Non-fatal") -->
+<!-- kable(seatbelt) %>% kable_styling(full_width = FALSE) -->
+<!-- ``` -->
+
+<!-- For our $\chi^2$ test, we need only pass a matrix or table of these values and `chisq.test()` will automatically perform a test of independence: -->
+
+<!-- ```{r} -->
+<!-- seatbelt <- matrix(c(1085, 703, 55623, 441239), nrow = 2) -->
+<!-- chisq.test(seatbelt) # we do not need to add proportions here -->
+<!-- ``` -->
+
+
+
+<!-- **Question 9:** This question will use the college dataset loaded below  -->
+
+<!-- ```{r} -->
+<!-- college <- read.csv("https://collinn.github.io/data/college2019.csv") -->
+<!-- ``` -->
+
+<!--   - **Part A:** Create a proportional bar chart between the variables for Region and Type Does it appear that there is an association between these two variables? In other words, does knowing anything about the region tell you anything about the proportion of Public or Private colleges? -->
+<!--   - **Part B:** Using the `table()` function, create a 2-way table of these two variables. Save this table to a new variable called `tab` -->
+<!--   - **Part C:** Conduct a $\chi^2$ test on the observed frequencies that you found in the table in Part B. Based on this, what would you conclude about there being an association between the variables for Region and Private? -->
+
+
+
+
+<!-- ```{r, include = FALSE} -->
+<!-- ggplot(college, aes(Region, fill = Type)) +  -->
+<!--   geom_bar(position = "fill") -->
+<!-- tab <- with(college, table(Region, Type)) -->
+<!-- chisq.test(tab) -->
+<!-- ``` -->
