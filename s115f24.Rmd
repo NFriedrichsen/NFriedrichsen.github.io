@@ -224,7 +224,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 11/25 | [HT - Decision Making](lectures/HypothesisTesting4_115.pdf) | [Testing Worksheet 4 (PDF)](labs/sst115_hyptesting_worksheet4.pdf) [Webpage Format](labs/labs/sst115_hyptesting_worksheet4.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Mon 11/25 | [HT - Decision Making](lectures/HypothesisTesting4_115.pdf) | [Testing Worksheet 4 (PDF)](labs/sst115_hyptesting_worksheet4.pdf) [Webpage Format](labs/sst115_hyptesting_worksheet4.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
 | Wed 11/27 | Project Workday | Worksheets cont'd | - |
 | Fri 11/29 | Break (No Class) | - | - |
 
