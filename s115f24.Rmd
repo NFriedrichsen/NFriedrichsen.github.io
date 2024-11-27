@@ -232,7 +232,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Final Project Info](exams/SST115_project.html) project proposals due Friday 11/29 at 10pm. 
 2) [Testing Worksheet 3](labs/sst115_hyptesting_worksheet3.pdf) will also serve as HW 8 due Friday 11/29 at 10pm.
-3) Exam corrections due Monday 12/2 at 10pm.
+3) [Testing Worksheet 4 (PDF)](labs/sst115_hyptesting_worksheet4.pdf) due Sunday 12/01 at 10pm.
+4) Exam corrections due Monday 12/2 at 10pm.
 
 ---
 
