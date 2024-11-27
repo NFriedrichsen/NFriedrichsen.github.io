@@ -146,19 +146,17 @@ Ok, but where does this distribution come from? \vspace{4mm}
 Suppose I have a whole bunch of Standard Normal variables $X_1, X_2, ... , X_k$ that are all independent (not influencing each other)
 \begin{itemize}
     \item If I square and add them, I get something that has a $\chi^2$ distribution
-    \item df = (k-1) where k is the number of Normals I used
+    \item df = k, where k is the number of Normals I used
 \end{itemize} \vspace{4mm}
 \begin{center}
-$\sum_{i=1}^k X_i^2 \sim \chi^2_{k-1}$
+$\sum_{i=1}^k X_i^2 \sim \chi^2_{k}$
 \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{$\chi^2$-Distribution}
-$Z = \frac{\overline{x}-\mu}{\sigma / \sqrt{n}} \sim N(0,1) \rightarrow Z^2 \sim \chi^2_{0}$ \hspace{2mm} \textbf{ISSUE:} can't have k=0 (only 1 group)
-\begin{itemize}
-    \item $\chi^2$ only works for more than 1 group (differences)
-\end{itemize}\vspace{8mm}
+$Z = \frac{\overline{x}-\mu}{\sigma / \sqrt{n}} \sim N(0,1) \rightarrow Z^2 \sim \chi^2_{1}$ \hspace{2mm} 
+\vspace{8mm}
 
 Could have done this:
 
@@ -166,9 +164,9 @@ $Z_1 = \frac{\overline{x}_1-\mu_1}{\sigma_1 / \sqrt{n}_1} \sim N(0,1)$
 
 $Z_2 = \frac{\overline{x}_2-\mu_2}{\sigma_2 / \sqrt{n}_2} \sim N(0,1)$
 
-$Z_1^2 + Z_2^2 = (\frac{\overline{x}_1-\mu_1}{\sigma_1 / \sqrt{n}_1})^2 + (\frac{\overline{x}_2-\mu_2}{\sigma_2 / \sqrt{n}_2})^2 \sim \chi^2_1$
+$Z_1^2 + Z_2^2 = (\frac{\overline{x}_1-\mu_1}{\sigma_1 / \sqrt{n}_1})^2 + (\frac{\overline{x}_2-\mu_2}{\sigma_2 / \sqrt{n}_2})^2 \sim \chi^2_2$ \vspace{4mm}
 \begin{itemize}
-    \item could have used this distribution to talk about diff. in means
+    \item could have used $\chi^2$ distribution for means and diff. in means
     \item but... Normal distribution is easier
     \item this \textbf{does} come in more handy for differences in proportions
 \end{itemize}
@@ -243,7 +241,9 @@ Under the null hypothesis (equality of proportions to 'expected' proportions), f
 \begin{align*}
 \chi^2 \sim \chi^2(k-1)
 \end{align*}
-
+\begin{itemize}
+    \item $df = k-1$ comes from the fact that if we know $k-1$ proportions, we know the value for the last group since they all add to 1
+\end{itemize}
 \end{frame}
 
 \begin{frame}
