@@ -221,15 +221,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 11/25 | [$\chi^2$ Tests](lectures/Chi2Test.pdf) | [Hypothesis Testing Lab 2](labs/HypothesisTestingLab2_209.html) cont'd | - |
-| Wed 11/27 | [$\chi^2$ Tests (Independence)] | Project Workday | - |
+| Mon 11/25 | [$\chi^2$ Tests (Goodness of Fit)](lectures/Chi2Test.pdf) | [Hypothesis Testing Lab 2](labs/HypothesisTestingLab2_209.html) cont'd | - |
+| Wed 11/27 | [$\chi^2$ Tests (Independence)](lectures/Chi2_Independence.pdf) | Project Workday | - |
 | Fri 11/29 | Break (No Class) | - | - |
 
 **Assignments and Deadlines**
 
-1) [Final Project Info](exams/STA209_project.html) project proposals due Friday 11/29 at 10pm. 
+1) [Final Project Info](exams/STA209_project.html) project proposals due Friday 11/29 at 10pm (Gradescope link will be posted, please also include group member names).
 2) [Homework 8](homework/Homework8_209.html) due Friday 11/29 at 10pm.
-3) Exam corrections due Monday 12/2 at 10pm.
+3) [Hypothesis Testing Lab 2](labs/HypothesisTestingLab2_209.html) due Sunday 12/01 at 10pm.
+4) Exam corrections due Monday 12/2 at 10pm.
 
 ---
 
