@@ -198,6 +198,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam \#3 Content 
+
 ### Week 12 (Hypothesis Testing)
 
 | Date | Lecture | Lab | Reading |
@@ -233,6 +235,18 @@ Please note: material will not be posted until we've reached that point in the c
 4) Exam corrections due Monday 12/2 at 10pm.
 
 [Mentor Evaluations](https://grinnell.co1.qualtrics.com/jfe/form/SV_egM8dXmqnt40c7Q)
+
+---
+
+### Week 14
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/02 | [ANOVA](lectures/Anova1.pdf) | [ANOVA Lab](labs/ANOVA_lab.html) | - |
+| Wed 12/04 | - | - | - |
+| Fri 12/06 | - | - | - |
+
+**Assignments and Deadlines**
 
 ---
 

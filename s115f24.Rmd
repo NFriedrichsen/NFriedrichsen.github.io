@@ -201,6 +201,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam \#3 Content
+
 ### Week 12 (Hypothesis Testing)
 
 | Date | Lecture | Lab | Reading |
@@ -220,7 +222,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
-### Week 13
+### Week 13 (Hypothesis Testing)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
@@ -236,6 +238,18 @@ Please note: material will not be posted until we've reached that point in the c
 4) Exam corrections due Monday 12/2 at 10pm.
 
 [Mentor Evaluations](https://grinnell.co1.qualtrics.com/jfe/form/SV_egM8dXmqnt40c7Q)
+
+---
+
+### Week 14 (Hypothesis Testing)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/02 | [HT - More on Differences](lectures/HypothesisTesting5_115.pdf) | [Testing Lab](labs/HypothesisTestingLab_115.html) | - |
+| Wed 12/04 | [$\chi^2$ Tests] | - | - |
+| Fri 12/06 | TBD | - | - |
+
+**Assignments and Deadlines**
 
 ---
 
