@@ -1,0 +1,167 @@
+---
+title: "ANOVA Lab"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scoll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 6, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+library(knitr)
+library(kableExtra)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Better histograms
+gh <- function(bins = 10) {
+  geom_histogram(color = 'black', fill = 'gray80', bins = bins)
+}
+```
+
+## Introduction
+
+This lab is oriented around the use of the `aov()` function in R to fit an analysis of variance model.
+
+
+## One-way ANOVA
+
+The first ANOVA we will consider is that which compares equality of means across several groups. To begin, we'll consider the `dog` dataset that was introduced in class
+
+```{r}
+dogs <- read.csv("https://collinn.github.io/data/dogs.csv")
+```
+
+From this dataset, we find that we have one quantitative variable (speed), along with three categorical variables for breed, size, and color. We can quickly get a summary of these categories with the table function
+
+```{r}
+with(dogs, table(color))
+```
+
+Here, we see that the color variable has 4 categories with 400 observations. To conduct an ANOVA, we will use the same formula syntax that was used for the two sample t-test, with our quantitative variable on the left hand side and the categories on the right. We'll do this using `aov()`
+
+```{r}
+aov(speed ~ color, dogs)
+```
+
+The basic output of this function only gives us limited information related to the sums of squares and degrees of freedom. We can recreate the tables we saw in lecture by passing the output of `aov()` into a `summary()` function, either with a pipe (`%>%`) or by assigning the output to a new variable and calling summary on it
+
+```{r}
+## Method 1
+# model <- aov(speed ~ color, dogs)
+# summary(model)
+
+## Method 2
+aov(speed ~ color, dogs) %>% summary()
+```
+
+Here, we now get the mean sums of squares for our groups and residuals, along with an F statistic and an associated p-value. In particular, we know that this statistic follows an F distribution with $F(3, 396)$ degrees of freedom. The $p$-value would be the area under the curve to the right of the red line below:
+
+```{r, echo  = FALSE}
+x <- seq(0, 10, by = 0.01)
+y <- df(x, 3, 396)
+ggplot(data.frame(x, y), aes(x, y)) + 
+  geom_line() + ylab("Density") + 
+  ggtitle("F(3, 396)") + 
+  geom_vline(xintercept = 4.3, color = 'red')
+```
+
+**Question 1:** Using the `dogs` dataset, recreate a boxplot showing the speeds of each dog, separated by color. Based on this plot, does it appear as if there is a statistically significant ($\alpha = 0.05$) difference in group means? Compare your conclusion with the ANOVA output done above. Explain what might be causing you to reject the null hypothesis in this case.
+
+```{r, echo=F, eval=F}
+ggplot(dogs, aes(x=speed, y=color)) + geom_boxplot()
+```
+
+**Question 2:** The data for this question involves sandwiches and ants. An experiment was conducted in which sandwiches were made with various combinations of filling and bread, both with and without butter added. A piece of the sandwich was ripped off and left near an ant hill for several minutes, at which point a jar was placed over the sandwich and the number of ants surrounding it were counted.
+
+```{r}
+sandwich <- read.csv("https://collinn.github.io/data/sandwich.csv")
+```
+
+Suppose that you wanted to choose one variable (Butter or Filling) to predict how many ants will be attracted to a sandwich. Which do you think would best accomplish this goal? Justify your answer with a plot and a statistical test.
+
+```{r, eval=F, echo=F}
+ggplot(sandwich, aes(x=Ants, y=Butter))+geom_boxplot()
+ggplot(sandwich, aes(x=Ants, y=Filling))+geom_boxplot()
+
+aov(Ants~Butter, sandwich) %>% summary()
+aov(Ants~Filling, sandwich) %>% summary()
+```
+
+
+<!-- ## Post-Hoc Testing -->
+
+<!-- As noted previously, ANOVA is specifically concerned with testing the null hypothesis of equality between means for multiple groups,  -->
+
+<!-- $$ -->
+<!-- H_0: \mu_1 = \mu_2 = \dots = \mu_k -->
+<!-- $$ -->
+<!-- Should we perform an ANOVA and *reject* our null hypothesis, we only know that *at least* two of our group means are different. *Post-hoc* pairwise testing (Latin for "after this" or "after the fact") can be done to determine which of our pairwise differences are likely responsible. -->
+
+<!-- Consider again our dog dataset in which we wish to test for equality in average speed between different colored dogs. This is done simply with the `aov()` function -->
+
+<!-- ```{r} -->
+<!-- ## This will assign the results to a variable called model -->
+<!-- model <- aov(speed ~ color, dogs) -->
+<!-- summary(model) -->
+<!-- ``` -->
+
+<!-- Here, we see information on the squared error from the grouping and our residuals, along with an F-statistic and a p-value. If we were testing at the $\alpha = 0.05$ level, we would reject this test as $p-val = 0.0053$. -->
+
+<!-- To determine which pairwise colors had a difference, we can use the `TukeyHSD()` function (Tukey honest statistical difference) on the `model` object we created above: -->
+
+<!-- ```{r} -->
+<!-- ## Pass in output from aov() function -->
+<!-- comp <- TukeyHSD(model) -->
+<!-- comp -->
+<!-- ``` -->
+
+<!-- There are a few things to note here: -->
+
+<!--   1. First, we see that it gives us a *point estimate* of the difference in means as the first column in the output -->
+<!--   2. Next, we get a confidence interval for the difference for lower and upper bounds. By default, this is a 95\% confidence interval, but we can change this in the `TukeyHSD()` function by passing in an argument for `conf.level` -->
+<!--   3. Finally, we see that the last column gives us an *adjusted* p-value. That is, rather than adjusting $\alpha^* = \alpha/3$ and comparing the original p-values, it adjust the p-values that we can compare with our regular $\alpha$. In either case, the conclusions that we should come to will be the same. -->
+
+<!-- From this output, we see the only statistically significant difference in between yellow and white. -->
+
+<!-- Finally, we can plot the output from the `TukeyHSD()` function with a call to the base R function `plot()` -->
+
+<!-- ```{r} -->
+<!-- ## Pass in output from TukeyHSD() function -->
+<!-- plot(comp) -->
+<!-- ``` -->
+
+<!-- Note here again, the only confidence interval that does not contain 0 (our null hypothesis for pairwise tests) is that between yellow and white, consistent with the output we observed above. -->
+
+
+<!-- **Question 3:** An individual's "critical clicker frequency" is the highest frequency at which a flickering light source can actually be detected to be flickering; at frequencies above this rate, the light source will appear continuous. (An example of this can be seen [here](https://youtu.be/xW3oQUe6DEw)) -->
+
+<!-- The data below come from a study titled "The effect of iris color on critical flicker frequency" published in the *Journal of General Psychology*, recording the critical clicker frequency and iris color for $n = 19$ subjects -->
+
+<!-- ```{r} -->
+<!-- flicker <- read.delim('https://raw.githubusercontent.com/IowaBiostat/data-sets/main/flicker/flicker.txt') -->
+<!-- ``` -->
+
+<!--   - **Part A:** What are the null and alternative hypotheses for one-way ANOVA analyzing this data -->
+<!--   - **Part B:** Use the `aov()` function to analyze this data and print a summary using `summary()` -->
+<!--   - **Part C:** Does Color or the Residuals have a larger sum of squares? Which has a larger mean square?  What accounts for this discrepancy? -->
+<!--   - **Part D:** Perform post-hoc testing to determine which pairwise groups have a statistically significant difference between them. -->
+
+<!-- ```{r, include = FALSE, echo = FALSE} -->
+<!-- aov(Flicker ~ Color, flicker) %>% summary() -->
+<!-- ``` -->
