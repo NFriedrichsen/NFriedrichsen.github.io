@@ -290,7 +290,45 @@ chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01))
 
 Again, we get the value of the $\chi^2$ statistic, along with degrees of freedom and a $p$-value.
 
-### Question 5
+### Question 5 -- Conceptual
+
+**Part A**: What kinds of null hypothesis are we testing with $\chi^2$ tests?
+
+**Part B**: Why is the p-value always one-sided (area greater than the test-statistic) for a $\chi^2$ test statistic?
+
+---
+
+### Question 6
+
+Returning to the Alameda county data. Let's carry out computing the $\chi^2$-statistic by hand (the practice will help you for the exam *wink wink*).
+
+```{r, echo = FALSE}
+Observed = c(780, 117, 114, 384, 58, 1453)
+ExpectedProportions = c(.54, .18, .12, .15, .01, 1.00)
+names(Observed) <- c("White", "Black", "Hispanic", "Asian", "Other", "Total")
+obs = rbind(Observed, ExpectedProportions)
+kable(obs) %>% kable_styling(full_width = F)
+```
+
+**Part A**: Using the sample size of 1453, how many people should I expect in each group for race/ethnicity given the expected proportions from census data?
+
+```{r, echo=F, eval=F}
+exp = c(.54, .18, .12, .15, .01)
+1453 * exp
+```
+
+
+**Part B** Compute the $\chi^2$-statistic using the formula with the 'expected' info you just found for each group in Part A and the Observed values for each group in the table. (Do not use Total as a group) You should get 357.3625 which matches the `chisq.test` result we got earlier.
+
+```{r, echo=F, eval=F}
+(784.62 - 780)^2/784.62 + (261.54 - 117)^2 / 261.54 + (174.36-114)^2/174.36 + (384-217.95)^2/217.95 + (58 - 14.53)^2/14.53
+```
+
+
+
+---
+
+### Question 7
 
 Just as a normal distribution describes phenomenon in which observations tend to fall symmetrically about the mean, the *Poisson* distribution is a probability distribution that is used to describe the number of discrete events we should expect to occur within a period of time (i.e., how many students walk into the student union each hour). This question involves assessing whether or not a particular collection of data is consistent with a Poisson distribution.
 

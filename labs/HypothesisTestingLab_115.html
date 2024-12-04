@@ -1018,8 +1018,105 @@ chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01))</code></pre>
 <p>Again, we get the value of the <span class="math inline">\(\chi^2\)</span> statistic, along with degrees of
 freedom and a <span class="math inline">\(p\)</span>-value.</p>
 </div>
-<div id="question-5" class="section level3">
-<h3>Question 5</h3>
+<div id="question-5-conceptual" class="section level3">
+<h3>Question 5 – Conceptual</h3>
+<p><strong>Part A</strong>: What kinds of null hypothesis are we testing
+with <span class="math inline">\(\chi^2\)</span> tests?</p>
+<p><strong>Part B</strong>: Why is the p-value always one-sided (area
+greater than the test-statistic) for a <span class="math inline">\(\chi^2\)</span> test statistic?</p>
+<hr />
+</div>
+<div id="question-6" class="section level3">
+<h3>Question 6</h3>
+<p>Returning to the Alameda county data. Let’s carry out computing the
+<span class="math inline">\(\chi^2\)</span>-statistic by hand (the
+practice will help you for the exam <em>wink wink</em>).</p>
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+White
+</th>
+<th style="text-align:right;">
+Black
+</th>
+<th style="text-align:right;">
+Hispanic
+</th>
+<th style="text-align:right;">
+Asian
+</th>
+<th style="text-align:right;">
+Other
+</th>
+<th style="text-align:right;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Observed
+</td>
+<td style="text-align:right;">
+780.00
+</td>
+<td style="text-align:right;">
+117.00
+</td>
+<td style="text-align:right;">
+114.00
+</td>
+<td style="text-align:right;">
+384.00
+</td>
+<td style="text-align:right;">
+58.00
+</td>
+<td style="text-align:right;">
+1453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ExpectedProportions
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Part A</strong>: Using the sample size of 1453, how many
+people should I expect in each group for race/ethnicity given the
+expected proportions from census data?</p>
+<p><strong>Part B</strong> Compute the <span class="math inline">\(\chi^2\)</span>-statistic using the formula with
+the ‘expected’ info you just found for each group in Part A and the
+Observed values for each group in the table. (Do not use Total as a
+group) You should get 357.3625 which matches the <code>chisq.test</code>
+result we got earlier.</p>
+<hr />
+</div>
+<div id="question-7" class="section level3">
+<h3>Question 7</h3>
 <p>Just as a normal distribution describes phenomenon in which
 observations tend to fall symmetrically about the mean, the
 <em>Poisson</em> distribution is a probability distribution that is used
@@ -1035,7 +1132,7 @@ were frequently used to haul army equipment). The data collected follows
 “corp-years”. In 109 corp-years, there were no deaths from mule kicks,
 in 65 corp-years, there was one death, and so on. Below is a table with
 all of the observed data</p>
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
