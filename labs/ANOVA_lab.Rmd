@@ -167,6 +167,7 @@ model2 %>% summary()
 
   - **Part C:** Does Color or the Residuals have a larger sum of squares? Which has a larger mean square?  What accounts for this discrepancy?
   - **Part D:** Perform post-hoc testing to determine which pairwise groups have a statistically significant difference between them.
+  - **Part E:** Of the groups you found to have statistically significant difference in means in Part D, which group appears to have the *larger* mean?
   
 ```{r, include = FALSE, echo = FALSE}
 comp2 = TukeyHSD(model2)
@@ -200,9 +201,9 @@ ggplot(data, aes(x=obs, fill=groups)) + geom_boxplot()
 mean(group1); mean(group2); mean(group3)
 ```
 
-**Question 4**: Think about how much variability there is *within* each group, i.e., how much observations vary from each other within group 1, withing group 2, and within group 3 respectively. Are the differences in group means large or small relative to how much variability there is *within* groups.
+**Question 4**: Think about how much variability there is *within* each group, i.e., how much observations vary from each other within group 1, withing group 2, and within group 3 respectively. Are the differences in group means large or small relative to how much variability there is *within* groups. Explain.
 
-**Question 5**: Utilizing your answer from Question 4, do you think the F-statistic from an ANOVA test will give us a large or small p-value for testing if these means are different? Check your answer using the `aov()` and `summary` functions with the `data` object.
+**Question 5**: Utilizing your answer from Question 4, do you think the F-statistic from an ANOVA test will give us a large or small p-value for testing if these means are different? Explain. Check your answer using the `aov()` and `summary` functions with the `data` object.
 
 ```{r, include = FALSE, echo = FALSE}
 aov(obs~groups, data) %>% summary()
@@ -236,7 +237,7 @@ ggplot(data2, aes(x=obs, fill=groups)) + geom_boxplot() +
 mean(group1); mean(group2); mean(group3)
 ```
 
-**Question 6**: Think about how much variability there is *within* each group for this example. Are the differences in group means large or small relative to how much variability there is *within* groups. Is it easier to see differences in the groups compared to the previous example?
+**Question 6**: Think about how much variability there is *within* each group for this example. Are the differences in group means large or small relative to how much variability there is *within* groups. Explain. Is it easier to see differences in the groups compared to the previous example?
 
 **Question 7**: Do you think the F-statistic from an ANOVA test will be larger or smaller than the previous example? Check your answer using the `aov()` and `summary` functions with the `data2` object.
 
