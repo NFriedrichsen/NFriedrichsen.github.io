@@ -243,7 +243,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 12/02 | [ANOVA](lectures/Anova1.pdf) | [ANOVA Lab](labs/ANOVA_lab.html) | - |
-| Wed 12/04 | - | - | - |
+| Wed 12/04 | [ANOVA 2](lectures/Anova2.pdf) | [ANOVA Lab](labs/ANOVA_lab.html) cont'd | - |
 | Fri 12/06 | - | - | - |
 
 **Assignments and Deadlines**
