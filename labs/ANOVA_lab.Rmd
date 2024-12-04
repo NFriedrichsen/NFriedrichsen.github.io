@@ -104,64 +104,159 @@ aov(Ants~Filling, sandwich) %>% summary()
 ```
 
 
-<!-- ## Post-Hoc Testing -->
+## Post-Hoc Testing
 
-<!-- As noted previously, ANOVA is specifically concerned with testing the null hypothesis of equality between means for multiple groups,  -->
+As noted previously, ANOVA is specifically concerned with testing the null hypothesis of equality between means for multiple groups,
 
-<!-- $$ -->
-<!-- H_0: \mu_1 = \mu_2 = \dots = \mu_k -->
-<!-- $$ -->
-<!-- Should we perform an ANOVA and *reject* our null hypothesis, we only know that *at least* two of our group means are different. *Post-hoc* pairwise testing (Latin for "after this" or "after the fact") can be done to determine which of our pairwise differences are likely responsible. -->
+$$
+H_0: \mu_1 = \mu_2 = \dots = \mu_k
+$$
+Should we perform an ANOVA and *reject* our null hypothesis, we only know that *at least* two of our group means are different. *Post-hoc* pairwise testing (Latin for "after this" or "after the fact") can be done to determine which of our pairwise differences are likely responsible.
 
-<!-- Consider again our dog dataset in which we wish to test for equality in average speed between different colored dogs. This is done simply with the `aov()` function -->
+Consider again our dog dataset in which we wish to test for equality in average speed between different colored dogs. This is done simply with the `aov()` function
 
-<!-- ```{r} -->
-<!-- ## This will assign the results to a variable called model -->
-<!-- model <- aov(speed ~ color, dogs) -->
-<!-- summary(model) -->
-<!-- ``` -->
+```{r}
+## This will assign the results to a variable called model
+model <- aov(speed ~ color, dogs)
+summary(model)
+```
 
-<!-- Here, we see information on the squared error from the grouping and our residuals, along with an F-statistic and a p-value. If we were testing at the $\alpha = 0.05$ level, we would reject this test as $p-val = 0.0053$. -->
+Here, we see information on the squared error from the grouping and our residuals, along with an F-statistic and a p-value. If we were testing at the $\alpha = 0.05$ level, we would reject this test as $p-val = 0.0053$.
 
-<!-- To determine which pairwise colors had a difference, we can use the `TukeyHSD()` function (Tukey honest statistical difference) on the `model` object we created above: -->
+To determine which pairwise colors had a difference, we can use the `TukeyHSD()` function (Tukey honest statistical difference) on the `model` object we created above:
 
-<!-- ```{r} -->
-<!-- ## Pass in output from aov() function -->
-<!-- comp <- TukeyHSD(model) -->
-<!-- comp -->
-<!-- ``` -->
+```{r}
+## Pass in output from aov() function
+comp <- TukeyHSD(model)
+comp
+```
 
-<!-- There are a few things to note here: -->
+There are a few things to note here:
 
-<!--   1. First, we see that it gives us a *point estimate* of the difference in means as the first column in the output -->
-<!--   2. Next, we get a confidence interval for the difference for lower and upper bounds. By default, this is a 95\% confidence interval, but we can change this in the `TukeyHSD()` function by passing in an argument for `conf.level` -->
-<!--   3. Finally, we see that the last column gives us an *adjusted* p-value. That is, rather than adjusting $\alpha^* = \alpha/3$ and comparing the original p-values, it adjust the p-values that we can compare with our regular $\alpha$. In either case, the conclusions that we should come to will be the same. -->
+  1. First, we see that it gives us a *point estimate* of the difference in means as the first column in the output
+  2. Next, we get a confidence interval for the difference for lower and upper bounds. By default, this is a 95\% confidence interval, but we can change this in the `TukeyHSD()` function by passing in an argument for `conf.level`
+  3. Finally, we see that the last column gives us an *adjusted* p-value. That is, rather than adjusting $\alpha^* = \alpha/3$ and comparing the original p-values, it adjust the p-values that we can compare with our regular $\alpha$. In either case, the conclusions that we should come to will be the same.
 
-<!-- From this output, we see the only statistically significant difference in between yellow and white. -->
+From this output, we see the only statistically significant difference in between yellow and white.
 
-<!-- Finally, we can plot the output from the `TukeyHSD()` function with a call to the base R function `plot()` -->
+Finally, we can plot the output from the `TukeyHSD()` function with a call to the base R function `plot()`
 
-<!-- ```{r} -->
-<!-- ## Pass in output from TukeyHSD() function -->
-<!-- plot(comp) -->
-<!-- ``` -->
+```{r}
+## Pass in output from TukeyHSD() function
+plot(comp)
+```
 
-<!-- Note here again, the only confidence interval that does not contain 0 (our null hypothesis for pairwise tests) is that between yellow and white, consistent with the output we observed above. -->
+Note here again, the only confidence interval that does not contain 0 (our null hypothesis for pairwise tests) is that between yellow and white, consistent with the output we observed above.
 
 
-<!-- **Question 3:** An individual's "critical clicker frequency" is the highest frequency at which a flickering light source can actually be detected to be flickering; at frequencies above this rate, the light source will appear continuous. (An example of this can be seen [here](https://youtu.be/xW3oQUe6DEw)) -->
+**Question 3:** An individual's "critical clicker frequency" is the highest frequency at which a flickering light source can actually be detected to be flickering; at frequencies above this rate, the light source will appear continuous. **EPILEPSY WARNING** (An example of this can be seen [here](https://youtu.be/xW3oQUe6DEw))
 
-<!-- The data below come from a study titled "The effect of iris color on critical flicker frequency" published in the *Journal of General Psychology*, recording the critical clicker frequency and iris color for $n = 19$ subjects -->
+The data below come from a study titled "The effect of iris color on critical flicker frequency" published in the *Journal of General Psychology*, recording the critical clicker frequency and iris color for $n = 19$ subjects
 
-<!-- ```{r} -->
-<!-- flicker <- read.delim('https://raw.githubusercontent.com/IowaBiostat/data-sets/main/flicker/flicker.txt') -->
-<!-- ``` -->
+```{r}
+flicker <- read.delim('https://raw.githubusercontent.com/IowaBiostat/data-sets/main/flicker/flicker.txt')
+```
 
-<!--   - **Part A:** What are the null and alternative hypotheses for one-way ANOVA analyzing this data -->
-<!--   - **Part B:** Use the `aov()` function to analyze this data and print a summary using `summary()` -->
-<!--   - **Part C:** Does Color or the Residuals have a larger sum of squares? Which has a larger mean square?  What accounts for this discrepancy? -->
-<!--   - **Part D:** Perform post-hoc testing to determine which pairwise groups have a statistically significant difference between them. -->
+  - **Part A:** What are the null and alternative hypotheses for one-way ANOVA analyzing this data
+  - **Part B:** Use the `aov()` function to analyze this data and print a summary using `summary()`
+  
+```{r, include = FALSE, echo = FALSE}
+model2 = aov(Flicker ~ Color, flicker) 
+model2 %>% summary()
+```
 
-<!-- ```{r, include = FALSE, echo = FALSE} -->
-<!-- aov(Flicker ~ Color, flicker) %>% summary() -->
-<!-- ``` -->
+  - **Part C:** Does Color or the Residuals have a larger sum of squares? Which has a larger mean square?  What accounts for this discrepancy?
+  - **Part D:** Perform post-hoc testing to determine which pairwise groups have a statistically significant difference between them.
+  
+```{r, include = FALSE, echo = FALSE}
+comp2 = TukeyHSD(model2)
+comp2
+plot(comp2)
+```
+
+---
+
+# More on F-tests
+
+The following code simulations a few situations to help us better understand what some components of the ANOVA table represent. We are going to also see what changing group variances does to the F-statistic and p-value for the ANOVA test.
+
+### Simulated Groups with Large Variances
+
+Here we are simulating 50 observations from each of 3 groups. All have the same population std. dev. $\sigma=40$. The corresponding population means are $\mu_1 = 250$, $\mu_1 = 245$, and $\mu_1 = 255$. The group means are not equal, but the variances are relatively large which we can see by the following plot.
+
+```{r}
+set.seed(423)
+group1 = rnorm(50, mean=250, sd=40)
+group2 = rnorm(50, mean=245, sd=40)
+group3 = rnorm(50, mean=255, sd=40)
+groups = c(rep("Group1",50), rep("Group2", 50), rep("Group3", 50))
+
+data=data.frame(c(group1, group2, group3),groups)
+colnames(data)=c("obs","groups")
+
+ggplot(data, aes(x=obs, fill=groups)) + geom_boxplot()
+
+# sample group means
+mean(group1); mean(group2); mean(group3)
+```
+
+**Question 4**: Think about how much variability there is *within* each group, i.e., how much observations vary from each other within group 1, withing group 2, and within group 3 respectively. Are the differences in group means large or small relative to how much variability there is *within* groups.
+
+**Question 5**: Utilizing your answer from Question 4, do you think the F-statistic from an ANOVA test will give us a large or small p-value for testing if these means are different? Check your answer using the `aov()` and `summary` functions with the `data` object.
+
+```{r, include = FALSE, echo = FALSE}
+aov(obs~groups, data) %>% summary()
+```
+
+
+---
+
+### Simulated Groups with Small Variances
+
+We are going to do the same thing as above, but with smaller variances.
+
+We are simulating 50 observations from each of 3 groups. All have the same population std. dev. $\sigma=4$. The corresponding population means are $\mu_1 = 250$, $\mu_1 = 245$, and $\mu_1 = 255$.
+
+**Note:** The means haven't changed from the last example, only the variances. Let's see how that affects the ANOVA test.
+
+```{r}
+set.seed(423)
+group1 = rnorm(50, mean=250, sd=4)
+group2 = rnorm(50, mean=245, sd=4)
+group3 = rnorm(50, mean=255, sd=4)
+groups = c(rep("Group1",50), rep("Group2", 50), rep("Group3", 50))
+
+data2=data.frame(c(group1, group2, group3),groups)
+colnames(data2)=c("obs","groups")
+
+ggplot(data2, aes(x=obs, fill=groups)) + geom_boxplot() +
+  xlim(235, 260)
+
+# sample group means
+mean(group1); mean(group2); mean(group3)
+```
+
+**Question 6**: Think about how much variability there is *within* each group for this example. Are the differences in group means large or small relative to how much variability there is *within* groups. Is it easier to see differences in the groups compared to the previous example?
+
+**Question 7**: Do you think the F-statistic from an ANOVA test will be larger or smaller than the previous example? Check your answer using the `aov()` and `summary` functions with the `data2` object.
+
+**Question 8**: In the ANOVA output for Question 7, which Sum of Squares corresponds to *within* group variability? How does this Sum of Squares compare for the 2 different scenarios we just looked at?
+
+
+```{r, include = FALSE, echo = FALSE}
+aov(obs~groups, data2) %>% summary()
+```
+
+
+### Affect of Axis scale on how we perceive differences
+
+The following plot uses the `data2` simulated data from above. The only difference is that I have changed the x-axis scale.
+
+```{r}
+ggplot(data2, aes(x=obs, fill=groups)) + geom_boxplot() +
+  xlim(150, 350)
+```
+
+**Question 9**: Does this change your answer to whether or not you can visually tell the groups apart? Did it become more difficult?
+
+The fact that changing the scale can affect how we perceive whether the groups are different means we should be wary of just visually looking at graphs to determine differences. The F-test circumvents this by comparing how different the group means are relative to how 'wide' the distributions are (variability within groups) so that we are not lead astray by our eyes.

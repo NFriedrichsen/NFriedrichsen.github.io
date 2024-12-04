@@ -219,113 +219,113 @@ french <- french %>% mutate(diff = post-pre)
 head(french)
 ```
 
-<!-- --- -->
+---
 
-<!-- ## $\chi^2$ Tests -->
+## $\chi^2$ Tests
 
-<!-- This portion of the labs deals with tests of goodness-of-fit for categorical variables. Both tests are performed with the construction of the $\chi^2$ test statistic, computed as -->
+This portion of the labs deals with tests of goodness-of-fit for categorical variables. Both tests are performed with the construction of the $\chi^2$ test statistic, computed as
 
-<!-- $$ -->
-<!-- \chi^2 = \sum_{i=1}^k \frac{(\text{Observed}_i - \text{Expected}_i)^2}{\text{Expected}_i} -->
-<!-- $$ -->
+$$
+\chi^2 = \sum_{i=1}^k \frac{(\text{Observed}_i - \text{Expected}_i)^2}{\text{Expected}_i}
+$$
 
-<!-- where $i = 1, \dots, k$ iterates through each of the groups and where the expected counts are what we should expect to see under the null hypothesis. The resulting test statistic follows a $\chi^2$ distribution, with degrees of freedom calculated to be: -->
+where $i = 1, \dots, k$ iterates through each of the groups and where the expected counts are what we should expect to see under the null hypothesis. The resulting test statistic follows a $\chi^2$ distribution, with degrees of freedom calculated to be:
 
-<!--   - In the one categorical case, $df = k-1$ where $k$ is the number of unique categories -->
+  - In the one categorical case, $df = k-1$ where $k$ is the number of unique categories
 
-<!-- We can compute this test statistic in R using the `chisq.test()` function which will give us a value for the test statistic, the degrees of freedom, and the resulting p-value under the null hypothesis. -->
+We can compute this test statistic in R using the `chisq.test()` function which will give us a value for the test statistic, the degrees of freedom, and the resulting p-value under the null hypothesis.
 
-<!-- ### Goodness-of-fit Tests (1 Variable) -->
+### Goodness-of-fit Tests (1 Variable)
 
-<!-- The one categorical variable cases, in the context of a $\chi^2$ test (note: you can write in rmarkdown by typing $\text{\$\chi^2\$}$), is the goodness-of-fit test. To use the `chisq.test()` function, all we need is a vector that includes the counts of each of our categories, along with the proportions we should expect to see under the null hypothesis. -->
+The one categorical variable cases, in the context of a $\chi^2$ test (note: you can write in rmarkdown by typing $\text{\$\chi^2\$}$), is the goodness-of-fit test. To use the `chisq.test()` function, all we need is a vector that includes the counts of each of our categories, along with the proportions we should expect to see under the null hypothesis.
 
-<!-- ```{r, echo = FALSE} -->
-<!-- obs <- c(6,7,6,2,4) -->
-<!-- names(obs) <- LETTERS[1:5] -->
-<!-- ``` -->
+```{r, echo = FALSE}
+obs <- c(6,7,6,2,4)
+names(obs) <- LETTERS[1:5]
+```
 
-<!-- For example, consider again our example from class in which we wish to create a standardized exam with 1 question, but with 5 answers. If we wish to test whether people were effectively randomly guessing, we would have a null hypothesis of the form -->
+For example, consider again our example from class in which we wish to create a standardized exam with 1 question, but with 5 answers. If we wish to test whether people were effectively randomly guessing, we would have a null hypothesis of the form
 
-<!-- $$ -->
-<!-- H_0: p_A = p_B = p_C = p_D = p_E = 0.2 -->
-<!-- $$ -->
-<!-- where the expected counts should be (under the null): -->
+$$
+H_0: p_A = p_B = p_C = p_D = p_E = 0.2
+$$
+where the expected counts should be (under the null):
 
-<!-- ```{r, echo = FALSE} -->
-<!-- nul <- rep(5, 5) -->
-<!-- names(nul) <- names(obs) -->
-<!-- kable(t(nul)) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+nul <- rep(5, 5)
+names(nul) <- names(obs)
+kable(t(nul)) %>% kable_styling(full_width = FALSE)
+```
 
-<!-- In class, we considered an example where the *observed* distribution had the following counts: -->
+In class, we considered an example where the *observed* distribution had the following counts:
 
-<!-- ```{r, echo = FALSE} -->
-<!-- kable(t(obs)) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+kable(t(obs)) %>% kable_styling(full_width = FALSE)
+```
 
-<!-- To conduct a $\chi^2$ test that our observed values where drawn from the null distribution, we would create our vector with these values, along with the associated probabilities: -->
+To conduct a $\chi^2$ test that our observed values where drawn from the null distribution, we would create our vector with these values, along with the associated probabilities:
 
-<!-- ```{r} -->
-<!-- ## Create obs variable with the observed counts -->
-<!-- obs <- c(6,7,6,2,4) -->
+```{r}
+## Create obs variable with the observed counts
+obs <- c(6,7,6,2,4)
 
-<!-- ## Pass this into chisq.test, with null probabilities -->
-<!-- chisq.test(obs, p = c(0.2,0.2,0.2,0.2,0.2)) -->
-<!-- ``` -->
+## Pass this into chisq.test, with null probabilities
+chisq.test(obs, p = c(0.2,0.2,0.2,0.2,0.2))
+```
 
-<!-- By default, `chisq.test()` will assign an equal probability to each of the outcomes. In this case, because our null hypothesis sets each of these probabilities to be equal, we can omit the probability argument when calling the function: -->
+By default, `chisq.test()` will assign an equal probability to each of the outcomes. In this case, because our null hypothesis sets each of these probabilities to be equal, we can omit the probability argument when calling the function:
 
-<!-- ```{r} -->
-<!-- chisq.test(obs) -->
-<!-- ``` -->
+```{r}
+chisq.test(obs)
+```
 
-<!-- In each case, we find a test statistic of $\chi^2 = 3.2$ and a $p$-value of 0.52. -->
+In each case, we find a test statistic of $\chi^2 = 3.2$ and a $p$-value of 0.52.
 
-<!-- Contrast this with the example we gave for Alameda county, where we were investigating the observed counts of each race/ethnicity in the jury pooled which we compared against proportions estimated from US Census data. Because our null hypothesis in this case no longer assumes that our expected proportions are equal, we will have to pass them in ourselves. The values here are taken from the lecture slides: -->
+Contrast this with the example we gave for Alameda county, where we were investigating the observed counts of each race/ethnicity in the jury pooled which we compared against proportions estimated from US Census data. Because our null hypothesis in this case no longer assumes that our expected proportions are equal, we will have to pass them in ourselves. The values here are taken from the lecture slides:
 
-<!-- ```{r} -->
-<!-- jury <- c(780, 117,114,384,58) -->
-<!-- chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01)) -->
-<!-- ``` -->
+```{r}
+jury <- c(780, 117,114,384,58)
+chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01))
+```
 
-<!-- Again, we get the value of the $\chi^2$ statistic, along with degrees of freedom and a $p$-value. -->
+Again, we get the value of the $\chi^2$ statistic, along with degrees of freedom and a $p$-value.
 
-<!-- ### Question 6 -->
+### Question 5
 
-<!-- Just as a normal distribution describes phenomenon in which observations tend to fall symmetrically about the mean, the *Poisson* distribution is a probability distribution that is used to describe the number of discrete events we should expect to occur within a period of time (i.e., how many students walk into the student union each hour). This question involves assessing whether or not a particular collection of data is consistent with a Poisson distribution. -->
+Just as a normal distribution describes phenomenon in which observations tend to fall symmetrically about the mean, the *Poisson* distribution is a probability distribution that is used to describe the number of discrete events we should expect to occur within a period of time (i.e., how many students walk into the student union each hour). This question involves assessing whether or not a particular collection of data is consistent with a Poisson distribution.
 
-<!-- In 1898, Ladislaus von Bortkiewicz collected data on the number of soldiers in the Prussian army that got kicked to death by mules (mules were frequently used to haul army equipment). The data collected follows 10 corps, each observed for 20 years, resulting in a total of 200 "corp-years". In 109 corp-years, there were no deaths from mule kicks, in 65 corp-years, there was one death, and so on. Below is a table with all of the observed data -->
+In 1898, Ladislaus von Bortkiewicz collected data on the number of soldiers in the Prussian army that got kicked to death by mules (mules were frequently used to haul army equipment). The data collected follows 10 corps, each observed for 20 years, resulting in a total of 200 "corp-years". In 109 corp-years, there were no deaths from mule kicks, in 65 corp-years, there was one death, and so on. Below is a table with all of the observed data
 
-<!-- ```{r, echo = FALSE} -->
-<!-- df <- data.frame(dead = c("0", "1", "2", "3+"), -->
-<!--                  num = c(109,65,22,4)) -->
-<!-- names(df) <- c("Number of Deaths", "Number of Corps-Years") -->
-<!-- kable(df) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+df <- data.frame(dead = c("0", "1", "2", "3+"),
+                 num = c(109,65,22,4))
+names(df) <- c("Number of Deaths", "Number of Corps-Years")
+kable(df) %>% kable_styling(full_width = FALSE)
+```
 
-<!-- If the number of death via mules *did* match a Poisson distribution, the expected number of corps-years with each death count should have the following proportions: -->
+If the number of death via mules *did* match a Poisson distribution, the expected number of corps-years with each death count should have the following proportions:
 
-<!-- ```{r, echo = FALSE} -->
-<!-- vals <- c(0.55,0.33,0.1,0.02) -->
-<!-- names(vals) <- paste0(c("0", "1", "2", "3+"), " deaths") -->
-<!-- kable(t(vals)) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+vals <- c(0.55,0.33,0.1,0.02)
+names(vals) <- paste0(c("0", "1", "2", "3+"), " deaths")
+kable(t(vals)) %>% kable_styling(full_width = FALSE)
+```
 
-<!-- Briefly skim the [Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution) info linked here, then conduct a $\chi^2$ test to determine whether or not the observed data is consistent with what we should expect to see if death-by-mule-kick truly did follow a Poisson distribution. What $p$-value do you find, and what does this say about your null hypothesis? (note: you may ignore the warning about expected counts) -->
+If you are interested, briefly skim the [Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution) info linked here (Wikipedia is actually a pretty good source for stats/probability related stuff). Conduct a $\chi^2$ test to determine whether or not the observed data is consistent with what we should expect to see if death-by-mule-kick truly did follow a Poisson distribution. What $p$-value do you find, and what does this say about your null hypothesis? (note: you may ignore the warning about expected counts)
 
-<!-- ```{r, echo=F, eval=F} -->
-<!-- deaths = c(109, 65, 22, 4) -->
-<!-- chisq.test(deaths, p=c(.55, .33, .1, .02)) -->
-<!-- ``` -->
+```{r, echo=F, eval=F}
+deaths = c(109, 65, 22, 4)
+chisq.test(deaths, p=c(.55, .33, .1, .02))
+```
 
-<!-- ```{r, echo=F, eval=F} -->
-<!-- dpois(0:5, 0.61) -->
-<!-- obs <- c(109, 65,22,3,1,0) -->
-<!-- obs <- c(109, 65,22,4) -->
-<!-- obs/200 -->
+```{r, echo=F, eval=F}
+dpois(0:5, 0.61)
+obs <- c(109, 65,22,3,1,0)
+obs <- c(109, 65,22,4)
+obs/200
 
-<!-- chisq.test(c(109,65,22,4), p = c(0.55,0.33,0.1,0.02)) -->
-<!-- ``` -->
+chisq.test(c(109,65,22,4), p = c(0.55,0.33,0.1,0.02))
+```
 
 
 <!-- ### Tests for independence (2 Variable) -->
