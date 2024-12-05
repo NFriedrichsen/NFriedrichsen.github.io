@@ -366,44 +366,44 @@ chisq.test(c(109,65,22,4), p = c(0.55,0.33,0.1,0.02))
 ```
 
 
-<!-- ### Tests for independence (2 Variable) -->
+### Tests for independence (2 Variables)
 
-<!-- When considering two categorical variables, we are (usually) less interested in assessing goodness-of-fit in the expected counts of two variables and more interested in determining if there is any sort of *association* between the two variables. In other words, for a single observation, does knowing the value of one categorical variable give us information about the other? -->
+When considering two categorical variables, we are (usually) less interested in assessing goodness-of-fit in the expected counts of two variables and more interested in determining if there is any sort of *association* between the two variables. In other words, for a single observation, does knowing the value of one categorical variable give us information about the other?
 
-<!-- To an extent, we have seen this already when considering two-way tables with categorical variables. Consider, for example, the data we had seen on auto accidents in Florida recording the number of fatal and non-fatal fatalities, along with seatbelt use. That data is summarized again here in the following table: -->
+To an extent, we have seen this already when considering two-way tables with categorical variables. Consider, for example, the data we had seen on auto accidents in Florida recording the number of fatal and non-fatal fatalities, along with seatbelt use. That data is summarized again here in the following table:
 
-<!-- ```{r, echo = FALSE} -->
-<!-- seatbelt <- matrix(c(1085,703,55623,441239), nrow = 2) -->
-<!-- rownames(seatbelt) <- c("No Seatbelt", "Seatbelt") -->
-<!-- colnames(seatbelt) <- c("Fatal", "Non-fatal") -->
-<!-- kable(seatbelt) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+seatbelt <- matrix(c(1085,703,55623,441239), nrow = 2)
+rownames(seatbelt) <- c("No Seatbelt", "Seatbelt")
+colnames(seatbelt) <- c("Fatal", "Non-fatal")
+kable(seatbelt) %>% kable_styling(full_width = FALSE)
+```
 
-<!-- For our $\chi^2$ test, we need only pass a matrix or table of these values and `chisq.test()` will automatically perform a test of independence: -->
+For our $\chi^2$ test, we need only pass a matrix or table of these values and `chisq.test()` will automatically perform a test of independence:
 
-<!-- ```{r} -->
-<!-- seatbelt <- matrix(c(1085, 703, 55623, 441239), nrow = 2) -->
-<!-- chisq.test(seatbelt) # we do not need to add proportions here -->
-<!-- ``` -->
-
-
-
-<!-- **Question 9:** This question will use the college dataset loaded below -->
-
-<!-- ```{r} -->
-<!-- college <- read.csv("https://collinn.github.io/data/college2019.csv") -->
-<!-- ``` -->
-
-<!--   - **Part A:** Create a proportional bar chart between the variables for Region and Type Does it appear that there is an association between these two variables? In other words, does knowing anything about the region tell you anything about the proportion of Public or Private colleges? -->
-<!--   - **Part B:** Using the `table()` function, create a 2-way table of these two variables. Save this table to a new variable called `tab` -->
-<!--   - **Part C:** Conduct a $\chi^2$ test on the observed frequencies that you found in the table in Part B. Based on this, what would you conclude about there being an association between the variables for Region and Private? -->
+```{r}
+seatbelt <- matrix(c(1085, 703, 55623, 441239), nrow = 2)
+chisq.test(seatbelt) # we do not need to add proportions here
+```
 
 
 
+**Question 9:** This question will use the college dataset loaded below
 
-<!-- ```{r, include = FALSE} -->
-<!-- ggplot(college, aes(Region, fill = Type)) + -->
-<!--   geom_bar(position = "fill") -->
-<!-- tab <- with(college, table(Region, Type)) -->
-<!-- chisq.test(tab) -->
-<!-- ``` -->
+```{r}
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+```
+
+  - **Part A:** Create a proportional bar chart between the variables for Region and Type Does it appear that there is an association between these two variables? In other words, does knowing anything about the region tell you anything about the proportion of Public or Private colleges?
+  - **Part B:** Using the `table()` function, create a 2-way table of these two variables. Save this table to a new variable called `tab`
+  - **Part C:** Conduct a $\chi^2$ test on the observed frequencies that you found in the table in Part B. Based on this, what would you conclude about there being an association between the variables for Region and Private?
+
+
+
+
+```{r, include = FALSE}
+ggplot(college, aes(Region, fill = Type)) +
+  geom_bar(position = "fill")
+tab <- with(college, table(Region, Type))
+chisq.test(tab)
+```
