@@ -246,8 +246,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 12/02 | [HT - More on Differences](lectures/HypothesisTesting5_115.pdf) | [Testing Lab](labs/HypothesisTestingLab_115.html) | - |
-| Wed 12/04 | [$\chi^2$ Tests](lectures/Chi2Test.pdf) | [Testing Lab](labs/HypothesisTestingLab_115.html) cont'd | - |
-| Fri 12/06 | [More on $\chi^2$ Tests | - | - |
+| Wed 12/04 | [$\chi^2$ Tests (Goodness of Fit)](lectures/Chi2Test.pdf) | [Testing Lab](labs/HypothesisTestingLab_115.html) cont'd | - |
+| Fri 12/06 | [$\chi^2$ Tests (Independence)](lectures/Chi2_Independence.pdf) | [Testing Lab](labs/HypothesisTestingLab_115.html) cont'd | - |
 
 **Assignments and Deadlines**
 
