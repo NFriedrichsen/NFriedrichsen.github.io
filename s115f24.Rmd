@@ -257,6 +257,13 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 15 (Review)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/09 | Methods Review | [Review Worksheet](labs/SST115_methodsreview.pdf) and [Webpage Version](labs/SST115_methodsreview.html) | - |
+| Wed 12/11 | Exam Review | [Practice -- To be Posted] and [Topics] | - |
+| Fri 12/13 | Exam 3 | - | - |
 
 
 ### Exam 1 Info

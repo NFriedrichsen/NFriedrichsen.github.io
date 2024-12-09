@@ -254,6 +254,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 15 (Regression and Exam)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/09 | [Regression Error](lectures/Regression_Error.pdf) | [ANOVA Regression Lab](labs/ANOVA_regression_lab.html) cont'd | - |
+| Wed 12/11 | Exam Review | [Practice -- To be Posted] and [Topics](exams/topic_list_exam3_209.pdf) | - |
+| Fri 12/13 | Exam 3 | - | - |
+
+---
+
 ### Exam Info
 
 Exam 1 will be in-class Wednesday Oct 2.
