@@ -162,123 +162,160 @@ lm(Enrollment ~ ACT_median + Debt_median + Private, college) %>% summary()
 
 
 
-<!-- ## Error -->
+## Error
 
-<!-- In a non-statistical context, the idea of a line specifying the relationship between two variables is considered a *functional* relationship, i.e., I can directly find the correct value of $y$ given a value of $X$. This is precisely the kind of relationship we would see, for example, when describing the value of a temperature in Celsius (y) given a temperature in Fahrenheit (X) -->
+In a non-statistical context, the idea of a line specifying the relationship between two variables is considered a *functional* relationship, i.e., I can directly find the correct value of $y$ given a value of $X$. This is precisely the kind of relationship we would see, for example, when describing the value of a temperature in Celsius (y) given a temperature in Fahrenheit (X)
 
-<!-- $$ -->
-<!-- y = -32 - \left(\frac{5}{9}\right) X -->
-<!-- $$ -->
+$$
+y = -32 - \left(\frac{5}{9}\right) X
+$$
 
-<!-- ```{r, echo = FALSE} -->
-<!-- x <- runif(15, 32, 100) -->
-<!-- y <- (5/9)*(x - 32) -->
-<!-- ggplot(data.frame(Farenheit = x, Celsius = y), aes(Farenheit, Celsius)) +  -->
-<!--   geom_smooth(method = lm, se = FALSE) + geom_point() -->
-<!-- ``` -->
+```{r, echo = FALSE}
+x <- runif(15, 32, 100)
+y <- (5/9)*(x - 32)
+ggplot(data.frame(Farenheit = x, Celsius = y), aes(Farenheit, Celsius)) +
+  geom_smooth(method = lm, se = FALSE) + geom_point()
+```
 
-<!-- In contrast, we may be interested in establishing a *statistical* linear relationship between two variables, such as height and weight. In this case, there is no straight line that would perfectly equate a value for weight given a certain height: -->
+In contrast, we may be interested in establishing a *statistical* linear relationship between two variables, such as height and weight. In this case, there is no straight line that would perfectly equate a value for weight given a certain height:
 
-<!-- ```{r, echo = FALSE} -->
-<!-- ggplot(women, aes(height, weight))+  -->
-<!--   geom_smooth(method = lm, se = FALSE) + geom_point() -->
-<!-- ``` -->
+```{r, echo = FALSE}
+ggplot(women, aes(height, weight))+
+  geom_smooth(method = lm, se = FALSE) + geom_point()
+```
 
-<!-- When describing a *statistical* relationship between two variables, it is custom to account for this variability about the line with the inclusion of an error term, $\epsilon$ (epsilon): -->
-
-
-<!-- $$ -->
-<!-- y = \beta_0 + X \beta_1 + \epsilon -->
-<!-- $$ -->
-
-<!-- In other words, we assume there is a *linear* relationship between $y$ and $X$ (given by $y = \beta_0 + X \beta_1$), plus some error term. The difference between our observered value of $y$ and the predicted value $\hat{y}$ is our estimate of the error term, also called a residual, i.e., $r_i = y_i - \hat{y}_i$ -->
-
-<!-- ```{r, echo = FALSE, fig.width=8} -->
-<!-- par(mfrow = c(1, 2)) -->
-
-<!-- set.seed(699) -->
-<!-- x <- runif(10) -->
-<!-- y <- 2*x + rnorm(10, sd = 0.5) -->
-
-<!-- plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,  -->
-<!--      axes = FALSE, xaxt="n", yaxt="n",  -->
-<!--      main = "Collection of (x, y) points") -->
-
-<!-- plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,  -->
-<!--      axes = FALSE, xaxt="n", yaxt="n",  -->
-<!--      main = "Fitted line with  residual") -->
-<!-- abline(a = -.185, b = 2.259, col = 'steelblue', lwd = 2) -->
-<!-- text(x = 0.48, y = 0.25, labels = expression(y[i]), cex = 1.5) -->
-<!-- text(x = 0.41, y = 0.95, labels = expression(hat(y)[i]), cex = 1.5) -->
-<!-- lines(x = c(0.41, 0.41), y = c(y[5], -.185 + 2.259*0.41), col = 'tomato', lwd = 2) -->
-<!-- ``` -->
-
-<!-- One of the primary assumptions for linear regression is that the error terms are normally distributed with a mean value of $0$ and variability of $\sigma^2$. Notationally, this is written -->
-
-<!-- $$ -->
-<!-- \epsilon \sim N(0, \sigma^2) -->
-<!-- $$ -->
-<!-- In plain language, this means that we expect, *on average* for our response variable to fall near our line of best fit, but that the error around this line should be plus or minus some value. By investigating our residuals, we can accomplish two goals: -->
-
-<!--   1. First, much of the theory around linear regression rests on the assumptoin that the errors are normally distributed. If this is not true, we may have issues in making future predictions -->
-<!--   2. Second, patterns in our residuals can indicate that we are missing critical information. By comparing our residuals with missing variables, we can often identify additional variables to include in our model -->
-
-<!-- Once we have fit a model with `lm()`, we can access the residuals using the `$`, just as we would for a data frame. Here, for example, are the residuals from the model fit in Question 1 -->
-
-<!-- ```{r} -->
-<!-- ## Fit model -->
-<!-- fit <- lm(hp ~ wt, mtcars) -->
-
-<!-- ## Get residuals -->
-<!-- res <- fit$residuals -->
-
-<!-- ## Plot them -->
-<!-- hist(res, breaks = 8) -->
-<!-- ``` -->
-<!-- Here we see a slight skew, indicating that there are more large (positive) residuals than there large (negative) ones, yet most appear to be centered around 0.  -->
-
-<!-- Also useful is to plot residuals against the original variable in the model, in this case, weight. Below is a plot that shows how the residuals look for each value of `wt` -->
+When describing a *statistical* relationship between two variables, it is custom to account for this variability about the line with the inclusion of an error term, $\epsilon$ (epsilon):
 
 
-<!-- ```{r} -->
-<!-- ## Use fit$residuals in the y spot since `residuals` does not exist in mtcars -->
-<!-- ggplot(mtcars, aes(wt, fit$residuals)) + geom_point() +  -->
-<!--   geom_hline(yintercept = 0, color = 'red', linetype = "dashed") -->
-<!-- ``` -->
-<!-- Here, we see the same thing again -- many residuals are close to zero, with a handful of very large residuals that make up the right side of the skew. While it doesn't appear that the residuals here are exceptionally normal, they are likely close enough for our purposes. -->
+$$
+y = \beta_0 + X \beta_1 + \epsilon
+$$
 
-<!-- Contrast this with the model for height and weight we saw above, which has errors that are very clearly not normally distributed: -->
+In other words, we assume there is a *linear* relationship between $y$ and $X$ (given by $y = \beta_0 + X \beta_1$), plus some error term. The difference between our observered value of $y$ and the predicted value $\hat{y}$ is our estimate of the error term, also called a residual, i.e., $e_i = \hat{y}_i - y_i$
 
-<!-- ```{r, eval = FALSE} -->
-<!-- fit <- lm(weight ~ height, women) -->
+```{r, echo = FALSE, fig.width=8}
+par(mfrow = c(1, 2))
 
-<!-- ggplot(women, aes(height, weight)) + -->
-<!--   geom_smooth(method = lm, se = FALSE) +  -->
-<!--   geom_point() + ggtitle("Fitted Line") -->
+set.seed(699)
+x <- runif(10)
+y <- 2*x + rnorm(10, sd = 0.5)
 
-<!-- ggplot(women, aes(height, fit$residuals)) +  -->
-<!--   geom_point() + ggtitle("Residual Plot") + -->
-<!--   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")  -->
-<!-- ``` -->
+plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,
+     axes = FALSE, xaxt="n", yaxt="n",
+     main = "Collection of (x, y) points")
 
-<!-- ```{r, fig.width = 8, echo = FALSE} -->
-<!-- fit <- lm(weight ~ height, women) -->
+plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,
+     axes = FALSE, xaxt="n", yaxt="n",
+     main = "Fitted line with  residual")
+abline(a = -.185, b = 2.259, col = 'steelblue', lwd = 2)
+text(x = 0.48, y = 0.25, labels = expression(y[i]), cex = 1.5)
+text(x = 0.41, y = 0.95, labels = expression(hat(y)[i]), cex = 1.5)
+lines(x = c(0.41, 0.41), y = c(y[5], -.185 + 2.259*0.41), col = 'tomato', lwd = 2)
+```
 
-<!-- p1 <- ggplot(women, aes(height, weight)) + -->
-<!--   geom_smooth(method = lm, se = FALSE) +  -->
-<!--   geom_point() + ggtitle("Fitted Line") -->
+One of the primary assumptions for linear regression is that the error terms are normally distributed with a mean value of $0$ and variability of $\sigma^2$. Notationally, this is written
 
-<!-- p2 <- ggplot(women, aes(height, fit$residuals)) +  -->
-<!--   geom_point() + ggtitle("Residual Plot") + -->
-<!--   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")  -->
-<!-- gridExtra::grid.arrange(p1, p2, nrow = 1) -->
-<!-- ``` -->
+$$
+\epsilon \sim N(0, \sigma^2)
+$$
+In plain language, this means that we expect, *on average* for our response variable to fall near our line of best fit, but that the error around this line should be plus or minus some value. By investigating our residuals, we can accomplish two goals:
+
+  1. First, much of the theory around linear regression rests on the assumptoin that the errors are normally distributed. If this is not true, we may have issues in making future predictions
+  2. Second, patterns in our residuals can indicate that we are missing critical information. By comparing our residuals with missing variables, we can often identify additional variables to include in our model
+
+Once we have fit a model with `lm()`, we can access the residuals using the `$`, just as we would for a data frame. Here, for example, are the residuals from the model fit in Question 1
+
+```{r}
+## Fit model
+fit <- lm(hp ~ wt, mtcars)
+
+## Get residuals
+res <- fit$residuals
+
+## Plot them
+hist(res, breaks = 8)
+```
+Here we see a slight skew, indicating that there are more large (positive) residuals than there large (negative) ones, yet most appear to be centered around 0.
+
+Also useful is to plot residuals against the original variable in the model, in this case, weight. Below is a plot that shows how the residuals look for each value of `wt`
 
 
-<!-- ```{r} -->
-<!-- fit <- lm(disp ~ wt, mtcars) -->
+```{r}
+## Use fit$residuals in the y spot since `residuals` does not exist in mtcars
+ggplot(mtcars, aes(wt, fit$residuals)) + geom_point() +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+Here, we see the same thing again -- many residuals are close to zero, with a handful of very large residuals that make up the right side of the skew. While it doesn't appear that the residuals here are exceptionally normal, they are likely close enough for our purposes.
 
-<!-- ggplot(mtcars, aes(wt, fit$residuals)) +  -->
-<!--   geom_point() + ggtitle("Residual Plot") + -->
-<!--   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")  -->
-<!-- ``` -->
+Contrast this with the model for height and weight we saw above, which has errors that are very clearly not normally distributed:
+
+```{r, eval = FALSE}
+fit <- lm(weight ~ height, women)
+
+ggplot(women, aes(height, weight)) +
+  geom_smooth(method = lm, se = FALSE) +
+  geom_point() + ggtitle("Fitted Line")
+
+ggplot(women, aes(height, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
+```{r, fig.width = 8, echo = FALSE}
+fit <- lm(weight ~ height, women)
+
+p1 <- ggplot(women, aes(height, weight)) +
+  geom_smooth(method = lm, se = FALSE) +
+  geom_point() + ggtitle("Fitted Line")
+
+p2 <- ggplot(women, aes(height, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+gridExtra::grid.arrange(p1, p2, nrow = 1)
+```
+
+
+```{r}
+fit <- lm(disp ~ wt, mtcars)
+
+ggplot(mtcars, aes(wt, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
+### Question 4
+
+For the `dogs` dataset, construct a histogram of residuals to check Normality assumption for linear regression for a model predicting `speed` with `breed`.
+
+```{r, echo=F, eval=F}
+model = lm(speed ~ breed, data=dogs)
+model %>% summary()
+ggplot(dogs, aes(y=model$residuals)) +
+  geom_histogram()
+```
+### Question 5
+
+Continuation of using the `college` dataset in question 3. For the model predicting enrollment using `ACT_median`, `Debt_median`, and `Private`, check the residual assumptions by looking at histogram of residuals, and also plot residuals vs the two quantitative variables. For these last two plots, also color the residuals by Private vs. Public. What do you see?
+
+```{r, eval=F, echo=F}
+fit = lm(Enrollment ~ ACT_median + Debt_median + Private, college) %>% summary()
+
+ggplot(data=college, aes(y=fit$residuals)) + geom_histogram()
+
+ggplot(college, aes(ACT_median, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(Debt_median, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(ACT_median, fit$residuals, color=Private)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(Debt_median, fit$residuals, color=Private)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
