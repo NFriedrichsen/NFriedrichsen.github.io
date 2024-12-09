@@ -191,7 +191,7 @@ $$
 y = \beta_0 + X \beta_1 + \epsilon
 $$
 
-In other words, we assume there is a *linear* relationship between $y$ and $X$ (given by $y = \beta_0 + X \beta_1$), plus some error term. The difference between our observered value of $y$ and the predicted value $\hat{y}$ is our estimate of the error term, also called a residual, i.e., $e_i = \hat{y}_i - y_i$
+In other words, we assume there is a *linear* relationship between $y$ and $X$ (given by $y = \beta_0 + X \beta_1$), plus some error term. The difference between our observered value of $y$ and the predicted value $\hat{y}$ is our estimate of the error term, also called a residual, i.e., $e_i =  y_i - \hat{y}_i$
 
 ```{r, echo = FALSE, fig.width=8}
 par(mfrow = c(1, 2))
