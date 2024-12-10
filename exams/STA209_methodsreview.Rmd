@@ -1,0 +1,150 @@
+---
+title: "STA-209 - Methods Review"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Statistical Methods We Covered
+
+- Descriptive Statistics
+- Regression
+- Probability
+- Confidence Intervals
+- Hypothesis Tests
+
+# Descriptive Statistics / Data Visualization
+
+When do we use descriptive statistics? \vspace{20mm}
+
+What descriptive statistics do we use for categorical variables? \vspace{20mm}
+
+What descriptive statistics do we use for quantitative variables? \vspace{20mm}
+
+# Regression
+
+When do we use correlation? \vspace{20mm}
+
+When do we use regression? \vspace{20mm}
+
+\newpage
+
+# Probabilities
+
+When do we use probability? \vspace{20mm}
+
+What types of likelihoods did we learn about? \vspace{20mm}
+
+# Confidence Intervals
+
+When do we use confidence intervals? \vspace{20mm}
+
+What types of parameters did we estimate? \vspace{20mm}
+
+# Hypothesis Testing
+
+When do we use hypothesis tests? \vspace{20mm}
+
+What types of parameters did we answer questions about? \vspace{20mm}
+
+What 3 types of tests did we learn to compute p-values? \vspace{20mm}
+
+\newpage
+
+# Which Method?
+
+For each of the following, decide which method of analysis fits best. Also describe what type of parameter we are working with (mean, multiple means, proportion, multiple proportions). Most of these are courtesy of Dr. Ziegler at ISU.
+
+### Question 1
+
+Anthropologists have found two burial mounds in the same region. They know that several different tribes lived in the region and that the tribes have been classified according to different lengths of skulls. They measure the skulls found in each burial mound and wish to determine if the two mounds were made by different tribes for the population of all skulls at these two burial mounds. \vspace{22mm}
+
+### Question 2
+
+Researchers were commissioned by the Violence In Children’s Television Investigative Monitors (VICTIM) to study the frequency of depictions of violent acts in Saturday morning TV fare. They selected a random sample of 40 shows which aired during this time period over a 12-week period. Suppose that 28 of the 40 shows in the same were judged to contain scenes depicting overtly violent acts. Do more than half of all Saturday morning TV shows depict overtly violent acts. \vspace{22mm}
+
+### Question 3
+
+The Career Planning Office is interested in seniors’ plans and how they might relate to their majors. A large number of students are surveyed and classified according to their major (Natural Science, Social Science, Humanities) and future plans (Graduate School, Job, Undecided). Are the type of major and future plans significantly related? \vspace{22mm}
+
+\newpage
+
+### Question 4
+
+(Kind of a weird one, I'll admit, but I saw a strange study that tried to answer this) How many times a day do all humans urinate, on average? \vspace{22mm}
+
+### Question 5
+
+In one of his adventures, Sherlock Holmes found footprints made by the criminal at the scene of a crime and measured the distance between them. After sampling many people, measuring their height and length of stride, he confidently announced that he could predict the height of the suspect. How? \vspace{22mm}
+
+### Question 6
+
+A researcher plans to randomly sample 10 pigs to test if they have Disease A. The probability of Disease A is 0.02. How likely is it that 1 of the 10 pigs will have Disease A? \vspace{22mm}
+
+### Question 7
+
+What percentage of all Americans support same-sex marriage? \vspace{22mm}
+
+### Question 8
+
+Is the percentage of the national budget spent on health care associated with life expectancy for countries? \vspace{22mm}
+
+### Question 9
+
+People were recruited for a study on weight loss, in which participants were randomly assigned to one of two groups. Group 1 was given exercise instructions and group 2 was given no exercise instructions. The researchers are interested in estimating how much more weight was lost on average by people who were given exercise instructions, as opposed to those who weren’t. \vspace{22mm}
+
+### Question 10
+
+A professional figure skater was interested in which of two jumps she landed more consistently. She did 50 double loops (landed 47 successfully) and 50 double flips (landed 48 successfully), and wanted to determine whether this was enough evidence to conclude that she has a higher success rate with one jump than another. \vspace{22mm}
+
+---
+
+# Study Design Review
+
+### Question 1
+
+Identify which value represents the sample mean and which value
+represents the claimed population mean. 
+
+a) American households spent an average of about \$52 in 2007 on Halloween merchandise such as costumes, decorations and candy. To see if this number had changed, researchers conducted a new survey in 2008 before industry numbers were reported. The survey included 1,500 households and found that average Halloween spending was \$58 per household. \vspace{20mm}
+
+b) The average GPA of students in 2001 at a private university was 3.37. A survey on a sample of 203 students from this university yielded an average GPA of 3.59 a decade later. \vspace{20mm}
+
+### Question 2
+
+Researchers studying the relationship between honesty, age and self-control conducted an experiment on 160 children between the ages of 5 and 15. The researchers asked each child to toss a fair coin in private and to record the outcome (white or black) on a paper sheet, and said they would only reward children who report white. Half the students were explicitly told not to cheat and the others were not given any explicit instructions. Differences were observed in the cheating rates in the instruction and no instruction groups, as well as some differences across children’s characteristics within each group. (Bucciol and Piovesan 2011)
+
+a) Identify the population of interest and the sample in this study. \vspace{20mm}
+
+b) Comment on whether the results of the study can be generalized to the population, and if the findings of the study can be used to establish causal relationships \vspace{20mm}
+
+### Question 3
+
+Researchers investigating the effects of gamification (application of game-design elements and game principles in non-game contexts) on learning statistics randomly assigned 365 college students in a statistics course to one of four groups; one of these groups had no reading exercises and no gamification, one group had reading but no gamification, one group had gamification but no reading, and a final group had gamification and reading. Students in all groups also attended lectures. The study found that gamification had a positive impact on student learning compared to traditional teaching methods involving reading exercises. (Legaki et al. 2020)
+
+a) Identify the population of interest and the sample in this study. \vspace{20mm}
+
+b) Comment on whether the results of the study can be generalized to the population, and if the findings of the study can be used to establish causal relationships. \vspace{20mm}
+
+\newpage
+
+### Question 4
+
+In a public health study on the effects of consumption of fruits and
+vegetables on psychological well-being in young adults, participants were randomly assigned to three groups: (1) diet-as-usual, (2) an ecological momentary intervention involving text message reminders to increase their fruits and vegetable consumption plus a voucher to purchase them, or (3) a fruit and vegetable intervention in which participants were given two additional daily servings of fresh fruits and vegetables to consume on top of their normal diet. Participants were asked to take a nightly survey on their smartphones. Participants were student volunteers at the University of Otago, New Zealand. At the end of the 14-day study, only participants in the third group showed improvements to their psychological well-being across the 14-days relative to the other groups. (Conner et al. 2017)
+
+a) What type of study is this, how do you know? \vspace{20mm}
+
+b) Identify the explanatory and response variables. \vspace{20mm}
+
+c) Comment on whether the results of the study can be generalized to the population. \vspace{20mm}
+
+d) Comment on whether the results of the study can be used to establish causal relationships. \vspace{20mm}
+
+e) A newspaper article reporting on the study states, “The results of this study provide proof that giving young adults fresh fruits and vegetables to eat can have psychological benefits, even over a brief period of time.” How would you suggest revising this statement so that it can be supported by the study? \vspace{20mm}
+
+
