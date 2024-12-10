@@ -286,7 +286,13 @@ Exam 2 will be in-class Wednesday 11/13.
 
 ### Exam 3 Info
 
-[[Exam 3 Topics List]](exams/topic_list_exam3_209.pdf)
+[Exam 3 Topics List](exams/topic_list_exam3_209.pdf)
+
+[Short Answer Practice](exams/Exam3_shortanswer_209.html)
+
+[Methods Review](exams/STA209_methodsreview.pdf)
+
+---
 
 ### Solutions
 

@@ -261,7 +261,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 12/09 | Methods Review | [Review Worksheet](labs/SST115_methodsreview.pdf) and [Webpage Version](labs/SST115_methodsreview.html) | - |
+| Mon 12/09 | Methods Review | [Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html) | - |
 | Wed 12/11 | Exam Review | [Practice -- To be Posted] and [Topics] | - |
 | Fri 12/13 | Exam 3 | - | - |
 
@@ -288,7 +288,11 @@ Exam 2 will be in-class Wednesday 11/13.
 
 ### Exam 3 Info
 
-[[Exam 3 Topics List]](exams/topic_list_exam3_115.pdf)
+[Exam 3 Topics List](exams/topic_list_exam3_115.pdf)
+
+[Short Answer Practice](exams/Exam3_shortanswer_115.html)
+
+
 
 ---
 
