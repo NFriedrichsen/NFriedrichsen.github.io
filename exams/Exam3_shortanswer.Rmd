@@ -1,0 +1,75 @@
+---
+title: "Exam 3 -- Short Answer Questions"
+author: "Nathan Friedrichsen"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Answer the following questions in 1 or 2 sentences.
+
+--- 
+
+### Study Design
+
+What is the difference between an experiment and observational study? How does this affect conclusions?
+
+What determines whether we can make generalizations about our conclusions?
+
+---
+
+### General Hypothesis Testing
+
+What different types of questions do CIs and Hypothesis testing answer? 
+
+Describe the difference between the Null hypothesis and the Alternate hypothesis. Which one are we trying to show is true? 
+
+Why do we calculate a test-statistic?
+
+What does the test-statistic tell us in the context of a hypothesis test?
+
+Why do we sometimes call tests left, right, or two-tailed tests? 
+
+What is the definition of a p-value?
+
+What does the p-value tell us for a hypothesis test?
+
+How does the sample size affect the test-statistic, and as a consequence the p-value, with everything else held constant? 
+
+How does the standard error affect the test-statistic, and as a consequence the p-value, with everything else held constant? 
+
+What is the difference between ‘statistical significance’ and ‘practical significance’?
+
+---
+
+### Decision Making
+
+What does the ‘significance level’ refer to in hypothesis testing?
+
+What is a Type I error and what is another name for it?
+
+What is a Type II error and what is another name for it?
+
+What type of error occurs if H0 is False but we fail to reject it? 
+
+What type of error occurs if HA is True but we do reject it? 
+
+Explain why using $\alpha$ = 0.05 as a strict cut-off for significance is problematic
+
+What should determine the value we use for our significance level of a hypothesis test?
+
+Explain in your own words what is meant by the following phrase: “Over time it appears the p-value has become a gatekeeper for whether work is publishable.”
+
+### ANOVA
+
+Describe in your own words what the Sums of Squares of Groups represents.
+
+Describe in your own words what the Sums of Squares of Errors represents.
+
+Describe in your own words what the F-statistic in an ANOVA test is measuring.
+
+For basic ANOVA, describe in words what null hypothesis the F-statistic testing.
+
+We saw that regression was a special case of ANOVA. What null hypothesis is the F-statistic testing in regression?
