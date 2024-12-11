@@ -322,6 +322,8 @@ Exam 2 will be in-class Wednesday 11/13.
 
 [HT Worksheet 2](labs/STA209_hyptesting_worksheet2_solutions.html)
 
+[ANOVA Regression](labs/ANOVA_regression_lab_solutions.html)
+
 **Selected HWs**
 
 [Homework 2 Solutions](homework/Homework2_solutions.html)
