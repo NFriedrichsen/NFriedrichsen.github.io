@@ -318,6 +318,10 @@ Exam 2 will be in-class Wednesday 11/13.
 
 [CI Lab 2 Solutions](labs/Confidence_Intervals_Lab_2_solutions.html)
 
+[HT Worksheet 1](labs/STA209_hyptesting_worksheet_solutions.html)
+
+[HT Worksheet 2](labs/STA209_hyptesting_worksheet2_solutions.html)
+
 **Selected HWs**
 
 [Homework 2 Solutions](homework/Homework2_solutions.html)
