@@ -265,6 +265,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 12/11 | Exam Review | [Practice -- To be Posted] and [Topics] | - |
 | Fri 12/13 | Exam 3 | - | - |
 
+[Course Evaluations](https://urldefense.proofpoint.com/v2/url?u=https-3A__grinnell.smartevals.com&d=DwQCaQ&c=HUrdOLg_tCr0UMeDjWLBOM9lLDRpsndbROGxEKQRFzk&r=mXWso0LEbSrsUW7m626OK-G1zFlVewbTiYYUguNyWD8&m=NW8tcDaPI8u93BrpQWpcvhmQl21H2086sVhBsv8jR4ZyghiuxEfQqrDYNxk5Vd6u&s=38UtVHFEM0wjyrVjZDKM5V4RwvLyzVeG7qKIO07Kyw0&e=)
+
 
 ### Exam 1 Info
 
@@ -312,7 +314,7 @@ Exam 2 will be in-class Wednesday 11/13.
 
 [Regression Lab Solutions](labs/corr_regression_lab_solutions.html)
 
-[Probabily Lab Solutions](labs/probabilities_lab_solutions.html)
+[Probability Lab Solutions](labs/probabilities_lab_solutions.html)
 
 [CI Lab 1 Solutions](labs/normal_and_confidence_intervals_solutions.html)
 
