@@ -42,7 +42,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/02 | [Introduction](lectures/00_introduction.pdf) | [In-class](labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
-| Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [Intro R Lab](labs/01_introR.html) [[solution]](labs/01_introR_solutions.html) | - |
+| Wed 9/04 | [Intro to R](lectures/01_R_introduction.pdf) | [Intro R Lab](labs/01_introR.html) | - |
 | Fri 9/06 | [Data Visualization](lectures/02_DataVisualization.pdf) | Intro R cont'd | - |
 
 **Assignments and Deadlines**
@@ -58,9 +58,9 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 3 (Data Visualization)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | [Data Viz](labs/DataVisualizationLab.html) and [Template](labs/DataVisualizationLab.Rmd) [[solution]](labs/DataVisualizationLab_Solutions.html)| - |
-| Wed 9/11 | - | [ggplot lab](labs/ggplot2_lab.html) [[solution]](labs/ggplot_lab_solutions.html) | - |
-| Fri 9/13 | - | [ggplot lab](labs/ggplot2_lab.html) [[solution]](labs/ggplot_lab_solutions.html) continued | - |
+| Mon 9/09 | [Data Visualization Part 2](lectures/03_DataVisualization_Part2.pdf) | [Data Viz](labs/DataVisualizationLab.html) and [Template](labs/DataVisualizationLab.Rmd)| - |
+| Wed 9/11 | - | [ggplot lab](labs/ggplot2_lab.html) | - |
+| Fri 9/13 | - | [ggplot lab](labs/ggplot2_lab.html) | - |
 
 **Assignments and Deadlines**
 
@@ -75,8 +75,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/16 | [Numerical Summaries](lectures/04_NumericalSummaries.pdf) | - | IMS Sections 5.2, 5.4, and 5.6 |
-| Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Tables Lab](labs/tables_and_descriptions_lab.html) [[solution]](labs/tables_lab_solutions.html) | - |
-| Fri 9/20 | [Study Design](lectures/06_StudyDesign.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | IMS Chapter 2 (pgs. 28-37) |
+| Wed 9/18 | [Tables](lectures/05_Tables.pdf) | [Tables Lab](labs/tables_and_descriptions_lab.html) | - |
+| Fri 9/20 | [Study Design](lectures/06_StudyDesign.pdf) | [Design Lab](labs/Design_lab.html) | IMS Chapter 2 (pgs. 28-37) |
 
 **Assignments and Deadlines**
 
@@ -91,9 +91,9 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 5 (Correlation and Regression)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) [[solution]](labs/design_lab_solutions.html) | - |
-| Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) [[solutions]](labs/corr_regression_lab_solutions.html) | - |
-| Fri 9/27 | [Regression (Cat. Predictor)](lectures/09_LinearRegression_Categorical.pdf) | [Regression Lab](labs/corr_regression_lab.html) [[solutions]](labs/corr_regression_lab_solutions.html) | - |
+| Mon 9/23 | [Correlation](lectures/07_Correlation.pdf) | [Design Lab](labs/Design_lab.html) | - |
+| Wed 9/25 | [Linear Regression](lectures/08_LinearRegression.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
+| Fri 9/27 | [Regression (Cat. Predictor)](lectures/09_LinearRegression_Categorical.pdf) | [Regression Lab](labs/corr_regression_lab.html) | - |
 
 **Assignments and Deadlines**
 
@@ -303,35 +303,3 @@ Exam 2 will be in-class Wednesday 11/13.
 [Formula Sheet](exams/exam3_formulas209.pdf)
 
 ---
-
-### Solutions
-
-**Labs**
-
-[Intro to R Solutions](labs/01_introR_solutions.html)
-
-[Data Viz Lab Solutions](labs/DataVisualizationLab_Solutions.html)
-
-[ggplot lab Solutions](labs/ggplot_lab_solutions.html)
-
-[Design Lab Slutions](labs/design_lab_solutions.html)
-
-[Regression Lab Solutions](labs/corr_regression_lab_solutions.html)
-
-[Probabily Lab Solutions](labs/probabilities_lab_solutions.html)
-
-[CI Lab 1 Solutions](labs/normal_and_confidence_intervals_solutions.html)
-
-[CI Lab 2 Solutions](labs/Confidence_Intervals_Lab_2_solutions.html)
-
-[HT Worksheet 1](labs/STA209_hyptesting_worksheet_solutions.html)
-
-[HT Worksheet 2](labs/STA209_hyptesting_worksheet2_solutions.html)
-
-[ANOVA Regression](labs/ANOVA_regression_lab_solutions.html)
-
-**Selected HWs**
-
-[Homework 2 Solutions](homework/Homework2_solutions.html)
-
-[Homework 6 Solutions](homework/Homework6_209_solutions.html)
