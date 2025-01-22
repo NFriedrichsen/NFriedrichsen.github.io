@@ -3,6 +3,7 @@
 
 ## Teaching (Grinnell)
 ### Current Semester
+
 [Stat 115 (Spring 2025)](https://nfriedrichsen.github.io/SST115s25.html)
 
 [Stat 209 (Spring 2025)](https://nfriedrichsen.github.io/STA209s25.html)
