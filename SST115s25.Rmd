@@ -31,7 +31,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Wed 1/22 | [Syllabus](syllabus115s25.html) | - | - |
-| Fri 1/24 | [Introduction](Lectures/Introduction.pdf) | [Lab](Labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
+| Fri 1/24 | [Introduction](Lectures_Spring25/Introduction.pdf) | [Lab](Labs_Spring25/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
 
 **Assignments and Deadlines**
 
