@@ -1,5 +1,6 @@
 # Nathan Friedrichsen - Home Page
 
+
 ## Teaching (Grinnell)
 ### Current Semester
 [Stat 115 (Spring 2025)](https://nfriedrichsen.github.io/Statistics_Spring2025/SST115.html)
