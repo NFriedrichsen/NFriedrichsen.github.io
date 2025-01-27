@@ -26,7 +26,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 ## Exam \#1 Content
 
-### Week 1 (Intro)
+### Week 1 (Introduction)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
@@ -37,3 +37,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) Install R (https://cran.r-project.org/)
 2) Install RStudio (https://posit.co/download/rstudio-desktop/)
+
+---
+
+### Week 2 (Intro to R & Data Visualization)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 1/27 | [Intro to R](Lectures_Spring25/01_R_introduction.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) | - |
+| Wed 1/22 | [Data Visualization](Lectures_Spring25/02_DescribingData.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) cont'd | - |
+| Fri 1/24 | No Class  | - |  - |
+
+**Assignments and Deadlines**
+
+1) Intro R Lab due Friday 1/31 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty.
