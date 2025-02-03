@@ -1,0 +1,54 @@
+---
+title: "Lab 01 - Introduction to R and R Markdown"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: no
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Question 1:**
+
+Create a new R Markdown file and copy the entirety of this question over to the new file (we will do this for all questions in this lab). Then, proceed with the instructions below.
+
+Between the stars below, do the following:
+
+1. Use two # to create a header that says About Me
+2. Type your first name in bold and your last name in italics
+3. Create a bullet point list of the people sitting on either side of you
+4. Create a numbered list of your 3 least favorite animals
+
+****
+
+**Question 2:**
+
+Again, copy the entirety of this question into the R Markdown file you created for Question 1. 
+
+Let's practice creating vectors and subsetting with a short exercise.
+
+1. First, create an R code chunk between the rows of stars below (Ctrl+Alt+I is quick way to do this)
+2. Next, create a vector called `x` that has all of the numbers from 11 to 20
+3. Use square brackets and subsetting to select the first five numbers of this vector.
+
+****
+
+**Question 3:**
+
+For this question, we will be using the `HappyPlanet` data that we have just looked at:
+
+  - **Part A** Copy the code above to read the Happy Planet data into your own R Markdown file, saving the dataset to a variable called `planet`
+
+  - **Part B** Looking at the Happy Planet data, explain in one or two sentences what constitutes an observation in this dataset (what is the data being recorded from)
+  
+  - **Part C** Using `$` to extract columns from the dataset, find the mean life expectancy of all countries in the dataset? (Hint: what functions have we seen already in this lab?)
+  
+  - **Part D** Are there any variables in this dataset that are stored as a numeric that would be better suited as a categorical variable? Explain your answer

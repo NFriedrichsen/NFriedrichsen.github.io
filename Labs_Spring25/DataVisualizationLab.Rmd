@@ -1,0 +1,165 @@
+---
+title: "Data Visualization Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+We will work through a series of questions in this lab, which will cover some of the topics we went over in the Introduction and Data Visualization slides. Fill in answers to the questions presented throughout this document. You may work together with others, but each student will need to submit their own version of this file to Gradescope as a .pdf with all answers filled out.
+
+---
+
+# Part 1 - Conceptual Questions
+
+**Question 1:** In the Introduction slides, I stated that 'Statistics is about *variation*.' In your own words, explain what I meant by this statement.
+
+**Question 2:** What is a census? Give two reasons why we do not always want to conduct a census.
+
+**Question 3:** What does it mean to say two variables are *associated* with each other?
+  
+---
+
+# Part 2 - Describing Data & Including Context
+
+We have seen the terms *population, parameter, sample, statistic*, and *observation* in the Introduction slides. These terms are important for helping us describe data and understand what the purpose of a study is. Being able to read a summary of a study and label these individual parts is going to be an important skill we will use all semester. 
+
+When we are describing the *population*, *sample*, and *observations* in a study, we want to provide adequate context to explain the study and data. The following are some things to consider when reading a description of a study.
+
+### 5 W's and H of Data
+* **Who** -- Who collected the data, who is the data collected on? How many observations are there?
+
+* **What** -- What variables were data recorded on?
+
+* **When** -- When was the data collected? Populations can change over time and old data does not always reflect how things are now
+
+* **Where** -- Where was the data collected? Different     geographical areas can have vastly different populations
+
+* **Why** -- Why was the data collected? What research question(s) were the investigators trying to answer?
+
+* **How** -- How was the data physically collected?
+
+We may not always use all of these terms in our own descriptions, but they are useful to add context to our data, and potentially see if there are any issues with the study.
+
+### Describing Studies
+
+**Question 1:** (Healthcare Opinions) In 2009, the PEW research group wanted to learn more about public opinion on the idea of the public option for health coverage. One thing that they wanted to know was the percentage of adult U.S. residents who favored a public option for health coverage in October 2009. In a poll of 1500 randomly selected Adult residents in the United States, they found that 55% of adult residents favored a government health insurance plan to compete with private plans. [Source](https://www.pewresearch.org/politics/2009/10/08/section-2-opinions-of-health-care-proposals/) 
+
+* Describe the population in this study:
+
+* Describe the sample in this study:
+
+* Describe an observation in this study: 
+
+* What is the variable of interest in this study? Is it categorical or quantitative?
+
+* Do you think this data is useful for learning about healthcare opinions in 2024?
+
+**Question 2:** (National household size) The American Community Survey (ACS) conducts yearly surveys. One thing that is of interest is the average household size. In April 2022, the ACS had surveyed 1,980,550 U.S. households and found the average household size to be 2.50. [Source](https://data.census.gov/table/ACSDP1Y2022.DP02) 
+
+* Describe the population in this study:
+
+* Describe the sample in this study:
+
+* Describe an observation in this study: 
+
+* What is the variable of interest in this study? Is it categorical or quantitative?
+
+**Question 3:** (Real Life Engineering Example) Forty prismatic lithium-ion pouch cells were built at the University of Michigan Battery Laboratory. Cells were formed using two different formation protocols: "fast formation" and "baseline formation". After formation, the cells were put under cycle life testing at room temperature and 45degC. Cells were cycled until the discharge capacities dropped below 50% of the initial capacities and the number of cycles was recorded.
+
+* Describe an observation in this study:
+
+* Describe the sample in this study:
+
+* Describe the population in this study:
+
+* What question do you think the researchers were trying to answer?:
+
+---
+
+### Part 3 - Distributions
+
+The *distribution* of a variable is a description of how frequently values of that variable show up. We saw that the way in which we describe the distribution of a variable is different depending on if the variable is categorical or quantitative. 
+
+**Question 1:** Below is a bar chart representing the hair color of students in a statistics class (color may be exaggerated in the chart). Describe the distribution of the haircolor variable. 
+
+(In the graph code chunks I have put the term 'echo=FALSE' in the brackets. This stops RStudio from showing the code in the pdf to save a little bit of space). We will talk more about how to make these graphs on Wednesday.
+
+```{r, echo=F}
+data = data.frame(HairEyeColor)
+Hair = c("Black", "Blond", "Brown", "Red")
+Count = c(sum(data$Freq[data$Hair=="Black"]),
+          sum(data$Freq[data$Hair=="Blond"]),
+          sum(data$Freq[data$Hair=="Brown"]),
+          sum(data$Freq[data$Hair=="Red"]))
+new_data = data.frame(Hair, Count)
+ggplot(new_data, aes(x=Hair, y=Count, fill=Hair)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("black", "gold","tan4", "red"))
+```
+
+**Note:** We will come back to distributions of quantitative variables on Friday, after we have learned a bit more about describing histograms and box plots.
+
+---
+
+### Part 4 - Relationships between Variables
+
+For this set of questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code.
+
+```{r}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+**Question 1:** How many observations and variables are there in the dataset? Explain how you found this answer and show any code (if you used any). 
+
+```{r}
+```
+
+
+**Question 2:** Look at the conditional bar chart below. Is there an *association* between the region and the type of college (public vs private) in our sample? Justify your answer using 1 or 2 sentences.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(y=Region, fill=Private)) +
+  geom_bar(position="fill") + labs(x="Proportion")
+```
+
+**Question 3:** Using the side-by-side box plots below, answer the following questions.
+
+```{r, echo=FALSE}
+
+ggplot(colleges, aes(ACT_median, Region)) +
+  geom_boxplot() + labs(x="Median ACT") +
+  scale_x_continuous(breaks=seq(14,36,2)) +
+  theme_bw()
+```
+
+* What is the shape of 'South East's' box plot? What about 'Mid East'?
+
+* Which region's boxplot has the largest median and what is the value of the median? 
+
+* Which region has the largest IQR? Give an approximate value of the IQR for this region and show your calculation
+
+**Question 4:** 
+
+* When we describe scatterplots, we need to talk about **form, strength, direction,** and **outliers**. Using the scatterplot below, describe the relationship between Average Faculty Salary and Median 10-year Salary (the median salary of graduates from the college 10 years after receiving their degree) for our sample of colleges. Use full sentences and include context.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+
+**Question 5:** Below is another scatterplot similar to the one in Question 3, but I have added information on whether the colleges are public or private. Is the relationship between Average Faculty Salary and Median 10-year Salary different for public and private colleges? *Briefly* explain (1 or 2 sentences).
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median, color=Private)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+

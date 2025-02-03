@@ -45,9 +45,24 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 1/27 | [Intro to R](Lectures_Spring25/01_R_introduction.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) | - |
-| Wed 1/22 | [Data Visualization](Lectures_Spring25/02_DescribingData.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) cont'd | - |
-| Fri 1/24 | No Class  | - |  - |
+| Wed 1/29 | [Data Visualization](Lectures_Spring25/02_DescribingData.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) cont'd | - |
+| Fri 1/31 | No Class  | - |  - |
 
 **Assignments and Deadlines**
 
 1) Intro R Lab due Sunday 2/02 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty. Make sure to select answers in your submission on Gradescope.
+
+--- 
+
+### Week 3 (Data Visualization and Numerical Summaries)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/03 | [Data Visualization Part 2](Lectures_Spring25/03_DataVisualization_Part2.pdf) | [Data Viz Lab](Labs_Spring25/DataVisualizationLab.html) and [Template](Labs_Spring25/DataVisualizationLab.Rmd)| - |
+| Wed 2/05 | - | [ggplot lab](Labs_Spring25/ggplot2_lab.html) | - |
+| Fri 2/07 | [Numerical Summaries](Lectures_Spring25/04_NumericalSummaries.pdf) | [ggplot lab](Labs_Spring25/ggplot2_lab.html) cont'd | - |
+
+**Assignments and Deadlines**
+
+1) [Data Viz Lab](Labs_Spring25/DataVisualizationLab.html) due Wednesday 2/05 at 10pm.
+2) [Homework 1](Homework_Spring25/Homework1.html) is assigned Monday 2/03 and will be due the following Monday 2/10 at 10pm. The R markdown file for writing your answers can be found [here](Homework_Spring25/Homework1.Rmd)
+3) [ggplot lab](Labs_Spring25/ggplot2_lab.html) due Monday 2/10 at 10pm.
