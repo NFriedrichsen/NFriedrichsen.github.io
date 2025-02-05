@@ -146,7 +146,7 @@ ggplot(majors, aes(Per_Male, Bach_Med_Income, color = Category)) +
 
 This is an example of a *multivariate* plot; it allows us to succinctly describe the relationship between 3 or more variables.
 
-**Question 1:** Looking at the multivariate plot above, what additional information is gleaned by including `Category` as a color as opposed to what we saw when we only had the x- and y-axes? (Similar to Question 0, but here pay attention specifically to the difference between the two.)
+**Question 1:** Looking at the multivariate plot above, what additional information is gleaned by including `Category` as a color? (Similar to Question 0, but here pay attention specifically to the difference between the two.)
 
 ---
 
