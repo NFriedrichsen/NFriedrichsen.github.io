@@ -69,6 +69,13 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 4 (Describing Data / Study Design)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/10 | [Numerical Summaries](Lectures_Spring25/04_NumericalSummaries.pdf) | - | IMS Sections 5.2, 5.4, and 5.6 |
+| Wed 2/12 | [Tables](Lectures_Spring25/05_Tables.pdf) | [Tables Lab](Labs_Spring25/tables_and_descriptions_lab.html) | - |
+| Fri 2/14 | [Study Design](Lectures_Spring25/06_StudyDesign.pdf) | [Design Lab](Labs_Spring25/Design_lab.html) | IMS Chapter 2 (pgs. 28-37) |
+
 ### Lab Solutions
 
 [Intro R Lab](Labs_Spring25/01_introR_solutions.html)
