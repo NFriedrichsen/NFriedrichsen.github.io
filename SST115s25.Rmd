@@ -76,6 +76,10 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 2/12 | [Tables](Lectures_Spring25/05_Tables.pdf) | [Tables Lab](Labs_Spring25/tables_and_descriptions_lab.html) | - |
 | Fri 2/14 | [Study Design](Lectures_Spring25/06_StudyDesign.pdf) | [Design Lab](Labs_Spring25/Design_lab.html) | IMS Chapter 2 (pgs. 28-37) |
 
+**Assignments and Deadlines**
+
+1) [Homework 2](Homework_Spring25/Homework2.html) assigned Wed 2/12 and due Friday 2/21 at 10pm.
+
 ---
 
 ### Lab Solutions
