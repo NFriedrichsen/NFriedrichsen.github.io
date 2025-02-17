@@ -83,6 +83,15 @@ Please note: material will not be posted until we've reached that point in the c
 3) [Design Lab](Labs_Spring25/Design_lab.html) due Wednesday 2/19 at 10pm.
 4) Exam 1 will be Wednesday 2/26 during normal class time. Monday 2/24 will be a review day.
 
+---
+
+### Week 5 (Correlation and Regression)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/17 | Lab and Homework Day | - | - |
+| Wed 2/19 | [Correlation](Lectures_Spring25/07_Correlation.pdf) | [Correlation and Regression Lab](Labs_Spring25/corr_regression_lab.html) | - |
+| Fri 2/21 | [Linear Regression](Lectures_Spring25/08_LinearRegression.pdf) | [Correlation and Regression Lab](Labs_Spring25/corr_regression_lab.html) | - |
+
 ### Lab Solutions
 
 [Intro R Lab](Labs_Spring25/01_introR_solutions.html)
