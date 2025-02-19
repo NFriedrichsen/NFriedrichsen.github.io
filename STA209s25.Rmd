@@ -92,6 +92,11 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 2/19 | [Correlation](Lectures_Spring25/07_Correlation.pdf) | [Correlation and Regression Lab](Labs_Spring25/corr_regression_lab.html) | - |
 | Fri 2/21 | [Linear Regression](Lectures_Spring25/08_LinearRegression.pdf) | [Correlation and Regression Lab](Labs_Spring25/corr_regression_lab.html) | - |
 
+**Assignments and Deadlines**
+
+1) [Homework 3](Homework_Spring25/Homework3.html) is due Friday 2/27 at 10pm. The HW is extremely similar to some exam questions. I recommend finishing this early.
+2) Exam 1 will be Wednesday 2/26 during normal class time. Monday 2/24 will be a review day.
+
 ### Lab Solutions
 
 [Intro R Lab](Labs_Spring25/01_introR_solutions.html)
