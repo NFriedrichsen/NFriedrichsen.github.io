@@ -99,8 +99,24 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam 1 Info
+
+Exam 1 will be in-class Wednesday Feb. 26.
+
+[Exam 1 Topics Outline](Exams_Spring25/topic_list_exam1.html)
+
+[Practice Exam 1](Exams_Spring25/practice_exam1.html) file and ([PDF Format](Exams_Spring25/practice_exam1.pdf))
+
+---
+
 ### Lab Solutions
 
 [Intro R Lab](Labs_Spring25/01_introR_solutions.html)
 
 [Data Viz Lab](Labs_Spring25/DataVisualizationLab_Solutions.html)
+
+[Ggplot2 Lab](Labs_Spring25/ggplot_lab_solutions.html)
+
+[Tables Lab](Labs_Spring25/tables_lab_solutions.html)
+
+[Design Lab](Labs_Spring25/design_lab_solutions.html)
