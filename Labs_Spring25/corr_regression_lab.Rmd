@@ -95,38 +95,38 @@ ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point()
 
 ---
 
-<!-- # Linear Regression -->
+# Linear Regression
 
-<!-- Next, we are going to fit the linear regression line to the `Happiness` and `LifeExpectancy` scatterplot we just saw a second ago. To do this, we are going to use the `lm()` function in R. It stands for Linear Model. The syntax that the function uses is variable1 \~ variable2 which means "predict variable1 using variable 2", and then we also need to tell R which data set these variables are coming from. Take a second to read the code that makes the linear regression line below, then use the output to answer the following questions. -->
+Next, we are going to fit the linear regression line to the `Happiness` and `LifeExpectancy` scatterplot we just saw a second ago. To do this, we are going to use the `lm()` function in R. It stands for Linear Model. The syntax that the function uses is variable1 \~ variable2 which means "predict variable1 using variable 2", and then we also need to tell R which data set these variables are coming from. Take a second to read the code that makes the linear regression line below, then use the output to answer the following questions.
 
-<!-- ```{r, message=F} -->
-<!-- # Linear regression for HDI vs Happiness. -->
-<!-- fit = lm(data=Happy, Happiness~LifeExpectancy) -->
-<!-- fit -->
+```{r, message=F}
+# Linear regression for HDI vs Happiness.
+fit = lm(data=Happy, Happiness~LifeExpectancy)
+fit
 
-<!-- # Plot regression on scatterplot -->
-<!-- ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point() + -->
-<!--   geom_smooth(method='lm', se=F) +  -->
-<!--   geom_label(x=55, y=8, label = paste("Predicted Happiness = -1.104 + 0.104*LifeExpectancy")) -->
-<!-- ``` -->
+# Plot regression on scatterplot
+ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point() +
+  geom_smooth(method='lm', se=F) +
+  geom_label(x=55, y=8, label = paste("Predicted Happiness = -1.104 + 0.104*LifeExpectancy"))
+```
 
-<!-- **Question 9:** State the regression equation using the variable names. -->
+**Question 9:** State the regression equation using the variable names.
 
-<!-- **Question 10:** What is the value of the slope? Interpret the value of the slope in context. -->
+**Question 10:** What is the value of the slope? Interpret the value of the slope in context.
 
-<!-- **Question 11:** What is the value of the intercept? Would it be appropriate to interpret the y-intercept? If yes, interpret the value of the y-intercept. If not, explain why. -->
+**Question 11:** What is the value of the intercept? Would it be appropriate to interpret the y-intercept? If yes, interpret the value of the y-intercept. If not, explain why.
 
-<!-- **Question 12:** What is the predicted happiness for a country that has a life expectancy of 77.9 years? Show your calculation. -->
+**Question 12:** What is the predicted happiness for a country that has a life expectancy of 77.9 years? Show your calculation.
 
-<!-- **Question 13:** What is the value of the residual for the United States? Interpret the value of the residual. The value of the US's `LifeExpectancy` and `Happiness` variables are: -->
+**Question 13:** What is the value of the residual for the United States? Interpret the value of the residual. The value of the US's `LifeExpectancy` and `Happiness` variables are:
 
-<!-- ```{r} -->
-<!-- Happy %>% filter(Country == "United States of America") %>% select(LifeExpectancy, Happiness) -->
-<!-- ``` -->
+```{r}
+Happy %>% filter(Country == "United States of America") %>% select(LifeExpectancy, Happiness)
+```
 
-<!-- **Question 14:** What is the value of the coefficient of determination (R^2) between the happiness of a country and its life expectancy? Interpret the value of R^2 (do not use correlation interpretation). -->
+**Question 14:** What is the value of the coefficient of determination (R^2) between the happiness of a country and its life expectancy? Interpret the value of R^2 (you may use the relationship between r and $R^2$, but do not use correlation interpretation).
 
-<!-- --- -->
+---
 
 <!-- # Linear Regression (Categorical Predictor) -->
 
