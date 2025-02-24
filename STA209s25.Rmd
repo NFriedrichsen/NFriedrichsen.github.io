@@ -99,6 +99,19 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 6 (Exam 1)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/24 | Review Day | - | Optional: IMS Chapter 7.1 - 7.2.4 (pages 105-119, avoid strength of fit section) |
+| Wed 2/26 | Exam 1 | - | - |
+| Fri 2/28 | TBD | - | - |
+
+**Assignments and Deadlines**
+
+1) [Regression Lab](Labs_Spring25/corr_regression_lab.html) due Monday 2/24 at 10pm.
+
+---
+
 ## Exam 1 Info
 
 Exam 1 will be in-class Wednesday Feb. 26.
@@ -120,3 +133,7 @@ Exam 1 will be in-class Wednesday Feb. 26.
 [Tables Lab](Labs_Spring25/tables_lab_solutions.html)
 
 [Design Lab](Labs_Spring25/design_lab_solutions.html)
+
+### Selected HW Solutions
+
+[Homework 2](Homework_Spring25/Homework2_solutions.pdf)
