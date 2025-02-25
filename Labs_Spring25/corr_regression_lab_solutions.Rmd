@@ -1,0 +1,178 @@
+---
+title: "Regression Lab Solutions"
+author: "Nathan Friedrichsen"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Happy Planet Data
+
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+
+data = read.table("https://nfriedrichsen.github.io/data/HappyPlanetIndex.txt", header=T, sep=",")
+Happy = data.frame(data)
+Happy$Region = as.factor(Happy$Region)
+```
+
+# Correlation
+
+### Predicting `Happiness` with `Footprint`. 
+
+```{r, warning=F}
+# Scatterplot of Footprint vs Happiness
+theme_set(theme_bw())
+ggplot(Happy, aes(x=Footprint, y=Happiness)) + geom_point()
+```
+
+**Question 1**: Which is the explanatory variable and which is the response variable? Explain.
+
+<span style="background-color: yellow;"> The response is Happiness because that is what we are predicting. We are using Footprint to predict Happiness so it is the explanatory variable.</span>
+
+**Question 2**: Describe the relationship between the happiness of a country and it's ecological footprint.
+
+<span style="background-color: yellow;">The relationship between happiness and ecological footprint is moderately strong, positive, and curved.</span>
+
+**Question 3**: Is it appropriate to use Pearson's correlation to quantify the relationship between these two variables? Explain.
+
+<span style="background-color: yellow;">No. Pearson's correlation describes a linear relationship but the relationship *isn't* linear.</span>
+
+---
+
+### Correlation Matrix
+
+```{r}
+Happy %>% select(Happiness, LifeExpectancy, GDPperCapita) %>%
+cor(use="complete.obs")
+```
+
+**Question 4:** Of the two other variables in the correlation matrix, which has the strongest correlation with Happiness?
+
+<span style="background-color: yellow;">Life Expectancy.</span>
+
+---
+
+### Predicting `Happiness` with `LifeExpectancy`
+
+```{r}
+# Scatterplot of Happiness vs. LifeExpectancy
+ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point()
+```
+
+**Question 5:** Which of these is the explanatory and which is the response variable? Explain.
+
+<span style="background-color: yellow;">Happiness is the response since that is what we are predicting, life expectancy is the explanatory because we are using it to predict.</span>
+
+**Question 6:** Describe the general relationship between `LifeExpectancy` and `Happiness`. 
+
+<span style="background-color: yellow;">There is a positive moderately strong linear relationship between Life Expectancy and Happiness.</span>
+
+**Question 7:** Is it appropriate to use Pearson's correlation to quantify the relationship between these two variables? Explain.
+
+<span style="background-color: yellow;">Yes. The relationship is linear, so Pearson's correlation can be used.</span>
+
+**Question 8:** State the value of the correlation between `LifeExpectancy` and `Happiness`. Interpret the value of this correlation.
+
+<span style="background-color: yellow;">The correlation is 0.833. It tells us that the linear relationship between the variables is positive and strong.</span>
+
+---
+
+# Linear Regression
+
+```{r, message=F}
+# Linear regression for HDI vs Happiness.
+fit = lm(data=Happy, Happiness~LifeExpectancy)
+fit
+
+# Plot regression on scatterplot
+ggplot(Happy, aes(x=LifeExpectancy, y=Happiness)) + geom_point() +
+  geom_smooth(method='lm', se=F) + 
+  geom_label(x=55, y=8, label = paste("Predicted Happiness = -1.104 + 0.104*LifeExpectancy"))
+```
+
+**Question 9:** State the regression equation using the variable names.
+
+<span style="background-color: yellow;">Predicted Happiness = -1.104 + 0.104 $\times$ LifeExpectancy.</span>
+
+**Question 10:** What is the value of the slope? Interpret the value of the slope in context.
+
+<span style="background-color: yellow;">The slope value is 0.104. For every 1-year increase in life expectancy, the predicted Happiness increases by 0.104.</span>
+
+**Question 11:** What is the value of the intercept? Would it be appropriate to interpret the y-intercept? If yes, interpret the value of the y-intercept. If not, explain why.
+
+<span style="background-color: yellow;">The value of the intercept is -1.104. It is not appropriate to interpret because happiness can't be negative and LifeExpectancy for a country cannot reasonably be zero.</span>
+
+**Question 12:** What is the predicted happiness for a country that has a life expectancy of 77.9 years? Show your calculation.
+
+```{r}
+-1.104 + 0.104*(77.9)
+```
+
+**Question 13:** What is the value of the residual for the United States? Interpret the value of the residual. The value of the US's `LifeExpectancy` and `Happiness` variables are:
+
+```{r}
+Happy %>% filter(Country == "United States of America") %>% select(LifeExpectancy, Happiness)
+```
+
+```{r}
+# residual: e = y - y_hat = observed - predicted Happiness
+7.9 - 6.9976
+```
+<span style="background-color: yellow;">We have under-predicted the US's happiness by 0.9024.</span>
+
+**Question 14:** What is the value of the coefficient of determination (R^2) between the happiness of a country and its life expectancy? Interpret the value of R^2 (do not use correlation interpretation).
+
+```{r}
+cor(Happy$Happiness, Happy$LifeExpectancy)^2
+```
+
+<span style="background-color: yellow;">We can square the correlation value we got earlier to get $R^2 = 0.693$. 69.3\% of variation in Happiness values for countries can be explained with our regression model using Life Expectancy as our predictor.</span>
+
+---
+
+<!-- # Linear Regression (Categorical Predictor) -->
+
+<!-- ### Predicting petal length with species -->
+
+<!-- ```{r, warning=F, message=F, echo=F} -->
+<!-- ggplot(data=iris, aes(x=Species, y=Petal.Length)) + geom_jitter(width=.2) + geom_smooth(method="lm") + geom_segment(aes(x = 0.7, xend = 1.3, y = 1.462, yend=1.462),  -->
+<!--                color = 'tomato', linewidth = 1) + -->
+<!--   geom_segment(aes(x = 1.7, xend = 2.3, y = 4.26, yend=4.26),  -->
+<!--                color = 'tomato', linewidth = 1) + -->
+<!--   geom_segment(aes(x = 2.7, xend = 3.3, y = 5.552, yend=5.552),  -->
+<!--                color = 'tomato', linewidth = 1) -->
+
+<!-- lm(Petal.Length ~ Species, data=iris) -->
+<!-- ``` -->
+
+<!-- **Question 15**: What are the categories of `Species`? How many indicator variables could we make with this variable? -->
+
+<!-- <span style="background-color: yellow;">The categories are Setosa, Versicolor, and Virginica. We can make 3 indicators.</span> -->
+
+<!-- **Question 16**: What is reference variable in the linear regression output? -->
+
+<!-- <span style="background-color: yellow;">The reference variable is Setosa (it doesn't have a slope coefficient).</span> -->
+
+<!-- **Question 17**: Write the equation for the line in two different ways (see slide 10/18 from Cat. Predictor notes). -->
+
+<!-- <span style="background-color: yellow;">Predicted petal length = 1.462 + 2.789$\times$**1**$_{versicolor}$ + 4.09$\times$**1**$_{virginica}$</span> -->
+
+<!-- <span style="background-color: yellow;">Predicted petal length = 1.462$\times$**1**$_{setosa}$ + 4.251$\times$**1**$_{versicolor}$ + 5.552$\times$**1**$_{virginica}$</span>  -->
+
+<!-- <span style="background-color: orange;">The slope for setosa doesn't change. The slopes in the second equation are the sum of the slope in the previous equation with the intercept.</span> -->
+
+<!-- **Question 18**: What is the predicted petal length for a Setosa flower? -->
+
+<!-- <span style="background-color: yellow;">1.462</span> -->
+
+<!-- **Question 19**: What is the predicted petal length for a Versicolor flower? -->
+
+<!-- <span style="background-color: yellow;">4.251</span> -->
+
+<!-- **Question 20**: What is the predicted petal length for a Virginica flower? -->
+
+<!-- <span style="background-color: yellow;">5.552</span> -->
