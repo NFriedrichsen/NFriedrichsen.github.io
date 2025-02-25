@@ -134,6 +134,8 @@ Exam 1 will be in-class Wednesday Feb. 26.
 
 [Design Lab](Labs_Spring25/design_lab_solutions.html)
 
+[Regression Lab](Labs_Spring25/corr_regression_lab_solutions.html)
+
 ### Selected HW Solutions
 
 [Homework 2](Homework_Spring25/Homework2_solutions.pdf)
