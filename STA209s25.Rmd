@@ -104,11 +104,12 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 2/24 | Review Day | - | Optional: IMS Chapter 7.1 - 7.2.4 (pages 105-119, avoid strength of fit section) |
 | Wed 2/26 | Exam 1 | - | - |
-| Fri 2/28 | TBD | - | - |
+| Fri 2/28 | - | [dplyr Lab](Labs_Spring25/dplyr_lab.html) | - |
 
 **Assignments and Deadlines**
 
 1) [Regression Lab](Labs_Spring25/corr_regression_lab.html) due Monday 2/24 at 10pm.
+2) [dplyr Lab](Labs_Spring25/dplyr_lab.html) due Wednesday 3/05 at 10pm.
 
 ---
 
