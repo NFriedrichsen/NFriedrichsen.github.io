@@ -1,0 +1,122 @@
+---
+title: "Probability Worksheet 1"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+```
+
+## Introduction 
+
+These initial problems will help get us oriented in a context that is more familiar. In each, we will be referring to a standard "die" (singular of dice) that has 6 faces, each with an equal chance of being rolled
+
+\vspace{1pt}
+
+**Part A** What is the chance of getting a 1 when rolling a die once?
+
+\vspace{25pt}
+
+**Part B** When rolling a die once, what is the chance of rolling a 1 *or* a 2?
+
+\vspace{25pt}
+
+**Part C** When rolling a die once, what is the chance of rolling a 1 *and* a 2?
+
+\vspace{25pt}
+
+
+**Part D** What is the chance of rolling a 1,2,3,4,5, or 6?
+
+\vspace{25pt}
+
+
+**Part E** What is the chance of *not* rolling a 2?
+
+\vspace{25pt}
+
+
+## Problem 1 (Addition Rule) 
+
+**Question 1**  Here, we concern ourselves with 10,000 individuals who either (1) rent their home (3,858), (2) have a mortgage on their home (4,789), or (3) own it outright (1,353). 
+
+ - What proportion of individuals have either a mortgage or own it outright?
+ - If we select one person out of this 10,000 at random, what is the probability that this person either owns their own or has a mortgage?
+ 
+\vspace{45pt}
+
+
+**Question 2** Consider rolling a dice where we define three different events:
+
+$$
+A = \{1, 2\}, \quad B = \{4, 6\}, \quad D = \{2, 3\}
+$$
+
+ - What is the probability of event $A$?
+ - Are events $B$ and $D$ disjoint? Confirm the addition rule by finding the probability that either $B$ or $D$ occurs.
+ 
+ 
+\newpage
+ 
+## Problem 2 (General Addition Rule) 
+
+**Question 1** If events $A$ and $B$ are disjoint, explain why this implies that $P(A \text{ and } B) = 0$. Verify that the General Addition Rule simplifies to the Addition Rule when $A$ and $B$ are disjoint.
+
+\vspace{100pt}
+
+**Question 2** In a sample of 10,000 homes, 1495 homes were painted blue, 4789 had a garage, and 950 homes had both of these properties. Create a Venn diagram illustrating this problem. 
+
+\vspace{100pt}
+
+**Problem 3** Using the information from Question 2, what is the probability that a home selected at random had a garage but was not painted blue?
+
+\vspace{100pt}
+
+
+## Problem 3 (Compliments) 
+
+
+
+**Question 1** For a single dice roll, let $D = \{2, 3\}$. What is $D^C$? Find $P(D)$ and $P(D^C)$ 
+
+\newpage
+
+## Problem 4 (Empirical Probabilities)
+
+This data is from a report published in 1988 that summarizes the results of a Harvard Medical School clinical trial determining effectiveness of aspirin in preventing heart attacks in middle-aged male physicians}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|} \hline  
+         &  \multicolumn{2}{|c|}{Heart Attack}& \\ \hline  
+         Treatment&  Attack&  No Attack& Total\\ \hline  
+         Placebo&  189&  10,845& 11,034\\ \hline  
+         Aspirin&  104&  10,933& 11,037\\ \hline  
+         Total&  293&  21,778& 22,071\\ \hline 
+    \end{tabular}
+\end{table}
+
+---
+
+For all questions, restate the probability in terms of probability notation you've seen.
+
+**Question 1** What is the probability that a randomly selected physician had a heart attack? \vspace{75pt}
+
+**Question 2** What is the complement of the event in question 1? What is the probability of the complement? \vspace{75pt}
+
+**Question 3** What is the probability that a randomly selected physician was taking aspirin? \vspace{75pt}
+
+**Question 4** What is the probability that a randomly selected physician was taking aspirin *and* had a heart attack? Think about where this number comes from on the table and why it's called an intersection. \vspace{75pt}
+
+**Question 5** Using your previous answers, what is the probability that a randomly selected physician was taking aspirin *or* had a heart attack? \vspace{75pt}
