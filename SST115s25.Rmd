@@ -113,6 +113,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam \#2 Content
+
+### Week 7 (Probability)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/03 | [Probability 1](Lectures_Spring25/Probability1.pdf) | [Probability Worksheet 1](Labs_Spring25/ProbWorksheet1.pdf) | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections 3.1-3.4 and 3.6|
+| Wed 3/05 | Probability 2 | Probability Worksheet 2 | - |
+| Fri 3/07 | TBA | - | - |
+
+---
+
 ## Exam 1 Info
 
 Exam 1 will be in-class Wednesday Feb. 26.
