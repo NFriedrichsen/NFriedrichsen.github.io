@@ -1,0 +1,125 @@
+---
+title: "Probability Worksheet 2"
+output: pdf_document
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+```
+
+## Rules
+
+For each of these problem, please use notation that we have adopted in class, i.e., events $A$ or $B$, probabilities $P(A)$, expressions $P(A|B)$ or $P(A \text{ or }B)$, etc., in addition to solving them numerically.
+
+## Independence
+
+**Question 1** It is estimated that 9\% of people are left handed. We randomly sample five people from our population. Based on these five, answer the following:
+
+  - What is the probability that all five people are right-handed?
+  - What is the probability that all five people are left-handed?
+  - What is the probability that that not all five people are right-handed (i.e., probability that *at least one* is left-handed)?
+  
+\vspace{150pt}
+
+**Question 2** Further assume that sex and handedness are independent, i.e., 
+
+$$
+P(\text{right-handed and male}) = P(\text{right-handed}) \times P(\text{Male}).
+$$
+
+In a population with equal proportions of men and women, answer the following:
+
+  - What is the probability that the first person is male and right-handed?
+  - What is the probability the the first two people are male and right-handed
+  - What is the probability that the third person is female and left-handed?
+  - What is the probability that the first two people are male and right-handed and the third person is female and left-handed?
+  
+\newpage
+
+**Question 3** In a standard 52 card deck, assume we draw one card at random. Is the event that a card is a Heart independent of the card being an Ace? Make your argument using the **multiplication rule**
+
+
+
+\vspace{75pt}
+
+## Conditional Probability
+
+
+Below is a table of 6,224 individuals from the year 1721 who were exposed to smallpox in Boston. Doctors at the time believed that exposing a person to the disease in a controlled form (inoculating them) could reduce the likelihood of death.
+
+```{r, echo = FALSE}
+library(kableExtra)
+library(knitr)
+library(openintro)
+tt <- table(smallpox)[c(2, 1), c(2,1)] %>% addmargins()
+rownames(tt) <- c(rownames(tt)[1:2], "Total")
+colnames(tt) <- c(colnames(tt)[1:2], "Total")
+tt  %>%  kable() %>% 
+  kable_styling(latex_options = "hold_position", full_width = FALSE, font_size = 12) %>% 
+  add_header_above(c("", "inoculated" = 2, ""), line_sep = 5)
+```
+
+Here, the same table is reproduced, providing joint and marginal probabilities
+
+```{r, echo = FALSE}
+library(kableExtra)
+library(knitr)
+library(openintro)
+tt <- table(smallpox)[c(2, 1), c(2,1)] %>% proportions %>%  addmargins()
+rownames(tt) <- c(rownames(tt)[1:2], "Total")
+colnames(tt) <- c(colnames(tt)[1:2], "Total")
+tt  %>%  kable(digits = 4) %>% 
+  kable_styling(latex_options = "hold_position", full_width = FALSE, font_size = 12) %>% 
+  add_header_above(c("", "inoculated" = 2, ""), line_sep = 5)
+```
+
+
+**Question 1** Write in formal notation the probability that a randomly selected person who was not inoculated died from smallpox and compute the probability
+
+\vspace{75pt}
+
+**Question 2** Determine the probability that an inoculated person died from smallpox. How does this compare with what you found in Question 1?
+
+
+\vspace{75pt}
+
+
+**Question 3** Based on your results from Q1 and Q2, does it appear as if inoculation is effective at reducing the risk of smallpox?
+
+\newpage
+
+**Question 4** Let $X$ and $Y$ represent the outcomes of rolling two dice. Answer the following:
+
+ - What is the probability that the first die, $X$, is equal to 1?
+ - What is the probability that both $X$ and $Y$ are equal to 1?
+ - Use the formula for conditional probability to compute $P(Y = 1| X = 1)$
+ - What is $P(Y=1)$? Is this different that what we found in the last part? Explain.
+ 
+ 
+\vspace{170pt}
+
+**Question 5** Suppose that 80\% of people like peanut butter (obviously), 89\% like jelly, and 78\% like both. Given that a randomly sampled person likes peanut butter, what is the probability that they also like jelly?
+
+\vspace{150pt}
+
+**Question 6** Bob is watching a roulette table in a casino and notices that the last five outcomes landed on black. He figures that the probability of landing on black six times in a row is very small $(1/64)$, so he places a bet on red. What is wrong with this logic? (This is known as the Gambler's Fallacy)
+
+
+<!-- \newpage -->
+
+<!-- **Birthday Problem** What is the probability that *at least* two people in a room share a birthday? For this problem, we can assume: -->
+
+<!--   - There are 25 individuals in the classroom -->
+<!--   - Nobody has a birthday on Feb 29 -->
+<!--   - Any individual person is equally likely to be born on any day of the year, i.e., the probability of being born on each day is the same -->
+<!--   - Hint -- what does this produce: `prod(1:4)`? -->
+
+<!-- Work with your group to come up with a solution to this problem. Try using the notation we have covered today and Monday to frame this problem in probabilistic statements. You are welcome to use R for this problem  -->
