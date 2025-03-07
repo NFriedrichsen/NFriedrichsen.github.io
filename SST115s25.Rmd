@@ -122,6 +122,11 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 3/05 | [Probability 2](Lectures_Spring25/Probability2.pdf) | [Probability Worksheet 2](Labs_Spring25/ProbWorksheet2.pdf) | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections 3.1.5 and 3.2.1-3.2.5 |
 | Fri 3/07 | [Odds and Relative Risk](Lectures_Spring25/Odds_Risk.pdf) | [Probability Worksheet 3](Labs_Spring25/ProbWorksheet3.pdf) | - |
 
+**Assignments and Deadlines**
+
+1) [Homework 4](Homework_Spring25/Homework4.html) due Friday 3/28 at 10pm.
+2) [Exam Corrections](Homework_Spring25/exam1_corrections.pdf) due Friday 3/28 at 10pm (exam score is capped at 80\% for corrections).
+
 ---
 
 ## Exam 1 Info
