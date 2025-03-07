@@ -1,0 +1,165 @@
+---
+title: "Probability Worksheet 3"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+```
+
+For each of these problem, (if applicable) please use notation that we have adopted in class, i.e., events $A$ or $B$, probabilities $P(A)$, expressions $P(A|B)$ or $P(A \text{ or }B)$, etc., in addition to solving them numerically.
+
+### Question 1
+
+This is the table of data for heart attacks (different than data in the slides).
+
+```{r, echo=F, message=F}
+library(kableExtra)
+options(knitr.kable.NA = '')
+data.frame(Treatment = c("Aspirin", "Placebo", "Total"),
+           Heart_Attack = c(24, 25, 49),
+           No_Heart_Attack = c(1533, 851, 2384)) |>
+  knitr::kable()
+```
+
+**Part A:** What are the odds for having a heart attack in the aspirin group? Simplify the result so it looks like 1:X. \vspace{20mm}
+
+```{r, echo=F, include=F}
+# 24:1533 or roughly 1:64
+```
+
+**Part B:** What are the odds for having a heart attack in the placebo group? Simplify the result so it looks like 1:X.
+
+\vspace{20mm}
+
+```{r, echo=F, include=F}
+# 25:851
+# or roughly 1:34
+```
+
+**Part C:** What is the odds ratio for heart attacks for the aspirin group and placebo group? \vspace{20mm}
+
+```{r, echo=F, include=F}
+(24 / 1533) / (25 / 851)
+```
+
+**Part D:** According to the odds ratio, are aspirin use and heart attack occurence associated? \vspace{20mm}
+
+```{r, echo=F, include=F}
+# Yes. The odds ratio is less than 1.
+```
+
+
+**Part E:** Explain to someone who has never taken a statistics class what the odds ratio value we got tells us about aspirin's effect on heart attack rates. \vspace{20mm}
+
+```{r, echo=F, include=F}
+# Aspirin reduces the rate that people get heart attacks.
+```
+
+\newpage
+
+### Question 2 -- Titanic Data
+
+```{r, message=F, echo=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Data for lab
+data(Titanic)
+titanic <- as.data.frame(Titanic)
+titanic <- titanic[rep(1:nrow(titanic), times = titanic$Freq), ]
+titanic$Freq <- NULL
+```
+
+```{r, echo=F}
+with(titanic, table(Survived, Class)) %>% addmargins()
+```
+
+**Part A:** For a randomly selected 1st-class passenger, what is the probability they survived? \vspace{25mm}
+
+```{r, echo=F, include=F}
+203/325
+```
+
+**Part B:** For a randomly selected 1st-class passenger, what is their *risk* of death? \vspace{25mm}
+
+```{r, echo=F, include=F}
+122 / 325
+```
+
+**Part C:** For a randomly selected 3rd-class passenger, what is their *risk* of death? \vspace{25mm}
+
+```{r, echo=F, include=F}
+528 / 706
+```
+
+**Part D:** What is the value of *relative risk* of death for 3rd-class passengers compared to 1st-class passengers \vspace{25mm}
+
+```{r, echo=F, include=F}
+(528 / 706) / (122 / 325)
+```
+
+**Part E:** According to the *relative risk* value in Part D, is there an association between passenger class and survival? \vspace{25mm}
+
+```{r, echo=F, include=F}
+# Yes. The risk of death for 3rd class passengers is twice that of 1st-class
+```
+
+**Part F:** Explain what the *relative risk* value in Part D means to someone who has never taken a stats class.
+
+```{r, echo=F, include=F}
+# 3rd-class passengers were twice as likely to die on the Titanic than 1st-class passengers
+```
+
+\newpage
+
+
+
+**Part G:** For a randomly selected 1st-class passenger, what are their odds of survival? \vspace{25mm}
+
+**Part H:** For a randomly selected 3rd-class passenger, what are their odds of survival? \vspace{25mm}
+
+**Part I:** What is the odds ratio for survival between the 1st-class and 3rd-class passengers? \vspace{25mm}
+
+**Part J:** According to the odds-ratio, is there an association between passenger class and survival? \vspace{25mm}
+ 
+**Part K:** Do your answers to Parts E and F agree? Explain. \vspace{25mm}
+
+**Part L:** Explain what the odds-ratio means to someone who has never taken a stats class. \vspace{25mm}
+
+\newpage
+
+# Question 3 -- Intermittent Fasting and Heart Health
+
+<!-- The following information comes from [[this study]](https://newsroom.heart.org/news/8-hour-time-restricted-eating-linked-to-a-91-higher-risk-of-cardiovascular-death). -->
+
+> Time-restricted eating, a type of intermittent fasting, involves limiting the hours for eating to a specific number of hours each day, which may range from a 4- to 12-hour time window in 24 hours. Many people who follow a time-restricted eating diet follow a 16:8 eating schedule, where they eat all their foods in an 8-hour window and fast for the remaining 16 hours each day, the researchers noted. Previous research has found that time-restricted eating improves several cardiometabolic health measures, such as blood pressure, blood glucose and cholesterol levels.
+
+> In this study, researchers investigated the potential long-term health impact of following an 8-hour time-restricted eating plan. They reviewed information about dietary patterns for participants in the annual 2003-2018 National Health and Nutrition Examination Surveys (NHANES) in comparison to data about people who died in the U.S., from 2003 through December 2019.
+
+> The study included approximately 20,000 adults in the U.S. with an average age of 49 years. They found that people who followed a pattern of eating all of their food across less than 8 hours per day had a 91% higher risk of death due to cardiovascular disease.
+
+**Part A**: The study claims that those who follow the 8-hour time restricted diet had a 91\% increased risk of dying from cardiovascular disease. *Explain what this means in terms of comparing probability of dying from cardiovascular disease for those who follow the 8-hour diet and those who do not.* \vspace{25mm}
+
+**Part B**: Just knowing about this increased risk is not enough for us to tell how likely someone is to die from cardiovascular disease if they follow this 8-hour diet. What else do we need to know to figure this out? \vspace{25mm}
+
+**Part C**: An estimate I found of the *risk* of dying by cardiovascular disease before 50 in general is 0.000976. For the sake of comparison, let us use this to estimate the *risk* of dying from cardiovascular disease for someone who is not intermittent fasting. Using this information with info from Part A, what is the *risk* of dying from cardiovascular disease for someone intermittent fasting? Would you consider this risk low or high? \vspace{25mm}
+
+```{r, echo=F, include=F}
+1.91 * .000976
+```
+
+**Part D**: The information in this study was not gathered from an experiment. What are some reasons the intermittent fasting group could have higher cardiovascular death rates even if intermittent fasting itself was not the cause?
