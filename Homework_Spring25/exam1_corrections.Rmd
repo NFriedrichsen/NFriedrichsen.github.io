@@ -1,0 +1,29 @@
+---
+title: "Exam 1 Corrections"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 3/28 at 10pm
+
+You may earn half credit back for any missed questions on Exam 1 (up to 80\% max score).
+
+
+In order to receive the credit back you will need to do provide me correct answers to the questions you missed along with an image of that question showing the points taken off.
+
+
+**Instructions:**
+
+- Collect images of the questions you missed. I do not need to see the whole exam uploaded, but you can do that if you want to.
+- Start a new document (word or Rmarkdown both work).
+- List out the questions you missed and write up your new answer to the problem.
+- You can use notes or past HWs to fix your answers.
+- Compile the images and your answers into one PDF and submit to gradescope.
+
+I will set up a gradescope submission for the corrections on Monday night. For each question, if your answer is fully correct you will receive half the credit back to your exam score for that question.
+
