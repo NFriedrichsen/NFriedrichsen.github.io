@@ -128,6 +128,15 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 8\* (Normal Distributions)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/24 | [Expectation and Variance](Lectures_Spring25/Probability3_ExpVar.pdf) and [Normal Distributions](Lectures_Spring25/NormalDistribution.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) | - |
+| Wed 3/26 | [Sampling Distributions] | - | - |
+| Fri 3/28 | [Bootstrapping] | - | - |
+
+---
+
 ## Exam 1 Info
 
 Exam 1 will be in-class Wednesday Feb. 26.
