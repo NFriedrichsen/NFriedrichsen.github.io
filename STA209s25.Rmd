@@ -132,8 +132,13 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 3/24 | [Expectation and Variance](Lectures_Spring25/Probability3_ExpVar.pdf) and [Normal Distributions](Lectures_Spring25/NormalDistribution.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) | - |
-| Wed 3/26 | [Sampling Distributions] | - | - |
+| Wed 3/26 | [Sampling Distributions](Lectures_Spring25/SamplingDistributions.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) cont'd | - |
 | Fri 3/28 | [Bootstrapping] | - | - |
+
+**Assignments and Deadlines**
+
+1) Probability Worksheets scanned and uploaded to gradescope by Wednesday 3/26 at 10pm.
+2) Normal Distribution Lab due Friday 3/28 at 10pm.
 
 ---
 
