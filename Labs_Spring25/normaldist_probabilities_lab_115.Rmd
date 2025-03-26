@@ -71,6 +71,69 @@ pnorm(.46, mean=.354, sd=.03, lower.tail = FALSE)
 
 ---
 
+# Question 3 -- Standard Dev. Practice
+
+For this problem we will return to the college dataset we've used previously. 
+
+```{r, echo=F, message=F, warning=F}
+library(ggplot2)
+library(dplyr)
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+theme_set(theme_bw())
+```
+
+We are going to use the `Net_Tuition` variable and practice some ideas related to variability.
+
+```{r, warning=F, message=F}
+college %>% ggplot(aes(Net_Tuition)) + geom_histogram(color = 'black', fill = 'gray') + facet_wrap(~Type)
+```
+
+**Part A**: Why would we *not* want to use mean and standard deviation to describe the histograms for each of these groups? (Regardless, we will use these to practice our concepts)
+
+**Part B**: Compare the variability of both groups. Which would have a larger standard deviation?
+
+**Part C**: The mean and variance for the Private colleges are given by the following. Write an interpration of the *standard deviation* in this context.
+
+```{r}
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% mean()
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% var()
+```
+**Part D**: Suppose I add an observation for another college to the Private college data, which is an outlier with a large Net Tuition of \$50,000. What would happen to the std. dev.?
+
+**Part E**: Suppose I add an observation for another college to the Private college data, which is an outlier with a small Net Tuition of \$2,000. What would happen to the std. dev.?
+
+**EXTRA**: (no work is needed) `Net_Tuition` as we just looked at it is right-skewed for both groups. A technique that is sometimes used for right-skewed distributions to get them to look more 'Normal' is to do a log-transformation. We take the natural log of the variable i.e. log(variable) and graph it instead.
+
+```{r, warning=F, message=F}
+college %>% ggplot(aes(log(Net_Tuition))) + geom_histogram(color = 'black', fill = 'gray') + facet_wrap(~Type)
+```
+
+Both of these groups now look more 'Normal' (with small outliers for Private colleges). Intepreting the means and standard deviations becomes much more difficult though. What the heck does it mean to say 'the mean of the natural log of net tuition of private colleges is 9.68 with a standard deviation of 0.39.'
+
+```{r}
+# mean of log(net_tuition)
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% log() %>% mean()
+# sd of log(net_tuition)
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% log() %>% sd()
+```
+Another complication is the fact that working backwards to get our means and standard deviations in terms of the original unit measurement (\$) is not perfect, and in fact this fails miserably for the std.dev. You can see this with the following where I have switched the order of computing log and mean/std.dev.
+
+```{r}
+# mean of log(net_tuition)
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% log() %>% mean()
+
+# log of mean of net_tuition
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% mean() %>% log()
+
+# sd of log(net_tuition)
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% log() %>% sd()
+
+# log of sd() of net_tuition
+college %>% filter(Type=="Private") %>% pull(Net_Tuition) %>% sd() %>% log()
+```
+
+
+
 <!-- # Expectation and Variance -->
 
 <!-- ## Question 3 -->
