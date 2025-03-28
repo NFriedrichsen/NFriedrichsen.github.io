@@ -133,12 +133,13 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 3/24 | [Expectation and Variance](Lectures_Spring25/Probability3_ExpVar.pdf) and [Normal Distributions](Lectures_Spring25/NormalDistribution.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) | - |
 | Wed 3/26 | [Sampling Distributions](Lectures_Spring25/SamplingDistributions.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) cont'd | - |
-| Fri 3/28 | [Bootstrapping] | - | - |
+| Fri 3/28 | [Confidence Intervals for a Population Mean](Lectures_Spring25/ConfidenceIntervals_PopMean) | [CI Lab 1](Labs_Spring25/confidence_intervals_1.html) | - |
 
 **Assignments and Deadlines**
 
 1) Probability Worksheets scanned and uploaded to gradescope by Wednesday 3/26 at 10pm.
-2) Normal Distribution Lab due Friday 3/28 at 10pm.
+2) Normal Distribution Lab due Sunday 3/30 at 10pm.
+3) CI Lab 1 due Monday 3/31 at 10pm.
 
 ---
 
