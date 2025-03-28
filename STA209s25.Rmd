@@ -133,7 +133,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 3/24 | [Expectation and Variance](Lectures_Spring25/Probability3_ExpVar.pdf) and [Normal Distributions](Lectures_Spring25/NormalDistribution.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) | - |
 | Wed 3/26 | [Sampling Distributions](Lectures_Spring25/SamplingDistributions.pdf) | [Normal Distribution Lab](Labs_Spring25/normaldist_probabilities_lab.html) cont'd | - |
-| Fri 3/28 | [Confidence Intervals for a Population Mean](Lectures_Spring25/ConfidenceIntervals_PopMean) | [CI Lab 1](Labs_Spring25/confidence_intervals_1.html) | - |
+| Fri 3/28 | [Confidence Intervals for a Population Mean](Lectures_Spring25/ConfidenceIntervals_PopMean.pdf) | [CI Lab 1](Labs_Spring25/confidence_intervals_1.html) | - |
 
 **Assignments and Deadlines**
 
