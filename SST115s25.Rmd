@@ -140,7 +140,22 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) Probability Worksheets scanned and uploaded to gradescope by Wednesday 3/26 at 10pm.
 2) Normal Distribution Lab due Friday 3/28 at 10pm.
-3) Sampling Distributions Lab due Sunday 3/30 at 10pm.
+3) Sampling Distributions Lab due Monday 3/31 at 10pm (link was missing on Gradescope)
+
+---
+
+### Week 9 (Confidence Intervals)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/31 | [Confidence Intervals for a Population Mean](Lectures_Spring25/ConfidenceIntervals_PopMean.pdf) | [CI Lab 1](Labs_Spring25/confidence_intervals1_115.html) | - |
+| Wed 4/02 | [More on CIs](Lectures_Spring25/CI_tDist.pdf) | [CI Lab 1](Labs_Spring25/confidence_intervals1_115.html) cont'd | - |
+| Fri 4/04 | [CIs for Difference in Means](Lectures_Spring25/CI_DiffMeans.pdf) | [CI Lab 1](Labs_Spring25/confidence_intervals1_115.html) cont'd | - |
+
+**Assignments and Deadlines**
+
+1) Exam 2 on Friday 4/11 in normal class time. 
+2) CI Lab 1 due date TBD.
+3) HW5 will be posted mid-week and due Friday 4/11.
 
 ---
 
