@@ -1,0 +1,79 @@
+---
+title: "Confidence Intervals Lab 1"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question 1 (Conceptual)
+
+**Part A:** What is the purpose of a confidence interval?
+
+**Part B:** What does "95\% confidence" actually mean?
+
+**Part C:** What is the formula for the standard error of the sample mean?
+
+**Part D:** What is the formula for a 95\% confidence interval for a population mean?
+
+**Part E:** What type of variability are confidence intervals accounting for?
+
+**Part F:** Do confidence intervals account for biased samples?
+
+---
+
+## Question 2 -- Florida Mercury Levels
+
+This is using the info from a study similar to the Florida lakes fish data we saw in the slides.
+
+Data was collected from 107 lakes in Florida. For each lake, the mercury level (ppm) was computed for a large mouth bass. The average mercury level in the sample was 0.554 ppm.
+
+**Part A:** Describe the parameter in context. What is the corresponding parameter symbol? If we know the value, provide it.
+
+```{r, echo=F, include=F}
+# Mu = mean mercury levels of large mouth bass in all florida lakes
+```
+
+**Part B:** Describe the statistic in context. State the corresponding statistic symbol. If we know the value, provide it.
+
+```{r, echo=F, include=F}
+# x-bar = sample mean mercury level of large mouth bass from 107 florida lakes
+```
+
+**Part C:** The standard error for this statistic is 0.051. What is the 95\% confidence interval? (Show your work)
+
+```{r, echo=F, include=F}
+0.554 - 2*.051
+0.554 + 2*.051
+```
+
+**Part D:** Interpret the confidence interval.
+
+```{r, echo=F, include=F}
+# We are 95% confident the mean mercury level of large mouth bass in all
+# florida lakes is between 0.452 and 0.656 ppm
+```
+
+**Part E:** In the U.S., the FDA action level is 1 ppm. Is this safely below the U.S. limit?
+
+```{r, echo=F, include=F}
+# Yes. 1 is not within our interval
+```
+
+**Part F:** In Canada, the safety limit is 0.5 ppm. Is this clearly above the Canadian limit?
+
+```{r, echo=F, include=F}
+# No. 0.5 is within our interval
+```
+
+**Part G:** Suppose we didn't know the standard error value in part C, but instead we knew the population standard deviation is 0.20. Create a new 95\% confidence interval using this info. Does your answer to Part F change?
+
+```{r, echo=F, include=F}
+0.554 - 2*0.2/sqrt(107)
+0.554 + 2*0.2/sqrt(107)
+```
+
+**Part H:** What is the practical takeaway from your answer to Part G?
