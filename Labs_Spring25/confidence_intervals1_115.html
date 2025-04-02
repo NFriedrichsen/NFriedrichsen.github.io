@@ -394,6 +394,150 @@ is 0.20. Create a new 95% confidence interval using this info. Does your
 answer to Part F change?</p>
 <p><strong>Part H:</strong> What is the practical takeaway from your
 answer to Part G?</p>
+<hr />
+</div>
+<div id="practice-with-normal-and-t-distribution-quantiles" class="section level1">
+<h1>Practice with Normal and t-distribution quantiles</h1>
+<p>We saw in the previous lab that the <code>pnorm()</code> function
+could be used to find probabilities associated with specific values for
+the Normal distribution.</p>
+<pre class="r"><code>pnorm(-1.96); pnorm(1.96, lower.tail=F)</code></pre>
+<pre><code>## [1] 0.0249979</code></pre>
+<pre><code>## [1] 0.0249979</code></pre>
+<p>i.e.: the probability below -1.96 and above 1.96 are both .025 on a
+standard normal distribution</p>
+<p>The R functions <code>qnorm()</code> and <code>qt()</code> do the
+opposite: They give the cutoff that corresponds to a probability that we
+put in the function.</p>
+<p>In order to use <code>qnorm()</code> we must give it</p>
+<ol style="list-style-type: decimal">
+<li>the probability</li>
+<li>the mean (optional)</li>
+<li>the standard deviation (optional)</li>
+</ol>
+<p><strong>Note:</strong> If you do not specify the mean and standard
+deviation <code>qnorm()</code> defaults to the standard normal
+distribution N(0,1).</p>
+<pre class="r"><code>qnorm(.025)</code></pre>
+<pre><code>## [1] -1.959964</code></pre>
+<pre class="r"><code>qnorm(.975)</code></pre>
+<pre><code>## [1] 1.959964</code></pre>
+<p>These correspond to the cutoffs we use in a 95% confidence interval
+when we know <span class="math inline">\(\sigma\)</span>’s value. These
+also correspond to the middle 95% of the standard normal distribution
+because .975-.025 = .95</p>
+<p>When we want to use a different confidence % for our CI, we need to
+use values different from .025 and .975.</p>
+<p>We will do this by using <span class="math inline">\(\alpha\)</span>
+for a 100(1-<span class="math inline">\(\alpha\)</span>)% CI. The values
+will be <span class="math inline">\(\alpha / 2\)</span> and <span class="math inline">\(1-(\alpha / 2)\)</span>.</p>
+<p>For the 95% CI we have <span class="math inline">\(\alpha =
+.05\)</span> and so that gave us the cutoffs <span class="math inline">\(\alpha / 2 = .05 / 2 = .025\)</span> and <span class="math inline">\(1-(\alpha / 2)= 1-(.05 / 2) = .975\)</span>. We
+will actually get the same value just with a different sign (positive or
+negative) for each of these, so we will only care about the positive one
+from here on out.</p>
+<p>The <code>qt()</code> function will work very similar. We input the
+cutoffs according the the confidence % with the <span class="math inline">\(\alpha\)</span> values and it gives us the
+corresponding quantiles of the t-distribution instead of the normal
+distribution. We also need to include the degrees of freedom for the
+normal distribution.</p>
+<pre class="r"><code># 95\% CI quantile cutoffs
+# for a sample with sample size = 34 (n=34)
+qt(.975, df=33)</code></pre>
+<pre><code>## [1] 2.034515</code></pre>
+<p>This tells us we need to add and subtract 2.03 SE’s in our 95% CI for
+the mean using the t-distribution with df=33.</p>
+<p>Use the <code>qnorm()</code> and <code>qt()</code> functions to
+answer the following:</p>
+<div id="question-3" class="section level3">
+<h3>Question 3</h3>
+<p><strong>Part A:</strong> How many SE’s will we add and subtract for a
+99% CI using the normal distribution?</p>
+<p><strong>Part B:</strong> How many SE’s will we add and subtract for a
+90% CI using the normal distribution?</p>
+<p><strong>Part C:</strong> How many SE’s will we add and subtract for a
+95% CI using the t-distribution with a sample size of 30?</p>
+<p><strong>Part D:</strong> How many SE’s will we add and subtract for a
+95% CI using the t-distribution with a sample size of 200?</p>
+<p><strong>Part E:</strong> Using your answer to A and B, what do we
+notice about the relationship between confidence level and interval
+width?</p>
+<p><strong>Part F:</strong> Using your answer to C and D, what do you
+notice about the values we get for the cutoff as the sample size
+increases? (They should be getting close to a specific value)</p>
+<hr />
+</div>
+</div>
+<div id="mercury-in-fish-revisited-pt.-1" class="section level1">
+<h1>Mercury in Fish (revisited) Pt. 1</h1>
+<p>We are going to work on a problem similar to the yellowfin tuna and
+mercury levels we covered in the previous lab. Before, we knew the
+values for the population mean and standard deviation. Most of the time
+we will not know these.</p>
+<p>For this example, suppose the pop. mean and standard deviation are
+not known. (<span class="math inline">\(\mu\)</span> = ?, <span class="math inline">\(\sigma\)</span> = ?). Do not use the values from
+the previous questions.</p>
+<p><strong>Research Question</strong>: What is the pop. mean mercury
+level (micro-grams mercury per gram of fish) of yellowfin tuna?</p>
+<p>To answer this question, scientists recorded the mercury levels in 48
+randomly selected yellowfin tuna caught in different locations
+throughout the fish’ natural range. The mean mercury level in the sample
+was .388 with a std. dev. of 0.12. For the purpose of this lab, assume
+this is a representative sample.</p>
+<p><strong>Note:</strong> Since we do not know <span class="math inline">\(\sigma\)</span>, we cannot use the Normal
+distribution for a CI, we need to use the t-distribution.</p>
+<div id="question-4" class="section level3">
+<h3>Question 4</h3>
+<p><strong>Part A:</strong> Describe the parameter of interest in
+context. State whether we know the value.</p>
+<p><strong>Part B:</strong> Describe the statistic of interest in
+context. State the value if we know it.</p>
+<p><strong>Part C:</strong> Explain what the conditions are to make a CI
+using the t-distribution and why they are met in this example.</p>
+<p><strong>Part D:</strong> How many SE’s do we need to add and subtract
+to make a 90% CI with our data?</p>
+<p><strong>Part E:</strong> Make a 90% CI for the parameter. (Show
+work)</p>
+<p><strong>Part F:</strong> Interpret this confidence interval in
+context. We should be able to use this interpretation to answer the
+research question.</p>
+<hr />
+</div>
+</div>
+<div id="mercury-in-fish-pt.-2" class="section level1">
+<h1>Mercury in Fish Pt. 2</h1>
+<p>Suppose the 48 fish were actually caught using random samples from 2
+different locations: 1) gulf of Mexico and 2) east coast of Japan. We
+could look at answering a different research question:</p>
+<p><strong>Research Question:</strong> What is the difference in pop.
+mean mercury levels for yellowfin tuna in the Gulf of Mexico vs. off the
+east coast of Japan?</p>
+<div id="gulf-of-mexico-sample" class="section level4">
+<h4>Gulf of Mexico sample</h4>
+<p>There were 20 fish caught in the gulf of Mexico with a sample mean of
+0.413 and std. dev. of 0.15</p>
+</div>
+<div id="east-coast-of-japan-sample" class="section level4">
+<h4>East Coast of Japan sample</h4>
+<p>There were 28 fish caught off the east coast of Japan with a sample
+mean of 0.370 and std. dev. of 0.10</p>
+</div>
+<div id="question-5" class="section level3">
+<h3>Question 5</h3>
+<p><strong>Part A:</strong> Explain why the conditions to make a 95% CI
+for the difference in pop. means using a t-distribution are not met for
+this sample. (regardless, we will continue for practice)</p>
+<p><strong>Part B:</strong> What is the df for the t-distribution we
+will use and how many SE’s will we add and subtract for our 95% CI?</p>
+<p><strong>Part C:</strong> What is the value of the SE?</p>
+<p><strong>Part D:</strong> Make a 95% CI for the difference in pop.
+means (keep track of subtraction order)</p>
+<p><strong>Part E:</strong> Interpret the confidence interval in
+context.</p>
+<p><strong>Part F:</strong> According to the confidence interval, is it
+plausible there is actually no difference in pop. mean mercury
+levels?</p>
+</div>
 </div>
 
 
