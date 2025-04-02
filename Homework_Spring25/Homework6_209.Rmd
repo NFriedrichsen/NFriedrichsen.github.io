@@ -1,0 +1,121 @@
+---
+title: "Homework6_209"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Due Friday 11/08 at 10pm.
+
+This assignment is due *after* the exam that will feature this content, but I **strongly** recommend doing it beforehand if you are able. The exam questions will be very similar to questions on HWs 5 and 6. 
+
+This assignment has 25 points possible. Your score will be scaled to be out of 5 points. 
+
+I may post solutions to a few of these problems ahead of time. You may use the solutions to answer your questions but you may not just copy them. Put them in your own words. 
+
+# Question 1 -- Sex Equality (4 pts)
+
+The General Social Survey asked a random sample of 1,390 Americans the following question: “On the whole, do you think it should or should not be the government’s responsibility to promote equality between men and women?” 82\% of the respondents said it “should be”. At a 95\% confidence level, this sample has 2\% margin of error. Based on this
+information, determine if the following statements are true or false, and explain your reasoning. (NORC 2016)
+
+**Part A**: We are 95% confident that 80\% to 84\% of Americans in this sample think it’s the government’s responsibility to promote equality between men and women.
+
+**Part B**: We are 95% confident that 80\% to 84\% of all Americans think it’s the government’s responsibility to promote equality between men and women.
+
+**Part C**: If we considered many random samples of 1,390 Americans, and we calculated 95\% confidence intervals for each, 95\% of these intervals would include the true population proportion of Americans who think it’s the government’s responsibility to promote equality between
+men and women.
+
+**Part D**: In order to decrease the margin of error to 1\%, we would need to quadruple (multiply by 4) the sample size.
+
+---
+
+# Question 2 -- Proof of COVID-19 vaccination (6 pts)
+
+In the US, businesses and schools shut down due to the COVID-19 pandemic in March 2020, and a vaccine became publicly available for the first time in April 2021. That month, a Gallup poll surveyed a random sample of 3,731 US adults, asking how they felt about the COVID-19 vaccine requirement for air travel. The poll found that 57\% said they would favor it. (Gallup 2021b)
+
+**Part A**: Describe the population parameter of interest.
+
+**Part C**: Construct a 95% confidence interval for the proportion of US adults who favored requiring proof of COVID-19 vaccination for travel by airplane. (Show work and final value)
+
+**Part D**: Interpret the confidence interval.
+
+**Part E**: Without doing any calculations, describe what would happen to the confidence interval if we decided to use a higher confidence level.
+
+**Part F**: Without doing any calculations, describe what would happen to the confidence interval if we used a larger sample.
+
+---
+
+# Question 3 -- Is Yawning Contagious? (3 pts)
+
+Is yawning contagious? An experiment conducted by the MythBusters, a science entertainment TV program on the Discovery Channel, tested if a person can be subconsciously influenced into yawning if another person near them yawns. 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a group where there wasn’t a person yawning near them (control). The visualization below displays how many participants yawned in each group.
+
+
+```{r, echo=F, include=F}
+knitr::include_graphics("https://nfriedrichsen.github.io/homework/mythbusters-chart.jpg")
+```
+
+Suppose we are interested in estimating the difference in yawning rates between the control and treatment groups using a confidence interval. Explain why we cannot construct such an interval using the normal approximation. What might go wrong if we constructed the confidence interval despite this problem?
+
+---
+
+# Question 4 -- Sleep deprivation (5 pts)
+
+A CDC report on sleep deprivation rates shows that the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0%, while this proportion is 8.8% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+Construct a 90\% confidence interval for the difference in proportions (Oregon - California) and interpret the interval in context.
+
+---
+
+# Question 5 -- Rainbow Trout - Bootstrapping (7 pts)
+
+This is a continuation of the Rainbow Trout problem on HW5. We will use bootstrapping to make a confidence interval instead of the t-distribution. We will generate a sample that matches the info provided in that question. Specifically we are looking at the sinking net info. We will use this generated sample as a 'new' dataset because we don't have the original sample data in its entirety.
+
+#### Sinking Net Fish
+
+The average length (mm) for the fish caught in the Sinking Net was 254.972 with a standard deviation of 73.619. Sample size = 71
+
+```{r, message=F, warning=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Better histograms
+gh <- function(bins = 10) {
+  geom_histogram(color = 'black', fill = 'gray80', bins = bins)
+}
+
+## Bootstrapping function
+bootstrap <- function(x, statistic, n = 1000L) {
+  bs <- replicate(n, {
+    sb <- sample(x, replace = TRUE)
+    statistic(sb)
+  })
+  data.frame(Sample = seq_len(n), 
+             Statistic = bs)
+}
+
+set.seed(8675309)
+# generate new sample
+data_sink = rnorm(71, mean=254.972, sd=73.619)
+```
+
+**Part A**: Make a bootstrap distribution for the mean length of all fish caught with the sinking net using 1000 samples (use the `gh()` function from above).
+
+```{r, echo=F, include=F}
+mean_boot <- bootstrap(data_sink, mean, n=1000)
+ggplot(mean_boot, aes(x=Statistic)) + gh(bins=10)
+```
+
+
+**Part B**: Use the `quantile()` function and the bootstrap distribution to make a 90\% CI for the mean
+
+```{r, echo=F, include=F}
+quantile(x=data_sink, probs=c(.1, .9))
+```
+
+**Part C**: Suppose the true mean length of fish caught with the *floating net* is 300mm. According the bootstrap CI, is there a difference in mean lengths for fish caught with the different net types?
