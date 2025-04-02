@@ -9,7 +9,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Due Friday 11/08 at 10pm.
+## Due Friday 4/18 at 10pm.
 
 This assignment is due *after* the exam that will feature this content, but I **strongly** recommend doing it beforehand if you are able. The exam questions will be very similar to questions on HWs 5 and 6. 
 
