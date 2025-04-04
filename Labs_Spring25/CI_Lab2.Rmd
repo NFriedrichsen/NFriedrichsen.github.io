@@ -1,0 +1,269 @@
+---
+title: "Confidence Intervals Lab 2"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- # Practice with Normal and t-distribution quantiles -->
+
+<!-- We saw in the previous lab that the `pnorm()` function could be used to find probabilities associated with specific values for the Normal distribution. -->
+
+<!-- ```{r} -->
+<!-- pnorm(-1.96); pnorm(1.96, lower.tail=F) -->
+<!-- ``` -->
+<!-- i.e.: the probability below -1.96 and above 1.96 are both .025 on a standard normal distribution -->
+
+<!-- --- -->
+
+<!-- The R functions `qnorm()` and `qt()` do the opposite: They give the cutoff that corresponds to a probability that we put in the function.  -->
+
+<!-- In order to use `qnorm()` we must give it -->
+
+<!-- 1) the probability -->
+<!-- 2) the mean (optional) -->
+<!-- 3) the standard deviation (optional) -->
+
+<!-- **Note:** If you do not specify the mean and standard deviation `qnorm()` defaults to the standard normal distribution N(0,1). -->
+
+<!-- ```{r} -->
+<!-- qnorm(.025) -->
+<!-- qnorm(.975) -->
+<!-- ``` -->
+
+<!-- These correspond to the cutoffs we use in a 95\% confidence interval when we know $\sigma$'s value. These also correspond to the middle 95\% of the standard normal distribution because .975-.025 = .95 -->
+
+<!-- When we want to use a different confidence \% for our CI, we need to use values different from .025 and .975. -->
+
+<!-- We will do this by using $\alpha$ for a 100(1-$\alpha$)\% CI. -->
+<!-- The values will be $\alpha / 2$ and $1-(\alpha / 2)$. -->
+
+<!-- For the 95\% CI we have $\alpha = .05$ and so that gave us the cutoffs $\alpha / 2 = .05 / 2 = .025$ and $1-(\alpha / 2)= 1-(.05 / 2) = .975$. We will actually get the same value just with a different sign (positive or negative) for each of these, so we will only care about the positive one from here on out. -->
+
+<!-- The `qt()` function will work very similar. We input the cutoffs according the the confidence \% with the $\alpha$ values and it gives us the corresponding quantiles of the t-distribution instead of the normal distribution. We also need to include the degrees of freedom for the normal distribution. -->
+
+<!-- ```{r} -->
+<!-- # 95\% CI quantile cutoffs -->
+<!-- # for a sample with sample size = 34 (n=34) -->
+<!-- qt(.975, df=33) -->
+<!-- ``` -->
+
+<!-- This tells us we need to add and subtract 2.03 SE's in our 95\% CI for the mean using the t-distribution with df=33. -->
+
+<!-- Use the `qnorm()` and `qt()` functions to answer the following: -->
+
+<!-- ### Question 1 -->
+
+<!-- **Part A:** How many SE's will we add and subtract for a 99\% CI using the normal distribution? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- qnorm(.995) -->
+<!-- ``` -->
+<!-- **Part B:** How many SE's will we add and subtract for a 90\% CI using the normal distribution? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- qnorm(.95) -->
+<!-- ``` -->
+
+<!-- **Part C:** How many SE's will we add and subtract for a 95\% CI using the t-distribution with a sample size of 30? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- qt(.975, df=29) -->
+<!-- ``` -->
+
+<!-- **Part D:** How many SE's will we add and subtract for a 95\% CI using the t-distribution with a sample size of 200? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- qt(.975, df=199) -->
+<!-- ``` -->
+
+<!-- **Part E:** Using your answer to A and B, what do we notice about the relationship between confidence level and interval width? -->
+
+<!-- **Part F:** How does the width of CI made using the t-distribution compare to the width of a CI made using the Normal distribution (for the same confidence level)? -->
+
+<!-- --- -->
+
+<!-- # Mercury in Fish (revisited) Pt. 1 -->
+
+<!-- We are going to work on a problem similar to the yellowfin tuna and mercury levels we covered in the previous lab. Before, we knew the values for the population mean and standard deviation. Most of the time we will not know these. -->
+
+<!-- For this example, suppose the pop. mean and standard deviation are not known. ($\mu$ = ?, $\sigma$ = ?). Do not use the values from the previous lab. -->
+
+<!-- **Research Question**: What is the pop. mean mercury level (micro-grams mercury per gram of fish) of yellowfin tuna? -->
+
+<!-- To answer this question, scientists recorded the mercury levels in 48 randomly selected yellowfin tuna caught in different locations throughout the fish' natural range. The mean mercury level in the sample was .388 with a std. dev. of 0.12. For the purpose of this lab, assume this is a representative sample. -->
+
+<!-- **Note:** Since we do not know $\sigma$ we cannot use the Normal distribution for a CI, we need to use the t-distribution -->
+
+<!-- ### Question 2 -->
+
+<!-- **Part A:** Describe the parameter of interest in context. State whether we know the value. -->
+
+<!-- **Part B:** Describe the statistic of interest in context. State whether we know the value. -->
+
+<!-- **Part C:** Explain what the conditions are to make a CI using the t-distribution and why they are met in this example. -->
+
+<!-- **Part D:** How many SE's do we need to add and subtract to make a 90\% CI with our data? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- qt(.95, df=47) -->
+<!-- ``` -->
+
+<!-- **Part E:** Make a 90\% CI for the parameter. (Show work) -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- .388 - 1.68 * .12 / sqrt(48) -->
+<!-- .388 + 1.68 * .12 / sqrt(48) -->
+<!-- ``` -->
+
+<!-- **Part F:** Interpret this confidence interval in context. We should be able to use this interpretation to answer the research question. -->
+
+<!-- --- -->
+
+<!-- # Mercury in Fish Pt. 2 -->
+
+<!-- Suppose the 48 fish were actually caught using random samples from 2 different locations: 1) gulf of Mexico and 2) east coast of Japan. We could look at answering a different research question: -->
+
+<!-- **Research Question:** What is the difference in pop. mean mercury levels for yellowfin tuna in the Gulf of Mexico vs. off the east coast of Japan? -->
+
+<!-- #### Gulf of Mexico sample -->
+<!-- There were 20 fish caught in the gulf of Mexico with a sample mean of 0.413 and std. dev. of 0.15 -->
+
+<!-- #### East Coast of Japan sample -->
+<!-- There were 28 fish caught off the east coast of Japan with a sample mean of 0.370 and std. dev. of 0.10 -->
+
+
+<!-- ### Question 3 -->
+
+<!-- **Part A:** Explain why the conditions to make a 95\% CI for the difference in pop. means using a t-distribution are not met for this sample. (regardless, we will continue for practice) -->
+
+<!-- **Part B:** What is the df for the t-distribution we will use and how many SE's will we add and subtract for our 95\% CI? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- df = 19 -->
+<!-- t = qt(.975, df=19) -->
+<!-- t -->
+<!-- ``` -->
+
+<!-- **Part C:** What is the value of the SE? -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- SE = sqrt(.15^2 / 20 + .1^2 / 28) -->
+<!-- SE -->
+<!-- ``` -->
+
+
+<!-- **Part D:** Make a 95\% CI for the difference in pop. means (keep track of subtraction order) -->
+
+<!-- ```{r, echo=F, include=F} -->
+<!-- (.413 - .370) - t*SE -->
+<!-- (.413 - .370) + t*SE -->
+<!-- ``` -->
+
+<!-- **Part E:** Interpret the confidence interval in context. -->
+
+<!-- **Part F:** According to the confidence interval, is it plausible there is actually no difference in pop. mean mercury levels? -->
+
+# Proportions
+
+---
+
+# Political Affiliation and Immigration
+
+The dataset below contains the results from a poll based on a random sample with two variables: response, indicating their response to the poll question, and political, reporting their self-reported political ideology.
+
+A number of randomly sampled registered voters from Tampa, FL were asked if they thought workers who have illegally entered the US should be (i) allowed to keep their jobs and apply for US citizenship, (ii) allowed to keep their jobs as temporary guest workers but not allowed to apply for US citizenship, or (iii) lose their jobs and have to leave the country.
+
+```{r, message=F}
+## Copy and run this code to create table
+library(ggplot2)
+library(dplyr)
+immigration <- read.csv("https://collinn.github.io/data/immigrationpoll.csv")
+
+with(immigration, table(response, political)) %>% addmargins(1)
+```
+
+
+
+### Question 1
+
+We will make a confidence interval to answer the question "What proportion of conservative Tampa voters support workers being 'allowed to keep their jobs and apply for US citizenship.'
+
+**Part A**: Describe the parameter of interest, including which symbol we use for it.
+
+**Part B**: What is the corresponding value of the statistic and what symbol do we use for it?
+
+```{r, echo=F, include=F}
+# p-hat
+57 / 372
+```
+
+**Part C**: What is the sample size for the group of conservatives?
+
+```{r, echo=F, include=F}
+372
+```
+
+**Part D**: Check the conditions for making a confidence interval.
+
+```{r, echo=F, include=F}
+# Random sample: met
+# Success condition: 57 successes (met)
+# Failure condition: 315 failures (met)
+372 - 57
+```
+
+
+**Part E**: Create a 95\% confidence interval for the parameter.
+
+```{r, echo=F, include=F}
+p_hat = (57/352)
+n = 372
+p_hat - 1.96 * sqrt(p_hat * (1-p_hat) / n)
+p_hat + 1.96 * sqrt(p_hat * (1-p_hat) / n)
+```
+
+
+**Part F**: Interpret the confidence interval. 
+
+### Question 2
+
+Let's see if there is a difference between conservatives and liberals in terms of proportions that support workers being 'allowed to keep their jobs and apply for US citizenship.'
+
+**Part A**: What is the value of the statistic of interest? (Make 'Liberal' the first group)
+
+**Part B**: Check the conditions to make a confidence interval.
+
+**Part C**: Make a 90\% confidence interval.
+
+```{r, echo=F, include=F}
+p1 = (101/175)
+p2 = (57/372)
+n1 = 175
+n2 = 372
+
+(p1 - p2) - 1.645 * sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
+(p1 - p2) + 1.645 * sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
+```
+
+**Part D**: Interpret the confidence interval
+
+**Part E**: According to the CI, is it plausible there is no difference between the groups?
+
+---
+
+# Supercommuters
+
+The fraction of workers who are considered “supercommuters”, because they commute more than 90 minutes to get to work, varies by state. Suppose the 1\% of Nebraska residents and 6\% of New York residents are supercommuters. Now suppose that we plan a study to survey 1000 people from each state, and we will compute the sample proportions $\hat{p}_{NE}$ for Nebraska and $\hat{p}_{NY}$ for New York.
+
+a. What is the associated mean and standard deviation of $\hat{p}_{NE}$ in repeated samples of size 1000?
+
+b. What is the associated mean and standard deviation of $\hat{p}_{NY}$ in repeated samples of size 1000?
+
+c. Calculate and interpret the mean and standard deviation associated with the difference in sample proportions for the two groups, $\hat{p}_{NY} - \hat{p}_{NE}$ in repeated samples of 1000 in each group.
+
+d. How are the standard deviations from parts (a), (b), and (c) related?
+
