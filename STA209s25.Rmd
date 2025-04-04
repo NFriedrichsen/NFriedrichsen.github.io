@@ -148,7 +148,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 3/31 | [More on CIs](Lectures_Spring25/CI_tDist.pdf) and  [CIs for Difference in Means](Lectures_Spring25/CI_DiffMeans.pdf)| [CI Lab 1](Labs_Spring25/confidence_intervals_1.html) | - |
 | Wed 4/02 | Homework and Lab Day | [CI Lab 1] cont'd | [CI for Means -- Quick Guide](CI_for_means_quickguide.html) |
-| Fri 4/04 | [Confidence Intervals for Proportions](Lectures_Spring25/CI_proportions_209.pdf) | [CI Lab 2] | - |
+| Fri 4/04 | [Confidence Intervals for Proportions](Lectures_Spring25/CI_proportions_209.pdf) | [CI Lab 2](Labs_Spring25/CI_Lab2.html) | - |
 
 **Assignments and Deadlines**
 
