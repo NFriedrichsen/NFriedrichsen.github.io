@@ -163,7 +163,7 @@ Please note: material will not be posted until we've reached that point in the c
 ### Week 10 (CIs and Exam)
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 4/07 | [CIs for Proportions](CI_proportions.pdf) | [CI Lab 2](Labs_Spring25/CI_Lab2.html) | - |
+| Mon 4/07 | [CIs for Proportions](CI_proportions.pdf) | [CI Lab 2](Labs_Spring25/CI_Lab2.html) | [CI for Props. -- Quick Guide](CI_for_props_quickguide.html) |
 | Wed 4/09 | Review Day | - | - |
 | Fri 4/11 | Exam 2  | - | - |
 
