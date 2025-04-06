@@ -157,6 +157,14 @@ Please note: material will not be posted until we've reached that point in the c
 3) [HW5](Homework_Spring25/Homework5_209.html) due Friday 4/11 at 10pm.
 4) [HW6](Homework_Spring25/Homework6_209.html) due Friday 4/18 at 10pm.
 
+---
+
+### Week 10 (CIs and Exam)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/07 | [Bootstrapping](Lectures_Spring25/Bootstrapping.pdf) | [Bootstrapping Lab](Labs_Spring25/Bootstrapping_Lab.html) | [CI for Props. -- Quick Guide](CI_for_props_quickguide.html) |
+| Wed 4/09 | Review Day | - | - |
+| Fri 4/11 | Exam 2  | - | - |
 
 ---
 
@@ -167,6 +175,16 @@ Exam 1 will be in-class Wednesday Feb. 26.
 [Exam 1 Topics Outline](Exams_Spring25/topic_list_exam1.html)
 
 [Practice Exam 1](Exams_Spring25/practice_exam1.html) file and ([PDF Format](Exams_Spring25/practice_exam1.pdf))
+
+---
+
+## Exam 2 Info
+
+Exam 2 will be in-class Friday 4/11.
+
+[Exam 2 Topics Outline](Exams_Spring25/topic_list_exam2_209.html)
+
+[Practice Exam 2](Exams_Spring25/practice_exam2.html)
 
 ---
 
