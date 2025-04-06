@@ -1,0 +1,293 @@
+---
+title: "Bootstrapping Lab"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scoll: false
+  pdf_document:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 6, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Better histograms
+gh <- function(bins = 10) {
+  geom_histogram(color = 'black', fill = 'gray80', bins = bins)
+}
+
+## Bootstrapping function
+bootstrap <- function(x, statistic, n = 1000L) {
+  bs <- replicate(n, {
+    sb <- sample(x, replace = TRUE)
+    statistic(sb)
+  })
+  data.frame(Sample = seq_len(n), 
+             Statistic = bs)
+}
+```
+
+## Introduction
+
+This lab is intended to serve as an introduction to the construction of bootstrap confidence intervals in R.
+  
+Before we get into any exercises, let's take a little bit of time to introduce some new functions and techniques that we will be using to answer the questions.
+
+**Helpful Note:** This lab is written to be self-contained, meaning that everything that I will ask of you will be introduced in this lab. There is absolutely no expectation that you *memorize* everything.
+
+The two exceptions to this are the use of `ggplot()` and the use of `dplyr` functions, which were introduced in the previous lab. Extra guidance will be provided for questions involving dplyr.
+
+### Generating Data
+
+Often we will try and use real data for our problems, but it can also be instructive to generate *random data*. Not only does this permit us to generate as much data as we wish, it has the added bonus that we are able to know *exactly* the true values of our population.
+
+For example, we can generate random data that is normally distributed with the function `rnorm()` ("RandomNORMal"). The `rnorm()` function takes three arguments: `n`, indicating the sample size, `mean`, indicating the mean, and `sd`, indicating the standard deviation. If I wanted to generate 5 random variables from a normal distribution with mean value 10 and standard deviation 15, I would do:
+
+```{r}
+rnorm(n = 5, mean = 100, sd = 15)
+```
+
+You'll note that each time we generate random data, it gives us something, well, random. We may find ourselves in situations where we want to be able to recreate exactly a random process. We can do this with the function `set.seed()`:
+
+```{r}
+set.seed(35)
+rnorm(5, 100, 15)
+
+set.seed(35)
+rnorm(5, 100, 15)
+```
+
+As with everything else in `R`, we can assign these random values to a variable and do things with it. For example, here we collect a sample of 50 observations and compute the sample mean and standard deviation
+
+```{r}
+x <- rnorm(50, 100, 15)
+
+# Sample mean
+mean(x)
+
+# Standard deviation
+sd(x)
+```
+
+By default, the `rnorm()` function returns a *vector* instead of a data.frame. If we wish to plot the random data we create, we first have to put it in a `data.frame`
+
+```{r}
+## Sample data and put into data.frame
+x <- rnorm(50, 100, 15)
+df <- data.frame(x = x)
+
+## Using gh() (assigned above) to make histograms that don't look awful
+ggplot(df, aes(x)) + 
+  gh(bins = 10)
+```
+
+In this section, we briefly demonstrated how to generate random data in R. This involved using:
+
+  1. The `rnorm(n, mean, sd)` function to specify the parameters
+  2. We used `mean()`, `sd()`, and `length()` to find the mean, standard deviation, and standard error
+  3. We put our random variable in a data.frame to be able to plot it with `ggplot()`
+
+**Question 1:** Generate 100 observations from the normal distribution with a mean value of 50 and a standard deviation of 20, then create a histogram showing the distribution of your sample.
+
+```{r, echo = FALSE, include = FALSE}
+ggplot(data.frame(x = rnorm(100, 50, 20)), aes(x)) +
+  gh()
+```
+
+
+### Sampling Data
+
+Generating data using `rnorm()` is equivalent to collecting a sample from a population of infinite size. Further, each time we generate data, the observations are all completely different. What we need next is a way to *sample* data from an existing, finite population and we do this with the function `sample()`.
+
+Here, for example, I take a sample of size 5 from the numbers 1 to 10
+
+```{r}
+# This is my "population"
+X <- 1:10
+
+# Here, I take a sample of size 10
+sample(X, size = 10)
+```
+
+By default, the `sample()` function performs *sampling without replacement*, meaning that after a number has been sampled once, it cannot be sampled again. As such, sampling 10 numbers from the set 1:10 will give us the same 10 numbers in a different order. We can *sample with replacement* by passing a second argument, `replace = TRUE`
+
+```{r}
+# Sample with replacement
+sample(X, size = 10, replace = TRUE)
+```
+
+Now I should see that some of my numbers are repeated in the sample. Sampling with replacement is the type of sampling that we will be using with the bootstrap.
+
+We can perform this kind of sampling on variables in a data.frame as well. Consider the `trees` dataset built-in to R which contains measurements of felled cherry trees. The distribution of tree heights can be visualized simply enough:
+
+```{r}
+ggplot(trees, aes(Height)) + 
+  gh()
+```
+
+Here, I will sample tree height *with replacement* and again visualize it
+
+```{r}
+## Sample tree heights
+# (if I do not pass in `size = `, by default it will sample the same size)
+th <- sample(trees$Height, replace = TRUE)
+
+## Put sampled data in data.frame
+df <- data.frame(Height = th)
+
+## Create plot
+ggplot(df, aes(Height)) +
+  gh() + 
+  labs(title = "Distribution of Resampled Tree Height")
+```
+
+This is the equivalent of collecting one bootstrapped sample and plotting its distribution.
+
+In this section, we introduced the `sample()` function, as well as the argument `replace = TRUE` that allows us to sample *with replacement*. This will be important in the bootstrapping process.
+
+**Question 2:** Do the histogram for **all** felled cherry tree heights and the histogram of the bootstrap sample of cherry tree heights above look similar? Explain.
+
+---
+
+### Quantiles
+
+We previously saw the `qnorm()` and `qt()` functions which could be used to find quantiles of the normal and t-distribution respectively.
+
+We started with the coverage we wanted and divide the difference by two. For example, to find the middle 95%, we know we are excluding 5% at the edges; 2.5% on the left side and 2.5% on the right side. This gives us the quantiles (0.025, 0.975). Similarly, if we wanted an 80% confidence interval, our quantiles should be (0.1, 0.9).
+
+When the distribution does not look like a Normal or t-distribution, we cannot use the `qnorm()` or `qt()` functions. We will instead use the `quantile()` function in R.
+
+The `quantile()` function works by specifying the variable you want quantiles of and also the specific quantile values. See the example below to get the 2.5 and 97.5 quantiles for the cherry tree heights.
+
+```{r}
+quantile(x = trees$Height, probs=c(.025, .975))
+```
+
+#### Grinnell Rain data
+
+The data below contains the total monthly precipitation in Grinnell, IA from February 2014 to February 2024 (121 total months). We will treat all of these 121 months as the *population* we are interested in. 
+
+The following code creates a histogram of the `precipitation` variable, the amount of rainfall on a rainy day (inches), and finds the mean and standard deviation of this variable.
+
+```{r}
+## rain data
+rain <- read.csv("http://collinn.github.io/data/grinnell_rain.csv")
+ggplot(rain, aes(precip)) + 
+  gh(bins = 8) +
+  labs(x = "Precipitation (Inches)", 
+       title = "Rain Precipitation 2014-2024\nGrinnell, IA")
+
+# mean
+mean(rain$precip)
+
+# standard deviation
+sd(rain$precip)
+```
+
+**Question 3**
+
+a) Use the `qnorm()` function and these values for the mean and standard deviation to find the the 0.025 and 0.975 quantiles. Does the lower value make sense?
+
+```{r, echo=F, include=F}
+qnorm(c(.025, .975), mean=2.069835, sd=1.966139)
+```
+
+b) Using the quantile() function find the 0.025 and 0.975 quantiles of the `precip` variable. Do these values seem more reasonable for the histogram?
+
+```{r, echo=F, include=F}
+quantile(x=rain$precip, probs=c(.025, .975))
+```
+
+c) Why are the quantiles you found in the two previous parts so different? Think about the histogram shape.
+
+---
+
+### Bootstrapping
+
+We can think of the process of bootstrapping as following a simple algorithm:
+
+  1. First, given our sample of size $N$, we sample  *with replacement* a new sample from the original. This is the equivalent of pulling out a single marble from a bag of marbles, noting its color, then putting it back and drawing from the bag again
+  2. With our new sample, we compute the sample statistic (mean, median, etc...) and record it. This is a *bootstrapped sample mean*
+  3. We repeat this process as many times as we wish (usually a thousand or more times)
+  4. The resulting collection of bootstrapped sample statistics represents our *bootstrap sampling distribution*, which we will use to find our confidence interval
+  
+
+To help us with this procedure, we will need a new function called `bootstrap()` which I provided at the top of this lab. The bootstrap function takes three arguments: the data I want to bootstrap, the *statistic* I want to bootstrap, and the number of bootstrapped samples I wish to collect (by default, it will collect 1000). We will illustrate its use again using the `USArrests` data to find a confidence interval for the number of per capita murders in the United States.
+
+```{r}
+## Want to bootstrap the sample of rainy days, rain$precip
+mean_boot <- bootstrap(rain$precip, mean)
+
+head(mean_boot)
+```
+
+`head(mean_boot)` prints out the first 6 rows of the data.frame returned by `bootstrap()`: we see that the first column indicates the sample number, while the second column indicates the sample statistic, in our case the mean. Because it is a data.frame, we can easily plot it:
+
+```{r}
+ggplot(mean_boot, aes(Statistic)) + 
+  gh(bins = 15)
+```
+
+Remember: this is a *sampling distribution* of the mean value. We resampled our data 1,000 times, computed the sample mean each time, and this is the distribution of values that were returned. From this point, we can use the `quantile()` function to return the quantiles that we want. Because we want the middle 95\%, we need to take our quantiles at 2.5\% and 97.5\%
+
+```{r}
+quantile(mean_boot$Statistic, probs = c(0.025, 0.975))
+```
+
+
+**Question 4** 
+
+For this problem, we will assume that we have only collected data on 40 random months in this period, and our goal will be to estimate the true value of the mean ($\mu = 2.069$) given the sample that we have. In other words, we will be using `rs` (Rain Sample) as our observed sample dataset.
+
+```{r}
+## Create a random index of months for our sample 
+# (copy these lines into your lab)
+set.seed(123)
+idx <- sample(1:nrow(rain), size = 40, replace = FALSE)
+rs <- rain[idx, ]
+
+# histogram of the sample
+ggplot(rs, aes(x=precip)) + gh(bins=10)
+```
+
+a) Using the random sample of 40 months of Grinnell rain data above, make a bootstrap distribution for the mean using 2000 bootstrap samples.
+
+```{r, echo=F, include=F}
+mean_boot <- bootstrap(rs$precip, mean, n=2000)
+
+ggplot(mean_boot, aes(Statistic)) + 
+  gh(bins = 15)
+```
+
+b) Use the `quantile()` function to get the 2.5 and 97.5 percentiles of the bootstrap distribution. This makes a 95\% CI for the mean precipitation per month in Grinnell. Is the true mean value of $\mu = 2.09$ within this interval?
+
+```{r, echo=F, include=F}
+quantile(x=mean_boot$Statistic, probs=c(.025, .975))
+```
+
+---
+
+The following makes a 95\% CI for the *median*, which we couldn't do with the Normal or t-distribution methods.
+
+```{r}
+med_boot <- bootstrap(rs$precip, median, n=2000)
+ggplot(med_boot, aes(x=Statistic)) + gh(bins=10)
+quantile(x=med_boot$Statistic, probs=c(.025, .975))
+```
