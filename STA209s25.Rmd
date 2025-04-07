@@ -202,6 +202,8 @@ Exam 2 will be in-class Friday 4/11.
 
 [Regression Lab](Labs_Spring25/corr_regression_lab_solutions.html)
 
+[Normal Dist. Lab](Labs_Spring25/normaldist_probabilities_lab_sol.html)
+
 ### Selected HW Solutions
 
 [Homework 2](Homework_Spring25/Homework2_solutions.pdf)
