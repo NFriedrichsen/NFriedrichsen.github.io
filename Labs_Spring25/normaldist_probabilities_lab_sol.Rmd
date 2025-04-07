@@ -1,0 +1,221 @@
+---
+title: "Normal Distributions and Probabilities"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Normal Probabilities
+
+## Practice
+
+The R function `pnorm()` will be very helpful to use for calculating probabilities. In order to use it we need to tell the function a few specific things we are using:
+
+- The value we are checking a probability for
+- The mean of the normal distribution
+- The standard deviation of the normal distribution
+- Whether to give the probability less than or more than (by default R returns 'less than' probabilities, use "lower.tail=F" to get 'greater than probabilities)
+
+Here is an example of using the `pnorm()` function to calculate the probability P(X > 25) for a normal distribution with mean 30 and std.dev. 10.
+
+```{r}
+pnorm(25, mean=30, sd=10, lower.tail = FALSE)
+# Nice
+```
+
+
+### Question 1
+
+We will use a standard normal distribution for practice. For all of these question parts, show your R code and your calculations. I also recommend being able to draw a rough sketch to illustrate visually the probability on the normal distribution graph.
+
+**Part A**: Use R to find the probability of randomly picking a value more than 0.5.
+
+```{r}
+pnorm(0.5, lower.tail=F)
+```
+
+
+**Part B**: Use R to find the probability of randomly picking a value less than -0.5.
+
+```{r}
+pnorm(-.5)
+```
+
+
+**Part C**: Do your answers to Parts A and B match?
+
+```{r}
+# Yes, they are the same.
+```
+
+
+**Part D**: Use Parts A and B to find the probability of randomly picking a value *between* -0.5 and 0.5.
+
+```{r}
+pnorm(0.5) - pnorm(-.5)
+```
+
+
+**Part E**: Verify the 68-95-99.7\% rule using 1, 2, and 3 std.dev's, and state the results in your own words.
+
+```{r}
+pnorm(1) - pnorm(-1)
+pnorm(2) - pnorm(-2)
+pnorm(3) - pnorm(-3)
+```
+
+---
+
+## Practical Example -- Mercury in Fish
+
+Mercury is a chemical that is toxic to humans (and many others animals). From the smokestacks of power plants to the discharges from wastewater treatment plants, and other places, mercury in the form of the compound methylmercury exists in the enviroment, and it can settle to the seafloor and be taken up by tiny organisms that live or feed on bottom sediments. 
+
+These compounds aren’t digested, they accumulate within the animals that ingest them, and become more and more concentrated as they pass along the food chain as animals eat and then are eaten in turn. This is biomagnification, and it means that higher-level predators-fish, birds, and marine mammals-build up greater and more dangerous amounts of toxic materials than animals lower on the food chain. ([Info taken from here](https://longislandsoundstudy.net/2021/12/passing-contaminants-up-the-food-chain/))
+
+The U.S. Food and Drug Administration recommends avoiding eating fish with mercury levels higher than 0.46 $\mu$g/g (micro-grams mercury per gram of fish), as they may be harmful ([source](https://www.fda.gov/food/environmental-contaminants-food/technical-information-development-fdaepa-advice-about-eating-fish-those-who-might-become-or-are)).
+
+Suppose the population of yellowfin tuna follows a Normal distribution with an average mercury level of 0.354 $\mu$g/g , and a variance of 0.02. ([Mean value taken from here](https://www.healthline.com/nutrition/mercury-in-tuna#dangers), I made up the variance amount -- hard to find this)
+
+### Question 2:
+
+**Part A**: What is the standard deviation of this population?
+
+```{r]}
+sqrt(.02)
+```
+
+**Part B**: What is the probability of catching a yellowfin tuna with an unsafe amount of mercury? Suppose you enjoy eating yellowfin tuna -- would you frequently eat yellowfin tuna knowing this extra information?
+
+```{r}
+pnorm(.46, mean=.354, sd=.14, lower.tail = FALSE)
+```
+
+**Part C:** Suppose the standard deviation is actually .03 instead of .14. Find the probability of catching a yellowfin tuna with an unsafe amount of mercury. Does this change your answer to whether or not you would frequently eat yellowfin tuna?
+
+```{r}
+pnorm(.46, mean=.354, sd=.03, lower.tail = FALSE)
+```
+
+
+---
+
+# Expectation and Variance
+
+## Question 3
+
+Consider an 8-sided die with faces labeled 1 through 8.
+
+**Part A**: Find and interpret the expected value of this die.
+
+```{r}
+1/8 * (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
+```
+If we roll an 8-sided die many times, the average will be close to 4.5.
+
+**Part B**: Find and interpret the standard deviation of this die.
+
+```{r}
+var = 1/8 * (1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2 + 7^2 + 8^2) - 4.5^2
+sqrt(var)
+```
+The average difference of an 8-sided die roll result is 2.29 from the mean of 4.5.
+
+**Part C**: What is the expected value of rolling and adding up three 8-sided dice?
+
+```{r}
+4.5 + 4.5 + 4.5
+```
+
+
+**Part D**: Which has more variability: rolling three 8-sided dice and adding up the values *or* rolling one 8-sided die and multiplying the result by 3 (consider variance formulas)
+
+```{r}
+# variance of three 8-sided dice
+5.25 + 5.25 + 5.25
+
+# variance of 8-sided die result x 3
+9 * 5.25
+```
+The variance of the 8-sided die multiplied by 3 is more -- the result is more 'swingy.'
+
+---
+
+# Useful Website Stuff
+
+### Sampling Distribution
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNormal.htm)] and go through the tutorial and associated examples. It will help explain what the sampling distribution is all about.
+
+**Question 3:** What are some things you learned from this example?
+
+### Central Limit Theorem
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/CLT.htm)] and go through the tutorial and associate examples. It will help explain what the CLT is all about.
+
+**Question 4:** What are some things you learned from this example?
+
+---
+
+## Question 5 (Conceptual)
+
+**Part A**: In your own words, explain what a *population* distribution is.
+
+A distribution that represents the entire population.
+
+**Part B**: In your own words, explain what a *sample* distribution is.
+
+A distribution that represents a sample of data.
+
+**Part C**: In your own words, explain what a *sampling* distribution is.
+
+A distribution that represents the results (statistics) of *many* random samples.
+
+**Part D**: I mentioned before that sampling is a random process. What is meant by the term *sampling variability*?
+
+The fact that our sample is different every time we pick a new one, and thus the resulting statistics will be just a bit different every time.
+
+**Part E**: Which distribution does the *standard error* refer to?
+
+Sampling distribution.
+
+## Question 6 -- NFL Contracts
+
+We will use the following link to explore sampling distribution concepts. [StatKey Link for Sampling Distributions](https://www.lock5stat.com/StatKey/sampling_1_quant/sampling_1_quant.html). 
+
+This is an app for simulating sampling distributions. In the top left, click "Baseball Players 3e..." to navigate a drop down menu of data sets and select "NFL Contracts 3e". The panel on the right hand side shows what the original sample looks like under **Population** and gives some statistics for the population. At the top we are able to choose different sample sizes with which we create a random sample from the population.
+
+We will use the following link to explore sampling distribution concepts. [StatKey Link for Sampling Distributions](https://www.lock5stat.com/StatKey/sampling_1_quant/sampling_1_quant.html). 
+
+This is an app for simulating sampling distributions. In the top left, click "Baseball Players 3e..." to navigate a drop down menu of data sets and select "NFL Contracts 3e". The panel on the right hand side shows what the original sample looks like under **Population** and gives some statistics for the population. At the top we are able to choose different sample sizes with which we create a random sample from the population.
+
+**Part A**: Leave the sample size at n=10. Click "Generate 1 Sample." The app puts a point on the sampling distribution corresponding to this point. The sample we just generated is represented in the bottom right of the screen. What are the mean and standard deviation of the sample?
+
+Answers will vary.
+
+**Part B**: Generate another sample. What values did you get for the mean and standard deviation?
+
+Answers will vary.
+
+**Part C**: Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+Shape is right skewed. SE values will vary.
+
+**Part D**: Change the sample size to 50. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+Shape is less right skewed, and is more symmetric. SE decreased.
+
+**Part E**: Change the sample size to 200. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+The sampling distribution is Normal. SE decreased.
+
+**Part F**: Add 3000 more samples to the plot from Part E. Did the shape or std error change very much? Why?
+
+No. All we did was add more dots to the plot, but didn't change the samples themselves. 
+
+**Part G**: In general, how would you describe what happens to the shape of the sampling distribution as the sample size increases? What about the standard error?
+
+As sampling size increases, SE goes down and the sampling distribution becomes more and more Normal.
