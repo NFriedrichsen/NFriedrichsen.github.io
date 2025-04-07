@@ -166,6 +166,11 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 4/09 | Review Day | - | - |
 | Fri 4/11 | Exam 2  | - | - |
 
+**Assignments and Deadlines**
+
+1) CI Lab 2 due Tuesday 4/08 at 10pm.
+2) Bootstrapping Lab due Wednesday 4/09 at 10pm.
+
 ---
 
 ## Exam 1 Info
