@@ -1,0 +1,82 @@
+---
+title: "Sampling Distributions Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Useful Website Stuff
+
+### Sampling Distribution
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNormal.htm)] and go through the tutorial and associated examples. It will help explain what the sampling distribution is all about.
+
+**Question 1:** What are some things you learned from this example?
+
+### Central Limit Theorem
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/CLT.htm)] and go through the tutorial and associate examples. It will help explain what the CLT is all about.
+
+**Question 2:** What are some things you learned from this example?
+
+---
+
+## Question 3 (Conceptual)
+
+**Part A**: In your own words, explain what a *population* distribution is.
+
+A distribution that represents the entire population.
+
+**Part B**: In your own words, explain what a *sample* distribution is.
+
+A distribution that represents a sample of data.
+
+**Part C**: In your own words, explain what a *sampling* distribution is.
+
+A distribution that represents the results (statistics) of *many* random samples.
+
+**Part D**: I mentioned before that sampling is a random process. What is meant by the term *sampling variability*?
+
+The fact that our sample is different every time we pick a new one, and thus the resulting statistics will be just a bit different every time.
+
+**Part E**: Which distribution does the *standard error* refer to?
+
+Sampling distribution.
+
+## Question 4 -- NFL Contracts
+
+We will use the following link to explore sampling distribution concepts. [StatKey Link for Sampling Distributions](https://www.lock5stat.com/StatKey/sampling_1_quant/sampling_1_quant.html). 
+
+This is an app for simulating sampling distributions. In the top left, click "Baseball Players 3e..." to navigate a drop down menu of data sets and select "NFL Contracts 3e". The panel on the right hand side shows what the original sample looks like under **Population** and gives some statistics for the population. At the top we are able to choose different sample sizes with which we create a random sample from the population.
+
+**Part A**: Leave the sample size at n=10. Click "Generate 1 Sample." The app puts a point on the sampling distribution corresponding to this point. The sample we just generated is represented in the bottom right of the screen. What are the mean and standard deviation of the sample?
+
+Answers will vary.
+
+**Part B**: Generate another sample. What values did you get for the mean and standard deviation?
+
+Answers will vary.
+
+**Part C**: Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+Shape is right skewed. SE values will vary.
+
+**Part D**: Change the sample size to 50. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+Shape is less right skewed, and is more symmetric. SE decreased.
+
+**Part E**: Change the sample size to 200. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+The sampling distribution is Normal. SE decreased.
+
+**Part F**: Add 3000 more samples to the plot from Part E. Did the shape or std error change very much? Why?
+
+No. All we did was add more dots to the plot, but didn't change the samples themselves. 
+
+**Part G**: In general, how would you describe what happens to the shape of the sampling distribution as the sample size increases? What about the standard error?
+
+As sampling size increases, SE goes down and the sampling distribution becomes more and more Normal.
