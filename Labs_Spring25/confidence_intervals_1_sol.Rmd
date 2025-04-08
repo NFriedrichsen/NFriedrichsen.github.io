@@ -1,0 +1,274 @@
+---
+title: "Confidence Intervals Lab 1"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question 1 (Conceptual)
+
+**Part A:** What is the purpose of a confidence interval?
+
+To get a range of estimates for a parameter.
+
+**Part B:** What does "95\% confidence" actually mean?
+
+If we made a whole bunch of samples, 95\% of them would contain the parameter. 
+
+**Part C:** What is the formula for the standard error of the sample mean?
+
+$SE = \sigma / \sqrt{n}$ (we know $\sigma$) or $SE = s / \sqrt{n}$
+
+**Part D:** What is the formula for a 95\% confidence interval for a population mean?
+
+$\bar{x} \pm z^* \times \frac{\sigma}{\sqrt{n}}$ or
+$\bar{x} \pm t^* \times \frac{s}{\sqrt{n}}$
+
+**Part E:** What type of variability are confidence intervals accounting for?
+
+Sampling variability only.
+
+**Part F:** Do confidence intervals account for biased samples?
+
+They do not. They are made under the assumption of an unbiased sample.
+
+---
+
+## Question 2 -- Florida Mercury Levels
+
+This is using the info from a study similar to the Florida lakes fish data we saw in the slides.
+
+Data was collected from 107 lakes in Florida. For each lake, the mercury level (ppm) was computed for a large mouth bass. The average mercury level in the sample was 0.554 ppm.
+
+**Part A:** Describe the parameter in context. What is the corresponding parameter symbol? If we know the value, provide it.
+
+```{r}
+# Mu = mean mercury levels of large mouth bass in all florida lakes
+```
+
+**Part B:** Describe the statistic in context. State the corresponding statistic symbol. If we know the value, provide it.
+
+```{r}
+# x-bar = sample mean mercury level of large mouth bass from 107 florida lakes
+```
+
+**Part C:** The standard error for this statistic is 0.051. What is the 95\% confidence interval? (Show your work)
+
+```{r}
+0.554 - 2*.051
+0.554 + 2*.051
+```
+
+**Part D:** Interpret the confidence interval.
+
+```{r}
+# We are 95% confident the mean mercury level of large mouth bass in all
+# florida lakes is between 0.452 and 0.656 ppm
+```
+
+**Part E:** In the U.S., the FDA action level is 1 ppm. Is this safely below the U.S. limit?
+
+```{r}
+# Yes. 1 is not within our interval, the entire interval is below 1.
+```
+
+**Part F:** In Canada, the safety limit is 0.5 ppm. Is this clearly above the Canadian limit?
+
+```{r}
+# No. 0.5 is within our interval. It is plausible the true mean value is above 0.5
+```
+
+**Part G:** Suppose we didn't know the standard error value in part C, but instead we knew the population standard deviation is 0.20. Create a new 95\% confidence interval using this info. Does your answer to Part F change?
+
+```{r, echo=F, include=F}
+0.554 - 2*0.2/sqrt(107)
+0.554 + 2*0.2/sqrt(107)
+```
+
+Yes. Now the interval is entirely above 0.5.
+
+**Part H:** What is the practical takeaway from your answer to Part G?
+
+The standard error (precision) of our estimate matters a lot for answering real questions with our estimate. If we have a big standard error then we also have a wide range of estimates and haven't narrowed it down much. For part F, with a large SE it was possible the value was below 0.5. according to the CI, but with a smaller SE that is ruled out.
+
+---
+
+# Practice with Normal and t-distribution quantiles
+
+We saw in the previous lab that the `pnorm()` function could be used to find probabilities associated with specific values for the Normal distribution.
+
+```{r}
+pnorm(-1.96); pnorm(1.96, lower.tail=F)
+```
+i.e.: the probability below -1.96 and above 1.96 are both .025 on a standard normal distribution
+
+The R functions `qnorm()` and `qt()` do the opposite: They give the cutoff that corresponds to a probability that we put in the function. 
+
+In order to use `qnorm()` we must give it
+
+1) the probability
+2) the mean (optional)
+3) the standard deviation (optional)
+
+**Note:** If you do not specify the mean and standard deviation `qnorm()` defaults to the standard normal distribution N(0,1).
+
+```{r}
+qnorm(.025)
+qnorm(.975)
+```
+
+These correspond to the cutoffs we use in a 95\% confidence interval when we know $\sigma$'s value. These also correspond to the middle 95\% of the standard normal distribution because .975-.025 = .95
+
+When we want to use a different confidence \% for our CI, we need to use values different from .025 and .975.
+
+We will do this by using $\alpha$ for a 100(1-$\alpha$)\% CI.
+The values will be $\alpha / 2$ and $1-(\alpha / 2)$.
+
+For the 95\% CI we have $\alpha = .05$ and so that gave us the cutoffs $\alpha / 2 = .05 / 2 = .025$ and $1-(\alpha / 2)= 1-(.05 / 2) = .975$. We will actually get the same value just with a different sign (positive or negative) for each of these, so we will only care about the positive one from here on out.
+
+The `qt()` function will work very similar. We input the cutoffs according the the confidence \% with the $\alpha$ values and it gives us the corresponding quantiles of the t-distribution instead of the normal distribution. We also need to include the degrees of freedom for the normal distribution.
+
+```{r}
+# 95\% CI quantile cutoffs
+# for a sample with sample size = 34 (n=34)
+qt(.975, df=33)
+```
+
+This tells us we need to add and subtract 2.03 SE's in our 95\% CI for the mean using the t-distribution with df=33.
+
+Use the `qnorm()` and `qt()` functions to answer the following:
+
+### Question 3
+
+**Part A:** How many SE's will we add and subtract for a 99\% CI using the normal distribution?
+
+```{r}
+qnorm(.995)
+```
+**Part B:** How many SE's will we add and subtract for a 90\% CI using the normal distribution?
+
+```{r}
+qnorm(.95)
+```
+
+**Part C:** How many SE's will we add and subtract for a 95\% CI using the t-distribution with a sample size of 30?
+
+```{r}
+qt(.975, df=29)
+```
+
+**Part D:** How many SE's will we add and subtract for a 95\% CI using the t-distribution with a sample size of 200?
+
+```{r}
+qt(.975, df=199)
+```
+
+**Part E:** Using your answer to A and B, what do we notice about the relationship between confidence level and interval width?
+
+As confidence goes up, the interval must be wider in order for the intervals to be right more often.
+
+**Part F:** Using your answer to C and D, what do you notice about the values we get for the cutoff as the sample size increases? (They should be getting close to a specific value)
+
+As simple size increases, the value for the cutoff from the t-distribution goes down. It gets closer and closer to the value we would get from the Normal distribution.
+
+---
+
+# Mercury in Fish (revisited) Pt. 1
+
+We are going to work on a problem similar to the yellowfin tuna and mercury levels we covered in the previous lab. Before, we knew the values for the population mean and standard deviation. Most of the time we will not know these.
+
+For this example, suppose the pop. mean and standard deviation are not known. ($\mu$ = ?, $\sigma$ = ?). Do not use the values from the previous questions.
+
+**Research Question**: What is the pop. mean mercury level (micro-grams mercury per gram of fish) of yellowfin tuna?
+
+To answer this question, scientists recorded the mercury levels in 48 randomly selected yellowfin tuna caught in different locations throughout the fish' natural range. The mean mercury level in the sample was .388 with a std. dev. of 0.12. For the purpose of this lab, assume this is a representative sample.
+
+**Note:** Since we do not know $\sigma$, we cannot use the Normal distribution for a CI, we need to use the t-distribution.
+
+### Question 4
+
+**Part A:** Describe the parameter of interest in context. State whether we know the value.
+
+The true mean mercury level of all yellowfin tuna = $\mu$. We do not know the value.
+
+**Part B:** Describe the statistic of interest in context. State the value if we know it.
+
+The sample mean mercury level of 48 yellowfin tuna = $\bar{x} = 0.388$.
+
+**Part C:** Explain what the conditions are to make a CI using the t-distribution and why they are met in this example.
+
+We need a representatitive (or random) sample and either the a Normal population or sample size $\geq$ 30.
+
+Here we are told this is a representative sample and the sample size $n = 48 \geq 30$.
+
+**Part D:** How many SE's do we need to add and subtract to make a 90\% CI with our data?
+
+```{r}
+qt(.95, df=47)
+```
+
+**Part E:** Make a 90\% CI for the parameter. (Show work)
+
+```{r}
+.388 - 1.68 * .12 / sqrt(48)
+.388 + 1.68 * .12 / sqrt(48)
+```
+
+**Part F:** Interpret this confidence interval in context. We should be able to use this interpretation to answer the research question.
+
+We are 90\% confident the true mean mercury level of all yellowfin tuna is between 0.359 and 0.417 ppm.
+
+---
+
+# Mercury in Fish Pt. 2
+
+Suppose the 48 fish were actually caught using random samples from 2 different locations: 1) gulf of Mexico and 2) east coast of Japan. We could look at answering a different research question:
+
+**Research Question:** What is the difference in pop. mean mercury levels for yellowfin tuna in the Gulf of Mexico vs. off the east coast of Japan?
+
+#### Gulf of Mexico sample
+There were 20 fish caught in the gulf of Mexico with a sample mean of 0.413 and std. dev. of 0.15
+
+#### East Coast of Japan sample
+There were 28 fish caught off the east coast of Japan with a sample mean of 0.370 and std. dev. of 0.10
+
+### Question 5
+
+**Part A:** Explain why the conditions to make a 95\% CI for the difference in pop. means using a t-distribution are not met for this sample. (regardless, we will continue for practice)
+
+The sample sizes of the groups are not larger than 30.
+
+**Part B:** What is the df for the t-distribution we will use and how many SE's will we add and subtract for our 95\% CI?
+
+```{r}
+df = 19
+t = qt(.975, df=19)
+t
+```
+
+**Part C:** What is the value of the SE?
+
+```{r}
+SE = sqrt(.15^2 / 20 + .1^2 / 28)
+SE
+```
+
+
+**Part D:** Make a 95\% CI for the difference in pop. means (keep track of subtraction order)
+
+```{r}
+(.413 - .370) - t*SE
+(.413 - .370) + t*SE
+```
+
+**Part E:** Interpret the confidence interval in context.
+
+We are 95\% confident the population mean mercury level of yellowfin tuna from the Gulf of Mexico is between 0.038ppm lower or 0.124ppm higher than yellowfin tuna from the East Coast of Japan.
+
+**Part F:** According to the confidence interval, is it plausible there is actually no difference in pop. mean mercury levels?
+
+Yes. Zero is within the interval, so our CI suggests there may actually be no difference or only a very smal difference.
