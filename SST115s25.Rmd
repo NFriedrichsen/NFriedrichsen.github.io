@@ -212,6 +212,8 @@ Exam 2 will be in-class Friday 4/11.
 
 [CI Lab 1](Labs_Spring25/confidence_intervals_1_sol.html)
 
+[Probability "FunSheets"](Labs_Spring25/ProbWorksheets_Solutions.pdf)
+
 ### Selected HW Solutions
 
 [Homework 2](Homework_Spring25/Homework2_solutions.pdf)
