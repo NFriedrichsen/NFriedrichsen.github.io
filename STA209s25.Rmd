@@ -170,7 +170,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) CI Lab 2 due Tuesday 4/08 at 10pm.
 2) Bootstrapping Lab due Wednesday 4/09 at 10pm.
-3) [Project Info](Exams_Spring25/SST115_project.html)
+3) [Project Info](Exams_Spring25/STA209_project.html)
 
 ---
 
