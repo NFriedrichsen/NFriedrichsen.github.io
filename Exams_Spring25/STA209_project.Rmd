@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side an in-class presentation (optional, extra credit).
+This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side a short in-class presentation.
 
 ## Objectives
 
@@ -116,10 +116,10 @@ Recognize that keeping this report within the 3-page limit means you will have t
 
 ### Final Presentation
 
-Presentations will be limited to 10 minutes will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
+Presentations will be limited to 10 minutes and will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
 
   - Research question
-  - How the data were collected
+  - How the data was collected
   - Patterns and trends you identified in your investigation
   - Methods used
   - Conclusions drawn from the analysis

@@ -1,5 +1,5 @@
 ---
-title: "SST-115 Final Project (Fall 2024)"
+title: "SST-115 Final Project (Spring 2025)"
 output:
   html_document: default
   pdf_document: default
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side an in-class presentation (optional, extra credit).
+This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side a short in-class presentation.
 
 ## Objectives
 
@@ -90,7 +90,7 @@ Examples of the type of studies and data you might collect, consider:
  <br> <br>
 
 
-I will not strictly require that you collect your own data. If you find a dataset that you wish to use and have an interesting research question, I will be happy to consider it with you. That being said, my expectations for analysis on a pre-curated dataset will necessarily be higher than for those who have gone through the study design process themselves.
+I will not strictly require that you collect your own data. If you find a dataset that you wish to use and have an interesting research question, I will be happy to consider it with you. That being said, my expectations for analysis on a pre-curated dataset will necessarily be higher than for those who have gone through the study design process themselves. I will also not strictly disallow the use of surveys, but will discourage them. Survey data cleaning and manipulation in R is not easy -- and as such it will require a lot of work on your end to get the data in a workable format to use R graphics and analysis.
 
 Finally, there are often situations in which it may not be feasible to collect all of the data listed here (3+ vars, 30 observations). If you have an idea and are not sure on the practicality of it, feel free to talk to me and we can brainstorm solutions together.
   
@@ -116,10 +116,10 @@ Recognize that keeping this report within the 3-page limit means you will have t
 
 ### Final Presentation
 
-Presentations will be limited to 10 minutes will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
+Presentations will be limited to 10 minutes and will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
 
   - Research question
-  - How the data were collected
+  - How the data was collected
   - Patterns and trends you identified in your investigation
   - Methods used
   - Conclusions drawn from the analysis
