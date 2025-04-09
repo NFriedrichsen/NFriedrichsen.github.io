@@ -170,6 +170,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) CI Lab 2 due Tuesday 4/08 at 10pm.
 2) Bootstrapping Lab due Wednesday 4/09 at 10pm.
+3) [Project Info](Exams_Spring25/SST115_project.html)
 
 ---
 
@@ -190,6 +191,8 @@ Exam 2 will be in-class Friday 4/11.
 [Exam 2 Topics Outline](Exams_Spring25/topic_list_exam2_209.html)
 
 [Practice Exam 2](Exams_Spring25/practice_exam2.html)
+
+[Formula Sheet](Exams_Spring25/exam2_formulas.pdf)
 
 ---
 
