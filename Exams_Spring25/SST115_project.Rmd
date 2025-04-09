@@ -114,9 +114,9 @@ This report **will** be assessed on both content and form: messages, warnings, a
 
 Recognize that keeping this report within the 3-page limit means you will have to plan and be deliberate in deciding what is important to include and what is not. Indeed, most statistical analyses *do not* report everything that was explored in the final write up.
 
-### Final Presentation -- EXTRA CREDIT
+### Final Presentation
 
-Presentations will be limited to 10 minutes from each of the groups and delivered during the scheduled final exam time (**Tues Dec 17, 9am-12pm**). The presentation should clearly outline 
+Presentations will be limited to 10 minutes will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
 
   - Research question
   - How the data were collected
