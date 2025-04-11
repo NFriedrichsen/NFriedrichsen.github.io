@@ -217,6 +217,8 @@ Exam 2 will be in-class Friday 4/11.
 
 [Probability "FunSheets"](Labs_Spring25/ProbWorksheets_Solutions.pdf)
 
+[CI Lab 2](Labs_Spring25/CI_Lab2_sol.html)
+
 ### Selected HW Solutions
 
 [Homework 2](Homework_Spring25/Homework2_solutions.pdf)
