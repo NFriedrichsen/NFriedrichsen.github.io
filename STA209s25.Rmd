@@ -177,8 +177,13 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 4/14 | [Hypothesis Testing 1](Lectures_Spring25/HypothesisTesting1.pdf) | [Testing Worksheet (PDF)](Labs_Spring25/TestingWorksheet1.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet1.html) | - |
-| Wed 4/16 | [HT - P-values and Test-stats](Lectures_Spring25/HypothesisTesting2.pdf) | [Testing Worksheet 2 (PDF)](Labs_Spring25/TestingWorksheet2.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet2.html) | - |
-| Fri 4/18 | [HT - Props and Means](Lectures_Spring25/HypothesisTesting3.pdf) | [Testing Worksheet 3 (PDF)](Labs_Spring25/TestingWorksheet3.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet3.html) | - |
+| Wed 4/16 | Project and Worksheet Day | Worksheet 1 cont'd | - |
+| Fri 4/18 | [HT - P-values and Test-stats](Lectures_Spring25/HypothesisTesting2.pdf) | [Testing Worksheet 2 (PDF)](Labs_Spring25/TestingWorksheet2.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet2.html) | - |
+
+**Assignments and Deadlines**
+
+1) Project groups due Wednesday night at 10pm.
+2) Worksheet due dates TBD.
 
 ---
 
