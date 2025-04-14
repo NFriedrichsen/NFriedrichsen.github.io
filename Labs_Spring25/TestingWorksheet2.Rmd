@@ -1,0 +1,84 @@
+---
+title: "Hypothesis Testing Worksheet 2"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1 -- Conceptual
+
+**Part A**: Why do we calculate a test-statistic? \vspace{10mm}
+
+**Part B**: Why do we sometimes call tests left, right, or two-tailed tests? \vspace{10mm}
+
+---
+
+# Question 2 -- Finding P-values
+
+Using a standard normal distribution N(0,1) find the p-value associated with the following Z test-statistic and alternate hypothesis. Be sure to draw a graph. We used R to calculate normal probabilities with the `pnorm()` function. Remember that right-tail probabilities need `lower.tail=F` in `pnorm()`.
+
+**Part A**: Z = -1.35, left-tailed test \vspace{22mm}
+
+**Part B**: Z = 1.48, right-tailed test \vspace{22mm}
+
+**Part C**: Z = -.4, two-tailed test \vspace{22mm}
+
+**Part D**: Z = 1.87, two-tailed test \vspace{22mm}
+
+# Question 3 -- Do Aliens Exist?
+
+Do aliens exist? In May 2021, YouGov asked 4,839 adult Great Britain residents whether they think aliens exist, and if so, if they have or have not visited Earth. You want to evaluate if more than a quarter (25%) of Great Britain adults think aliens don’t exist. 
+
+In the survey 22% responded “I think they exist, and have visited Earth”, 28% responded “I think they exist, but have not visited Earth”, 29% responded “I don’t think they exist”, and 22% responded “Don’t know”. A friend of yours offers to help you with setting up the hypothesis test and comes up with the following hypotheses. Indicate any errors you see.
+
+H$_0$: $\widehat{p} = .29$, \hspace{2mm} H$_A$: $\widehat{p} > .29$ \vspace{35mm}
+
+# Question 4 -- Legalization of Marijuana
+
+The General Social Survey asked a random sample of 1,563 US adults: “Do you think the use of marijuana should be made legal, or not?” 60\% of the respondents said it should be made legal. (NORC 2022)
+
+**Part A**: Is 60\% a sample statistic or a population parameter? Explain. \vspace{10mm}
+
+**Part B**: A news piece on this survey’s findings states, “Majority of US adults think marijuana should be legalized.” Perform a hypothesis test to see if this claim is justified (state hypotheses, find test-statistic, p-value, strength of evidence, conclusion)
+
+H$_0$: p = \hspace{10mm}, \hspace{10mm} H$_A$: p
+
+Test-statistic = \vspace{10mm}
+
+P-value =
+
+Strength of evidence in favor of alternate hypothesis:
+
+**Is the news piece claim justified by the hypothesis test results? Explain.** \vspace{18mm}
+
+**Part C**: A critic points out that this hypothesis testing method is only accurate if the test-statistic follows a normal distribution, or if the normal model is a good approximation. Do the conditions hold for this data? Explain.
+
+\newpage
+
+# Question 5 -- Practicing Interpretations and Conclusions
+
+Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanting to test this claim randomly sampled 80 such people. He then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular. 53 participants correctly identified the soda.
+
+The test-statistic is 2.91 with a p-value of 
+```{r}
+2*pnorm(2.91, lower.tail=F)
+```
+
+**Interpret the p-value in this context.** \vspace{25mm}
+
+**Write a conclusion that answer the researcher's question.** \vspace{25mm}
+
+Nearsightedness (myopia) is a common vision condition in which you can see near objects clearly, but farther away objects blurry. It is believed that nearsightedness affects about 8\% of all children. In a random sample of 194 children, 21 are nearsighted. The following comes from conducting a hypothesis test to see if the 8\% value is inaccurate. The test-statistic and p-value are given by the following: 
+```{r}
+Z = (21/194 - .08) / sqrt(0.08 * (1-0.08) / 194)
+Z
+2*pnorm(Z, lower.tail=F)
+```
+
+**Explain why we want to use a two-tailed test.** \vspace{15mm}
+
+**Write up a conclusion to whether or not the 8\% value is inaccurate.**

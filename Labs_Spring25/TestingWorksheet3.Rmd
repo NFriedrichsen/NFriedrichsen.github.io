@@ -1,0 +1,85 @@
+---
+title: "Hypothesis Testing Worksheet 3"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This assignment will count as HW8 instead of a lab score. It will be worth 5 points. Either write your answers in Rmarkdown or upload a copy of your handwritten answers to gradescope for the HW8 submission. Due date TBD.
+
+# Question 1 -- Sleep deprivation, CA vs. OR (2 pts)
+
+A CDC report on sleep deprivation rates shows that the proportion of California residents who reported insufficient rest or sleep during each of the preceding 30 days is 8.0\%, while this proportion is 8.8\% for Oregon residents. These data are based on simple random samples of 11,545 California and 4,691 Oregon residents.
+
+**Goal:** Conduct a hypothesis test to determine if these data provide strong evidence that the rate of sleep deprivation is different for the two states.
+
+**Part A**: What type of hypothesis test is this? (proportion / diff. in proportions/ mean / diff. in means) \vspace{20mm}
+
+**Part B**: Compute $\widehat{p}_{pool}$. \vspace{30mm}
+
+**Part C**: Compute the test-statistic Z. \vspace{30mm}
+
+**Part D**: Compute the p-value using `pnorm()`.
+
+**Part E**: Write a conclusion to this question using 'strength of evidence'.
+
+\newpage
+
+# Question 2 -- Find the P-value with t-distribution (.5 pts)
+
+A random sample is selected from an approximately normal population
+with an unknown standard deviation. Find the p-value for the given sample size and test statistic using `pt()`.
+
+**Part A**: n = 26, T = 2.485, two-tail test
+
+```{r, echo=F, eval=F}
+2*pt(2.485, df=25, lower.tail=F)
+```
+
+
+**Part B**: n = 18, T = 0.5, right-tail test
+
+```{r, echo=F, eval=F}
+pt(.5, df=17, lower.tail=F)
+```
+
+
+---
+
+# Question 3 -- Piano (1 pt)
+
+Georgianna claims that in a small city renowned for its music school, the average child takes less than 5 years of piano lessons. We have a random sample of 35 children from the city, with a sample mean of 4.6 years of piano lessons and a sample standard deviation of 2.2 years.
+
+Evaluate Georgianna’s claim using a hypothesis test.
+
+- state hypotheses
+- check conditions
+- calculate test-statistic
+- p-value
+- conclusion
+
+\newpage
+
+# Question 4 -- Diamonds (1.5 pts)
+
+We have data on two random samples of diamonds: one with diamonds that weigh 0.99 carats and one with diamonds that weigh 1 carat. Each sample has 23 diamonds. Sample statistics for the price per carat of diamonds in each sample are provided below. 
+
+---
+
+### 0.99 Carats
+
+Sample mean = \$44.51, s.d. = \$13.32, n=23
+
+### 1 Carat
+
+Sample mean = \$57.20, s.d. = \$18.19, n=23
+
+---
+
+Assuming that the conditions for conducting inference using the t-distribution are satisfied, perform a hypothesis test to see if there is a difference in population prices per carat of diamonds that weigh 0.99 carats and 1 carat. (Wickham 2016)
+
+
