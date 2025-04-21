@@ -1,15 +1,13 @@
 ---
 title: "Hypothesis Testing Worksheet 3"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-This assignment will count as HW8 instead of a lab score. It will be worth 5 points. Either write your answers in Rmarkdown or upload a copy of your handwritten answers to gradescope for the HW8 submission. Due date TBD.
 
 # Question 1 -- Sleep deprivation, CA vs. OR (2 pts)
 

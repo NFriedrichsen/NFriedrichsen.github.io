@@ -11,7 +11,7 @@
 
 
 
-<title>Hypothesis Testing Worksheet 3</title>
+<title>Testing Worksheet 4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,76 +348,177 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Hypothesis Testing Worksheet 3</h1>
+<h1 class="title toc-ignore">Testing Worksheet 4</h1>
 
 </div>
 
 
-<div id="question-1-sleep-deprivation-ca-vs.-or-2-pts" class="section level1">
-<h1>Question 1 – Sleep deprivation, CA vs. OR (2 pts)</h1>
-<p>A CDC report on sleep deprivation rates shows that the proportion of
-California residents who reported insufficient rest or sleep during each
-of the preceding 30 days is 8.0%, while this proportion is 8.8% for
-Oregon residents. These data are based on simple random samples of
-11,545 California and 4,691 Oregon residents.</p>
-<p><strong>Goal:</strong> Conduct a hypothesis test to determine if
-these data provide strong evidence that the rate of sleep deprivation is
-different for the two states.</p>
-<p><strong>Part A</strong>: What type of hypothesis test is this?
-(proportion / diff. in proportions/ mean / diff. in means) </p>
-<p><strong>Part B</strong>: Compute <span class="math inline">\(\widehat{p}_{pool}\)</span>. </p>
-<p><strong>Part C</strong>: Compute the test-statistic Z. </p>
-<p><strong>Part D</strong>: Compute the p-value using
-<code>pnorm()</code>.</p>
-<p><strong>Part E</strong>: Write a conclusion to this question using
-‘strength of evidence’.</p>
-<div style="page-break-after: always;"></div>
-</div>
-<div id="question-2-find-the-p-value-with-t-distribution-.5-pts" class="section level1">
-<h1>Question 2 – Find the P-value with t-distribution (.5 pts)</h1>
-<p>A random sample is selected from an approximately normal population
-with an unknown standard deviation. Find the p-value for the given
-sample size and test statistic using <code>pt()</code>.</p>
-<p><strong>Part A</strong>: n = 26, T = 2.485, two-tail test</p>
-<p><strong>Part B</strong>: n = 18, T = 0.5, right-tail test</p>
+<div id="question-1-conceptual" class="section level1">
+<h1>Question 1 – Conceptual</h1>
+<p><strong>Part A</strong>: What does a test-statistic quantify? </p>
+<p><strong>Part B</strong>: What does the ‘significance level’ refer to
+in hypothesis testing? </p>
+<p><strong>Part C</strong>: What is another name for a Type I error?
+</p>
+<p><strong>Part D</strong>: What is another name for a Type II error?
+</p>
+<p><strong>Part E</strong>: Explain why using <span class="math inline">\(\alpha = 0.05\)</span> as a strict cut-off for
+signifance is problematic. </p>
 <hr />
 </div>
-<div id="question-3-piano-1-pt" class="section level1">
-<h1>Question 3 – Piano (1 pt)</h1>
+<div id="question-2-decision-error" class="section level1">
+<h1>Question 2 – Decision Error</h1>
+<p><strong>Part A</strong>: What type of error occurs if <span class="math inline">\(H_0\)</span> is False but we fail to reject it?
+</p>
+<p><strong>Part B</strong>: What type of error occurs if <span class="math inline">\(H_A\)</span> is True but we do reject it? </p>
+<p><strong>Part C</strong>: How does the sample size affect the
+test-statistic, and as a consequence the p-value, with everything else
+held constant? </p>
+<p><strong>Part D</strong>: How does the standard error affect the
+test-statistic, and as a consequence the p-value, with everything else
+held constant?</p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="conclusions-for-the-decision-making-approach" class="section level1">
+<h1>Conclusions for the ‘Decision Making’ Approach</h1>
+<p>Making conclusions with this approach will differ only slightly from
+what we did using ‘Strength of evidence.’ Use the significance level
+<span class="math inline">\(\alpha\)</span> you are given in a problem
+and compare the p-value to this. (If a significance level is not given
+use best judgement to pick one)</p>
+<p>You will answer the following question:</p>
+<p><strong>Do we reject <span class="math inline">\(H_0\)</span> at
+significance level <span class="math inline">\(\alpha\)</span>?</strong></p>
+<p>If p-value <span class="math inline">\(\leq \alpha
+\rightarrow\)</span> <strong>Yes</strong></p>
+<p>If P-value <span class="math inline">\(&gt; \alpha
+\rightarrow\)</span> <strong>No</strong></p>
+<p>Then we apply this answer to the context (what does <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_A\)</span> actually say?) to answer the research
+question. Usually I like to see the following in the conclusion:</p>
+<ul>
+<li>a statement of the test-statistic value and the p-value</li>
+<li>mention of whether we reject <span class="math inline">\(H_0\)</span></li>
+<li>what that actually means in context of the study</li>
+</ul>
+<p><strong>Example:</strong> With a test-statistic value of Z = 1.62 and
+a p-value of .104, we fail reject the null hypothesis that the coin is
+biased. There is not sufficient data to indicate the coin is biased.</p>
+<hr />
+</div>
+<div id="question-3-piano-revisited" class="section level1">
+<h1>Question 3 – Piano Revisited</h1>
 <p>Georgianna claims that in a small city renowned for its music school,
 the average child takes less than 5 years of piano lessons. We have a
 random sample of 35 children from the city, with a sample mean of 4.6
 years of piano lessons and a sample standard deviation of 2.2 years.</p>
-<p>Evaluate Georgianna’s claim using a hypothesis test.</p>
-<ul>
-<li>state hypotheses</li>
-<li>check conditions</li>
-<li>calculate test-statistic</li>
-<li>p-value</li>
-<li>conclusion</li>
-</ul>
+<p>Evaluate Georgianna’s claim using a hypothesis test at the 0.05
+significance level.</p>
+<p>The test-statistic and p-value from the previous worksheet is</p>
+<pre class="r"><code>T = (4.6 - 5) / (2.2 / sqrt(35))
+T</code></pre>
+<pre><code>## [1] -1.075651</code></pre>
+<pre class="r"><code>pt(T, df=34)</code></pre>
+<pre><code>## [1] 0.1448287</code></pre>
+<p>Do we reject the null hypothesis?</p>
+<p>Write a conclusion to summarize our results.</p>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="question-4-diamonds-1.5-pts" class="section level1">
-<h1>Question 4 – Diamonds (1.5 pts)</h1>
-<p>We have data on two random samples of diamonds: one with diamonds
-that weigh 0.99 carats and one with diamonds that weigh 1 carat. Each
-sample has 23 diamonds. Sample statistics for the price per carat of
-diamonds in each sample are provided below.</p>
-<hr />
-<div id="carats" class="section level3">
-<h3>0.99 Carats</h3>
-<p>Sample mean = $44.51, s.d. = $13.32, n=23</p>
+<div id="practical-vs-statistical-significance" class="section level1">
+<h1>Practical vs Statistical Significance</h1>
+<p>We have so far been talking about ‘statistical significance’ when it
+comes to test-statistics and p-values. What we are doing is basically
+going ‘our results are so many standard errors away from the
+hypothesized value.’</p>
+<p>In essence, we are saying there is (or there is not) a difference.
+But even if we reject a null hypothesis, it does not mean that an effect
+has any practical difference in the real world.</p>
+<p>Examine the following scenarios related to coin flipping we’ve seen
+before. For both we have the same null and alternate hypotheses:</p>
+<p><span class="math inline">\(H_0\)</span>: p = .5 (the coin is fair),
+<span class="math inline">\(H_A\)</span>: p <span class="math inline">\(&gt; .5\)</span> (coin is biased towards
+heads)</p>
+<div id="scenario-1" class="section level3">
+<h3>Scenario 1</h3>
+<p>We flip the coin 20 times and get 16 heads. (ignore conditions for
+now)</p>
+<pre class="r"><code>Z = (.8 - .5) / sqrt(.5 * .5 / 20)
+Z</code></pre>
+<pre><code>## [1] 2.683282</code></pre>
+<pre class="r"><code>round(pnorm(Z, lower.tail=F), 4)</code></pre>
+<pre><code>## [1] 0.0036</code></pre>
 </div>
-<div id="carat" class="section level3">
-<h3>1 Carat</h3>
-<p>Sample mean = $57.20, s.d. = $18.19, n=23</p>
-<hr />
-<p>Assuming that the conditions for conducting inference using the
-t-distribution are satisfied, perform a hypothesis test to see if there
-is a difference in population prices per carat of diamonds that weigh
-0.99 carats and 1 carat. (Wickham 2016)</p>
+<div id="scenario-2" class="section level3">
+<h3>Scenario 2</h3>
+<p>We flip the coin 1 million times and get 501342 heads.</p>
+<pre class="r"><code>Z = (.501342 - .5) / sqrt(.5 * .5 / 1000000)
+Z</code></pre>
+<pre><code>## [1] 2.684</code></pre>
+<pre class="r"><code>round(pnorm(Z, lower.tail=F), 4)</code></pre>
+<pre><code>## [1] 0.0036</code></pre>
+<p>In both scenarios we get nearly the same test-statistic and the same
+p-value rounded to 4 decimal places. In the real world, are you going to
+notice the affect of the biased coin in scenario 1? Probably. What about
+scenario 2? Probably not. I am willing to bet most real world coins are
+actually probably more biased than the coin in scenario 2, and yet it is
+hard to tell when actually flipping them.</p>
+<div style="page-break-after: always;"></div>
+<p>If we want an idea of practical significance – “HOW biased is the
+coin,” we can pair hypothesis tests with confidence intervals.</p>
 </div>
+<div id="scenario-1-1" class="section level3">
+<h3>Scenario 1</h3>
+<pre class="r"><code>CI_lower = .8 - 1.96*sqrt(.8 * .2 / 20)
+CI_upper = .8 + 1.96*sqrt(.8 * .2 / 20)
+paste(round(CI_lower, 4), round(CI_upper, 4))</code></pre>
+<pre><code>## [1] &quot;0.6247 0.9753&quot;</code></pre>
+</div>
+<div id="scenario-2-1" class="section level3">
+<h3>Scenario 2</h3>
+<pre class="r"><code>CI_lower = .501342 - 1.96*sqrt(.501342 * (1-.501342) / 1000000)
+CI_upper = .501342 + 1.96*sqrt(.501342 * (1-.501342) / 1000000)
+paste(round(CI_lower, 4), round(CI_upper, 4))</code></pre>
+<pre><code>## [1] &quot;0.5004 0.5023&quot;</code></pre>
+<p>Both scenarios have ‘statistical significance’ since there are low
+p-values. In scenario 1 we can see an estimated proportion of heads much
+larger than the .5 proportion of heads for a fair coin.</p>
+<p>But in scenario 2 the actual difference between the CI estimates and
+a fair coin proportion of 0.5 is basically nothing. You will not notice
+the effects of the coin bias. A bias this small won’t affect the # of
+heads flipped compared to a fair coin until you flip the coin 435
+times.</p>
+<pre class="r"><code>1 / (.5023 - .5)</code></pre>
+<pre><code>## [1] 434.7826</code></pre>
+<hr />
+</div>
+</div>
+<div id="effect-size" class="section level1">
+<h1>Effect Size</h1>
+<p>The actual difference between the statistic and the hypothesized
+value (<span class="math inline">\(\mu - \mu_0\)</span>, <span class="math inline">\(\mu_1-\mu_2\)</span>, <span class="math inline">\(p-p_0\)</span>, <span class="math inline">\(p_1 -
+p_2\)</span>) is called the <strong>effect size</strong>. In lieu of
+having confidence intervals that give you a range of estimates of the
+actual parameter, seeing reports of the effect size can help us judge
+practical significance too.</p>
+<p><strong>Scenario 1</strong>: The effect size is <span class="math inline">\(p-p_0\)</span> = 0.8 - 0.5 = 0.3. 30% is usually
+meaninful in the real world regardless of the actual circumstances</p>
+<p><strong>Scenario 2</strong>: the effect size is <span class="math inline">\(p-p_0\)</span> = 0.501342 - 0.5 = .001342, which
+is so small that it won’t really affect anything</p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="question-4-asa-p-value-statement" class="section level1">
+<h1>Question 4 – ASA P-value Statement</h1>
+<p>Read the “ASA Statement on P-values” link on the course webpage and
+answer the following:</p>
+<p><strong>Part A</strong>: Explain in your own words what is meant by
+the following phrase: “Over time it appears the p-value has become a
+gatekeeper for whether work is publishable.” </p>
+<p><strong>Part B</strong>: The articles says a common misconception is
+that ‘P-values measure the probability that the studied hypothesis is
+true, or the probability that the data were produced by random chance
+alone.’ What <em>do</em> p-values measure? </p>
+<p><strong>Part C</strong>: Briefly explain some methods statisticians
+use to supplement (or even replace) using p-values. (at least one of
+these we’ve already seen)</p>
 </div>
 
 
