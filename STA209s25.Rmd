@@ -190,6 +190,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 12 (Hypothesis Test cont'd)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/21 | [HT - Props and Means](Lectures_Spring25/HypothesisTesting3.pdf) and [HT - More on Differences](Lectures_Spring25/HypothesisTesting4.pdf) | [Testing Worksheet 3 (PDF)](Labs_Spring25/TestingWorksheet3.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet3.html) | - |
+| Wed 4/23 | [HT - Decision Making](Lectures_Spring25/HypothesisTesting5.pdf)  | [Testing Worksheet 4 (PDF)](Labs_Spring25/TestingWorksheet4.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet4.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Fri 4/25 | TBA | - | - |
+
 
 ## Exam 1 Info
 
