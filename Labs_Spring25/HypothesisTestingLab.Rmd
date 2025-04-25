@@ -1,0 +1,371 @@
+---
+title: "STA209 - Hypothesis Testing Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = 'center', 
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      message = FALSE, 
+                      warning = FALSE)
+sol <- FALSE
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
+```
+
+## Introduction
+
+This lab will introduce the idea of hypothesis testing using functions in R. We will look first at performing t-tests. By t-test, we simply mean performing a hypothesis test in which we construct a test statistic, $t$ (sometimes also written as capital $T$) that follows a t-distribution. We will then see how to do hypothesis tests with proportions as well (Z-tests) next week.
+
+**Note:** You've already seen how to do these by hand! We are just figuring out how to do it in R
+
+---
+
+# Testing means
+
+## One sample tests
+
+In R, we can perform hypothesis testing and create standard confidence intervals based on the $t$-distribution using the function `t.test()`. While the `t.test()` function will take a number of useful arguments that we will use in the future, for now we only concern ourselves with three:
+
+  - `x`, a numeric vector of data we wish to construct a confidence interval for
+  - `mu`, a single number indicating the null hypothesis value
+  - `conf.level` which gives the confidence interval for a specified significance level $\alpha$ (i.e., our confidence interval is $1 - \alpha$)
+  
+The output of the `t.test()` function will include a collection of useful information, ranging from the point estimate for the mean value of `x`, as well as a confidence interval for this value. For example, consider the built-in dataset `mtcars` (data on cars we've seen before) in R. Here, we use `t.test()` to find a 90% confidence interval for average miles per gallon:
+
+```{r}
+t.test(mtcars$mpg, conf.level = 0.9)
+```
+
+From the output, you should note a few things:
+
+  1. At the bottom of the output, we see our point estimate, $\overline{x} = 20.09$
+  2. Just above the point estimate, we see our estimate of the 90% confidence interval, here $(18.24, 21.89)$
+  3. All of the information above this is related to *hypothesis testing*. This includes:
+    
+      - A $T$-statistic, equal to $T = 18.9$
+      - Degrees of freedom equal to $df = 31$
+      - p-value $< 2 \times 10^{-15}$
+    
+However, as we did not specify any hypothesis test in this particular example, this information can be ignored.
+    
+By default, the `t.test()` function assumes a null hypothesis of $H_0: \mu_0 = 0$. As our t-statistic is computed as 
+
+$$
+T = \frac{\overline{x} - \mu_0}{\hat{\sigma}/\sqrt{n}}
+$$
+this gives rise to the computed statistic $T = 18.9$ that we saw in the output (and was subsequently used to compute the p-value).
+
+To see a more realistic example, suppose we wanted to investigate the hypothesis that the average miles per gallon was equal to 18 mpg. That is, suppose we have $H_0: \mu = 18$. We could evaluate this hypothesis using the `t.test` function with the `mu` argument:
+
+```{r}
+t.test(x = mtcars$mpg, 
+       mu = 18, 
+       conf.level = 0.9)
+```
+
+In this example, note that our point estimate did not change, nor did our 90\% confidence interval. What did change, however, was the calculated t-statistic as well as the p-value. 
+
+### Question 1
+
+**Part A**: Explain why both the t-statistic and the p-value changed in our second call of `t.test()` above, while the point estimate and the confidence interval stayed the same.
+
+**Part B**: Using the subsets of the data below, find and report 95\% confidence intervals for total enrollment at public and private colleges (two different CIs)
+
+```{r}
+library(dplyr)
+college <- read.csv("https://collinn.github.io/data/college2019.csv")
+
+col_priv <- filter(college, Type == "Private")
+col_pub <- filter(college, Type == "Public")
+```
+
+```{r, echo=F, eval=F}
+t.test(x=col_priv$Enrollment, conf.level=.95)
+t.test(x=col_pub$Enrollment, conf.level=.95)
+```
+### Question 2
+
+Below is code to create two datasets of information on captured Red-tail hawks. The `hawks2` dataset is a subset of `hawks`, but with the sample size reduced down to 20.
+
+
+```{r}
+## RT Hawk data
+hawks <- read.csv("https://collinn.github.io/data/hawks.csv")
+hawks <- filter(hawks, Species == "RT")
+
+## Subset of RT Hawk data
+set.seed(89)
+idx <- sample(seq_len(nrow(hawks)), size = 20)
+hawks2 <- hawks[idx, ]
+```
+
+
+**Hawk 2A:** Find the mean body weight for Red-tailed hawks in both the `hawks` and `hawks2` datasets. How do they compare?
+  
+```{r, echo=F, eval=F}
+mean(hawks$Weight)
+mean(hawks2$Weight)
+```
+
+**Hawk 2B:** Using the average weight of the Red-tailed's hawks, perform a t-test on each dataset to test the hypothesis that $\mu = 1050$. If you were testing at the $\alpha = 0.05$ level, what would you conclude?
+  
+```{r, echo=F, eval=F}
+t.test(hawks$Weight, mu=1050, conf.level=.95)
+t.test(hawks2$Weight, mu=1050, conf.level=.95)
+```
+
+**Hawk 2C:** Explain why the conclusions you came to were different in Part B.
+
+---
+
+## Two Sample Tests
+
+Using R to perform two sample $t$-tests is an immediate extension from the one variable case in that the same function is used, along with the same arguments. Before, we had to be careful to specify the function argument `mu` to state what our null hypothesis was; in the two sample case, however, the default value of `mu = 0` will typically be what we want. 
+
+### Two Sample t-test
+
+There are two ways to pass an argument to the `t.test()` function for two sample data, depending on how the data is arranged. The first type of data arrangement, called "long format" describe a situation in which one column has the group name and the other has the value we are interested in. In the `mtcars` dataset, for example, we see that the `am` column designates if the vehicle has automatic or manual transmission, while the `qsec` column gives the quarter mile time of a vehicle
+
+```{r}
+head(mtcars)
+```
+
+To use this data in the `t.test()` function, we will use a formula syntax that is of the form `outcome ~ group`, along with an argument showin which dataset we are using:
+
+```{r}
+t.test(qsec ~ am, data = mtcars)
+```
+
+The other method is appropriate when the two values we want to compare each exist in their own column. For example, the college dataset has one column each for male and female four-year graduation rates. To test for a difference in these, we would pass each in separately:
+
+```{r}
+t.test(college$FourYearComp_Males, college$FourYearComp_Females)
+```
+
+Here, we see compelling evidence that the four year graduation rate for women is not equal to the four year graduation rate for men.
+
+### Question 3
+
+For this question, we will be using the sandwhich dataset which includes the number of ants found on a sandwich left out at a picnic according to the toppings, bread, and butter that was on it
+
+```{r}
+sandwich <- read.csv("https://collinn.github.io/data/sandwich.csv")
+```
+
+Perform a two sample t-test to determine if the mean value of ants on a sandwhich was the same for sandwiches that had butter compared to those that did not
+
+```{r, echo = FALSE, include = FALSE, eval = FALSE}
+t.test(Ants ~ Butter, sandwich)
+```
+
+### Question 4
+
+For this question we will be using the hawks dataset. Use the following code with `dplyr` to `filter` the datset to only include sharp-shinned hawks,  `Species == "SS"`
+
+```{r}
+hawks <- read.csv("https://collinn.github.io/data/hawks.csv")
+
+## (Do this for part 1)
+hawks <- filter(hawks, Species == "SS")
+```
+
+  1. Create a boxplot showing the distribution of hallux length in sharp-shinned hawks for each of the two sexes. What do you notice?
+  2. Perform a two-sample t-test to determine if there is evidence suggesting a difference in average hallux (killing talon) length between male and female hawks. Based on this test, what would you conclude?
+  3. `filter` your sharp-shinned dataset again to remove outliers, using the criterion `Hallux < 50`
+  
+```{r}
+## (Do this for part 3)
+hawks <- filter(hawks, Hallux < 50)
+```
+  4. Recreate your boxplot and repeat your test from part (1) and (2). What impact did outliers have on the results of your test? Why do you think that is?
+
+```{r, eval = FALSE, echo = FALSE}
+ggplot(hawks, aes(Hallux, Sex)) + geom_boxplot()
+t.test(Hallux ~ Sex, hawks)
+```
+
+---
+
+<!-- ### Paired Testing -->
+
+<!-- We can implement *paired* t-tests in R by simplying setting the argument `paired = TRUE` in the `t.test()` function. Here, for example, is the data for our French language institute we saw in class: -->
+
+<!-- ```{r} -->
+<!-- french <- read.csv("https://collinn.github.io/data/french_institute.csv") -->
+
+<!-- head(french) -->
+<!-- ``` -->
+
+<!-- Because pre and post test scores are each contained in their own column, we will use the second method of passing in our arguments to the `t.test()` function -->
+
+<!-- ```{r} -->
+<!-- t.test(french$pre, french$post, paired = TRUE) -->
+<!-- ``` -->
+
+
+<!-- ### Question 5 -->
+
+<!-- Use the following code to create a new variable in the `french` dataset called `diff`. Perform a one-sample t-test on this variable and compare it with the paired output above. How do the t-statistic, degrees of freedom, and p-values compare? -->
+
+<!-- ```{r} -->
+<!-- french <- french %>% mutate(diff = post-pre) -->
+<!-- head(french) -->
+<!-- ``` -->
+
+<!-- --- -->
+
+## $\chi^2$ Tests
+
+This portion of the labs deals with tests of goodness-of-fit for categorical variables. Both tests are performed with the construction of the $\chi^2$ test statistic, computed as
+
+$$
+\chi^2 = \sum_{i=1}^k \frac{(\text{Observed}_i - \text{Expected}_i)^2}{\text{Expected}_i}
+$$
+
+where $i = 1, \dots, k$ iterates through each of the groups and where the expected counts are what we should expect to see under the null hypothesis. The resulting test statistic follows a $\chi^2$ distribution, with degrees of freedom calculated to be:
+
+  - In the one categorical case, $df = k-1$ where $k$ is the number of unique categories
+  
+We can compute this test statistic in R using the `chisq.test()` function which will give us a value for the test statistic, the degrees of freedom, and the resulting p-value under the null hypothesis.
+
+### Goodness-of-fit Tests (1 Variable)
+
+The one categorical variable cases, in the context of a $\chi^2$ test (note: you can write in rmarkdown by typing $\text{\$\chi^2\$}$), is the goodness-of-fit test. To use the `chisq.test()` function, all we need is a vector that includes the counts of each of our categories, along with the proportions we should expect to see under the null hypothesis.
+
+```{r, echo = FALSE}
+obs <- c(6,7,6,2,4)
+names(obs) <- LETTERS[1:5]
+```
+
+For example, consider again our example from class in which we wish to create a standardized exam with 1 question, but with 5 answers. If we wish to test whether people were effectively randomly guessing, we would have a null hypothesis of the form
+
+$$
+H_0: p_A = p_B = p_C = p_D = p_E = 0.2
+$$
+where the expected counts should be (under the null):
+
+```{r, echo = FALSE}
+nul <- rep(5, 5)
+names(nul) <- names(obs)
+kable(t(nul)) %>% kable_styling(full_width = FALSE)
+```
+
+In class, we considered an example where the *observed* distribution had the following counts:
+
+```{r, echo = FALSE}
+kable(t(obs)) %>% kable_styling(full_width = FALSE)
+```
+
+To conduct a $\chi^2$ test that our observed values where drawn from the null distribution, we would create our vector with these values, along with the associated probabilities:
+
+```{r}
+## Create obs variable with the observed counts
+obs <- c(6,7,6,2,4)
+
+## Pass this into chisq.test, with null probabilities
+chisq.test(obs, p = c(0.2,0.2,0.2,0.2,0.2))
+```
+
+By default, `chisq.test()` will assign an equal probability to each of the outcomes. In this case, because our null hypothesis sets each of these probabilities to be equal, we can omit the probability argument when calling the function:
+
+```{r}
+chisq.test(obs)
+```
+
+In each case, we find a test statistic of $\chi^2 = 3.2$ and a $p$-value of 0.52.
+
+Contrast this with the example we gave for Alameda county, where we were investigating the observed counts of each race/ethnicity in the jury pooled which we compared against proportions estimated from US Census data. Because our null hypothesis in this case no longer assumes that our expected proportions are equal, we will have to pass them in ourselves. The values here are taken from the lecture slides:
+
+```{r}
+jury <- c(780, 117,114,384,58)
+chisq.test(jury, p = c(0.54, 0.18, 0.12, 0.15, 0.01))
+```
+
+Again, we get the value of the $\chi^2$ statistic, along with degrees of freedom and a $p$-value.
+
+### Question 5
+
+Just as a normal distribution describes phenomenon in which observations tend to fall symmetrically about the mean, the *Poisson* distribution is a probability distribution that is used to describe the number of discrete events we should expect to occur within a period of time (i.e., how many students walk into the student union each hour). This question involves assessing whether or not a particular collection of data is consistent with a Poisson distribution.
+
+In 1898, Ladislaus von Bortkiewicz collected data on the number of soldiers in the Prussian army that got kicked to death by mules (mules were frequently used to haul army equipment). The data collected follows 10 corps, each observed for 20 years, resulting in a total of 200 "corp-years". In 109 corp-years, there were no deaths from mule kicks, in 65 corp-years, there was one death, and so on. Below is a table with all of the observed data
+
+```{r, echo = FALSE}
+df <- data.frame(dead = c("0", "1", "2", "3+"),
+                 num = c(109,65,22,4))
+names(df) <- c("Number of Deaths", "Number of Corps-Years")
+kable(df) %>% kable_styling(full_width = FALSE)
+```
+
+If the number of death via mules *did* match a Poisson distribution, the expected number of corps-years with each death count should have the following proportions:
+
+```{r, echo = FALSE}
+vals <- c(0.55,0.33,0.1,0.02)
+names(vals) <- paste0(c("0", "1", "2", "3+"), " deaths")
+kable(t(vals)) %>% kable_styling(full_width = FALSE)
+```
+
+Briefly skim the [Poisson Distribution](https://en.wikipedia.org/wiki/Poisson_distribution) info linked here, then conduct a $\chi^2$ test to determine whether or not the observed data is consistent with what we should expect to see if death-by-mule-kick truly did follow a Poisson distribution. What $p$-value do you find, and what does this say about your null hypothesis? (note: you may ignore the warning about expected counts)
+
+```{r, echo=F, eval=F}
+deaths = c(109, 65, 22, 4)
+chisq.test(deaths, p=c(.55, .33, .1, .02))
+```
+
+```{r, echo=F, eval=F}
+dpois(0:5, 0.61)
+obs <- c(109, 65,22,3,1,0)
+obs <- c(109, 65,22,4)
+obs/200
+
+chisq.test(c(109,65,22,4), p = c(0.55,0.33,0.1,0.02))
+```
+
+
+<!-- ### Tests for independence (2 Variable) -->
+
+<!-- When considering two categorical variables, we are (usually) less interested in assessing goodness-of-fit in the expected counts of two variables and more interested in determining if there is any sort of *association* between the two variables. In other words, for a single observation, does knowing the value of one categorical variable give us information about the other? -->
+
+<!-- To an extent, we have seen this already when considering two-way tables with categorical variables. Consider, for example, the data we had seen on auto accidents in Florida recording the number of fatal and non-fatal fatalities, along with seatbelt use. That data is summarized again here in the following table: -->
+
+<!-- ```{r, echo = FALSE} -->
+<!-- seatbelt <- matrix(c(1085,703,55623,441239), nrow = 2) -->
+<!-- rownames(seatbelt) <- c("No Seatbelt", "Seatbelt") -->
+<!-- colnames(seatbelt) <- c("Fatal", "Non-fatal") -->
+<!-- kable(seatbelt) %>% kable_styling(full_width = FALSE) -->
+<!-- ``` -->
+
+<!-- For our $\chi^2$ test, we need only pass a matrix or table of these values and `chisq.test()` will automatically perform a test of independence: -->
+
+<!-- ```{r} -->
+<!-- seatbelt <- matrix(c(1085, 703, 55623, 441239), nrow = 2) -->
+<!-- chisq.test(seatbelt) # we do not need to add proportions here -->
+<!-- ``` -->
+
+
+
+<!-- **Question 9:** This question will use the college dataset loaded below -->
+
+<!-- ```{r} -->
+<!-- college <- read.csv("https://collinn.github.io/data/college2019.csv") -->
+<!-- ``` -->
+
+<!--   - **Part A:** Create a proportional bar chart between the variables for Region and Type Does it appear that there is an association between these two variables? In other words, does knowing anything about the region tell you anything about the proportion of Public or Private colleges? -->
+<!--   - **Part B:** Using the `table()` function, create a 2-way table of these two variables. Save this table to a new variable called `tab` -->
+<!--   - **Part C:** Conduct a $\chi^2$ test on the observed frequencies that you found in the table in Part B. Based on this, what would you conclude about there being an association between the variables for Region and Private? -->
+
+
+
+
+```{r, include = FALSE}
+ggplot(college, aes(Region, fill = Type)) +
+  geom_bar(position = "fill")
+tab <- with(college, table(Region, Type))
+chisq.test(tab)
+```
