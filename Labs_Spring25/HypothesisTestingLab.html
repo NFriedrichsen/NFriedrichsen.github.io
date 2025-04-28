@@ -11,7 +11,7 @@
 
 
 
-<title>STA209 - Hypothesis Testing Lab</title>
+<title>Hypothesis Testing Lab</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -572,7 +572,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">STA209 - Hypothesis Testing Lab</h1>
+<h1 class="title toc-ignore">Hypothesis Testing Lab</h1>
 
 </div>
 
@@ -1009,7 +1009,7 @@ were frequently used to haul army equipment). The data collected follows
 “corp-years”. In 109 corp-years, there were no deaths from mule kicks,
 in 65 corp-years, there was one death, and so on. Below is a table with
 all of the observed data</p>
-<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -1058,7 +1058,7 @@ Number of Corps-Years
 <p>If the number of death via mules <em>did</em> match a Poisson
 distribution, the expected number of corps-years with each death count
 should have the following proportions:</p>
-<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:right;">
@@ -1098,27 +1098,86 @@ the observed data is consistent with what we should expect to see if
 death-by-mule-kick truly did follow a Poisson distribution. What <span class="math inline">\(p\)</span>-value do you find, and what does this
 say about your null hypothesis? (note: you may ignore the warning about
 expected counts)</p>
-<!-- ### Tests for independence (2 Variable) -->
-<!-- When considering two categorical variables, we are (usually) less interested in assessing goodness-of-fit in the expected counts of two variables and more interested in determining if there is any sort of *association* between the two variables. In other words, for a single observation, does knowing the value of one categorical variable give us information about the other? -->
-<!-- To an extent, we have seen this already when considering two-way tables with categorical variables. Consider, for example, the data we had seen on auto accidents in Florida recording the number of fatal and non-fatal fatalities, along with seatbelt use. That data is summarized again here in the following table: -->
-<!-- ```{r, echo = FALSE} -->
-<!-- seatbelt <- matrix(c(1085,703,55623,441239), nrow = 2) -->
-<!-- rownames(seatbelt) <- c("No Seatbelt", "Seatbelt") -->
-<!-- colnames(seatbelt) <- c("Fatal", "Non-fatal") -->
-<!-- kable(seatbelt) %>% kable_styling(full_width = FALSE) -->
-<!-- ``` -->
-<!-- For our $\chi^2$ test, we need only pass a matrix or table of these values and `chisq.test()` will automatically perform a test of independence: -->
-<!-- ```{r} -->
-<!-- seatbelt <- matrix(c(1085, 703, 55623, 441239), nrow = 2) -->
-<!-- chisq.test(seatbelt) # we do not need to add proportions here -->
-<!-- ``` -->
-<!-- **Question 9:** This question will use the college dataset loaded below -->
-<!-- ```{r} -->
-<!-- college <- read.csv("https://collinn.github.io/data/college2019.csv") -->
-<!-- ``` -->
-<!--   - **Part A:** Create a proportional bar chart between the variables for Region and Type Does it appear that there is an association between these two variables? In other words, does knowing anything about the region tell you anything about the proportion of Public or Private colleges? -->
-<!--   - **Part B:** Using the `table()` function, create a 2-way table of these two variables. Save this table to a new variable called `tab` -->
-<!--   - **Part C:** Conduct a $\chi^2$ test on the observed frequencies that you found in the table in Part B. Based on this, what would you conclude about there being an association between the variables for Region and Private? -->
+</div>
+<div id="tests-for-independence-2-variable" class="section level3">
+<h3>Tests for independence (2 Variable)</h3>
+<p>When considering two categorical variables, we are (usually) less
+interested in assessing goodness-of-fit in the expected counts of two
+variables and more interested in determining if there is any sort of
+<em>association</em> between the two variables. In other words, for a
+single observation, does knowing the value of one categorical variable
+give us information about the other?</p>
+<p>To an extent, we have seen this already when considering two-way
+tables with categorical variables. Consider, for example, the data we
+had seen on auto accidents in Florida recording the number of fatal and
+non-fatal fatalities, along with seatbelt use. That data is summarized
+again here in the following table:</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Fatal
+</th>
+<th style="text-align:right;">
+Non-fatal
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+No Seatbelt
+</td>
+<td style="text-align:right;">
+1085
+</td>
+<td style="text-align:right;">
+55623
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Seatbelt
+</td>
+<td style="text-align:right;">
+703
+</td>
+<td style="text-align:right;">
+441239
+</td>
+</tr>
+</tbody>
+</table>
+<p>For our <span class="math inline">\(\chi^2\)</span> test, we need
+only pass a matrix or table of these values and
+<code>chisq.test()</code> will automatically perform a test of
+independence:</p>
+<pre class="r"><code>seatbelt &lt;- matrix(c(1085, 703, 55623, 441239), nrow = 2)
+chisq.test(seatbelt) # we do not need to add proportions here</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  seatbelt
+## X-squared = 4324, df = 1, p-value &lt; 2.2e-16</code></pre>
+<p><strong>Question 9:</strong> This question will use the college
+dataset loaded below</p>
+<pre class="r"><code>college &lt;- read.csv(&quot;https://collinn.github.io/data/college2019.csv&quot;)</code></pre>
+<ul>
+<li><strong>Part A:</strong> Create a proportional bar chart between the
+variables for Region and Type Does it appear that there is an
+association between these two variables? In other words, does knowing
+anything about the region tell you anything about the proportion of
+Public or Private colleges?</li>
+<li><strong>Part B:</strong> Using the <code>table()</code> function,
+create a 2-way table of these two variables. Save this table to a new
+variable called <code>tab</code></li>
+<li><strong>Part C:</strong> Conduct a <span class="math inline">\(\chi^2\)</span> test on the observed frequencies
+that you found in the table in Part B. Based on this, what would you
+conclude about there being an association between the variables for
+Region and Private?</li>
+</ul>
 </div>
 </div>
 </div>
