@@ -196,7 +196,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 4/21 | [HT - Props and Means](Lectures_Spring25/HypothesisTesting3.pdf) and [HT - More on Differences](Lectures_Spring25/HypothesisTesting4.pdf) | [Testing Worksheet 3 (PDF)](Labs_Spring25/TestingWorksheet3.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet3.html) | - |
 | Wed 4/23 | [HT - Decision Making](Lectures_Spring25/HypothesisTesting5.pdf)  | [Testing Worksheet 4 (PDF)](Labs_Spring25/TestingWorksheet4.pdf) [Webpage Format](Labs_Spring25/TestingWorksheet4.html) | [ASA Statement on P-values](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
-| Fri 4/25 | [Chi Square Tests](Lectures_Spring25/Chi2Test.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) | - |
+| Fri 4/25 | [Chi Square Tests (GoF)](Lectures_Spring25/Chi2Test.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) | - |
 
 **Assignments and Deadlines**
 
@@ -204,6 +204,16 @@ Please note: material will not be posted until we've reached that point in the c
 2) Project proposal due Friday 4/25 at 10pm (gradescope link will be posted).
 3) Testing Worksheet 4 will take the place of HW7 due Friday 5/2 at 10pm.
 4) [Exam 2 corrections](Exams_Spring25/exam2_corrections.pdf) will be posted on Gradescope and due Friday 5/2 at 10pm. Potentiality for half credit earned back for missed questions (available to all).
+
+---
+
+### Week 13 (Chi-square and ANOVA)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/28 | [Chi Square Tests (Ind.)](Lectures_Spring25/Chi2_Independence.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) cont'd | - |
+| Wed 4/30 | [ANOVA 1](Lectures_Spring25/Anova1.pdf) | TBP | - |
+| Fri 5/02 | [ANOVA 2](Lectures_Spring25/Anova2.pdf) | TBP | - |
 
 ---
 

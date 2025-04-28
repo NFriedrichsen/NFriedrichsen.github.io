@@ -207,6 +207,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 13 (Chi-Square Tests)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/28 | [Chi Square Tests (GoF)](Lectures_Spring25/Chi2Test.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) | - |
+| Wed 4/30 | [Chi Square Tests (Ind.)](Lectures_Spring25/Chi2_Independence.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) cont'd | - |
+| Fri 5/02 | TBA | - | - |
+
+**Assignments and Deadlines**
+
 
 ## Exam 1 Info
 
