@@ -212,8 +212,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 4/28 | [Chi Square Tests (Ind.)](Lectures_Spring25/Chi2_Independence.pdf) | [Testing Lab](Labs_Spring25/HypothesisTestingLab.html) cont'd | - |
-| Wed 4/30 | [ANOVA 1](Lectures_Spring25/Anova1.pdf) | TBP | - |
-| Fri 5/02 | [ANOVA 2](Lectures_Spring25/Anova2.pdf) | TBP | - |
+| Wed 4/30 | [ANOVA 1](Lectures_Spring25/Anova1.pdf) | [ANOVA Lab](Labs_Spring25/ANOVA_lab.html) Q1+2 | - |
+| Fri 5/02 | [ANOVA 2](Lectures_Spring25/Anova2.pdf) | [ANOVA Lab](Labs_Spring25/ANOVA_lab.html) Q3+ | - |
 
 **Assignments and Deadlines**
 
