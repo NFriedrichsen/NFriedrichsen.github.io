@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side a short in-class presentation.
+This project is an opportunity for you to set up and conduct your own statistical analysis. This will involve generating a research question, collecting data, and then performing a written analysis along side a short in-class presentation (optional).
 
 ## Objectives
 
@@ -31,13 +31,13 @@ During our projects, we should aim to demonstrate the following competencies:
     2. The data you plan to include in your analysis and how it will be collected
     3. A short justification on why this project has the appropriate difficulty for this class with consideration for the objectives listed above
     <br> <br>
-  - **Friday, May 2 at 10pm** -- A PDF documenting an *exploratory analysis* due. This should include
+  - **Friday, May 9 at 10pm** -- A PDF documenting an *exploratory analysis* due. This should include
     1. A list and short description of all of your variables
     2. At least *two* data visualizations that are relevant to your research question
     3. A *qualitative* description of each data visualization and what we can learn from each
     4. At least one relevant set of descriptive statistics or a regression model, and a quantitative description of what these statistics or model coefficients tell you in regard to your research question
     <br> <br>
-  - **Wednesday + Friday, May 5-7** -- Presentations during scheduled class time
+  - **Finals Week (During 2nd half of exam time)** -- Optional presentations for minor extra credit, points TBD
   
   - **Friday, May 16 at 5pm** -- Final report is due
   
@@ -116,7 +116,7 @@ Recognize that keeping this report within the 3-page limit means you will have t
 
 ### Final Presentation
 
-Presentations will be limited to 10 minutes and will be delivered in the last week of the course (not counting exam week). The presentation should clearly outline 
+Optional presentations will be limited to 10 minutes and will be delivered during the 2nd half of the scheduled exam time, time permitting for each group. I am thinking of how the extra credit part will work, but it will be relatively minor. The presentation should clearly outline 
 
   - Research question
   - How the data was collected
