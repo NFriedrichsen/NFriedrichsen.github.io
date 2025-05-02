@@ -219,6 +219,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) Testing Lab due Friday 5/02 at 10pm. We won't have extra time to work on it Wednesday.
 2) Anova Lab due Sunday 5/04 at 10pm.
+3) Project exploratory analysis due Friday 5/09 at 10pm.
+
+[Project Writeup Example](Exams_Spring25/final_writeup.pdf) courtesy of Professor Nolte.
 
 ---
 
