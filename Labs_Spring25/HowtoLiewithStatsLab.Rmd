@@ -53,6 +53,8 @@ ggplot(colleges, aes(x=Net_Tuition)) + geom_histogram()
 
 **Note:** This idea applies to lots of right-skewed data, *especially* in economics or things related to money/income. Do not trust people who tell you averages of things without letting you see the actual distribution.
 
+---
+
 # Messing with Axes (not those kind)
 
 Another way we can lie with statistics is by changing the axes of graphs. Doing so, we can exaggerate things by making them look smaller or larger than they really are.
@@ -82,15 +84,80 @@ ggplot(LH, aes(x=year, y=LakeHuron)) + geom_line() +
 
 **Question 4**: By graphing the data in this way, what are we lead to believe? Is the level of Lake Huron as consistent as the graph makes it out to be?
 
+---
+
+## Effect of Axis scale on how we perceive differences
+
+Just like the y-axis can be used to mislead with data by making increases or decreases more or less exaggerated, the x-axis can mislead too. Changes in the x-axis affect how we perceive variability in the data. This means that the x-axis can be adjusted to make groups seem more or less different than they actually are. We will first look at how variability in data affects how easily we can tell groups apart, then adjust the x-axis.
+
+### Simulated Groups with Large Variances
+
+Here we are simulating 50 observations from each of 3 groups. All have the same population std. dev. $\sigma=40$. The corresponding population means are $\mu_1 = 250$, $\mu_1 = 245$, and $\mu_1 = 255$. The group means are not equal, but the variances are relatively large which we can see by the following plot.
+
+```{r}
+set.seed(423)
+group1 = rnorm(50, mean=250, sd=40)
+group2 = rnorm(50, mean=245, sd=40)
+group3 = rnorm(50, mean=255, sd=40)
+groups = c(rep("Group1",50), rep("Group2", 50), rep("Group3", 50))
+
+data=data.frame(c(group1, group2, group3),groups)
+colnames(data)=c("obs","groups")
+
+ggplot(data, aes(x=obs, fill=groups)) + geom_boxplot()
+```
+
+**Question 5**: Are the differences in group means large or small relative to the range of values for each group? Explain.
+
+---
+
+### Simulated Groups with Small Variances
+
+We are going to do the same thing as above, but with smaller variances.
+
+We are simulating 50 observations from each of 3 groups. All have the same population std. dev. $\sigma=4$. The corresponding population means are $\mu_1 = 250$, $\mu_1 = 245$, and $\mu_1 = 255$.
+
+**Note:** The means haven't changed from the last example, only the variances.
+
+```{r}
+set.seed(423)
+group1 = rnorm(50, mean=250, sd=4)
+group2 = rnorm(50, mean=245, sd=4)
+group3 = rnorm(50, mean=255, sd=4)
+groups = c(rep("Group1",50), rep("Group2", 50), rep("Group3", 50))
+
+data2=data.frame(c(group1, group2, group3),groups)
+colnames(data2)=c("obs","groups")
+
+ggplot(data2, aes(x=obs, fill=groups)) + geom_boxplot() +
+  xlim(235, 260)
+```
+
+**Question 6**: Are the differences in group means large or small relative to the range of values for each group? Is it easier to see differences in the groups compared to the previous example? Explain. 
+
+The following plot uses the `data2` simulated data from above. The only difference is that I have changed the x-axis scale.
+
+```{r}
+ggplot(data2, aes(x=obs, fill=groups)) + geom_boxplot() +
+  xlim(150, 350)
+```
+
+**Question 7**: Does this change your answer to whether or not the groups look very different?
+
+---
+
+
 ### Average Price of Goods in US
 
 Take a look at the following link and mess with the graphics. You can click goods to plot them simulataneously or click again to remove them from the plot. Pay attention to the axes of the plot. [LINK](https://www.bls.gov/charts/consumer-price-index/consumer-price-index-average-price-data.htm)
 
-**Question 5:** In what way is the Bureau of Labor Statistics **NOT** lying to us with this data in terms of the axes of the plots?
+**Question 8:** In what way is the Bureau of Labor Statistics **NOT** lying to us with this data in terms of the axes of the plots?
 
-**Question 6:** One of the biggest factors in the recent 2024 election determining who people voted for is how they feel the economy is doing. With this in mind, how do current gas prices compare to 13 years ago? Has the price of milk changed much over the last 20 years?
+**Question 9:** One of the biggest factors in the recent 2024 election determining who people voted for is how they feel the economy is doing. With this in mind, how do current gas prices compare to 13 years ago? Has the price of milk changed much over the last 20 years?
 
-**Question 7:** Do you think it would be more advantageous for the Bureau of Labor Statistics to report mean or median price of goods if they wanted to make the current administration look better in terms of handling the economy? 
+**Question 10:** Do you think it would be more advantageous for the Bureau of Labor Statistics to report mean or median price of goods if they wanted to make the current administration look better in terms of handling the economy? 
+
+---
 
 # Meaningless Statistics
 
@@ -108,7 +175,7 @@ The organization referred to is a manufacturer and distributor of stainless stee
 
 This is a fairly typical example of a Meaningless Statistic -- a precise figure used in conjunction with a term sufficiently vague that a Friendly Definition is sorely needed to endow the figure with meaning. But such a definition is not provided, or, if one is provided, it is itself so vague that it doesn't really help.
 
-**Question 8**: Provide an example of a 'meaningless statistic' you have encountered or had foisted upon you.
+**Question 11**: Provide an example of a 'meaningless statistic' you have encountered or had foisted upon you.
 
 
 <!-- # Variance -->
