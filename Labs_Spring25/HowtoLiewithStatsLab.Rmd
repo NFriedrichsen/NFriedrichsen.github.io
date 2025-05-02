@@ -1,0 +1,124 @@
+---
+title: "How to Lie with Stats Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We will briefly go over some of the topics related to presenting statistics in misleading ways, whether intention or unintentional. In some ways, much of this is similar to what we saw during the Data Visualization lectures and labs.
+
+We will need to run the following code.
+
+```{r, message=F, warning=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+## Better histograms
+gh <- function(bins = 10) {
+  geom_histogram(color = 'black', fill = 'gray80', bins = bins)
+}
+```
+
+
+# Mean vs. Median
+
+Here we re-examine the difference between mean and median and when to use each. The following code generates right-skewed data and makes a histogram of the distribution. The **mean** is denoted by the red line, and the **median** is denoted by the blue line. When we have skewed distributions the median tends to do a better job describing what is typical.
+
+```{r}
+set.seed(4025)
+x = c(rnorm(50, 2, 1), rexp(200, rate=10))
+sample = data.frame(x)
+colnames(sample) = c("Data")
+ggplot(sample, aes(Data)) + 
+  gh() + 
+  geom_vline(xintercept = mean(sample$Data), color="red", linewidth=2) +
+  geom_vline(xintercept = median(sample$Data), color="blue", linewidth=2)
+```
+
+### College Sucks(?)
+
+```{r, message=F, warning=F}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+
+ggplot(colleges, aes(x=Net_Tuition)) + geom_histogram()
+```
+
+**Question 1**: Let's say I wanted to convince people college is a waste of time. Maybe I think it's too expensive for what students get out of it. Using the Net Tuition, how would I exaggerate how expensive college is? Would I report the mean or the median? Which of these is a better indicator of 'typical debt'?
+
+**Note:** This idea applies to lots of right-skewed data, *especially* in economics or things related to money/income. Do not trust people who tell you averages of things without letting you see the actual distribution.
+
+# Messing with Axes (not those kind)
+
+Another way we can lie with statistics is by changing the axes of graphs. Doing so, we can exaggerate things by making them look smaller or larger than they really are.
+
+### Lake Huron Data
+
+The following data is a measurement of the water level of Lake Huron from 1875 to 1972. Each dot corresponds to a year. This type of data is actually called a 'time series.'
+
+```{r, message=F, warning=F}
+year = 1875:1972
+LH = data.frame(LakeHuron, year)
+ggplot(LH, aes(x=year, y=LakeHuron)) + geom_line()
+```
+
+**Question 2**: What general pattern do we see? Is the level of water in Lake Huron relatively consistent or does it tend to fluctuate?
+
+**Question 3**: We can see that somewhere in the 1960s, Lake Huron reach the lowest level on record. Is there that much of a difference between the lowest and highest points on this graph?
+
+We will plot the same data again, but mess with the y-axis.
+
+```{r, message=F, warning=F}
+year = 1875:1972
+LH = data.frame(LakeHuron, year)
+ggplot(LH, aes(x=year, y=LakeHuron)) + geom_line() +
+  ylim(c(0, 600)) + geom_area(fill = "lightblue")
+```
+
+**Question 4**: By graphing the data in this way, what are we lead to believe? Is the level of Lake Huron as consistent as the graph makes it out to be?
+
+### Average Price of Goods in US
+
+Take a look at the following link and mess with the graphics. You can click goods to plot them simulataneously or click again to remove them from the plot. Pay attention to the axes of the plot. [LINK](https://www.bls.gov/charts/consumer-price-index/consumer-price-index-average-price-data.htm)
+
+**Question 5:** In what way is the Bureau of Labor Statistics **NOT** lying to us with this data in terms of the axes of the plots?
+
+**Question 6:** One of the biggest factors in the recent 2024 election determining who people voted for is how they feel the economy is doing. With this in mind, how do current gas prices compare to 13 years ago? Has the price of milk changed much over the last 20 years?
+
+**Question 7:** Do you think it would be more advantageous for the Bureau of Labor Statistics to report mean or median price of goods if they wanted to make the current administration look better in terms of handling the economy? 
+
+# Meaningless Statistics
+
+The following is an excerpt from the book "Flaws and Fallacies in Statistical Thinking" by Stephen K. Campbell, with small edits.
+
+"... a tale told by an idiot, full of sound and fury, signifying nothing." - Shakespeare
+
+It seems to me that if someone is going to waste my time and insult my intelligence by foisting Meaning Statistics upon me, [they] should at least by the common decency to see that [their] offerings are funny... Most Meaningless Statistics aren't very funny.
+
+### An Example of Meaningless Statistics
+
+The executive of a certain company claimed that about 75 percent of the entire organization had been with the company for many, many years. Is that not a truly impressive record? On second thought, just how impressive is it? The answer of course, depends entirely on what is meant by "many, many years," a detail the executive saw fit to spare us.
+
+The organization referred to is a manufacturer and distributor of stainless steel cookware, one of several brands sold exclusively by direct sales[people]. I admittedly have no idea what the sales[person]-turnover rate is for this particular company, but I do know that in most direct selling it is pretty high - so high, in fac, that "many, many years" could conceivably mean four or three or even few. (Not that it necessarily does, mind you. We simply have no way of telling from the information given.) The 75-percent figure sounds precise enough, but the entire claim fails to deliver the precision promised because the rest of it is so vague. 
+
+This is a fairly typical example of a Meaningless Statistic -- a precise figure used in conjunction with a term sufficiently vague that a Friendly Definition is sorely needed to endow the figure with meaning. But such a definition is not provided, or, if one is provided, it is itself so vague that it doesn't really help.
+
+**Question 8**: Provide an example of a 'meaningless statistic' you have encountered or had foisted upon you.
+
+
+<!-- # Variance -->
+
+<!-- The following idea is adapated from the book "Flaws and Fallacies in Statistical Thinking" by Stephen K. Campbell. -->
+
+<!-- Suppose you have a friend who is faced with the terrifying prospect of having to take an introductory statistics course next semester. Let us say that they come to you for advice about which of two professors they should choose -- Professor Friedrichsen or Professor Nolte (note that any following info about myself and Professor Nolte is entirely hypothetical and is just being used to concoct this funny scenario).  -->
+
+<!-- After some questioning, you find out your friend would be happy to pass the course with a B, but doesn't care to do much better than this but would be upset to do worse. Also assume, outlandishly, that the grade is the only thing that matters to your friend. Which professor would you recommend your friend take? Well, in order to answer this you would need to know some idea of how grades are given out in classes taught by these professors. -->
+
+<!-- Suppose you know that the average grade given out for both Professors Friedrichsen and Nolte is a B. Is this enough info to make a recommendation to your friend? No! -->
+
+<!-- Suppose I seldom give a grade that is not a B (in reality this is not true, don't worry), meaning that all of A's, C's, D's, and F's are rare. Further suppose that Professor Nolte rarely gives a grade that is not an A or a C. Which Professor would you recommend your friend take intro stats with? -->
