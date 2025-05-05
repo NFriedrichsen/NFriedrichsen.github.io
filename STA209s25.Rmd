@@ -225,6 +225,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 14 (Finishing Up)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 5/05 | ANOVA and SLR  |  | - |
+| Wed 5/07 | ANOVA and MLR | - | - |
+| Fri 5/09 | ANOVA Assumptions | - | - |
+
+
+---
+
 
 ## Exam 1 Info
 
