@@ -232,6 +232,11 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 5/07 | More Lying With Statistics | - | - |
 | Fri 5/09 | LLMs | - | - |
 
+**Assignments and Deadlines**
+
+1) Project exploratory analysis due Friday 5/09 at 10pm.
+2) How to Lie with Stats Lab due Thursday 5/08 at 10pm.
+
 ---
 
 ## Exam 1 Info
