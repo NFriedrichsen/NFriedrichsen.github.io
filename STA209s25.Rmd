@@ -259,6 +259,22 @@ Exam 2 will be in-class Friday 4/11.
 
 ---
 
+### Exam 3 Info
+
+[Exam 3 Topics List](exams/topic_list_exam3_209.pdf)
+
+[Short Answer Practice](exams/Exam3_shortanswer_209.html)
+
+[Methods Review](exams/STA209_methodsreview.pdf)
+
+[Practice Exam 1](exams/exam3_practice1_209.pdf)
+
+[Practice Exam 2](exams/practice_exam3.pdf)
+
+[Formula Sheet](exams/exam3_formulas209.pdf)
+
+---
+
 ### Lab Solutions
 
 [Intro R Lab](Labs_Spring25/01_introR_solutions.html)
