@@ -1,5 +1,5 @@
 ---
-title: "SST115 - Hypothesis Testing Worksheet"
+title: "Hypothesis Testing Worksheet"
 output:
   html_document: default
   pdf_document: default
