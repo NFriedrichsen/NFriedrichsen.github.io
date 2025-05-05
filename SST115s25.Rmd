@@ -222,6 +222,18 @@ Please note: material will not be posted until we've reached that point in the c
 
 [Project Writeup Example](Exams_Spring25/final_writeup.pdf) courtesy of Professor Nolte.
 
+---
+
+### Week 14 (Finishing Up)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 5/05 | Semester Review | [Methods Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html) | - |
+| Wed 5/07 | More Lying With Statistics | - | - |
+| Fri 5/09 | LLMs | - | - |
+
+---
+
 ## Exam 1 Info
 
 Exam 1 will be in-class Wednesday Feb. 26.
@@ -247,6 +259,14 @@ Exam 2 will be in-class Friday 4/11.
 ## Exam 3 Info
 
 [Methods Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html)
+
+[Exam 3 Topics List](exams/topic_list_exam3_115.pdf)
+
+[Short Answer Practice](exams/Exam3_shortanswer_115.html)
+
+[Practice Exam](exams/practice_exam3.pdf)
+
+[Formula Sheet](exams/exam3_formulas115.pdf)
 
 ---
 
