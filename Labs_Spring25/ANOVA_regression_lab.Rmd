@@ -1,0 +1,323 @@
+---
+title: "ANOVA Regression Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, 
+                      message = FALSE, fig.width = 4, 
+                      fig.height = 4, fig.align = 'center')
+```
+
+```{r, message=F}
+library(dplyr)
+library(ggplot2)
+
+# Pretty plots
+theme_set(theme_bw())
+
+college <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+## Re-introduction to Linear Regression in R
+
+We were first introduced to linear regression earlier this semester. We continue this topic today, re-demonstrating the key functions in R that are used for linear regression, as well as some new tools for doing so.
+
+## Simple Linear Regression
+
+Recall that *simple* linear regression (as opposed to *multivariate* linear regression) is a continuous/quantitative outcome variable with one explanatory variable, assumed to be of the form
+
+$$
+y = \beta_0 + X\beta_1 + \epsilon
+$$
+Note that this formula represents "a line + error". Once we have estimated values for $\beta$ with $\hat{\beta}$, we can also give a predicted value of $y$ for a given value of $X$:
+
+$$
+\hat{y} = \hat{\beta}_0 + X \hat{\beta}_1
+$$
+Our estimate of the error term is called the *residual* and is given by the difference between the true value of $y$ and our prediction:
+
+$$
+e_i = y_i - \hat{y}_i
+$$
+Ultimately, the predicted values for $\beta$'s are those chosen as to minimize the residual squared error, $\sum_{i=1}^n e_i^2$.
+
+---
+
+For practice, we will use the `mtcars` dataset that comes built-in to R. You can use `?mtcars` to get a description of each of the data variables
+
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+Similar to ANOVA and the t-test functions, the `lm()` function (**L**inear **M**odel) operates using a formula syntax with an outcome and predictor variables. Here, we use `lm()` to estimate a vehicles miles per gallon (`mpg`) using the size of the engine (`disp`)
+
+```{r}
+## First fit model with lm
+fit <- lm(mpg ~ disp, mtcars)
+
+## Summary function to display output
+summary(fit)
+```
+From here, we get a lot of useful summary information. Try to identify the following:
+
+  1. The slope estimate ($\beta$) is $\hat{\beta} = -0.041$, indicating that for each additional cubic inch in displacement, the vehicle is expected to have a reduction of 0.04 miles per gallon
+  2. Based on the p-value reported in the summary, we have evidence that the relationship between mpg and displacement is statistically significant, indicating a rejection of the null hypothesis that there is no linear relationship between the two
+  3. We have a multiple R-squared of 0.718, indicating that about 70\% of the total variance in mpg is explained with vehicle displacement
+  
+It's worth observing that the *effect size*, or the value of $\hat{\beta}$, isn't particularly large: without more context, it is difficult to see if this is a consequence of the effect size being small or if it is a consequence of differences in scale between mpg and engine displacement. We can investigate this further by creating a plot where we find evidence for the latter. Additionally, recall that we can also use the `geom_smooth()` function with ggplot to illustrate how our regression line will look
+
+```{r}
+ggplot(mtcars, aes(disp, mpg)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) # remove standard error
+```
+The apparent strength of this relationship corroborates what we found in the linear model summary information above.
+
+---
+
+**Question 1:** For this question, we will be using the `mtcars` dataset to investigate the relationship between horsepower (`hp`) and vehicle weight (`wt`)
+
+  - **Part A:** What is the null hypothesis relating vehicle weight to horsepower?
+  - **Part B:** Create a scatter plot showing the relationship between the outcome and predictor variables. Use `geom_smooth(method = lm)` to add a linear regression line. How does this relationship appear?
+  - **Part C:** Construct a linear model testing your hypothesis from Part A. What do you find? Is it consistent with your plot in Part B?
+  - **Part D:** looking at the linear model summary output, find and report the value for the multiple $R^2$. Interpret what this means.
+  - **Part E:** Interpret the coefficients of the linear regression in context.
+  - **Part F:** Use the regression equation to find the *predicted* mpg and residual for a vehicle with a displacement of 300 and observed mpg of 15.
+
+```{r, echo = FALSE, include = FALSE}
+lm(hp ~ wt, mtcars) %>% summary()
+```
+
+---
+
+## Multivariate Regression
+
+
+We have seen previously that we can extend our linear model to include more than one predictor or independent variables. For example, in one of our studies we consider the growth of odontoblasts in guinea pigs. In this study, there were two separate variables of interest: the dose of vitamin C delivered and the route of administration (either orange juice or ascorbic acid). The linear model constructed looked like this:
+
+```{r}
+data(ToothGrowth)
+lm(len ~ dose + supp, ToothGrowth) %>% summary()
+```
+
+Written as an equation, this has the form
+
+$$
+\hat{y} = 9.27 + 9.764 \times (\text{dose}) - 3.7 \times \mathbb{1}_{VC}
+$$
+That is, we find:
+
+  1. An intercept of 9.27 (note however that this is not a meaningful term as our independent variable `dose` never takes on the value 0)
+  2. A slope of 9.76, indicating that every additional milligram of vitamin C resulted in 9.76 millimeter change in odontoblast length
+  3. A -3.7 associated with the indicator for ascorbic acid. As this is an indicator term, it effectively shifts the regression line vertically, according to the sign. Additionally, because this is an indicator for ascorbic acid, it tells us that orange juice has become the reference variable
+
+A plot of this regression looks like this:
+
+```{r, echo = FALSE}
+ggplot(ToothGrowth, aes(dose, len, color = supp)) + 
+  geom_point(size = 2) + xlim(0, 2) + 
+  geom_abline(intercept = 9.27, slope = 9.76, 
+              color = "#E41A1C", linewidth = 1.25) +
+  geom_abline(intercept = 9.27-3.70, slope = 9.76, 
+              color = "#377EB8", linewidth = 1.25) +
+  scale_color_brewer(palette = "Set1")
+```
+
+Looking at this, we see indeed that the intercept for the red line is about 9.2, with the intercept for ascorbic acid is shifted 3.7 lower. The slope for these two lines remains the same.
+
+**Question 2:** Consider the dog dataset we used in class
+
+```{r}
+dogs <- read.csv("https://collinn.github.io/data/dogs.csv")
+```
+
+  - **Part A:** Construct a linear model with `speed` as the dependent variable and include *both* `color` and `size` as the independent variables. Looking at the summary output, what variable(s) have become the reference variables?
+  - **Part B:** We saw previously in ANOVA that there were no statistically significant differences in speed between small, medium, or large dogs. Explain why you think the summary output here indicates that each of these groups is statistically significant (hint: reference variable)
+  - **Part C:** Based on this model, what speed would you predict from a medium sized white dog?
+  
+```{r, echo = FALSE, eval = FALSE}
+lm(speed ~ color + size, dogs) %>% summary()
+```
+
+**Question 3:** For this question, we will be creating a linear model to predict enrollment at primary undergraduate institutions in the United States
+
+```{r}
+college <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+  - **Part A:** Create a linear model with  Enrollment as our response variable and ACT_median and Private as our explanatory variables. Using the summary information, explain how each of these variables impacts predicted enrollment.
+  - **Part B:** Create two scatter plots investigating the relationship between ACT_median and both Debt_median and Salary10yr_median. Which appears to be most correlated with ACT_median? Which do you think would be a better variable to include in our linear model?
+  - **Part C:** Create two additional linear models for predicting Enrollment, one adding Debt_median to the model in Part A, the other adding Salary10yr_median. Is what you found consistent with what you chose in Part B? What metric(s) would you use in support of your choice.
+
+```{r, eval = FALSE, echo = FALSE}
+
+lm(Enrollment ~ ACT_median + Private, college) %>% summary()
+lm(Enrollment ~ ACT_median + Salary10yr_median + Private, college) %>% summary()
+lm(Enrollment ~ ACT_median + Debt_median + Private, college) %>% summary()
+```
+
+
+
+
+
+## Error
+
+In a non-statistical context, the idea of a line specifying the relationship between two variables is considered a *functional* relationship, i.e., I can directly find the correct value of $y$ given a value of $X$. This is precisely the kind of relationship we would see, for example, when describing the value of a temperature in Celsius (y) given a temperature in Fahrenheit (X)
+
+$$
+y = -32 - \left(\frac{5}{9}\right) X
+$$
+
+```{r, echo = FALSE}
+x <- runif(15, 32, 100)
+y <- (5/9)*(x - 32)
+ggplot(data.frame(Farenheit = x, Celsius = y), aes(Farenheit, Celsius)) +
+  geom_smooth(method = lm, se = FALSE) + geom_point()
+```
+
+In contrast, we may be interested in establishing a *statistical* linear relationship between two variables, such as height and weight. In this case, there is no straight line that would perfectly equate a value for weight given a certain height:
+
+```{r, echo = FALSE}
+ggplot(women, aes(height, weight))+
+  geom_smooth(method = lm, se = FALSE) + geom_point()
+```
+
+When describing a *statistical* relationship between two variables, it is custom to account for this variability about the line with the inclusion of an error term, $\epsilon$ (epsilon):
+
+
+$$
+y = \beta_0 + X \beta_1 + \epsilon
+$$
+
+In other words, we assume there is a *linear* relationship between $y$ and $X$ (given by $y = \beta_0 + X \beta_1$), plus some error term. The difference between our observered value of $y$ and the predicted value $\hat{y}$ is our estimate of the error term, also called a residual, i.e., $e_i =  y_i - \hat{y}_i$
+
+```{r, echo = FALSE, fig.width=8}
+par(mfrow = c(1, 2))
+
+set.seed(699)
+x <- runif(10)
+y <- 2*x + rnorm(10, sd = 0.5)
+
+plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,
+     axes = FALSE, xaxt="n", yaxt="n",
+     main = "Collection of (x, y) points")
+
+plot(x,y, pch = 19, xlab = "", ylab = "", frame.plot = TRUE,
+     axes = FALSE, xaxt="n", yaxt="n",
+     main = "Fitted line with  residual")
+abline(a = -.185, b = 2.259, col = 'steelblue', lwd = 2)
+text(x = 0.48, y = 0.25, labels = expression(y[i]), cex = 1.5)
+text(x = 0.41, y = 0.95, labels = expression(hat(y)[i]), cex = 1.5)
+lines(x = c(0.41, 0.41), y = c(y[5], -.185 + 2.259*0.41), col = 'tomato', lwd = 2)
+```
+
+One of the primary assumptions for linear regression is that the error terms are normally distributed with a mean value of $0$ and variability of $\sigma^2$. Notationally, this is written
+
+$$
+\epsilon \sim N(0, \sigma^2)
+$$
+In plain language, this means that we expect, *on average* for our response variable to fall near our line of best fit, but that the error around this line should be plus or minus some value. By investigating our residuals, we can accomplish two goals:
+
+  1. First, much of the theory around linear regression rests on the assumptoin that the errors are normally distributed. If this is not true, we may have issues in making future predictions
+  2. Second, patterns in our residuals can indicate that we are missing critical information. By comparing our residuals with missing variables, we can often identify additional variables to include in our model
+
+Once we have fit a model with `lm()`, we can access the residuals using the `$`, just as we would for a data frame. Here, for example, are the residuals from the model fit in Question 1
+
+```{r}
+## Fit model
+fit <- lm(hp ~ wt, mtcars)
+
+## Get residuals
+res <- fit$residuals
+
+## Plot them
+hist(res, breaks = 8)
+```
+Here we see a slight skew, indicating that there are more large (positive) residuals than there large (negative) ones, yet most appear to be centered around 0.
+
+Also useful is to plot residuals against the original variable in the model, in this case, weight. Below is a plot that shows how the residuals look for each value of `wt`
+
+
+```{r}
+## Use fit$residuals in the y spot since `residuals` does not exist in mtcars
+ggplot(mtcars, aes(wt, fit$residuals)) + geom_point() +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+Here, we see the same thing again -- many residuals are close to zero, with a handful of very large residuals that make up the right side of the skew. While it doesn't appear that the residuals here are exceptionally normal, they are likely close enough for our purposes.
+
+Contrast this with the model for height and weight we saw above, which has errors that are very clearly not normally distributed:
+
+```{r, eval = FALSE}
+fit <- lm(weight ~ height, women)
+
+ggplot(women, aes(height, weight)) +
+  geom_smooth(method = lm, se = FALSE) +
+  geom_point() + ggtitle("Fitted Line")
+
+ggplot(women, aes(height, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
+```{r, fig.width = 8, echo = FALSE}
+fit <- lm(weight ~ height, women)
+
+p1 <- ggplot(women, aes(height, weight)) +
+  geom_smooth(method = lm, se = FALSE) +
+  geom_point() + ggtitle("Fitted Line")
+
+p2 <- ggplot(women, aes(height, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+gridExtra::grid.arrange(p1, p2, nrow = 1)
+```
+
+
+```{r}
+fit <- lm(disp ~ wt, mtcars)
+
+ggplot(mtcars, aes(wt, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
+### Question 4
+
+For the `dogs` dataset, construct a histogram of residuals to check Normality assumption for linear regression for a model predicting `speed` with `breed`.
+
+```{r, echo=F, eval=F}
+model = lm(speed ~ breed, data=dogs)
+model %>% summary()
+ggplot(dogs, aes(y=model$residuals)) +
+  geom_histogram()
+```
+### Question 5
+
+Continuation of using the `college` dataset in question 3. For the model predicting enrollment using `ACT_median`, `Debt_median`, and `Private`, check the residual assumptions by looking at histogram of residuals, and also plot residuals vs the two quantitative variables. For these last two plots, also color the residuals by Private vs. Public. What do you see?
+
+```{r, eval=F, echo=F}
+fit = lm(Enrollment ~ ACT_median + Debt_median + Private, college) %>% summary()
+
+ggplot(data=college, aes(y=fit$residuals)) + geom_histogram()
+
+ggplot(college, aes(ACT_median, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(Debt_median, fit$residuals)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(ACT_median, fit$residuals, color=Private)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+
+ggplot(college, aes(Debt_median, fit$residuals, color=Private)) +
+  geom_point() + ggtitle("Residual Plot") +
+  geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
+```
+
