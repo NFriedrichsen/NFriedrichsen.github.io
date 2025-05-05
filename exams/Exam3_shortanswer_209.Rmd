@@ -53,7 +53,7 @@ What is a Type II error and what is another name for it?
 
 What type of error occurs if H0 is False but we fail to reject it? 
 
-What type of error occurs if HA is True but we do reject it? 
+What type of error occurs if H0 is True but we do reject it? 
 
 Explain why using $\alpha$ = 0.05 as a strict cut-off for significance is problematic
 
