@@ -230,7 +230,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 5/05 | [ANOVA - SLR](Lectures_Spring25/ANOVA_SLR.pdf)  | [ANOVA Regression Lab](Labs_Spring25/ANOVA_regression_lab.html) Q1 | - |
-| Wed 5/07 | ANOVA and MLR | [ANOVA Regression Lab](Labs_Spring25/ANOVA_regression_lab.html) Q2+3 | - |
+| Wed 5/07 | [ANOVA - MLR](Lectures_Spring25/ANOVA_MLR.pdf) | [ANOVA Regression Lab](Labs_Spring25/ANOVA_regression_lab.html) Q2+3 | - |
 | Fri 5/09 | ANOVA Conditions | [ANOVA Regression Lab](Labs_Spring25/ANOVA_regression_lab.html) Q4+5 | - |
 
 
