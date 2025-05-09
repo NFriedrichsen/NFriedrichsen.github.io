@@ -230,7 +230,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 5/05 | Semester Review | [Methods Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html) | - |
 | Wed 5/07 | [More Lying With Statistics](Lectures_Spring25/HTLWS.pdf) | - | - |
-| Fri 5/09 | LLMs | - | - |
+| Fri 5/09 | [AI and Machine Learning](Lectures_Spring25/AI_ML.pdf) | Review for Exam | - |
 
 **Assignments and Deadlines**
 
