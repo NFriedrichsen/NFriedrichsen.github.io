@@ -222,8 +222,8 @@ $$
 $$
 In plain language, this means that we expect, *on average* for our response variable to fall near our line of best fit, but that the error around this line should be plus or minus some value. By investigating our residuals, we can accomplish two goals:
 
-  1. First, much of the theory around linear regression rests on the assumptoin that the errors are normally distributed. If this is not true, we may have issues in making future predictions
-  2. Second, patterns in our residuals can indicate that we are missing critical information. By comparing our residuals with missing variables, we can often identify additional variables to include in our model
+  1. First, much of the theory around linear regression rests on the assumption that the errors are normally distributed. If this is not true, we may have issues in making future predictions
+  2. Second, patterns in our residuals can indicate that we are missing critical information. By comparing our residuals with missing variables, we can often identify additional variables to include in our model.
 
 Once we have fit a model with `lm()`, we can access the residuals using the `$`, just as we would for a data frame. Here, for example, are the residuals from the model fit in Question 1
 
@@ -247,6 +247,7 @@ Also useful is to plot residuals against the original variable in the model, in 
 ggplot(mtcars, aes(wt, fit$residuals)) + geom_point() +
   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
 ```
+
 Here, we see the same thing again -- many residuals are close to zero, with a handful of very large residuals that make up the right side of the skew. While it doesn't appear that the residuals here are exceptionally normal, they are likely close enough for our purposes.
 
 Contrast this with the model for height and weight we saw above, which has errors that are very clearly not normally distributed:
@@ -285,6 +286,22 @@ ggplot(mtcars, aes(wt, fit$residuals)) +
   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
 ```
 
+## Checking to see if a distribution is Normal (QQplot)
+
+The Normal QQ Plot (quantile-quantile) compares the quantiles of your data to the theoretical distributions of a Normal distribution that has the same mean and standard deviation. You should expect to see a straight line if your data seems to resemble a Normal distribution.
+
+The function used to assess this is `qqnorm()`. The input is then the variable we want to find out if it has a Normal distribution. Recall that the distribution for residuals in the Linear Model using `wt` to predict `MPG' was skewed. This is how we get the normal QQ plot.
+
+```{r}
+# res = residuals from linear model
+qqnorm(res)
+
+# add line for comparison
+qqline(res)
+```
+
+---
+
 ### Question 4
 
 For the `dogs` dataset, construct a histogram of residuals to check Normality assumption for linear regression for a model predicting `speed` with `breed`.
@@ -295,6 +312,7 @@ model %>% summary()
 ggplot(dogs, aes(y=model$residuals)) +
   geom_histogram()
 ```
+
 ### Question 5
 
 Continuation of using the `college` dataset in question 3. For the model predicting enrollment using `ACT_median`, `Debt_median`, and `Private`, check the residual assumptions by looking at histogram of residuals, and also plot residuals vs the two quantitative variables. For these last two plots, also color the residuals by Private vs. Public. What do you see?
@@ -320,4 +338,6 @@ ggplot(college, aes(Debt_median, fit$residuals, color=Private)) +
   geom_point() + ggtitle("Residual Plot") +
   geom_hline(yintercept = 0, color = 'red', linetype = "dashed")
 ```
+
+
 
