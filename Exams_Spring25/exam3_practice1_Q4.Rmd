@@ -19,7 +19,7 @@ ParamountAction 36.15 + 14.69
 
 ParamountComedy 36.15 + 14.69 - 25.69
 
-**4C**: It is Plot A. Using the plot of Fox and Paramount movies on Page 5, we can see most movies are being overpredicted (=> negative residuals) with a few movies with large underpredictions (=> large positive residuals). This corresponds to plot B.
+**4C**: It is Plot A. Using the plot of Fox and Paramount movies on Page 5, we can see most movies are being overpredicted (=> negative residuals) with a few movies with large underpredictions (=> large positive residuals). This corresponds to plot A.
 
 **4D**: -21.48 is the predicted OpeningWeekend revenue (million $) for a Fox Action movie with 0 theaters for the opening weekend. Not meaninfgul. The revenue probably cannot be negative. Realistically, there won't every be 0 theaters showing the movie on the opening weekend.
 
