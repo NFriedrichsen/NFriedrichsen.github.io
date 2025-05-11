@@ -308,7 +308,7 @@ Exam 2 will be in-class Friday 4/11.
 
 [Testing Worksheet 4](Labs_Spring25/TestingWorksheet4_sol.html)
 
-[Testing Lab]()
+[Testing Lab](Labs_Spring25/HypothesisTestingLab_sol.html)
 
 ### Selected HW Solutions
 

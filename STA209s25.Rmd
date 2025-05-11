@@ -312,9 +312,9 @@ Exam 2 will be in-class Friday 4/11.
 
 [Testing Worksheet 4](Labs_Spring25/TestingWorksheet4_sol.html)
 
-[Testing Lab]()
+[Testing Lab](Labs_Spring25/HypothesisTestingLab_sol.html)
 
-[ANOVA Lab]()
+[ANOVA Lab](ANOVA_lab_sol.html)
 
 [ANOVA Regression Lab](Labs_Spring25/ANOVA_regression_lab_solutions.html)
 
