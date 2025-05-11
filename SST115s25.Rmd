@@ -269,7 +269,7 @@ Exam 2 will be in-class Friday 4/11.
 
 [Short Answer Practice](exams/Exam3_shortanswer_115.html)
 
-[Practice Exam](exams/practice_exam3.pdf) and [(Solutions)](Exams_Spring25/practice_exam3_solutions)
+[Practice Exam](exams/practice_exam3.pdf) and [(Solutions)](Exams_Spring25/practice_exam3_solutions.pdf)
 
 [Formula Sheet](exams/exam3_formulas115.pdf)
 
