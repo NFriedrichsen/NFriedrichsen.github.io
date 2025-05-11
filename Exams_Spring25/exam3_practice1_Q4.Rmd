@@ -1,0 +1,26 @@
+---
+title: "Practice Exam Question 4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**4A**: The intercept is the average OpeningWeekend value for Fox Action movies. It is meaningful as this is just finding a combination of categories.
+
+**4B**:
+
+FoxAction = 36.15
+
+FoxComedy 36.15 - 25.69
+
+ParamountAction 36.15 + 14.69
+
+ParamountComedy 36.15 + 14.69 - 25.69
+
+**4C**: It is Plot A. Using the plot of Fox and Paramount movies on Page 5, we can see most movies are being overpredicted (=> negative residuals) with a few movies with large underpredictions (=> large positive residuals). This corresponds to plot B.
+
+**4D**: -21.48 is the predicted OpeningWeekend revenue (million $) for a Fox Action movie with 0 theaters for the opening weekend. Not meaninfgul. The revenue probably cannot be negative. Realistically, there won't every be 0 theaters showing the movie on the opening weekend.
+
+**4E**: Both models have very small p-values (indicating significant fits), but the R2 for the model with TheatersOpenWeek is much higher, so we would prefer that one.
