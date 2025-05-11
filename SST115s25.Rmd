@@ -263,13 +263,13 @@ Exam 2 will be in-class Friday 4/11.
 
 ## Exam 3 Info
 
-[Methods Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html)
+[Methods Review Worksheet](exams/SST115_methodsreview.pdf) and [Webpage Version](exams/SST115_methodsreview.html) and [(Solution)](Exams_Spring25/Methods_review_solutions.html)
 
 [Exam 3 Topics List](exams/topic_list_exam3_115.pdf)
 
 [Short Answer Practice](exams/Exam3_shortanswer_115.html)
 
-[Practice Exam](exams/practice_exam3.pdf)
+[Practice Exam](exams/practice_exam3.pdf) and [(Solutions)](Exams_Spring25/practice_exam3_solutions)
 
 [Formula Sheet](exams/exam3_formulas115.pdf)
 
@@ -307,6 +307,8 @@ Exam 2 will be in-class Friday 4/11.
 [Testing Worksheet 3](Labs_Spring25/TestingWorksheet3_sol.html)
 
 [Testing Worksheet 4](Labs_Spring25/TestingWorksheet4_sol.html)
+
+[Testing Lab]()
 
 ### Selected HW Solutions
 
