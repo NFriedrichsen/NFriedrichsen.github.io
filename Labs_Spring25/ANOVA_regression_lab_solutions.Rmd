@@ -337,20 +337,20 @@ ggplot(mtcars, aes(wt, fit$residuals)) +
 
 For the `dogs` dataset, construct a histogram of residuals to check Normality assumption for linear regression for a model predicting `speed` with `breed`.
 
-```{r, echo=F, eval=F}
+```{r}
 model = lm(speed ~ breed, data=dogs)
-model %>% summary()
-ggplot(dogs, aes(y=model$residuals)) +
+ggplot(dogs, aes(x=model$residuals)) +
   geom_histogram()
 ```
+
 ### Question 5
 
 Continuation of using the `college` dataset in question 3. For the model predicting enrollment using `ACT_median`, `Debt_median`, and `Private`, check the residual assumptions by looking at histogram of residuals, and also plot residuals vs the two quantitative variables. For these last two plots, also color the residuals by Private vs. Public. What do you see?
 
-```{r, eval=F, echo=F}
+```{r}
 fit = lm(Enrollment ~ ACT_median + Debt_median + Private, college) %>% summary()
 
-ggplot(data=college, aes(y=fit$residuals)) + geom_histogram()
+ggplot(data=college, aes(x=fit$residuals)) + geom_histogram()
 
 ggplot(college, aes(ACT_median, fit$residuals)) +
   geom_point() + ggtitle("Residual Plot") +
