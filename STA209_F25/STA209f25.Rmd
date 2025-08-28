@@ -6,8 +6,6 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
-  pdf_document:
-    toc: true
 ---
 
 $~$
@@ -34,7 +32,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Fri 8/29 | [Syllabus](syllabus209f25.html) and [Introduction](Lectures/Introduction.pdf) (update pending) | [Lab](Labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
+| Fri 8/29 | [Syllabus](syllabus209f25.html) and [Introduction](Lectures/209_Introduction.pdf) (update pending) | [Lab](Labs/00_markdown.html) | IMS Sections 1.2.1-1.2.3 |
 
 **Assignments and Deadlines**
 
