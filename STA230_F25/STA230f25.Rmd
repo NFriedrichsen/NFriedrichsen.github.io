@@ -1,0 +1,33 @@
+---
+title: "STA-230 - Introduction to Data Science (Fall 2025)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# Syllabus
+
+Welcome to the course website for STAT 230, Introduction to Data Science. To begin, you can find the course syllabus linked below:
+
+- [Click here](syllabus230f25.html) to view the course syllabus
+
+You can locate course content by scrolling, or by using the navigation bar in the upper left.  
+
+Please note: material will not be posted until we've reached that point in the course.
+
+<hr style="border: none; border-top: 5px solid black;">
+
+### Week 1 (Intro to R)
+
+| Date | Lecture | Lab | Homework |
+|:-----|:-------|:-----|:-----|
+| Fri 8/29 | [Syllabus](syllabus230f25.html) | [Lab 1 -- Intro to R](Labs/Lab1.html) | - |
+
+**Assignments and Deadlines**
+
+1) Install R (https://cran.r-project.org/)
+2) Install RStudio (https://posit.co/download/rstudio-desktop/)

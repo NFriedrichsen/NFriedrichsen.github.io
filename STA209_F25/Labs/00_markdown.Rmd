@@ -1,0 +1,21 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Easy lab day
+
+R packages are pre-written collections of code (typically functions and data sets) hosted in a central repository known as CRAN.
+
+Copy and paste the block below into your R console to install a few of the packages we will be using in class
+
+```{r, eval=F}
+## We'll install these packages
+install.packages(c("tinytex", "dplyr", "ggplot2"))
+
+## Install tinytex
+tinytex::install_tinytex()
+```

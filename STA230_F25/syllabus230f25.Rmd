@@ -1,0 +1,222 @@
+---
+title: "Syllabus - STAT-230 (Fall 2025)"
+author: "Nathan Friedrichsen"
+date: "2025-08-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<hr style="border: none; border-top: 5px solid black;">
+
+**Instructor**:
+
+* Nathan Friedrichsen, Noyce 2220, friedrichsen@grinnell.edu
+
+**Class Meetings**:
+
+* STA-230-01: Noyce 2401, MWF 9:00-9:50 AM
+* STA-230-02: Noyce 2401, MWF 11:00-11:50 AM
+
+**Office Hours**:
+
+This time is purposefully scheduled for you to drop in and ask any questions about the course. Please feel free to stop by. If the time doesn't work for you, message me and we can try to arrange something.
+
+* Location: Noyce 2220
+* Time: TBD
+
+**Mentor Information**:
+
+This course employs the use of a mentor to aid you in navigating the course. Our course mentor will assist us in class, and host 1 – 2 mentor sessions throughout the week. Mentor Sessions may review course content, provide practice problems, practice interview skills, or provide homework help.
+
+More mentor info will be posted.
+
+**Gradescope Course numbers**
+
+* STA-230-01: 
+* STA-230-02:
+
+<hr style="border: none; border-top: 5px solid black;">
+
+**Course Description**:
+
+Welcome to the Fall 2025 sections of Grinnell College’s STA-230. This course introduces core topics in data science using R programming. This includes introductions to getting and cleaning data, data management, exploratory data analysis, reproducible research, and data visualization. This course incorporates case studies from multiple disciplines and emphasizes the importance of properly communicating statistical ideas. Prerequisite: MAT-209 or STA-209. Suggested CSC-151 or computer programming experience.
+
+**Texts**:
+
+No required texts, some free texts may be recommended throughout the semester.
+
+There may also be readings or links from other sources which will be provided as necessary.
+
+### Learning Objectives
+
+After completing this course, students will be able to do the following:
+
+* Apply methods of data exploration, visualization, and modeling to illustrate key findings and make justifiable inferences
+* Translate research questions into quantifiable metrics or models that can be evaluated
+* Use the R programming environment to process, manage, and format unstructured data, create meaningful data visualizations, and apply supervised or unsupervised learning models
+* Clearly and concisely communicate findings to statistical and non-statistical audiences
+
+### Class Format
+
+The current plan for the course is as follows:
+
+* Mondays, Wednesdays, and Fridays will consist of a short lecture followed by a lab that will be worked on in pairs.
+* Labs will generally be due every Saturday or Sunday (open to feedback on choice)
+* There will be approximately weekly homework assignments due every Friday
+* There will be 4 “Midterms” which are mostly project-based. These will also be due on Saturdays/Sundays.
+
+You will have the freedom to choose your partner for the first lab, afterwords lab partners may be assigned. During labs it is essential that you and your partner work together, making certain that each of you understand your work equally well.
+
+Most labs will begin with a brief “preamble” section that we will go through together as class. The purpose of this section is to introduce the topic of the lab and ensure a smooth start to each class meeting.
+
+*Course structuring is subject to change. I am basing our labs on previous semesters which used a Tuesday/Thursday schedule*
+
+<hr style="border: none; border-top: 5px solid black;">
+
+## Grading
+
+This class will employ a mastery-based grading system. All Components will be graded on a Satisfactory (S) or not-Satisfactory (NS) scale. The course grading scheme being employed is primarily the result of Prof. William Rebelsky's previous version STA-230.
+
+### Labs
+
+We will have in class labs almost every class. In general these will be due the Saturday/Sunday immediately following the class period in which they were released. In order to receive a Satisfactory:
+
+* The Lab must be complete: answer all questions, follow all instructions
+* The Lab must show a good faith effort on every problem
+* Key understanding is shown for each concept (this will vary by Lab)
+* Mistakes are minimal
+
+### Homework Assignments
+
+We will have approximately weekly homework assignments due on Saturdays/Sundays. In order to receive a Satisfactory:
+
+* The Assignment must be complete: answer all questions, follow all instructions
+* The Assignment must show a good faith effort on every problem
+* Key understanding is shown for each concept
+* Approximately 85-90% of problems are solved correctly
+
+### Midterms 
+
+There will be 4 midterms:
+
+* Out of class timed midterm due around week 7
+* Data manipulation project due around week 10
+* SQL database project due around week 12
+* R Shiny project due last day of class
+
+### Final Exam
+
+There will be no final exam held for the class.
+
+### Attendance and Participation
+
+Your attendance and participation in class is an integral part of your learning. You are expected to attend every class and work respectfully and effectively with your assigned partner.
+
+You may be excused from a class under certain situations. Excusable reasons to miss class include college sponsored sports absences, religious holidays, family emergencies, and illness. Please email me at least a week in advance in the event of a planned absence. In the event of an unplanned absence (e.g. illness), please let me know as soon as possible if you will miss class, ideally at least 30min in advance of the start of class. Excused absences will not count against tokens (see below) and will count as an S for the purposes of letter grades below.
+
+### Letter Grades
+
+This course will rely on the ideas of [specifications grading](https://www.insidehighered.com/views/2016/01/19/new-ways-grade-more-effectively-essay) and [mastery grading](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit#heading=h.w1uo4j12avfx). These systems, inspired by adult learning theory, are designed to create a “low-threat” learning environment where:
+
+* Mastery obtained via exploration, experimentation, and failure is encouraged and valued as
+highly as “getting it right” the first time.
+* Your final grade accurately reflects your mastery of the learning goals of the course.
+
+**Note:** I reserve the right to update requirements for grades as circumstances dictate over the course of the semester (e.g. if the number of assignments or labs changes).
+
+Letter grades for the entire course will be assigned according to the bundles in the table below. You will receive the grade corresponding to the bundle for which you meet all the requirements. All bundles list minimum amounts, you may exceed the requirements for a bundle and still qualify for it. All numbers in the table are the minimum number of satisfactory grades achieved.
+
+| Grade | Attendance (41 Possible) | Labs (11 Possible) | Homework (8 Possible) | Midterms (4 Possible) |
+|-------|---------------------------|---------------------|------------------------|------------------------|
+| C     | 32                        | 7                   | 5                      | 2                      |
+| B     | 35                        | 9                   | 6                      | 3                      |
+| A     | 38                        | 10                  | 7                      | 4                      |
+
+D: 3 requirements of a C are met
+F: 0-2 requirements of a C are met
+Half letter grades (C+,B+): all of the lower tier (C/B) requirements met, two of the higher tier
+(B/A) non-essay requirements met.
+Half letter grades (B-,A-): all of the lower tier (C/B) requirements met, three of the higher tier
+(B/A) non-essay requirements met.
+
+Later on, I will link a spreadsheet that you can use to test various combinations to see what the grade will be by the midsemester date.
+
+One of the fundamental principles behind this grading scheme is that you will have opportunities to re-try assignments if they do not originally obtain a satisfactory grade. My goal in using this schema is to reduce the stress that accompanies typical grading rubrics and give you permission to make mistakes and learn as much as possible. Ultimately, my goal is for each student to learn as much as possible, and I would be very happy to have every student earn an A. 
+
+### Late Policy
+
+*Tokens* reflect that life inevitably rears its ugly head in some fashion and ruins our best-laid plans. You begin the course with `3` tokens. Tokens may be used for:
+
+* Turning in a homework late (1 token per homework max, gives 2 late days)
+* Re-doing a homework or Lab marked non-satisfactory (1 token per attempt, max 2 extra attempts). Note that I expect re-submitted assignments to cross a higher bar for Satisfactory (closer to 90/95% correct)
+* Making up for an unexcused absence in class (1 token per missed class)
+
+There may be opportunities to earn more tokens as the semester progresses by reading select research papers and answering a short quiz. 
+
+
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# Software
+
+Software is increasingly an essential component of statistics and will play a role in this course. We will primarily use `R`, an open-source statistical software program.
+
+You are welcome to use your own personal laptop, or a Grinnell College laptop, during the course. `R` is freely available and you can download it and it’s UI companion, `R Studio`, here (note: `R` must be downloaded and installed before `R Studio`):
+
+1. Download `R` from [http://www.r-project.org/](http://www.r-project.org/)  
+2. Download `R Studio` from [http://www.rstudio.com/](http://www.rstudio.com/)
+
+You may also work on a classroom computer, all of which will have `R` and `R Studio` pre-installed.
+
+Finally, Grinnell hosts an online version of R Studio that you may use while on campus internet: https://rstudio.grinnell.edu/
+
+### Why use `R` for Data Science? (From Prof. Will Rebelsky)
+
+If you’ve spent any time reading about data science online you’ll undoubtedly have noticed the prominence of the Python programming language. Indeed, research from Cal State University found Python was the most popular data science language in private industry, being mentioned in 42% of data scientist job postings. However, R, which was mentioned in 20% of job postings, is not far behind and offers a few advantages when approaching data science from a statistical perspective (hence this course having the STA prefix).
+
+Both R and Python provide plenty of functions for data manipulation. However, because R was created by academic statisticians, it offers very strong data visualization and statistical modeling packages. On the other hand, Python is a general-purpose programming language that excels in production, deployment, and machine learning. Regardless of each language’s strengths and weaknesses, as an introductory course our focus is on the fundamental skills and thought processes used in data science – which is something that can be accomplished regardless of the tools used (which will change over time anyways).
+
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# General Policies
+
+### Student Workload
+
+You can expect to spend 12 hours per week on this course, including all in-class and out of class time. This number is based off of the Grinnell Guidelines for credit-hours. If you find that you are spending significantly more than 9 hours working on material for this course outside of class each week, please let me know.
+
+### Academic Honesty
+
+[Grinnell College’s Academic Honesty Policy](https://catalog.grinnell.edu/content.php?catoid=34&navoid=5483) is located in the online Student Handbook. It is the College’s expectation that students be aware of and meet the expectations expressed in this policy. In addition, in this course, it is my expectation that students may collaborate on the Homework Assignments and must collaborate on the Labs, however your collaboration must be attributed and all answers must be written up separately. It is my expectation that the Midterm will be completed independently.
+
+In this course, you are not allowed to use solutions you find on the internet, and further, you are not allowed to search for problem solutions on the internet (this includes resources such as ChatGpt). I know that there is great temptation to look for solutions online when things get difficult. It is my hope that the format of this course eases some of the pressure that you might feel. Additionally, we will work to build our growth mindset in this course, which makes it less uncomfortable to sit with a challenging problem. For more information on the way I approach academic honesty, it may be helpful to check out Professor Samuel Rebelsky’s [extended statement on academic honesty and integrity](https://rebelsky.cs.grinnell.edu/Courses/CSC301/2021Fa/handouts/academic-honesty).
+
+### Sharing of Course Materials
+
+Our goal is to create an inclusive learning environment where people feel free to share, fail, and ultimately grow in knowledge. To create such an environment, it is imperative that we be mindful of what we share outside of our learning space. To this end, I request that you refraining from sharing any recordings of our class meetings with others. Recordings of class meetings that we provide, e.g., recorded through Microsoft Teams, are meant for your personal use and should not be shared outside of the class. Students should not make their own recordings of class meetings.
+
+Furthermore, while you retain copyright of the work you produce in this course, we must still uphold the academic integrity of this course. To this end, you may not share copies of your assignments with others (unless otherwise allowed by the course policies) or upload your assignments to third party websites unless substantial changes are made to the assignment (e.g., significant extensions and improvements to your code) so that it is clear that the end product is significantly different from what was asked in original assignment. I do recognize that there are times where you want to do this, e.g., uploading projects to Github for your resume or to show to friends and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
+
+**Inclusive Classroom**
+
+Grinnell College makes reasonable accommodations for students with documented disabilities. Students with disabilities partner with the Office of Disability Resources to make academic accommodation letters available to faculty via the accommodation portal: access.grinnell.edu. To help ensure that your access needs are met, I encourage individual students to approach me so we can have a discussion about your distinctive learning needs and accommodations within the context of this course. If you have not already worked with the Office of Disability Resources and believe you may require academic accommodations for this course, Disability Resources staff can be reached via email at access@grinnell.edu or by stopping by their offices in Steiner Hall.
+
+**Religious Holidays**
+
+Grinnell College encourages students who plan to observe holy days that coincide with class meetings or assignment due dates to consult with your instructor in the first three weeks of classes so that you may reach a mutual understanding of how you can meet the terms of your religious observance, and the requirements of the course.
+
+**Pregnancy Related Conditions, Title IX**
+
+Grinnell College is committed to compliance with Title IX and to supporting the academic success of pregnant and parenting students and students with pregnancy related conditions. If you are a pregnant student, have pregnancy related conditions, or are a parenting student (child under 1-year needs documented medical care) who wishes to request reasonable related supportive measures from the College under Title IX, please email the Title IX Coordinator at [titleix@grinnel.edu](mailto:titleix@grinnel.edu). The Title IX Coordinator will work with Disability Resources and your professors to provide reasonable supportive measures in support of your education while pregnant or as a parent under Title IX. 
+
+
+
+
+<hr style="border: none; border-top: 5px solid black;">
+
+### Acknowledgements
+
+This Syllabus is based off material taken from a variety of Professors at Grinnell including, but not limited to, Professors (William) Rebelsky, Miller, and Nolte. Course content and organization is *heavily* based off previous courses by Profs. Miller and Rebelsky.
