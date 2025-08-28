@@ -1,11 +1,12 @@
 ---
 title: "STA-230 - Introduction to Data Science (Fall 2025)"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 $~$
 
