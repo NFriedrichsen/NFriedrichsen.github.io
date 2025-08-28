@@ -7,6 +7,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+$~$
+
+Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
+
 <hr style="border: none; border-top: 5px solid black;">
 
 # Syllabus
