@@ -357,7 +357,7 @@ display: none;
 
 <div id="class-introduction" class="section level2">
 <h2>Class Introduction</h2>
-<p><a href="syllabus230f25">Syllabus Link</a></p>
+<p><a href="syllabus230f25.html">Syllabus Link</a></p>
 <p>Important notes:</p>
 <ul>
 <li>Attendance is important. Please let me know all days that you will
@@ -1168,13 +1168,13 @@ initial data frame (provided the column names match):</p>
 df2 &lt;- data.frame(Year = 2020, val = rnorm(3, mean = 10))
 
 rbind(df1, df2)</code></pre>
-<pre><code>##   Year         val
-## 1 2019  0.08336218
-## 2 2019 -0.47460288
-## 3 2019 -0.22825758
-## 4 2020  9.76408658
-## 5 2020 10.14516869
-## 6 2020  9.88230306</code></pre>
+<pre><code>##   Year        val
+## 1 2019 -0.9926343
+## 2 2019  0.6679190
+## 3 2019  0.7363896
+## 4 2020  9.7745287
+## 5 2020  9.3232174
+## 6 2020  8.8489899</code></pre>
 <p>Note that this result could also be achieved using
 <code>full_join()</code> (though I personally find that approach less
 intuitive). However, <code>rbind()</code> has the advantage of easily
@@ -1183,16 +1183,16 @@ command:</p>
 <pre class="r"><code>full_join(x = df1, y = df2)</code></pre>
 <pre class="r"><code>df3 &lt;- data.frame(Year = 2021, val = rnorm(3, mean = -5)) ## How about a third year?
 rbind(df1, df2, df3)</code></pre>
-<pre><code>##   Year         val
-## 1 2019  0.08336218
-## 2 2019 -0.47460288
-## 3 2019 -0.22825758
-## 4 2020  9.76408658
-## 5 2020 10.14516869
-## 6 2020  9.88230306
-## 7 2021 -5.78893798
-## 8 2021 -4.57910130
-## 9 2021 -4.40637392</code></pre>
+<pre><code>##   Year        val
+## 1 2019 -0.9926343
+## 2 2019  0.6679190
+## 3 2019  0.7363896
+## 4 2020  9.7745287
+## 5 2020  9.3232174
+## 6 2020  8.8489899
+## 7 2021 -4.9116580
+## 8 2021 -4.5849365
+## 9 2021 -6.2910218</code></pre>
 <p><strong>Question 12</strong>: In the <code>colleges</code> dataset,
 find the rows for Iowa State University and Grinnell College. Make two
 data frames consisting of each row of data respectively. Use
