@@ -357,7 +357,7 @@ display: none;
 
 <div id="class-introduction" class="section level2">
 <h2>Class Introduction</h2>
-<p><a href>Syllabus Link</a></p>
+<p><a href="syllabus230f25">Syllabus Link</a></p>
 <p>Important notes:</p>
 <ul>
 <li>Attendance is important. Please let me know all days that you will
@@ -1157,6 +1157,46 @@ named “sds” and print them as part of your answer.</p>
 </div>
 <div id="row-binding" class="section level2">
 <h2>Row Binding</h2>
+<p>Sometimes it can be useful to aggregate several data frames with the
+same structure into one larger data frame. For example, we might want to
+combine all four participant files from Question #11 into a combined
+data frame. Or, perhaps we want to aggregate several years of data from
+the same source. These tasks can be handled by the <code>rbind()</code>
+function, which will append the rows of one or more data frames to an
+initial data frame (provided the column names match):</p>
+<pre class="r"><code>df1 &lt;- data.frame(Year = 2019, val = rnorm(3))
+df2 &lt;- data.frame(Year = 2020, val = rnorm(3, mean = 10))
+
+rbind(df1, df2)</code></pre>
+<pre><code>##   Year       val
+## 1 2019  1.997732
+## 2 2019  1.634882
+## 3 2019  1.292932
+## 4 2020 11.623400
+## 5 2020 10.643978
+## 6 2020 10.405366</code></pre>
+<p>Note that this result could also be achieved using
+<code>full_join()</code> (though I personally find that approach less
+intuitive). However, <code>rbind()</code> has the advantage of easily
+being able to bind an arbitrary number of data frames in a single
+command:</p>
+<pre class="r"><code>full_join(x = df1, y = df2)</code></pre>
+<pre class="r"><code>df3 &lt;- data.frame(Year = 2021, val = rnorm(3, mean = -5)) ## How about a third year?
+rbind(df1, df2, df3)</code></pre>
+<pre><code>##   Year       val
+## 1 2019  1.997732
+## 2 2019  1.634882
+## 3 2019  1.292932
+## 4 2020 11.623400
+## 5 2020 10.643978
+## 6 2020 10.405366
+## 7 2021 -5.409005
+## 8 2021 -4.261589
+## 9 2021 -3.276124</code></pre>
+<p><strong>Question 12</strong>: In the <code>colleges</code> dataset,
+find the rows for Iowa State University and Grinnell College. Make two
+data frames consisting of each row of data respectively. Use
+<code>rbind()</code> to combine these into a new data frame.</p>
 <hr />
 </div>
 <div id="practice-required" class="section level2">
