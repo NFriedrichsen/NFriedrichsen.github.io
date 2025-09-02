@@ -36,3 +36,18 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) Install R (https://cran.r-project.org/)
 2) Install RStudio (https://posit.co/download/rstudio-desktop/)
+
+---
+
+### Week 2 (Intro to R cont'd)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/01 | Labor Day (no class) | - | - |
+| Wed 9/03 | - | [Lab 1 -- Intro to R](Labs/Lab1.html) | - |
+| Fri 9/05 | - | [Lab 1 -- Intro to R](Labs/Lab1.html) | TBA |
+
+**Due Dates:**
+
+1) [Lab 1 -- Intro to R](Labs/Lab1.html) due Saturday at 10pm on Gradescope (will be linked).
+2) Homework 1 will be posted (most likely on Friday) and will be due the following week.
