@@ -39,17 +39,15 @@ Please note: material will not be posted until we've reached that point in the c
 1) Install R (https://cran.r-project.org/)
 2) Install RStudio (https://posit.co/download/rstudio-desktop/)
 
+---
 
+### Week 2 (Intro to R & Data Visualization)
 
-<!-- --- -->
-
-<!-- ### Week 2 (Intro to R & Data Visualization) -->
-
-<!-- | Date | Lecture | Lab | Reading | -->
-<!-- |:-----|:-------|:-----|:-----| -->
-<!-- | Mon 1/27 | [Intro to R](Lectures_Spring25/01_R_introduction.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) | - | -->
-<!-- | Wed 1/22 | [Data Visualization](Lectures_Spring25/02_DescribingData.pdf) | [Intro R Lab](Labs_Spring25/01_introR.html) cont'd | - | -->
-<!-- | Fri 1/24 | No Class  | - |  - | -->
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/01 | Labor Day (no class) | - | - |
+| Wed 9/03 | [Intro to R](Lectures/01_R_introduction.pdf) | [Intro R Lab](Labs/01_introR.html) | - |
+| Fri 9/05 | Data Visualization (update pending) | [Intro R Lab](Labs/01_introR.html) cont'd | - |
 
 <!-- **Assignments and Deadlines** -->
 
