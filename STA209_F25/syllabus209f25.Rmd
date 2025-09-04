@@ -22,7 +22,9 @@ output:
 This time is purposefully scheduled for you to drop in and ask any questions about the course. Please feel free to stop by. If the time doesn't work for you, message me and we can try to arrange something.
 
 * Location: Noyce 2220
-* Time: TBD
+* Time: 
+  * Mondays 10-11am 
+  * Wednesdays + Fridays 2:30 - 4:00pm
 
 **Mentor Information**:
 
@@ -30,7 +32,7 @@ More info will be posted.
 
 **Gradescope Course numbers**
 
-* STA-209-03: 
+* STA-209-03: 1118318
 
 <hr style="border: none; border-top: 5px solid black;">
 
@@ -91,7 +93,7 @@ After completing this course, students should be able to:
 
 In-class labs serve as an opportunity to practice content you will see in lectures, and prepare you for homeworks and exams. The labs contain embedded questions that you and your lab partner(s) will answer together. Some lab questions may be scored for accuracy with feedback given, but by and large labs will be scored for effort/completion. Missing questions or lack of effort for labs *will* result in lower scores.
 
-**Individual Homework** \- 10%
+**Individual Homework** \- 5%
 
 Homework will be assigned at most once per week and will be due on Gradescope, submitted as a pdf, *generally* due 10pm on Fridays. Gradescope requires that you indicate which problems appear on which page (we will go over an example) – failure to do this will result in a 25% deduction of that homework’s final score.
 
@@ -99,11 +101,11 @@ I encourage you to work with other students or visit the Math Lab for help on ho
 
 If you engage in significant collaboration with classmates or tutors, you must explicitly acknowledge that person(s) on the top of your assignment (again, you are encouraged to collaborate, and I want to emphasize that there is no penalty for doing so).
 
-**Required Readings** 10\%
+**Required Readings** 5\%
 
 At least three papers will be assigned during the course of the semester to read. They will not be overly long nor mathematically difficult to read. The goal of these papers is to help solidify the big picture understanding that I want you to walk away from the class with. A single paper will be assigned one to two weeks before a small quiz on it will be given in class. These quizzes will be closed notes/papers.
 
-**Exams (3)** \- 50\% in total (16.67\% each)
+**Exams (3)** \- 60\% in total (20\% each)
 
 There will be 2 midterms and a final exam. Each midterm will focus on a specific set of content, but because course topics are naturally cumulative there may be some questions involving earlier content. The 3 exams will each contribute 16.67\% towards your end-of-semester grade.
 
