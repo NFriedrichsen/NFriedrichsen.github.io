@@ -49,5 +49,5 @@ Please note: material will not be posted until we've reached that point in the c
 
 **Due Dates:**
 
-1) [Lab 1 -- Intro to R](Labs/Lab1.html) due Saturday at 10pm on Gradescope (will be linked).
+1) [Lab 1 -- Intro to R](Labs/Lab1.html) due Sunday at 10pm on Gradescope (will be linked).
 2) [Homework 1](Homework/hw1.html) is due Fri 9/12 at 10pm on Gradescope (assign pages to questions!)

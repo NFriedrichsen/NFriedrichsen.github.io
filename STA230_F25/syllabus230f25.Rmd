@@ -86,7 +86,7 @@ This class will employ a mastery-based grading system. All Components will be gr
 
 ### Labs
 
-We will have in class labs almost every class. In general these will be due the Saturday/Sunday immediately following the class period in which they were released. In order to receive a Satisfactory:
+We will have in class labs almost every class. In general these will be due 10pm on the Sunday immediately following the class period in which they were released. In order to receive a Satisfactory:
 
 * The Lab must be complete: answer all questions, follow all instructions
 * The Lab must show a good faith effort on every problem
@@ -95,7 +95,7 @@ We will have in class labs almost every class. In general these will be due the 
 
 ### Homework Assignments
 
-We will have approximately weekly homework assignments due on Saturdays/Sundays. In order to receive a Satisfactory:
+We will have approximately weekly homework assignments due on Fridays at 10pm. In order to receive a Satisfactory:
 
 * The Assignment must be complete: answer all questions, follow all instructions
 * The Assignment must show a good faith effort on every problem
