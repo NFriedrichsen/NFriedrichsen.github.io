@@ -2,7 +2,9 @@
 title: "Syllabus - STAT-230 (Fall 2025)"
 author: "Nathan Friedrichsen"
 date: "2025-08-27"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +27,9 @@ knitr::opts_chunk$set(echo = TRUE)
 This time is purposefully scheduled for you to drop in and ask any questions about the course. Please feel free to stop by. If the time doesn't work for you, message me and we can try to arrange something.
 
 * Location: Noyce 2220
-* Time: TBD
+* Time: 
+  * Mondays 10-11am 
+  * Wednesdays + Fridays 2:30 - 4:00pm
 
 **Mentor Information**:
 
@@ -35,8 +39,8 @@ More mentor info will be posted.
 
 **Gradescope Course numbers**
 
-* STA-230-01: 
-* STA-230-02:
+* STA-230-01: 1118307
+* STA-230-02: 1118315
 
 <hr style="border: none; border-top: 5px solid black;">
 
