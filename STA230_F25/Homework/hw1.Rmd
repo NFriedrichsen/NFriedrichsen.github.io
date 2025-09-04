@@ -1,0 +1,160 @@
+---
+title: 'Homework #1'
+author: "Your_Name_Here"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+### Directions
+
+For this assignment you should edit the "author" info in the header to include your name. Note that **you should save your file as "HW1_Your_Name.Rmd" when knitting.**
+
+For each question, you should add or modify code in blocks provided. You should provide any written responses in the section that follows the code block.
+
+If code for a question has been provided, but you were not asked to modify it, please don't delete it or your .Rmd file might not knit properly.
+
+*Homework #1 is due Fri 9/12 by 10:00pm*
+
+$~$
+
+### Question #1 - Part A
+
+Write code that stores the data at the following URL as a data.frame named `admissions_data`:
+
+https://remiller1450.github.io/data/admissions.csv 
+
+Next, print the dimensions of this data frame and write a sentence below your code chunk that briefly describes the total number of applicants and characteristics contained in the data set.
+
+*Note*: These data were queried in response to sex-based discrimination in graduate program admissions at a large US university in the 1970s. The column `dept` indicates the department applied to, and `gpa` is the applicant's undergraduate grade point average, and `admit == "Y"` indicates an applicant was admitted.
+
+```{r}
+## Your code for question 1-A goes here
+```
+
+Your written answer to question 1 should go here
+
+*indicate any help you received on this question here*
+
+
+### Question #1 - Part B
+
+Use the `table()` and `prop.table()` functions to find the proportions of applicants of each sex that were admitted.
+
+Then, without performing any statistical tests, briefly describe whether you think there appears to be a meaningful discrepancy in admissions rates.
+
+```{r}
+## Your code for question 1-B goes here
+```
+
+Your written answer to question 1-B should go here
+
+*indicate any help you received on this question here*
+
+
+### Question #2
+
+The plot below is a *stacked conditional bar chart* displaying the proportion of applicants of each sex that were admitted *within each department*. After looking at this visualization, would your answer to Q1B change?
+
+```{r,echo=FALSE}
+mydata <- read.csv("https://remiller1450.github.io/data/admissions.csv")
+ggplot(mydata, aes(x = sex, fill = admit)) + 
+  geom_bar(position = "fill") + 
+  facet_wrap(~dept)
+```
+
+
+
+*indicate any help you received on this question here*
+
+$~$
+
+
+### Question #3 - Part A
+
+The Washington Post maintains a database of fatal shootings by a police officer in the line of duty. Additional details on the methodology can be found here: https://github.com/washingtonpost/data-police-shootings 
+
+The URL below contains data for all individuals entered into the database between 2015 and 2019:
+
+https://remiller1450.github.io/data/Police2019.csv
+
+Write code that stores these data as a data frame named `police`. Then find the average age of the individuals in this data set, removing missing values as necessary.
+
+```{r}
+## Put your code for 3-A here
+```
+
+### Question #3 - Part B
+
+Print the names of every individual who did not have an age listed in the database (ie: all individuals removed when calculating the mean in Part A)
+
+```{r}
+## Put your code for 3-B here
+```
+
+### Question #3 - Part C
+
+Subset the `police` data set to only include only individuals who were armed with a gun (you may ignore any categories involving a gun and something else). Then, determine the fraction of these individuals had a threat level of "attack".
+
+```{r}
+## Put your code for 3-C here
+```
+
+
+### Question #4
+
+In the lab this week, we discussed functions. We may have also briefly briefly discussed the topic of magic numbers, that is, numbers that are “hard-coded” into our code rather than a more explicit statement of our intended actions. Magic numbers make our code less robust to accidents or changes, potentially introducing errors as we iteratively change parts of our analysis.
+
+The code below contains several instances of magic numbers:
+
+```{r}
+x <- c(1,2,3, "four", 5, "six", 7, 6, 2)
+
+
+### START ###
+
+x <- as.numeric(x)
+
+# Get rid of NA values
+x <- x[c(1,2,3,5,7,8,9)]
+
+# Create a vector to add to x
+y <- rep(1, length = 7)
+
+# Create new data.frame with x, y, and x+y
+df <- data.frame(x = x, y = y, z = x + y)
+
+## Only keep values where z > 5 and x <= 7 and grab column "z"
+z_new <- df[c(4,5,6), 3]
+
+
+### END ###
+
+z_new
+```
+
+Copy the code from the lines between ### START ### and ### END ### into the block below and modify it to remove the magic numbers with the appropriate expressions. Leave a comment for each modification explaining why the change is made. The value for z_new should remain unchanged:
+
+```{r}
+x <- c(1,2,3, "four", 5, "six", 7, 6, 2)
+
+# Write updated code here
+
+z_new
+```
+
+By removing instances of magic numbers, we can be sure that the “logic” of our operations will stay the same, even if the input changes. To verify this, copy your updated code again into the block below with the new input vector x. Verify that the results make sense
+
+```{r}
+## "new" vector x
+x <- c(3, 7, "four", 2)
+
+# Write same updated code here and verify it works
+
+z_new
+```
