@@ -40,7 +40,9 @@ More mentor info will be posted.
 **Gradescope Course numbers**
 
 * STA-230-01: 1118307
-* STA-230-02: 1118315
+* STA-230-02: 1118307
+
+*I am experimenting with merging the courses on Gradescope. Group submissions should be allowed.*
 
 <hr style="border: none; border-top: 5px solid black;">
 
