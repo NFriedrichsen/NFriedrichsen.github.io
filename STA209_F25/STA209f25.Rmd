@@ -47,7 +47,12 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/01 | Labor Day (no class) | - | - |
 | Wed 9/03 | [Intro to R](Lectures/01_R_introduction.pdf) | [Intro R Lab](Labs/01_introR.html) | - |
-| Fri 9/05 | Data Visualization (update pending) | [Intro R Lab](Labs/01_introR.html) cont'd | - |
+| Fri 9/05 | - | [Intro R Lab](Labs/01_introR.html) cont'd | IMS 5.2-5.5 (pgs. 74-82) |
+
+**Assignments and Deadlines**
+
+1) [Intro R Lab](Labs/01_introR.html) due Sunday at 10pm via Gradescope (assign all pages to Question 1). Gradescope assingment will be posted on Friday.
+2) Read IMS 5.2-5.5 (pgs. 74-82) before Monday's class.
 
 <!-- **Assignments and Deadlines** -->
 
