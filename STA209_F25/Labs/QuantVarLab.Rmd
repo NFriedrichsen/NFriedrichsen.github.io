@@ -16,7 +16,7 @@ library(dplyr)
 
 We will work through a series of questions in this lab, which will cover some of the topics we went over in the Introduction and Quantitative Variables (Part 1) slides. Fill in answers to the questions presented throughout this document. You may work together with others, but each student will need to submit their own version of this file to Gradescope as a .pdf with all answers filled out.
 
-You may use the template .Rmd file [found here](Labs/QuantVarLab.Rmd) to fill in your answers.
+You may use the template .Rmd file [found here](QuantVarLab.Rmd) to fill in your answers.
 
 ---
 
