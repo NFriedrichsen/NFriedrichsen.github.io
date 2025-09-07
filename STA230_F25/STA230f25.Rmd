@@ -54,7 +54,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
-### Week 3 
+### Week 3 (Functions, Loops, Simulations)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
