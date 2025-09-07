@@ -54,6 +54,16 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Intro R Lab](Labs/01_introR.html) due Sunday at 10pm via Gradescope (assign all pages to Question 1). Gradescope assingment will be posted on Friday.
 2) Read IMS 5.2-5.5 (pgs. 74-82) before Monday's class.
 
+---
+
+### Week 3 (Data Visualization and Summaries)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/08 | [Quantitative Variables -- 1](Lectures/QuantVar1.pdf) | [Quant Var Lab] | - |
+| Wed 9/10 | [Quantitative Variables -- 2](Lectures/QuantVar2.pdf) | [Quant Var Lab] | - |
+| Fri 9/12 | - | - | - |
+
 <!-- **Assignments and Deadlines** -->
 
 <!-- 1) Intro R Lab due Sunday 2/02 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty. Make sure to select answers in your submission on Gradescope. -->
