@@ -51,3 +51,13 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Lab 1 -- Intro to R](Labs/Lab1.html) due Sunday at 10pm on Gradescope (will be linked).
 2) [Homework 1](Homework/hw1.html) is due Fri 9/12 at 10pm on Gradescope (assign pages to questions!)
+
+---
+
+### Week 3 
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/08 | Preamble in Lab | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | - |
+| Wed 9/10 | - | [Lab 2 -- Functions](Labs/Lab1.html) cont'd | - |
+| Fri 9/12 | - | [Lab 2 -- Functions](Labs/Lab1.html) cont'd | Optional: [R Markdown Extras](https://r4ds.had.co.nz/r-markdown.html) |
