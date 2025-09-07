@@ -56,15 +56,25 @@ colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.
 colleges %>% ggplot(aes(x = Adm_Rate)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
 ```
 
+```{r, echo=F, eval=F}
+summary(colleges$Adm_Rate)
+sd(colleges$Adm_Rate)
+```
 **Part A**: Describe the distribution of admission rates for the colleges in our sample (include context).
 
+
 *Answer*: 
+
+### Enrollment
 
 ```{r, echo=F}
 colleges %>% ggplot(aes(x = Enrollment)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
 ```
 
-### Enrollment
+```{r, echo=F, eval=F}
+summary(colleges$Enrollment)
+sd(colleges$Enrollment)
+```
 
 **Part B**: Describe the distribution of enrollment for our sample of colleges.
 
@@ -74,6 +84,11 @@ colleges %>% ggplot(aes(x = Enrollment)) + geom_histogram(bins = 20, color = 'bl
 
 ```{r, echo=F}
 colleges %>% ggplot(aes(x = PercentFemale)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
+```
+
+```{r, echo=F, eval=F}
+summary(colleges$PercentFemale)
+sd(colleges$PercentFemale)
 ```
 
 **Part C**: Describe the distribution of the percent of female students for colleges in our sample.
@@ -100,7 +115,7 @@ colleges %>% ggplot(aes(x = Adm_Rate)) + geom_boxplot()
 * IQR = 
 * \# of outliers = 
 
-**Part B**: Compare your answer to the `summary()` output for Question 2A. Are they close? 
+**Part B**: Compare your answer to the previous question to the `summary()` output for Part 2A above. Are they similar? 
 
 *Answer*:
 
