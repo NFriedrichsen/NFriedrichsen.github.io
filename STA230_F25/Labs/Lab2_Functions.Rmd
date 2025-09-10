@@ -493,7 +493,7 @@ $~$
 
 #### Importing User-Defined Functions
 
-We discussed in Lab 1 that one of the advantages of user-defined functions is that we can reuse them in future projects. However, we didn't discuss how to actually do that. In order to reuse functions, the best practice is to save them in an *r script* and then import them using source(). These functions are available [here](https://rebelskyw.cs.grinnell.edu/wp-content/uploads/2025/01/Week2functions.zip). Please import them.
+We discussed in Lab 1 that one of the advantages of user-defined functions is that we can reuse them in future projects. However, we didn't discuss how to actually do that. In order to reuse functions, the best practice is to save them in an *r script* and then import them using source(). These functions are available [here](https://nfriedrichsen.github.io/STA230_F25/Labs/Week2functions.R). Please import them.
 
 Example if it's in the same directory. If not, you will have to use the "setwd()" from last week or include the full filepath.
 ```{r}
