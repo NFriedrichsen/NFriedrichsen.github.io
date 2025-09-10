@@ -506,6 +506,7 @@ exampleFunction1(Week2functionsTest)
 exampleFunction2(Week2functionsTest)
 ```
 **Question #4**: In your own words, what do exampleFunction1 and exampleFunction2 do?
+
 $~$
 
 #### More Function Practice
@@ -601,7 +602,7 @@ for(i in 1:ncol(num_data)){
 print(colleges_d2)
 ```
 
-**Question #6**: Write code that includes a *for loop* and stores the frequency in the most common category for the first three columns in the "colleges" data set using the function you created in Question #1. Then, print the object storing these frequencies (the correct result should be `3 24 127`)
+**Question #6**: Write code that includes a *for loop* and stores the frequency in the most common category for the first three columns in the "colleges" data set using the function you created in Question #5. Then, print the object storing these frequencies (the correct result should be `3 24 127`)
 
 ```{r, eval = FALSE, echo = FALSE}
 colleges_tc <- numeric(length = 3)
