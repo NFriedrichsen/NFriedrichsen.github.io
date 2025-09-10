@@ -416,9 +416,8 @@ squaredError <- function(x) {
 **Question #2** Taken from the reading. Write bothNA(), a summary function that takes two vectors of the same length and returns the number of positions that have an NA in both vectors.
 
 ```{r, echo=FALSE}
-x <- as.numeric(c(1,"a",3, "four", 5, "six", 7, 6)) #base vector. Expected output: 6 8 7
-x2 <- c(3, 7, "four", 2) #HW 1 vector. Expected output: 8
-y=as.numeric(c(x1,x2))
+x <- as.numeric(c(1,"a",3, "four", 5, "six", 7, 6)) # 1st vector
+x2 <- as.numeric(c(3, 7, "four", 2,5,"six", 1, 2)) # 2nd vector
 bothNA<-function(x,y){
   naX=which(is.na(x))
   naY=which(is.na(y))
@@ -426,8 +425,8 @@ bothNA<-function(x,y){
 }
 
 paste(c("Vector1: ",x))
-paste(c("Vector2: ",y))
-paste(c("Expected Output: ",bothNA(x,y)))
+paste(c("Vector2: ",x2))
+paste(c("Expected Output: ",bothNA(x,x2)))
 
 ```
 
