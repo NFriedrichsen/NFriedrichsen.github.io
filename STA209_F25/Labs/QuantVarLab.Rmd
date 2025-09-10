@@ -1,6 +1,8 @@
 ---
 title: "Quantitative Variables Lab"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -52,7 +54,7 @@ colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.
 
 ### Admission Rates
 
-```{r, echo=F}
+```{r, echo=F, fig.height=3}
 colleges %>% ggplot(aes(x = Adm_Rate)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
 ```
 
@@ -67,7 +69,7 @@ sd(colleges$Adm_Rate)
 
 ### Enrollment
 
-```{r, echo=F}
+```{r, echo=F, fig.height=3}
 colleges %>% ggplot(aes(x = Enrollment)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
 ```
 
@@ -82,7 +84,7 @@ sd(colleges$Enrollment)
 
 ### Percent of Female Students
 
-```{r, echo=F}
+```{r, echo=F, fig.height=3}
 colleges %>% ggplot(aes(x = PercentFemale)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
 ```
 
@@ -101,7 +103,7 @@ sd(colleges$PercentFemale)
 
 ### Admission Rates (again)
 
-```{r, echo=F}
+```{r, echo=F, fig.height=2.7}
 colleges %>% ggplot(aes(x = Adm_Rate)) + geom_boxplot()
 ```
 
@@ -125,7 +127,7 @@ colleges %>% ggplot(aes(x = Adm_Rate)) + geom_boxplot()
 
 ### Tuition Amount
 
-```{r, echo=F}
+```{r, echo=F, fig.height=2.7}
 colleges %>% ggplot(aes(x = Net_Tuition)) + geom_boxplot()
 ```
 
@@ -189,3 +191,60 @@ We may not always use all of these terms in our own descriptions, but they are u
 * Describe the population in this study:
 
 * What question do you think the researchers were trying to answer?:
+
+---
+
+### Part 5 - Relationships between Variables (Box Plots)
+
+Using the side-by-side box plots below, answer the following questions.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(ACT_median, Region)) +
+  geom_boxplot() + labs(x="Median ACT") +
+  scale_x_continuous(breaks=seq(14,36,2)) +
+  theme_bw()
+```
+
+**Part A**: What is the shape of 'South East's' box plot? What about 'Mid East'?
+
+*Answer:*
+
+**Part B**: Which region's boxplot has the largest median and what is the value of the median?
+
+*Answer:*
+
+**Part C**: Which region has the largest IQR? Give an approximate value of the IQR for this region and show your calculation.
+
+*Answer:*
+
+**Part D**: What does it mean to say two variables are associated?
+
+*Answer:*
+
+**Part E**: According to this plot, does it look like there is an association between Region and Median ACT of colleges?
+
+*Answer:*
+
+### Part 6 -- Scatterplots
+
+```{r, echo=FALSE, fig.height=3.2}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+
+**Part A**: Using the scatterplot above, describe whether there is a relationship/association between Average Faculty Salary and Median 10-year Salary (the median salary of graduates from the college 10 years after receiving their degree) for our sample of colleges.
+
+*Answer:*
+
+```{r, echo=FALSE, fig.height=3.2}
+ggplot(colleges, aes(Avg_Fac_Salary, Salary10yr_median, color=Private)) +
+geom_point() +
+labs(x = "Average Faculty Salary",
+y = "Median 10-yr Salary")
+```
+
+**Part B:** This is another scatterplot similar to the previous one, but I have added information on whether the colleges are public or private. Is the relationship between Average Faculty Salary and Median 10-year Salary different for public and private colleges? *Briefly* explain (1 or 2 sentences).
+
+*Answer:*
