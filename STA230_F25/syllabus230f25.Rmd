@@ -35,7 +35,17 @@ This time is purposefully scheduled for you to drop in and ask any questions abo
 
 This course employs the use of a mentor to aid you in navigating the course. Our course mentor will assist us in class, and host 1 – 2 mentor sessions throughout the week. Mentor Sessions may review course content, provide practice problems, practice interview skills, or provide homework help.
 
-More mentor info will be posted.
+Mentors:
+
+* Brigid Leahy (leahybri@grinnell.edu)
+
+* Finn Rowles (rowlesfi@grinnell.edu)
+
+Mentor Sessions:
+
+* Tuesday 8-9pm, Noyce 2402 (Brigid)
+
+* Thursday 7-8pm, Noyce 2402 (Finn)
 
 **Gradescope Course numbers**
 
@@ -121,7 +131,9 @@ There will be no final exam held for the class.
 
 Your attendance and participation in class is an integral part of your learning. You are expected to attend every class and work respectfully and effectively with your assigned partner.
 
-You may be excused from a class under certain situations. Excusable reasons to miss class include college sponsored sports absences, religious holidays, family emergencies, and illness. Please email me at least a week in advance in the event of a planned absence. In the event of an unplanned absence (e.g. illness), please let me know as soon as possible if you will miss class, ideally at least 30min in advance of the start of class. Excused absences will not count against tokens (see below) and will count as an S for the purposes of letter grades below.
+You may be excused from a class under certain situations. Excusable reasons to miss class include college sponsored sports absences, religious holidays, family emergencies, and illness. Please email me at least a week in advance in the event of a planned absence. In the event of an unplanned absence (e.g. illness), please let me know as soon as possible if you will miss class, ideally at least 30min in advance of the start of class. Excused absences will not count against tokens (see below) and will count as an S for the attendance that day.
+
+Otherwise, you must be present and ready to work as the class starts in order to get attendance credit. Arriving after class has begun will forfeit the attendance for that day. You may also be removed from a group to work on your own if I have already rearranged groups for that day. If you are absent you are still responsible for all homeworks and labs to be submitted on time.
 
 ### Letter Grades
 
