@@ -421,12 +421,15 @@ x2 <- as.numeric(c(3, 7, "four", 2,5,"six", 1, 2)) # 2nd vector
 bothNA<-function(x,y){
   naX=which(is.na(x))
   naY=which(is.na(y))
-  return(naX[naX%in%naY])
-}
+  return(length(naX[naX%in%naY]))
+
+  }
 
 paste(c("Vector1: ",x))
 paste(c("Vector2: ",x2))
 paste(c("Expected Output: ",bothNA(x,x2)))
+
+
 
 ```
 
