@@ -61,3 +61,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 9/08 | Preamble in Lab | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | - |
 | Wed 9/10 | - | [Lab 2 -- Functions](Labs/Lab2_Functions.html) cont'd | - |
 | Fri 9/12 | - | [Lab 2 -- Functions](Labs/Lab2_Functions.html) cont'd | Optional: [R Markdown Extras](https://r4ds.had.co.nz/r-markdown.html) |
+
+**Due Dates:**
+
+1) [Lab 2 -- Functions](Labs/Lab2_Functions.html) due Sunday 9/14 at 10pm.
+2) [Homework 2](Homework/hw2.html) due Friday 9/19 at 10pm.
