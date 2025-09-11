@@ -1,0 +1,118 @@
+---
+title: "Homework 2"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, results='hide')
+```
+
+### Directions
+
+For this assignment you should record your answers in an R Markdown file and submit the compiled output as a pdf. At the start of each problem, set the seed to 8.
+
+*Homework #2 is due Friday 9/19 by 10:00pm*
+$~$
+
+
+
+```{r message = FALSE, warning = FALSE, echo= FALSE}
+# load the following packages
+
+```
+
+
+$~$
+
+### Question #1 
+
+Using a for loop and 1000 iterations, what is the probability of getting at least 10 1s on 20 rolls of a fair 4 sided-die?
+```{r, echo=FALSE}
+set.seed(8)
+x=0
+for(i in 1:1000){
+  x=x+((sum(sample(c(1:4),20,replace=TRUE)==1))>=10)
+}
+x
+
+```
+
+
+
+$~$
+
+### Question #2
+
+Using the replicate function and 1000 iterations, what is the probability of getting at least 10 1s on 20 rolls of a fair 4 sided-die?
+```{r, echo=FALSE}
+set.seed(8)
+sum(replicate(1000,sum(sample(c(1:4),20,replace=TRUE)==1))>=10)
+
+```
+
+
+
+$~$
+
+### Question #3
+
+Write a function that does the following:
+
+Given:
+
+  - seed (integer)
+  - number of replications (integer)
+  - probability of success (decimal between 0 and 1)
+  - number of iterations (integer)
+  - number of successes (integer)
+  
+Returns:
+
+  - probability of getting that at least that number of successes within that number of iterations.
+
+Make sure to name it in a reasonable fashion so you could reuse it later (i.e. do not name it q3_func like I do below)
+
+For example, if we had this function running, we could have run the Lab 2 simulation example (die is 5 or 6, coin is heads) as:
+
+```{r, echo=FALSE}
+q3_func=function(seed, numRep,pSucc,numIt,numS){
+  set.seed(seed)
+  return(sum(replicate(numRep, 
+            sum(runif(numIt)<=pSucc))>=numS)/numRep)
+}
+
+```
+
+```{r, results='show',echo=TRUE}
+
+q3_func(0, 10000,.65,1000,700)
+
+```
+
+$~$
+
+### Question #4
+
+Demonstrate that your function works by
+
+**Part a** Running it on the Lab 2 simulation example mentioned previously (expected value 6e-04)
+
+**Part b** Running it on the example from Question 2 of this HW (hint: what is the probability of rolling a 1 on a fair 4 sided die?)
+
+$~$
+
+### Question #5
+
+Turn the Question 4 from Homework 1 into a function. Then verify it works on the following test cases. Before running the test cases, how long should each of the vectors be?
+
+```{r,echo=TRUE}
+x1 <- c(1,2,3, "four", 5, "six", 7, 6, 2)
+x2 <- c(3, 7, "four", 2)
+x3 <- c("a","b","c")
+x4 <- c(1,2,3,8,9,10)
+x5 <- c(4,5,6,7)
+x6 <- c(1,2,3,4,5,6,7,8,9,10)
+x7 <- c(5.1,4.1,3.9,7.1,6.8,55/10,75/10)
+```
