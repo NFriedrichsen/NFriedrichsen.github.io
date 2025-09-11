@@ -64,6 +64,10 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 9/10 | [Quantitative Variables -- 2](Lectures/QuantVar2.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) cont'd | - |
 | Fri 9/12 | - | - | - |
 
+**Assignments and Deadlines**
+
+1) [Quant Var Lab](Labs/QuantVarLab.html) due Friday 9/12 at 10pm. Make sure to assign pages to the question.
+
 <!-- **Assignments and Deadlines** -->
 
 <!-- 1) Intro R Lab due Sunday 2/02 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty. Make sure to select answers in your submission on Gradescope. -->
