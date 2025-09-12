@@ -1,0 +1,118 @@
+---
+title: "Categorical Variable Lab"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load the following packages, installing if necessary:
+
+```{r, warning=F, message=F}
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+```
+
+
+# Part 1 - Distributions
+
+The *distribution* of a variable is a description of how frequently values of that variable show up. We saw that the way in which we describe the distribution of a variable is different depending on if the variable is categorical or quantitative. 
+
+**Question 1:** Below is a bar chart representing the hair color of students in a statistics class (color may be exaggerated in the chart). Describe the distribution of the haircolor variable. 
+
+(In the graph code chunks I have put the term 'echo=FALSE' in the brackets. This stops RStudio from showing the code in the pdf to save a little bit of space). We will talk more about how to make these graphs next week.
+
+```{r, echo=F, fig.height=3}
+data = data.frame(HairEyeColor)
+Hair = c("Black", "Blond", "Brown", "Red")
+Count = c(sum(data$Freq[data$Hair=="Black"]),
+          sum(data$Freq[data$Hair=="Blond"]),
+          sum(data$Freq[data$Hair=="Brown"]),
+          sum(data$Freq[data$Hair=="Red"]))
+new_data = data.frame(Hair, Count)
+ggplot(new_data, aes(x=Hair, y=Count, fill=Hair)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values=c("black", "gold","tan4", "red"))
+```
+
+# Part 2 - Relationships between Variables (College dataset)
+
+For this set of questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code.
+
+```{r}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+**Question 2:** How many observations and variables are there in the dataset? Explain how you found this answer and show any code (if you used any). 
+
+```{r}
+```
+
+
+**Question 3:** Look at the conditional bar chart below. Is there an *association* between the region and the type of college (public vs private) in our sample? Justify your answer using 1 or 2 sentences.
+
+```{r, echo=FALSE}
+ggplot(colleges, aes(y=Region, fill=Private)) +
+  geom_bar(position="fill") + labs(x="Proportion")
+```
+
+# Part 3 -- Relationships Between Variables (Titanic dataset)
+
+We will be using the Titanic dataset built into R, providing information on the fate of the passengers on the fatal maiden voyage of the ocean liner Titanic summarized according to economic status (class), sex, age, and survival. See ?Titanic for more details.
+
+```{r, echo=F}
+library(ggplot2)
+library(dplyr)
+
+theme_set(theme_bw())
+
+
+## Data for lab
+data(Titanic)
+titanic <- as.data.frame(Titanic)
+titanic <- titanic[rep(1:nrow(titanic), times = titanic$Freq), ]
+titanic$Freq <- NULL
+```
+
+```{r}
+## head() shows us the first 6 rows of a data.frame
+head(titanic)
+```
+
+---
+
+**Question 4**: Use the following barchart to answer the questions.
+
+```{r, echo=F, , fig.height=3}
+## See ?scale_fill_brewer for more palette colors
+plot1 = ggplot(titanic, aes(x = Sex, fill = Survived)) + 
+  geom_bar(position = "dodge") + 
+  scale_fill_brewer(palette = "Set2")
+
+plot2 = ggplot(titanic, aes(Sex, fill = Survived)) +
+  geom_bar(position = "fill", color="black") + 
+  scale_fill_brewer(palette = "Purples")
+
+grid.arrange(plot1, plot2, ncol=2)
+```
+
+**Part A**: Did more people survive or not survive the Titanic accident? Which bar chart is more helpful to answer this?
+
+**Part B**: How many male passengers survived. Roughly what percent of male passengers survived?
+
+**Part C**: How many female passengers survived. Roughly what percent of female passengers survived?
+
+**Part D**: Suppose a friend says Sex doesn't seem to affect Survival that much because the number of males and females that survived is similar. Explain why they are not correct.
+
+---
+
+```{r, fig.align='center', fig.height=3, echo=F}
+ggplot(titanic, aes(Survived, fill = Sex)) +
+  geom_bar(position = "fill", color="black") + 
+  scale_fill_brewer(palette = "Accent") + 
+  ylab("Proportion")
+```
+
+**Question 5**: The order of variables has been swapped. Use this bar chart to make another argument (different than your previous one) for why Survival and Sex are associated. 
