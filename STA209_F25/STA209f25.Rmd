@@ -67,6 +67,7 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Deadlines**
 
 1) [Quant Var Lab](Labs/QuantVarLab.html) due Friday 9/12 at 10pm. Make sure to assign pages to the question.
+2) [Homework 1](Homework/Homework1.html) due Friday 9/19 at 10pm.
 
 <!-- **Assignments and Deadlines** -->
 
