@@ -62,7 +62,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/08 | [Quantitative Variables -- 1](Lectures/QuantVar1.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) and [Template](Labs/QuantVarLab.Rmd) | - |
 | Wed 9/10 | [Quantitative Variables -- 2](Lectures/QuantVar2.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) cont'd | - |
-| Fri 9/12 | [Categorical Variables](Lectures/CategoricalVariables.pdf) | [Cat Var Lab] | - |
+| Fri 9/12 | [Categorical Variables](Lectures/CategoricalVariables.pdf) | [Cat Var Lab](Labs/CatVarLab.html) ([Template](CatVarLab.Rmd)) | - |
 
 **Assignments and Deadlines**
 
