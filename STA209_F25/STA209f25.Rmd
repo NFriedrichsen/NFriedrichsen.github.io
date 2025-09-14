@@ -70,6 +70,24 @@ Please note: material will not be posted until we've reached that point in the c
 2) [Homework 1](Homework/Homework1.html) [(Template)](Homework/Homework1.Rmd) due Friday 9/19 at 10pm.
 3) [Cat Var Lab](Labs/CatVarLab.html) due Monday 9/15 at 10pm.
 
+---
+
+### Week 4 (Tables and ggplot2)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/15 | [Tables](Lectures/Tables.pdf) | [Tables Lab](Labs/TablesLab.html)| - |
+| Wed 9/17 | [ggplot2 Overview] | [ggplot2 lab](Labs/ggplot2_lab.html) | - |
+| Fri 9/19 | [Graphics Accessibility] | [ggplot2 lab](Labs/ggplot2_lab.html) cont'd | - |
+
+---
+
+### Week 5 (Probability)
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/22 | [Probability 1 -- Basics](Lectures/Probability1.pdf) | [Probability Worksheet 1]() | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA|
+| Wed 9/24 | [Probability 2 -- Independence](Lectures/Probability2.pdf) | [Probability Worksheet 2]() | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA |
+| Fri 9/26 | [Probability 3 -- Odds + Risk](Lectures_Spring25/Odds_Risk.pdf) | [Probability Worksheet 3]() | - |
+
 <!-- **Assignments and Deadlines** -->
 
 <!-- 1) Intro R Lab due Sunday 2/02 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty. Make sure to select answers in your submission on Gradescope. -->
