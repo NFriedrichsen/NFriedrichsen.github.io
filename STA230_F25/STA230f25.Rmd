@@ -66,3 +66,13 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Lab 2 -- Functions](Labs/Lab2_Functions.html) due Sunday 9/14 at 10pm.
 2) [Homework 2](Homework/hw2.html) due Friday 9/19 at 10pm.
+
+---
+
+### Week 3 (Data Visualization)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 9/15 | Preamble in Lab | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | - |
+| Wed 9/17 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
+| Fri 9/19 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
