@@ -86,7 +86,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 9/22 | [Probability 1 -- Basics](Lectures/Probability1.pdf) | [Probability Worksheet 1]() | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA|
 | Wed 9/24 | [Probability 2 -- Independence](Lectures/Probability2.pdf) | [Probability Worksheet 2]() | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA |
-| Fri 9/26 | [Probability 3 -- Odds + Risk](Lectures/Probability3) | [Probability Worksheet 3]() | - |
+| Fri 9/26 | [Probability 3 -- Odds + Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3]() | - |
 
 <!-- **Assignments and Deadlines** -->
 
