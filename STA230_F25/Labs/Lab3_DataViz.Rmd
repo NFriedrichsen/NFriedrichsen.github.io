@@ -214,7 +214,7 @@ The `ggplot` framework is unique because all graphics are *grammatically defined
 ```{r}
 ggplot(data = colleges, mapping = aes(x = Adm_Rate, color = Private)) + 
   geom_density() +
-  scale_x_continuous(trans = "reverse") +
+  scale_x_continuous(transform= "reverse") +
   facet_wrap(~Region)
 ```
 
@@ -231,7 +231,7 @@ ggplot(data = colleges, mapping = aes(x = Adm_Rate, color = Private)) +
 ```{r, echo = FALSE, eval = FALSE}
 ggplot(data = colleges, mapping = aes(x = Enrollment)) + 
   geom_histogram() +
-  scale_x_continuous(trans = "log2") + 
+  scale_x_continuous(transform= "log2") + 
   facet_wrap(~Private)
 ```
 
@@ -348,7 +348,7 @@ ggplot(data = colleges, mapping = aes(x = Cost, y = Net_Tuition, color = Adm_Rat
 ## Put cost (the "x" aesthetic) on the log2 scale
 ggplot(data = colleges, mapping = aes(x = Cost, y = Net_Tuition, color = Adm_Rate)) +
   geom_point() +
-  scale_x_continuous(trans = "log2")
+  scale_x_continuous(transform= "log2")
 ```
 
 ```{r fig.show="hold", out.width="50%"}
@@ -373,7 +373,7 @@ There are two things you should note at this point:
 ```{r, eval = FALSE, echo = FALSE}
 ggplot(data = colleges, mapping = aes(x = Adm_Rate, y = Net_Tuition)) +
   geom_density_2d_filled() +
-  scale_x_continuous(trans = "reverse") +
+  scale_x_continuous(transform= "reverse") +
   scale_color_continuous(type = "viridis")
 ```
 
@@ -587,8 +587,8 @@ ggplot(colleges, aes(x = Enrollment, y = Net_Tuition)) + geom_point() + labs(tit
 Sometimes scale transformations can lead to new insights:
 
 ```{r}
-ggplot(colleges, aes(x = Enrollment, y = Net_Tuition)) + geom_point() + labs(title = "Two distinct clusters?") + scale_x_continuous(trans = "log2")
-ggplot(colleges, aes(x = Enrollment, y = Net_Tuition, color = Private)) + geom_point() + labs(title = "Simpson's Paradox!") + scale_x_continuous(trans = "log2") + 
+ggplot(colleges, aes(x = Enrollment, y = Net_Tuition)) + geom_point() + labs(title = "Two distinct clusters?") + scale_x_continuous(transform = "log2")
+ggplot(colleges, aes(x = Enrollment, y = Net_Tuition, color = Private)) + geom_point() + labs(title = "Simpson's Paradox!") + scale_x_continuous(transform= "log2") + 
   guides(color="none") + 
   annotate(geom = "text", x = c(2000, 52000), y = c(52000,25000), label = c("Private", "Public"), color = c("red","cyan3"))
 ```
