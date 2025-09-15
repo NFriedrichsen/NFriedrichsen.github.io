@@ -1,8 +1,8 @@
 ---
 title: "Tables Lab"
 output:
-  pdf_document: default
   html_document: null
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -310,7 +310,7 @@ college <- college[,c(1, 5, 6)] # keep only columns 1, 5, and 6
 ```{r, fig.show="hold", out.width="75%", echo = FALSE, out.height="75%"}
 p1 = college %>% ggplot(aes(x=Region, fill=Type)) +
   geom_bar(position = "fill", color="black") + theme(axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5)) + 
-  xlab("Type") + ylab("Proportion") + scale_fill_grey()
+  xlab("Region") + ylab("Proportion") + scale_fill_grey()
 
 p2 = college %>% ggplot(aes(x=Type, fill=Region)) +
   geom_bar(position = "fill", color="black") + theme(axis.text.x = element_text(angle = 30, hjust = 0.5, vjust = 0.5)) + 
