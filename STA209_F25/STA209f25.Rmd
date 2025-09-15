@@ -79,6 +79,10 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 9/17 | [ggplot2 Overview] | [ggplot2 lab](Labs/ggplot2_lab.html) | - |
 | Fri 9/19 | [Graphics Accessibility] | [ggplot2 lab](Labs/ggplot2_lab.html) cont'd | - |
 
+**Assignments and Deadlines**
+
+1) Tables lab due Wednesday 9/17 at 10pm.
+
 ---
 
 ### Week 5 (Probability)
