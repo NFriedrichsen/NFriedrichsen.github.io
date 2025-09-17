@@ -1,6 +1,8 @@
 ---
-title: "Lab 3: Data Visualization with `ggplot2`"
-output: html_document
+title: 'Lab 3: Data Visualization with `ggplot2`'
+output:
+  html_document: default
+  pdf_document: default
 date: "2025-09-15"
 ---
 
@@ -489,6 +491,9 @@ Histograms and density plots display the *distribution of a quantitative variabl
 Faceting provides a strategy to show distributional differences across subsets of data. Effective use of faceting will align the scales of your axes (using `scales = fixed` in the faceting function) throughout the graph to facilitate accurate comparisons:
 
 ```{r, fig.show="hold", out.width="50%", echo = TRUE}
+library(dslabs)
+data(heights)
+
 ggplot(heights, aes(x = height)) + geom_histogram(aes(y = after_stat(density)), bins = 20) + 
     facet_wrap(~sex, nrow = 1, scales = "free") + labs(title = "Graph #1 (Difficult)")
 ggplot(heights, aes(x = height)) + geom_histogram(aes(y = after_stat(density)), bins = 20) + 
