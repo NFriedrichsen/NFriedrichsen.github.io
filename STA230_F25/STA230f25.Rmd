@@ -76,3 +76,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 9/15 | Preamble in Lab | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | - |
 | Wed 9/17 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
 | Fri 9/19 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
+
+**Due Dates:**
+
+1) [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) due Sunday 9/21 at 10pm.
+2) [Homework 3](Homework/hw3.html) due Friday 9/26 at 10pm.
