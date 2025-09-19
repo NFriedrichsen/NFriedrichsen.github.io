@@ -646,7 +646,7 @@ $~$
 
 ### Practice
 
-The code below will load a data set containing 970 Hollywood films released between 2007 and 2011, then reduce these data to only include variables that could be known prior to a film's opening weekend. The data are then simplified further to only include the four largest studios (Warner Bros, Fox, Paramount, and Universal) in the three most common genres (action, comedy, drama). You will use the resulting data (ie: `movies_subset`) for Question #7.
+The code below will load a data set containing 970 Hollywood films released between 2007 and 2011, then reduce these data to only include variables that could be known prior to a film's opening weekend. The data are then simplified further to only include the four largest studios (Warner Bros, Fox, Paramount, and Universal) in the three most common genres (action, comedy, drama). You will use the resulting data (ie: `movies_subset`) for Question #13.
 
 ```{r}
 movies = read.csv("https://remiller1450.github.io/data/HollywoodMovies.csv")
@@ -668,7 +668,9 @@ ggplot(movies_subset, aes(x = Budget, y = OpeningWeekend, col = LeadStudio)) + g
 
 $~$
 
-For these practice questions you should use the data contained at the link below:
+**Question 14**:
+
+For the following questions you should use the data contained at the link below:
 
 ```{r}
 mass = read.csv("https://remiller1450.github.io/data/MassShootings.csv")
