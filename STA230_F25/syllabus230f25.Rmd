@@ -168,7 +168,7 @@ One of the fundamental principles behind this grading scheme is that you will ha
 
 *Tokens* reflect that life inevitably rears its ugly head in some fashion and ruins our best-laid plans. You begin the course with `3` tokens. Tokens may be used for:
 
-* Turning in a homework late (1 token per homework max, gives 2 late days)
+* Turning in a homework late (1 token per homework max, gives 3 extra days)
 * Re-doing a homework or Lab marked non-satisfactory (1 token per attempt, max 2 extra attempts). Note that I expect re-submitted assignments to cross a higher bar for Satisfactory (closer to 90/95% correct)
 * Making up for an unexcused absence in class (1 token per missed class)
 
