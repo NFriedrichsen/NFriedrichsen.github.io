@@ -1,0 +1,73 @@
+---
+title: "Homework 2"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Due: Friday Sep 26, 2025 at 10pm
+  
+<!-- ### Question 1 (6 pts) -->
+
+<!-- This question is Question 4.2 from the textbook and has been reproduced here. The dataset below contains the results from a poll based on a random sample with two variables: response, indicating their response to the poll question, and political, reporting their self-reported political ideology. -->
+
+<!-- Nine-hundred and ten (910) randomly sampled registered voters from Tampa, FL were asked if they thought workers who have illegally entered the US should be (i) allowed to keep their jobs and apply for US citizenship, (ii) allowed to keep their jobs as temporary guest workers but not allowed to apply for US citizenship, or (iii) lose their jobs and have to leave the country. -->
+
+<!-- ```{r, warning=F, message=FALSE} -->
+<!-- ## Copy and run this code to create tables -->
+<!-- library(ggplot2) -->
+<!-- library(dplyr) -->
+<!-- immigration <- read.csv("https://collinn.github.io/data/immigrationpoll.csv") -->
+<!-- ``` -->
+
+<!-- Use the appropriate tables to answer the following questions (you may use the dataset in R if it is helpful, otherwise you may use the table in the book): -->
+
+<!-- a) What percent of these Tampa, FL voters identify themselves as conservatives? -->
+
+<!-- b) What percent of these Tampa, FL voters are in favor of the citizenship option? -->
+
+<!-- c) What percent of these Tampa, FL voters identify themselves as conservatives and are in favor of the citizenship option? -->
+
+<!-- d) What percent of these Tampa, FL voters who identify themselves as conservatives are in favor of the citizenship option? What percent of moderates share this view? What percent of liberals share this view? -->
+
+<!-- e) Do political ideology and views on immigration appear to be associated? Explain your reasoning. -->
+
+<!-- f) Conjecture other variables that might explain the potential relationship between these two variables. -->
+
+---
+
+# Numerical Summaries
+
+### Question 1 -- Conceptual Questions (1 pt each)
+
+  - **Part A** How does outlier classification differ between boxplots and histograms?
+  
+  - **Part B** What does it mean to say a statistic is *robust*?
+  
+  - **Part C** Why do we use median and IQR (instead of mean and standard deviation) for the center and spread when we have skews, outliers, or both?
+  
+  - **Part D** If a distribution is right-skewed with no outliers, which of these will be larger: the median or the mean?
+  
+### Question 2 (4 pts)
+
+This question is 5.10-Question \#22 from the textbook and has been reproduced here. 
+
+The first histogram below shows the distribution of the yearly incomes of 40 patrons at a college coffee shop. Suppose two new people walk into the coffee shop: one making \$225,000 and the other $250,000. The second histogram shows the new income distribution. Summary statistics are also provided, rounded to the nearest whole number.
+ 
+```{r, fig.align='center', echo = FALSE}
+knitr::include_graphics("https://nfriedrichsen.github.io/homework/IMS_5-10_Q22a.jpg")
+```
+
+a) Would the mean or the median best represent what we might think of as a typical income for the 42 patrons at this coffee shop? What does this say about the robustness of the two measures?
+
+b) Describe the distribution of incomes for the coffee shop's 42 patrons using the bottom histogram ('After'). You may assume the value for Q3 is \$68,000 (this may or may not be necessary). 
+
+### Question 3 (IMS book)
+
+From the [IMS Textbook](https://openintro-ims.netlify.app/), do the following exercises (you do not need to read anything from the textbook to answer these): 
+
+- Chapter 4.8: Questions 2, 7, 8, 9
+- Ch 5.10: Questions 10, 14
