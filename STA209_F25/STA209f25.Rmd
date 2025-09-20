@@ -102,6 +102,12 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 9/24 | TBD | TBA | TBA |
 | Fri 9/26 | Exam 1 | - | - |
 
+---
+
+### Lab Solutions
+
+[(Tables Lab Solutions)](Labs/TablesLab_Solutions.html)
+
 <!-- **Assignments and Deadlines** -->
 
 <!-- 1) Intro R Lab due Sunday 2/02 at 10pm. I only want to see the 3 questions from the lab in your submission file, not the entire text of the tutorial lab. Practice formatting to make everything look pretty. Make sure to select answers in your submission on Gradescope. -->
