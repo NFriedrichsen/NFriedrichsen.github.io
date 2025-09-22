@@ -1,0 +1,116 @@
+---
+title: "Study Design Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=F, warning=F}
+library(ggplot2)
+library(dplyr)
+
+data = read.csv("https://nfriedrichsen.github.io/data/strength_shoe.csv")
+```
+
+Strength Shoes® - The Strength Shoe® is a modified athletic shoe with a 4-cm platform attached to the front half of the sole. Its manufacturer claims that this shoe can increase a person's jumping ability. How can you determine whether the manufacturer's claim about the Strength Shoe® is legitimate? 
+
+A 1993 study published in the American Journal of Sports Medicine investigated the Strength Shoe® claim with a group of 24 intercollegiate track and field participants. Suppose you also want to investigate this claim, and you recruit 24 of your friends to serve as subjects. You plan to have 12 people wear Strength Shoes® and the other 12 wear an ordinary shoe and then measure each group's jumping ability. 
+
+---
+
+**How to tell when there is a causal relationship**
+
+When researchers want to find if a treatment variable causes changes in a response, they control the treatment variable and assign study participants to treatment groups. What we want to see is that both groups are approximately equal in terms of other variables, such as athletic ability, height, sex, etc. so that these other variables are not causing differences in jumping ability. We want to be able to say that the type of shoe is what is affecting jumping ability.
+
+**Question 1** -- Consider the scenario where participants in a study chose which type of shoe to wear. Suppose you find in this study that on average, the group who wears Strength Shoes® can jump much farther than the group who wears ordinary training shoes. Do you think this is compelling evidence that Strength Shoes® really increase jumping ability? Explain. 
+
+---
+
+**Confounding Variables**
+
+An association may not necessarily point to a cause-and-effect relationship. For example, subjects who choose to wear the Strength Shoe® could be more athletic to begin with than those who opt to wear the ordinary training shoes, and this is why they can jump farther. How athletic a person is would be another confounding variable. 
+
+One potential way to deal with this issue would be to purposefully try to balance out certain confounding variables and create two groups that are relatively equivalent with respect to known confounding variables. Suppose you decided to control for sex and height by purposefully assigning the two groups so that there was an equivalent number of females in each group, and the average height for each group was equivalent.
+
+If the two groups are balanced with respect to sex and height, then if you find a significant difference in jumping ability between the two groups, you can argue that it was not differences in sex or height that caused the difference in jumping ability.  
+
+**Question 2** -- Can you think of other variables besides sex and height that might explain differences in jumping ability? If so, what are they? 
+
+### BMI
+Suppose it is believed that BMI could affect jumping ability, but this was not taken into account when assigning subjects to the two groups. Larger BMI can indicate more muscle mass, and thus better jumping ability (up to a point). Below are the average BMIs for each group.
+```{r}
+# Mean BMI for Strength-Shoes group
+filter(data, Shoe.Type == "strength") %>% pull(BMI) %>% mean()
+
+# Mean BMI for Ordinary group
+filter(data, Shoe.Type == "ordinary") %>% pull(BMI) %>% mean()
+```
+**Question 3** -- After seeing the mean BMIs for each group, if the Strength Shoes group jumps further than the ordinary shoes group, is this still compelling evidence that Strength shoes are causing people to jump further?
+
+---
+
+### Genetic Factor
+Suppose there is also a genetic factor (which was not taken into account when assigning the groups) that can greatly improve a person's jumping ability. Since you do not know about it, you have no way to measure and control for it, but it will likely influence the results of our study.
+
+The `Gene.` variable in the data set corresponds to whether someone has this genetic factor, but it wasn't known until *after* the study was performed. Below are the proportion of each group that had this genetic factor.
+
+```{r}
+filter(data, Shoe.Type == "strength") %>% pull(Gene.) %>% table() %>% prop.table()
+
+filter(data, Shoe.Type == "ordinary") %>% pull(Gene.) %>% table() %>% prop.table()
+```
+**Question 4** -- Suppose the Strengh Shoes group jumped much further than the ordinary shoes group on average. After seeing the difference in the groups in terms of the genetic factor, is this still compelling evidence that the Strength Shoes really did cause the difference?
+
+---
+
+### Random Assignment
+
+Some confounding variables can be identified and controlled for, others may not be initially recognized by the researchers (such as BMI and the genetic component in this example). 
+
+The way in which we are going to control for all possible confounding variables is to use **random assignment** when we make our treatment groups. Each subject has an equal chance of being assigned to each treatment group.
+
+---
+
+## Applet
+
+Use the following link: [http://www.rossmanchance.com/applets/SubjectsAM2.html](http://www.rossmanchance.com/applets/SubjectsAM2.html). There should be a card for each subject on the right hand side of the applet with the person's height recorded and sex color-coded (Males = blue and Females = red). Uncheck the 'Animate' box. 
+
+Click 'Randomize' to make the applet randomize the 24 subjects between the two groups.
+
+### Male/Female ratio
+
+**Question 5** -- Compute the difference in proportions of males in each group (group 1 - group 2).
+
+**Question 6** -- Click 'Randomize' again. Compute the new difference in proportions of males in each group (group 1 - group 2). Is it the same as before?
+
+In the 'Replications' box, change 1 to 200. Click 'Randomize.' This is performing 100 simulations of randomly assigning the 24 participants to the groups. Look at the plot near the bottom-left of the app. 
+
+**Question 7** -- Where is the distribution of 'differences in proportion of males' centered? What does this tell you about how similar the groups tended to be in terms of the number of males and females in each group?
+
+### Genetic Factor
+As stated before, the genetic factor for jumping was not identified before the experiment was performed, and instead was recorded after.
+
+Click 'Reveal Gene?' on the applet. Change the 'sex' dropdown selector to 'gene.'
+
+**Question 8** -- Use the distribution to comment on whether random assignment tended to balance out the gene between the groups.  
+
+---
+
+## Conclusion
+
+Random assignment balances potential confounding variables out between both groups. This means that it (generally) creates treatment groups that are very similar except for the treatment they are receiving.
+
+Random assignment does not always *perfectly* balance the groups for all variables. We saw in the distributions that sometimes one group had a larger proportion of males or a larger proportion of the gene.
+
+If the difference in the response variable (jumping ability) for the groups is very large, such that it would be extremely rare for that difference to be the result of random assignment making very unbalanced groups, we say the difference is **statistically discernible**.
+
+When we have large differences between the response variable for two groups after using random assignment, it is reasonable for us to conclude that the treatment (explanatory variable) is the cause.
+
+
+
+
+
