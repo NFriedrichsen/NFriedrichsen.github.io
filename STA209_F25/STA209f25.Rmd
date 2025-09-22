@@ -94,6 +94,10 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 9/24 | [Probability 1 -- Basics](Lectures/Probability1.pdf) | [Probability Worksheet 1](Labs/ProbWorksheet1.pdf) | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA|
 | Fri 9/26 | [Probability 2 -- Independence](Lectures/Probability2.pdf) | [Probability Worksheet 2](Labs/ProbWorksheet2.pdf) | [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Sections TBA |
 
+**Deadlines and Due Dates:**
+
+1) [Study Design Lab](Labs/StudyDesign_Lab.html) due Wednesday 9/24 at 10pm.
+
 ### Week 6 (Probability + Exam 1)
 
 | Date | Lecture | Lab | Reading |
