@@ -24,8 +24,6 @@ You can locate course content by scrolling, or by using the navigation bar in th
 
 Please note: material will not be posted until we've reached that point in the course.
 
----
-
 ### Links to R Installations
 
 1) Install R (https://cran.r-project.org/)
