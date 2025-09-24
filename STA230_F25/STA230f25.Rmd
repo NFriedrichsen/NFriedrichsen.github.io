@@ -24,68 +24,29 @@ You can locate course content by scrolling, or by using the navigation bar in th
 
 Please note: material will not be posted until we've reached that point in the course.
 
-<hr style="border: none; border-top: 5px solid black;">
+---
 
-### Week 1 (Intro to R)
-
-| Date | Lecture | Lab | Homework |
-|:-----|:-------|:-----|:-----|
-| Fri 8/29 | [Syllabus](syllabus230f25.html) | [Lab 1 -- Intro to R](Labs/Lab1.html) | - |
-
-**Assignments and Deadlines**
+### Links to R Installations
 
 1) Install R (https://cran.r-project.org/)
 2) Install RStudio (https://posit.co/download/rstudio-desktop/)
 
----
+<hr style="border: none; border-top: 5px solid black;">
 
-### Week 2 (Intro to R cont'd)
+# Lab Agenda
 
-| Date | Lecture | Lab | Reading |
-|:-----|:-------|:-----|:-----|
-| Mon 9/01 | Labor Day (no class) | - | - |
-| Wed 9/03 | - | [Lab 1 -- Intro to R](Labs/Lab1.html) | - |
-| Fri 9/05 | - | [Lab 1 -- Intro to R](Labs/Lab1.html) | TBA |
+| Date | Lab | Due Date |
+|:-------|:-----|:-----|
+| Fri 8/29 - Fri 9/05 | [Lab 1 -- Intro to R](Labs/Lab1.html) | Sunday 9/7 at 10pm |
+| Mon 9/08 - Fri 9/12 | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | Sunday 9/14 at 10pm |
+| Mon 9/15 - Fri 9/19 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 9/21 at 10pm |
+| Mon 9/21 - Fri 9/26 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm |
 
-**Due Dates:**
+# Homework Assignments
 
-1) [Lab 1 -- Intro to R](Labs/Lab1.html) due Sunday at 10pm on Gradescope (will be linked).
-2) [Homework 1](Homework/hw1.html) is due Fri 9/12 at 10pm on Gradescope (assign pages to questions!)
+[[Homework 1]](Homework/hw1.html) (Intro R) due Fri 9/12 at 10pm
 
----
+[[Homework 2]](Homework/hw2.html) (Functions) due Friday 9/19 at 10pm
 
-### Week 3 (Functions, Loops, Simulations)
+[[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm
 
-| Date | Lecture | Lab | Reading |
-|:-----|:-------|:-----|:-----|
-| Mon 9/08 | Preamble in Lab | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | - |
-| Wed 9/10 | - | [Lab 2 -- Functions](Labs/Lab2_Functions.html) cont'd | - |
-| Fri 9/12 | - | [Lab 2 -- Functions](Labs/Lab2_Functions.html) cont'd | Optional: [R Markdown Extras](https://r4ds.had.co.nz/r-markdown.html) |
-
-**Due Dates:**
-
-1) [Lab 2 -- Functions](Labs/Lab2_Functions.html) due Sunday 9/14 at 10pm.
-2) [Homework 2](Homework/hw2.html) due Friday 9/19 at 10pm.
-
----
-
-### Week 4 (Data Visualization)
-
-| Date | Lecture | Lab | Reading |
-|:-----|:-------|:-----|:-----|
-| Mon 9/15 | Preamble in Lab | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | - |
-| Wed 9/17 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
-| Fri 9/19 | - | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) cont'd | - |
-
-**Due Dates:**
-
-1) [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) due Sunday 9/21 at 10pm.
-2) [Homework 3](Homework/hw3.html) due Friday 9/26 at 10pm.
-
-### Week 5 (Data Manipulation, Cleaning, and Preparation)
-
-| Date | Lecture | Lab | Reading |
-|:-----|:-------|:-----|:-----|
-| Mon 9/22 | Preamble in Lab | [Lab 4 -- Data Manipulation](Labs/Lab4_DataManip.html) | - |
-| Wed 9/24 | - | [Lab 4 -- Data Manipulation](Labs/Lab4_DataManip.html) cont'd | TBA |
-| Fri 9/26 | - | [Lab 4 -- Data Manipulation](Labs/Lab4_DataManip.html) cont'd | TBA |
