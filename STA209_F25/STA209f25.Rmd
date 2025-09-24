@@ -110,6 +110,10 @@ Please note: material will not be posted until we've reached that point in the c
 
 ### Lab Solutions
 
+[(Quantitative Variabls Lab Sol)](Labs/QuantVarLab_Solutions.html)
+
+[(Categorical Variabls Lab Sol)](Labs/CatVarLab_Solutions.html)
+
 [(Tables Lab Solutions)](Labs/TablesLab_Solutions.html)
 
 <!-- **Assignments and Deadlines** -->
