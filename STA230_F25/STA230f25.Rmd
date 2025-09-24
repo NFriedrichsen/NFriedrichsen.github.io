@@ -69,7 +69,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
-### Week 3 (Data Visualization)
+### Week 4 (Data Visualization)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
@@ -82,7 +82,7 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) due Sunday 9/21 at 10pm.
 2) [Homework 3](Homework/hw3.html) due Friday 9/26 at 10pm.
 
-### Week 4 (Data Manipulation, Cleaning, and Preparation)
+### Week 5 (Data Manipulation, Cleaning, and Preparation)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
