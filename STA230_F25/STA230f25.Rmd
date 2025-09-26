@@ -50,3 +50,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 10/03 at 10pm
 
+# Helpful Links
+
+[[GGplot Cheat Sheet]](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
+
+[[Matching Plots]](MatchingPlots.html) Courtesy of Instructor Will Rebelsky.
+
