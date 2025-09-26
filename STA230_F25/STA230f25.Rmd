@@ -48,3 +48,5 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm
 
+[[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 10/03 at 10pm
+
