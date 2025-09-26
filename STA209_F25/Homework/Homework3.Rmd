@@ -1,0 +1,63 @@
+---
+title: "Homework 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question 1 -- Conceptual (1 pt each)
+
+  - **Part A** (Study Design) What do we need to be true of a sample in order to generalize results to a population?
+  
+  - **Part B** (Study Design) Why does randomization of treatments to experimental units let us make causal conclusions?
+  
+  - **Part C** (Study Design) What is a sampling frame? What goes wrong if the sampling frame is missing subsets of the population?
+  
+  - **Part D**: Why does an odds-ratio of 1 indicate no association between variables?
+  
+  - **Part E**: In words, what does it mean to say 2 events are independent?
+
+  - **Part F**: What two different ways can we use to check if 2 events are independent?
+  
+---
+
+# Question 2 (IMS Questions)
+
+IMS - Section 2.5, Questions 3, 7, 10, 12, 15
+
+---
+
+# Question 3 (Probability Stuff)
+
+A link to the text from which the questions come from is [[here]](OpenIntro4e_Textbook_Chap3.pdf). 
+
+Open Intro Chapter 3, Questions 3.2, 3.5, 3.6, 3.8, 3.9, 3.16
+
+---
+
+# Question 4 (Stroke Risk: after Monday's lecture)
+
+Researchers recruited 451 patients with a high level of risk for strokes (when bloodflow gets cut off to the brain due to blocked blood vessels). They split these patients into two groups, a treated group that received stents (small mesh tube placed inside of vulnerable arteries) and medical management (medications, lifestyle coaching, etc.), and a control group that only received medical management. Of the 224 patients in the treatment group, 45 suffered a stroke within the first year of the study, while only 28 patients in the control group had a stroke during this time. (Hint: making a table/diagram of this data may be helpful)
+
+**Part A:** Find the risk of having a stroke for someone in the treatment group and also the risk of having a stroke for someone in the control group.
+
+**Part B:** Find the relative risk of having a stroke in the treatment group compared to the control group. 
+
+**Part C:** Interpret this relative risk value.
+
+**Part D:** Find the probability of someone in our data having a stroke *and* being in the treatment group. Are these two events disjoint?
+
+**Part E:** Find the odds of having a stroke for each group.
+
+**Part F:** Find the odds ratio comparing the odds of stroke in the treatment (stent) group with the odds of a stroke in the control group.
+
+**Part G:** Is there an association between stent use and the prevalence of strokes? Justify your answer using results from either Part B or Part F.
+
+**Part H:** Explain your findings to Part G to someone who hasn't taken a statistics class and has a high risk of having a stroke.
+
+
+
+
+
