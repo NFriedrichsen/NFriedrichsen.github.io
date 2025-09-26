@@ -97,6 +97,7 @@ Please note: material will not be posted until we've reached that point in the c
 **Deadlines and Due Dates:**
 
 1) [Study Design Lab](Labs/StudyDesign_Lab.html) due Wednesday 9/24 at 10pm.
+2) [Homework 3](Homework/Homework3.html) due Friday 10/03 at 10pm. This is due after the Exam, but *please* finish it beforehand. It will be extremely good practice.
 
 ### Week 6 (Probability + Exam 1)
 
