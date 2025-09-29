@@ -39,6 +39,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 9/08 - Fri 9/12 | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | Sunday 9/14 at 10pm |
 | Mon 9/15 - Fri 9/19 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 9/21 at 10pm |
 | Mon 9/21 - Fri 9/26 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm |
+| Mon 9/28 - Fri 10/03 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Sunday 10/05 at 10pm |
 
 # Homework Assignments
 
