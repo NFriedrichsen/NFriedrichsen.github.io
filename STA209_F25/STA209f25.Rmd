@@ -117,6 +117,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 [(Tables Lab Solutions)](Labs/TablesLab_Solutions.html)
 
+---
+
+### Selected HW Solutions
+
+[[Homework 1 Sol]](Homework/Homework1_Solutions.html)
+
+[[Homework 2 Sol]](Homework/Homework2_Solutions.html)
+
 ### Exam 1 Materials
 
 [[Practice Exam 1]](Exams/practice_exam1.pdf)
