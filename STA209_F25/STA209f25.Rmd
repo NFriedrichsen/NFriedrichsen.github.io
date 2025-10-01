@@ -104,7 +104,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 9/29 | [Probability 3 -- Odds + Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3](Labs/ProbWorksheet3.pdf) | - |
-| Wed 10/01 | TBD | TBA | TBA |
+| Wed 10/01 | [Random Variables](Lectures/RandomVariables.pdf) | Review Time | - |
 | Fri 10/03 | Exam 1 | - | - |
 
 ---
