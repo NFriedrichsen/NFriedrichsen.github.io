@@ -117,6 +117,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [(Tables Lab Solutions)](Labs/TablesLab_Solutions.html)
 
+[(Probability Worksheet Solutions)](Labs/ProbWorksheets_Solutions.pdf)
+
 ---
 
 ### Selected HW Solutions
