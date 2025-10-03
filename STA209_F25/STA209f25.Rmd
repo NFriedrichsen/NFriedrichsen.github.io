@@ -109,6 +109,18 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Exam \#1 Content
+
+### Week 7 (Normal and Sampling Distributions)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 10/06 | [Normal Distributions](Lectures/NormalDistribution.pdf) | [Normal Probability R Guide](Labs/NormalDistribution_Lab_Setup.html) and [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) | - |
+| Wed 10/08 | [Sampling Distributions](Lectures/SamplingDistributions.pdf) | TBP | - |
+| Fri 10/10 | [Confidence Interval 1 (Mean)](Lectures/CI1.pdf) | TBP | - |
+
+---
+
 ### Lab Solutions
 
 [(Quantitative Variabls Lab Sol)](Labs/QuantVarLab_Solutions.html)
