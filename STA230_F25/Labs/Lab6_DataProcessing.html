@@ -11,7 +11,7 @@
 
 
 
-<title>Week 6: Data Processing</title>
+<title>Lab 6: Data Processing</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1477,7 +1477,7 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Week 6: Data Processing</h1>
+<h1 class="title toc-ignore">Lab 6: Data Processing</h1>
 
 </div>
 
@@ -1593,7 +1593,7 @@ between Dec 12th 2019 and today. You could get today’s date in
 <code>R</code> using the <code>Sys.Date()</code> function:</p>
 <pre class="r"><code>todays_date = Sys.Date()
 print(todays_date)</code></pre>
-<pre><code>## [1] &quot;2025-10-04&quot;</code></pre>
+<pre><code>## [1] &quot;2025-10-05&quot;</code></pre>
 <p>While this looks like a character string, we can use the
 <code>class()</code> function to see that “today” is an object of class
 “Date”:</p>
@@ -1608,7 +1608,7 @@ todays_date - as.Date(&quot;2019-12-12&quot;)  ## Works as intended</code></pre>
 1970:</p>
 <pre class="r"><code>as.numeric(todays_date) - as.numeric(as.Date(&quot;2019-12-12&quot;))
 as.numeric(as.Date(&quot;1970-01-01&quot;))</code></pre>
-<pre><code>## [1] 2123
+<pre><code>## [1] 2124
 ## [1] 0</code></pre>
 <p><code>R</code> is set up to store dates internally as the number of
 days passed since Jan 1, 1970. Why? <a href="https://en.wikipedia.org/wiki/Unix_time">See here.</a></p>
@@ -1625,7 +1625,7 @@ handling of dates uses a different storage mode.We can use the
 retrieve the current date/time (to the nearest second):</p>
 <pre class="r"><code>right_now = now()
 print(right_now)</code></pre>
-<pre><code>## [1] &quot;2025-10-04 23:00:43 CDT&quot;</code></pre>
+<pre><code>## [1] &quot;2025-10-05 19:58:37 CDT&quot;</code></pre>
 <p>Notice the class of “right_now”:</p>
 <pre class="r"><code>class(right_now)</code></pre>
 <pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;</code></pre>
