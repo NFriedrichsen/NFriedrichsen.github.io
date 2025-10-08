@@ -116,8 +116,13 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/06 | [Normal Distributions](Lectures/NormalDistribution.pdf) | [Normal Probability R Guide](Labs/NormalDistribution_Lab_Setup.html) and [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) | - |
-| Wed 10/08 | [Sampling Distributions](Lectures/SamplingDistributions.pdf) | TBP | - |
+| Wed 10/08 | [Sampling Distributions](Lectures/SamplingDistributions.pdf) | [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) | - |
 | Fri 10/10 | [Confidence Interval 1 (Mean)](Lectures/CI1.pdf) | TBP | - |
+
+**Assignments and Due Dates**:
+
+1) [Normal Distribution Lab](Labs/NormalDistribution_Lab.pdf) due Wednesday 10/08 at 10pm.
+2) [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Friday 10/10 at 10pm.
 
 ---
 
