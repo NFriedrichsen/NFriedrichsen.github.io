@@ -136,6 +136,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [(Probability Worksheet Solutions)](Labs/ProbWorksheets_Solutions.pdf)
 
+[(Normal Distribution Practice Solutions)](labs/NormalDistribution_Lab_Solutions.html)
+
 ---
 
 ### Selected HW Solutions
