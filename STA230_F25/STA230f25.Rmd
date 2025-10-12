@@ -41,6 +41,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 9/21 - Fri 9/26 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm |
 | Mon 9/28 - Fri 10/03 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Sunday 10/05 at 10pm |
 | Mon 10/06 - Fri 10/10 | [Lab 6 -- Data Processing (Strings)](Labs/Lab6_DataProcessing.html) | Sunday 10/12 at 10pm |
+| Mon 10/13 - Friday 10/17 | [Lab 7 -- Stat Techniques](Labs/Lab7_StatisticalTechniques.html) | Sunday 10/26 at 10pm |
 
 # Homework Assignments
 
@@ -51,6 +52,8 @@ Please note: material will not be posted until we've reached that point in the c
 [[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm
 
 [[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 10/10 at 10pm (extended).
+
+[[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 10/31 at 10pm.
 
 # Midterm Projects
 
