@@ -124,6 +124,14 @@ Please note: material will not be posted until we've reached that point in the c
 1) [Normal Distribution Lab](Labs/NormalDistribution_Lab.pdf) due Wednesday 10/08 at 10pm.
 2) [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Friday 10/10 at 10pm.
 
+### Week 8 (Confidence Intervals)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 10/13 | [Confidence Interval 2 -- t-Distribution](Lectures/CI2.pdf) | [Labs/CI_Lab1.html] | - |
+| Wed 10/15 | [Confidence Interval 3 -- Difference in Means](Lectures/CI3.pdf) | - | - |
+| Fri 10/17 | [Confidence Interval 4 -- Proportions](Lectures/CI4.pdf) | - | - |
+
 ---
 
 ### Lab Solutions
