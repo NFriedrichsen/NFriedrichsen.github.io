@@ -136,6 +136,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Confidence Intervl Lab 1](Labs/CI_Lab1.html) due Wednesday 10/15 at 10pm.
 2) [Homework 4](Homework/Homework4.html) due Friday 10/31 at 10pm. More will be added to this over the course of Week 8. Start early!
+3) [Exam 1 Correction](Exams/exam1_corrections.html) due Monday 10/27 at 10pm. Gradescope submission will be posted.
 
 ---
 
