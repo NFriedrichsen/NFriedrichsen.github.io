@@ -129,7 +129,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 10/13 | [Confidence Interval 2 -- t-Distribution](Lectures/CI2.pdf) | [Confidence Interval Lab 1](Labs/CI_Lab1.html) cont'd | - |
-| Wed 10/15 | [Confidence Interval 3 -- Difference in Means](Lectures/CI3.pdf) | - | - |
+| Wed 10/15 | [Confidence Interval 3 -- Difference in Means](Lectures/CI3.pdf) | [Confidence Interval Lab 1](Labs/CI_Lab1.html) cont'd | - |
 | Fri 10/17 | [Confidence Interval 4 -- Proportions](Lectures/CI4.pdf) | - | - |
 
 **Assignments and Due Dates**:
