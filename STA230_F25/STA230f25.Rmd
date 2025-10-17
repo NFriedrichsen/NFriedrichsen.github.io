@@ -61,7 +61,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 # Assigned Readings
 
-[Readings for Lab 8](Lab8_Readings.html) read before class on Wednesday 10/29.
+[Readings for Lab 8](Labs/Lab8_Readings.html) read before class on Wednesday 10/29.
 
 # Helpful Links
 
