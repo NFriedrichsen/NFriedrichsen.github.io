@@ -115,7 +115,9 @@ Exams will be announced at least two weeks in advance. Exams will be closed note
 
 Alternative exam arrangements need to be made at least one week in advance of the time you plan to take the exam; this includes taking the exam in a different location, or times going beyond the given class time. Alternative arrangements are not guaranteed unless proper notification is given.
 
-After the first two exams are graded, I will allow students with scores below 90\% an opportunity for exam corrections. You can earn back half credit for any missed question by submitting a correct answer and explanation of why the original answer was incorrect (up to a maximum exam score of 90\%). Exam correction answers must be fully correct to receive back half credit for the respective question.
+After the first two exams are graded, I will allow students an opportunity for exam corrections. You can earn back half credit for any missed question by submitting a correct answer and explanation of why the original answer was incorrect. Exam correction answers must be fully correct to receive back half credit for the respective question.
+
+**Note:** Previous wording for max cap of 90\% after corrections removed.
 
 
 **Final Project** \- 15%
