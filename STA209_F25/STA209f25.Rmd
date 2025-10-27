@@ -141,6 +141,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 9 (dplyr + Bootstrapping + Hypotheses)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 10/27 | - | [dplyr Lab](Labs/dplyr_lab.html) | - |
+| Wed 10/29 | [Bootstrapping TBP] | [Bootstrapping Lab] | - |
+| Fri 10/31 | [Hypothesis Testing TBP] | [Stuff] | - |
+
+---
+
 ### Lab Solutions
 
 [(Quantitative Variabls Lab Sol)](Labs/QuantVarLab_Solutions.html)
