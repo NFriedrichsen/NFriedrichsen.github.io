@@ -368,6 +368,19 @@ college %>% filter(Region == "Plains") %>%
 
 **Question 4:** Do private and public colleges seem different at a glance? Compute a 95\% CI for difference in mean costs using your answer to Question 3 (and with t-Distribution) and explain our results to someone who hasn't taken a stats class.
 
+```{r, echo=F}
+# Yes. Private colleges look more expensive at a glance.
+
+t_value = qt(.975, df=41)
+(43316 - 20798) - t_value*sqrt(8487^2/84 + 2634^2/42)
+(43316 - 20798) + t_value*sqrt(8487^2/84 + 2634^2/42)
+
+# We are 95% confident the mean price for private colleges is between
+# $20576 and $24560 more expensive than public colleges. Private colleges
+# seem to cost around $20k+ more on average than public. Oof my wallet.
+```
+
+
 <!-- # Regression for College data set. -->
 
 <!-- We will continue using the college dataset. Last week we introduced regression which was useful when we had a linear relationship between quant. variables. Read in this modified version of the college dataset with better variable names. -->
@@ -493,7 +506,14 @@ icu %>% filter(Infection == 1) %>%
             N = n()) %>% as.data.frame()
 ```
 
-**Question 6:** Using the values from Question 5, compute a 90\% CI for difference in means and interpret it. Do the groups seem to be different?
+**Question 6:** Using the values from Question 5, compute a 90\% CI for difference in means. Do the groups seem to be different?
+
+```{r}
+t_value = qt(.95, df=18)
+(62.37 - 57) - t_value*sqrt(17.84^2/65 + 17.60^2/19)
+(62.37 - 57) + t_value*sqrt(17.84^2/65 + 17.60^2/19)
+```
+
 
 **Question 7:** Below are histograms for the two groups. Do the conditions for creating the CI look OK? Recreate this histogram using your previous `filter` and `mutate` in Question 5 and adding `+ggplot(aes(x=Age)) + geom_histogram(bins=10) + facet_wrap(~Previous) + labs(title="Histogram of Age by Previous Admission")`.
 
