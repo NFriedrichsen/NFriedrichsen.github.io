@@ -55,7 +55,7 @@ Data manipulation can mean a lot of things. For this lab, we will focus on the f
 The `dplyr` package contains a suite of functions that accommodate these procedures, often *chained together* in a sequence of operations, connected with our pipe operator, `%>%` (Ctrl+Shift+M for PC, Cmd+Shift+M for Mac). For example, if I wanted to find the average cost for public and private schools in Iowa, my code may look something like this:
 
 ```{r}
-college %>% filter(State %in% "IA") %>% 
+college %>% filter(State == "IA") %>% 
   group_by(Type) %>% 
   summarize(meanCost = mean(Cost))
 ```
@@ -195,7 +195,7 @@ head(act30_iamn)
 
 Notice how the `%in%` operator is used here: `State %in% c("IA", "MN")` first considers the variable `State` and then matches it to each of the values in the vector `c("IA", "MN")`
 
-**Question 1:** Filter the college dataset to include only schools located in the Plains and the Great Lakes regions and with enrollments less than 20,000. Using your filtered data, create a two-way table using the variables `Region` and `Type`
+**Question 1:** Filter the college dataset to include only schools located in the Plains and the Great Lakes regions and with enrollments less than 20,000. Using your filtered data, create a two-way table using the variables `Region` and `Type`. **Hint**: `with(table())`
 
 ```{r, include = FALSE, eval = FALSE}
 filter(college, Region %in% c("Plains", "Great Lakes"), 
@@ -257,7 +257,8 @@ with(ia_select, table(Selective))
 ```{r, include = FALSE, eval = FALSE}
 tt <- college %>% 
   mutate(Size = ifelse(Enrollment > 10000, "large", "small"))
-ggplot(tt, aes(fill = Size, Region)) + geom_bar(position = "fill")
+ggplot(tt, aes(fill = Size, y = Region)) + geom_bar(position = "fill") +
+  labs(x = "Proportion")
 ```
 
 ---
