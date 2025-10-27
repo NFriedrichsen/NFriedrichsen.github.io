@@ -2178,14 +2178,14 @@ of 50.</p>
                  extra = -1)
 df</code></pre>
 <pre><code>##   group       val extra
-## 1     A  2.890210    -1
-## 2     A  3.903585    -1
-## 3     A  5.278551    -1
-## 4     A  4.523867    -1
-## 5     B 51.069413    -1
-## 6     B 50.622593    -1
-## 7     B 48.667493    -1
-## 8     B 49.683979    -1</code></pre>
+## 1     A  5.943798    -1
+## 2     A  3.569653    -1
+## 3     A  5.292319    -1
+## 4     A  4.709635    -1
+## 5     B 50.830488    -1
+## 6     B 50.793743    -1
+## 7     B 50.688088    -1
+## 8     B 51.321202    -1</code></pre>
 <p>If I first group and then mutate, it will add an additional column,
 returning the mean value for each group</p>
 <pre class="r"><code>df %&gt;% group_by(group) %&gt;% 
@@ -2194,22 +2194,22 @@ returning the mean value for each group</p>
 ## # Groups:   group [2]
 ##   group   val extra meanVal
 ##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
-## 1 A      2.89    -1    4.15
-## 2 A      3.90    -1    4.15
-## 3 A      5.28    -1    4.15
-## 4 A      4.52    -1    4.15
-## 5 B     51.1     -1   50.0 
-## 6 B     50.6     -1   50.0 
-## 7 B     48.7     -1   50.0 
-## 8 B     49.7     -1   50.0</code></pre>
+## 1 A      5.94    -1    4.88
+## 2 A      3.57    -1    4.88
+## 3 A      5.29    -1    4.88
+## 4 A      4.71    -1    4.88
+## 5 B     50.8     -1   50.9 
+## 6 B     50.8     -1   50.9 
+## 7 B     50.7     -1   50.9 
+## 8 B     51.3     -1   50.9</code></pre>
 <p>Contrast this with the summarize function</p>
 <pre class="r"><code>df %&gt;% group_by(group) %&gt;% 
   summarize(meanVal = mean(val))</code></pre>
 <pre><code>## # A tibble: 2 × 2
 ##   group meanVal
 ##   &lt;chr&gt;   &lt;dbl&gt;
-## 1 A        4.15
-## 2 B       50.0</code></pre>
+## 1 A        4.88
+## 2 B       50.9</code></pre>
 <p>Here, the “extra” column has been removed, and all of the rows have
 been reduced down to the number of values in the grouping variable. Both
 methods have their uses, depending on the context.</p>
@@ -2249,8 +2249,6 @@ the skew of the distributions?</p>
 different at a glance? Compute a 95% CI for difference in mean costs
 using your answer to Question 3 (and with t-Distribution) and explain
 our results to someone who hasn’t taken a stats class.</p>
-<pre><code>## [1] 20475.69</code></pre>
-<pre><code>## [1] 24560.31</code></pre>
 <!-- # Regression for College data set. -->
 <!-- We will continue using the college dataset. Last week we introduced regression which was useful when we had a linear relationship between quant. variables. Read in this modified version of the college dataset with better variable names. -->
 <!-- ```{r} -->
@@ -2483,11 +2481,6 @@ final output should look like this:</p>
 <p><strong>Question 6:</strong> Using the values from Question 5,
 compute a 90% CI for difference in means. Do the groups seem to be
 different?</p>
-<pre class="r"><code>t_value = qt(.95, df=18)
-(62.37 - 57) - t_value*sqrt(17.84^2/65 + 17.60^2/19)</code></pre>
-<pre><code>## [1] -2.614144</code></pre>
-<pre class="r"><code>(62.37 - 57) + t_value*sqrt(17.84^2/65 + 17.60^2/19)</code></pre>
-<pre><code>## [1] 13.35414</code></pre>
 <p><strong>Question 7:</strong> Below are histograms for the two groups.
 Do the conditions for creating the CI look OK? Recreate this histogram
 using your previous <code>filter</code> and <code>mutate</code> in

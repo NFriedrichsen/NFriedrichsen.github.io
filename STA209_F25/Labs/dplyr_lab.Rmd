@@ -368,7 +368,7 @@ college %>% filter(Region == "Plains") %>%
 
 **Question 4:** Do private and public colleges seem different at a glance? Compute a 95\% CI for difference in mean costs using your answer to Question 3 (and with t-Distribution) and explain our results to someone who hasn't taken a stats class.
 
-```{r, echo=F}
+```{r, echo=F, eval=F}
 # Yes. Private colleges look more expensive at a glance.
 
 t_value = qt(.975, df=41)
@@ -508,7 +508,7 @@ icu %>% filter(Infection == 1) %>%
 
 **Question 6:** Using the values from Question 5, compute a 90\% CI for difference in means. Do the groups seem to be different?
 
-```{r}
+```{r, echo=F, eval=F}
 t_value = qt(.95, df=18)
 (62.37 - 57) - t_value*sqrt(17.84^2/65 + 17.60^2/19)
 (62.37 - 57) + t_value*sqrt(17.84^2/65 + 17.60^2/19)
