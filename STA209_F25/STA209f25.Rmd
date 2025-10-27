@@ -163,6 +163,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [(Normal Distribution Practice Solutions)](Labs/NormalDistribution_Lab_Solutions.html)
 
+[(Sampling Distributions Solutions)](Labs/SamplingDistribution_Lab_Solutions.html)
+
 ---
 
 ### Selected HW Solutions
