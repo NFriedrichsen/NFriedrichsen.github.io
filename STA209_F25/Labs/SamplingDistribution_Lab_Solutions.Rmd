@@ -1,0 +1,116 @@
+---
+title: "Sampling Distribution Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Useful Website Stuff
+
+### Sampling Distribution
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNormal.htm)] and go through the tutorial and associated examples. It will help explain what the sampling distribution is all about.
+
+**Question 1:** What are some things you learned from this example?
+
+*Answers will vary.*
+
+### Central Limit Theorem
+
+Go to [[this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/CLT.htm)] and go through the tutorial and associate examples. It will help explain what the CLT is all about.
+
+**Question 2:** What are some things you learned from this example?
+
+*Answers will vary.*
+
+---
+
+## Question 3 (Conceptual)
+
+**Part A**: In your own words, explain what a *population* distribution is.
+
+The distribution of all values (of a variable) from the population.
+
+**Part B**: In your own words, explain what a *sample* distribution is.
+
+The distribution of values (of a variable) from a sample taken from a population.
+
+**Part C**: In your own words, explain what a *sampling* distribution is.
+
+The distribution of many statistics from many different samples (of the same sample size).
+
+**Part D**: I mentioned before that sampling is a random process. What is meant by the term *sampling variability*?
+
+*Answer will vary*. We do not always get identical samples, and so with different samples we get slightly different values for any statistic we are looking at.
+
+**Part E**: Which distribution does the *standard error* refer to?
+
+*Sampling distribution, standard error of*
+
+## Question 4 -- NFL Contracts
+
+We will use the following link to explore sampling distribution concepts. [StatKey Link for Sampling Distributions](https://www.lock5stat.com/StatKey/sampling_1_quant/sampling_1_quant.html). 
+
+This is an app for simulating sampling distributions. In the top left, click "Baseball Players 3e..." to navigate a drop down menu of data sets and select "NFL Contracts 3e". The panel on the right hand side shows what the original sample looks like under **Population** and gives some statistics for the population. At the top we are able to choose different sample sizes with which we create a random sample from the population.
+
+**Part A**: Leave the sample size at n=10. Click "Generate 1 Sample." The app puts a point on the sampling distribution corresponding to this point. The sample we just generated is represented in the bottom right of the screen. What are the mean and standard deviation of the sample?
+
+*Answers will vary*
+
+**Part B**: Generate another sample. What values did you get for the mean and standard deviation?
+
+*Answers will vary*
+
+
+**Part C**: Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+*Right-skewed* SE around 1.4 (million USD)
+
+**Part D**: What does a dot on this distribution represent?
+
+*Mean of one sample of 10 NFL players*
+
+**Part E**: Change the sample size to 50. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+*Slightly right-skewed, SE around 4*
+
+**Part F**: Change the sample size to 200. Generate 5000 samples. What shape does the distribution have and what is the value of the standard error?
+
+*Symmetric, unimodal, SE around 0.3*
+
+**Part G**: Add 3000 more samples to the plot from Part F. Did the shape or std error change very much? Why?
+
+*No. adding more samples does not change the shape too much, only sample size changing does*
+
+**Part H**: In general, how would you describe what happens to the shape of the sampling distribution as the sample size increases? What about the standard error?
+
+*As sample size increases, the shape becomes more Normal, SE goes down*
+
+**Part I**: Describe what a standard error is to someone who has taken a stats class but it was a really long time ago (they are rusty).
+
+## Question 5 -- Central Limit Theorem
+
+The Central Limit Theorem (CLT) is a mathematical result that describes the behavior of the sampling distribution for the sample mean (the results which we just discovered). It says:
+
+"as the sample size increases, the sampling distribution of the sample mean ($\bar{X}$) becomes more Normal" and it gives us specific values for the mean and standard error of this distribution.
+
+\begin{align*}
+\bar{X} \sim N(\mu, SE = \frac{\sigma}{\sqrt{n}})
+\end{align*}
+
+**Part A**: Sketch what the CLT says the sampling distribution for the sample mean looks like for n=200. You will need to calculate the SE. Does this look very similar to the distribution in part F of Question 4?
+
+```{r}
+4.427 / sqrt(200)
+```
+
+
+*You do not need to turn in your sketch for this problem.*
+
+**Part B**: The sampling distribution gives us an idea of roughly what values for the sample mean we will get for a population. Using your answer to Part A of this question, roughly what percent of sample means will be within the range 2.47 ($\mu - 2SE$) and 3.65 ($\mu + 2SE$)?
+
+*95/%*
