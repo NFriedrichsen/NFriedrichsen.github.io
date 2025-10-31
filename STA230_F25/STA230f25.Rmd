@@ -6,6 +6,8 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
+  pdf_document:
+    toc: true
 ---
 
 $~$
@@ -56,9 +58,13 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 10/31 at 10pm.
 
+[[Mid-semester Feedback]](Homework/midsemester_feedback.html) due Friday 11/07 at 10pm. This is not a graded assignment, but will earn you a token for thoughtful completion.
+
 # Midterm Projects
 
 [Midterm 1] will be available on Gradescope Monday (10/06) . It is an individual assignment. See the gradescope template for more information when posted. Due Friday 10/17 at 10pm.
+
+[Midterm 2] instructions posted on Gradescope 10/31. You are allowed to choose your own group with 2-3 total students per group. You may work individually, but I would avoid this if possible. Due Sunday 11/16 at 10pm.
 
 # Assigned Readings
 
