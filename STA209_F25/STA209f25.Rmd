@@ -147,12 +147,15 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 10/27 | - | [dplyr Lab](Labs/dplyr_lab.html) | - |
 | Wed 10/29 | [Bootstrapping](Lectures/Bootstrapping.pdf) | [Bootstrapping Lab](Labs/Bootstrapping_Lab.html) | - |
-| Fri 10/31 | [Hypothesis Testing TBP] | [Stuff] | - |
+| Fri 10/31 | [Hypothesis Testing Intro](Lectures/HT1.pdf) | Free Work Period | - |
 
 **Assignments and Due Dates**
 
 1) [dplyr Lab](Labs/dplyr_lab.html) due Wednesday 10/29 at 10pm.
 2) [Bootstrapping Lab](Labs/Bootstrapping_Lab.html) due Sunday 11/02 at 10pm.
+3) [Homework 5](Homework/Homework5.html) due Friday 11/07 at 10pm.
+4) [Feedback Assignment](Homework/209_feedback_assign.html) due Friday 11/07 at 10pm. See details for grading. Completion $\rightarrow$ extra token.
+5) Exam 2 will be on Friday Nov. 14 during scheduled class time.
 
 ---
 
