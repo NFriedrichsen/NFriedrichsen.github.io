@@ -159,6 +159,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 10 (Hypothesis Testing)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/03 | [Hypothesis Testing 2](Lectures/HT2.pdf) | [HT Lab 1](Labs/TestingLab1.html) | - |
+| Wed 11/05 | [HT Part 3] | TBP | Reading Assignment TBP |
+| Fri 11/07 | [HT Part 4] | TBP | - |
+
+---
+
+
 ### Lab Solutions
 
 [(Quantitative Variabls Lab Sol)](Labs/QuantVarLab_Solutions.html)
