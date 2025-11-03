@@ -169,6 +169,24 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+**Deadlines and Due Dates**:
+
+1) [Homework 5](Homework/Homework5.html) due Friday 11/07 at 10pm.
+2) [Feedback Assignment](Homework/209_feedback_assign.html) due Friday 11/07 at 10pm. See details for grading. Completion $\rightarrow$ extra token.
+3) [HT Lab 1](Labs/TestingLab1.html) due date TBD.
+4) See Final Project info posted below.
+5) Exam 2 on Friday 11/14 in class.
+
+---
+
+### Project Information
+
+See [project link here](Exams/STA209_project.html) for all of the information.
+
+1) Group assignments due Monday 11/10 at 10pm via email. 
+2) Project Proposal due Sunday 11/16 at 10pm. 
+3) Exploratory analysis due Friday 11/28 at 10pm. 
+4) Final project write-up due Friday 12/12 at 10pm.
 
 ### Lab Solutions
 
