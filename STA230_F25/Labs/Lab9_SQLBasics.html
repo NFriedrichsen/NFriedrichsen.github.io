@@ -666,11 +666,11 @@ LEFT JOIN customers as b ON a.id = b.id
 ORDER BY name DESC
 LIMIT 5;&quot;)</code></pre>
 <pre><code>##   order id   date    name
-## 1    12  8 Feb-11 Wickham
-## 2     2  8 Feb-01 Wickham
-## 3    11  4 Apr-18   Tukey
-## 4     1  4 Jan-01   Tukey
-## 5     3 42 Apr-15     Cox</code></pre>
+## 1     2  8 Feb-01 Wickham
+## 2    12  8 Feb-11 Wickham
+## 3     1  4 Jan-01   Tukey
+## 4    11  4 Apr-18   Tukey
+## 5    13 42 Jul-15     Cox</code></pre>
 </div>
 </div>
 </div>
@@ -699,11 +699,11 @@ ORDER BY name DESC
 LIMIT 5;&quot;)
 print(exampleQuery)</code></pre>
 <pre><code>##   order id   date    name
-## 1    12  8 Feb-11 Wickham
-## 2     2  8 Feb-01 Wickham
-## 3    11  4 Apr-18   Tukey
-## 4     1  4 Jan-01   Tukey
-## 5     3 42 Apr-15     Cox</code></pre>
+## 1     2  8 Feb-01 Wickham
+## 2    12  8 Feb-11 Wickham
+## 3     1  4 Jan-01   Tukey
+## 4    11  4 Apr-18   Tukey
+## 5    13 42 Jul-15     Cox</code></pre>
 <p><strong>Question 3</strong> Write queries to pull the week9 tables
 and store them as R dataframes with the same name.</p>
 </div>
@@ -720,8 +720,9 @@ with the tables saved in Q3.</li>
 why? If not, what differences are there?</li>
 </ul>
 <p><strong>Question 5</strong> Using the tables imported into R,
-complete the next three parts to determine the number of faculty in each
-department by department ID.</p>
+complete the next two parts to determine the number of faculty in each
+department by department ID. The following tables were created with SQL
+queries.</p>
 <ul>
 <li><strong>Part A</strong>: Create a table containing only professor
 ids and department ids. I have included what the first 5 lines should
@@ -735,8 +736,8 @@ look like.</li>
 ## 5  38 ECN</code></pre>
 <ul>
 <li><strong>Part B</strong>: Create a table containing only the number
-of faculty in each department by department id.Your answer should match
-the table below</li>
+of faculty in each department by department id. Your answer should match
+the table below. You may leave out the “(*)” of the column name.</li>
 </ul>
 <pre><code>##   did COUNT(*)
 ## 1 CHM       11
@@ -744,13 +745,10 @@ the table below</li>
 ## 3 ECN        9
 ## 4 MAT        9
 ## 5 STA        5</code></pre>
-<ul>
-<li><strong>Part C</strong>: What benefits does using LIMIT have for
-using table operations?</li>
-</ul>
-<p><strong>Question 6</strong> Write a SQL query to determine the number
-of faculty in each department by department name. Use the corresponding
-parts of Question 3 to make sure your query works.</p>
+<p><strong>Question 6</strong> (Question 5, but in SQL) Write a SQL
+query to determine the number of faculty in each department by
+department name. Use the corresponding tables in R (from Q3) to make
+sure your query works.</p>
 <ul>
 <li><p><strong>Part A</strong>: Write a SQL query to get a table
 containing only professor ids and department ids.</p></li>
@@ -758,10 +756,14 @@ containing only professor ids and department ids.</p></li>
 containing only professor ids and the name of the department they are
 in.</p></li>
 <li><p><strong>Part C</strong>: Write a SQL query to determine the
-number of faculty in each department by department id.</p></li>
-<li><p><strong>Part D</strong>: Put it all together to write a SQL query
-to determine the number of faculty in each department by department
-name. The first line of the table should say “Chemistry 11”</p></li>
+number of faculty in each department by department id (this should match
+the table in 5b).</p></li>
+<li><p><strong>Part D</strong>: Put it all together to write one SQL
+query to determine the number of faculty in each department by
+department name. The first line of the table should say “Chemistry
+11”</p></li>
+<li><p><strong>Part E</strong>: What benefits does using LIMIT have for
+using table operations?</p></li>
 </ul>
 </div>
 <div id="r-vs-sql" class="section level2">
