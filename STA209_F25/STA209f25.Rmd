@@ -164,8 +164,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/03 | [Hypothesis Testing 2](Lectures/HT2.pdf) | [HT Lab 1](Labs/TestingLab1.html) | - |
-| Wed 11/05 | [HT Part 3] | TBP | Reading Assignment TBP |
-| Fri 11/07 | [HT Part 4] | TBP | - |
+| Wed 11/05 | [Hypothesis Testing 3](Lectures/HT3.pdf) | [HT Lab 2](Labs/TestingLab2.html) | - |
+| Fri 11/07 | [HT Part 4] | TBP | Reading Assignment TBP |
 
 ---
 
@@ -173,7 +173,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 1) [Homework 5](Homework/Homework5.html) due Friday 11/07 at 10pm.
 2) [Feedback Assignment](Homework/209_feedback_assign.html) due Friday 11/07 at 10pm. See details for grading. Completion $\rightarrow$ extra token.
-3) [HT Lab 1](Labs/TestingLab1.html) due date TBD.
+3) [HT Lab 1](Labs/TestingLab1.html) due Friday 11/07 at 10pm.
+4) [HT Lab 2](Labs/TestingLab2.html) due Sunday 11/09 at 10pm.
 4) See Final Project info posted below.
 5) Exam 2 on Friday 11/14 in class.
 
