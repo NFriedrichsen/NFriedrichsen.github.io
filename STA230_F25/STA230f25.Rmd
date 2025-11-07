@@ -61,6 +61,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Mid-semester Feedback]](Homework/midsemester_feedback.html) due Friday 11/07 at 10pm. This is not a graded assignment, but will earn you a token for thoughtful completion.
 
+[[Homework 6]](Homework/hw6.html) (PCA / Clustering) due Friday 11/21 at 10pm.
+
 # Midterm Projects
 
 [Midterm 1] will be available on Gradescope Monday (10/06) . It is an individual assignment. See the gradescope template for more information when posted. Due Friday 10/17 at 10pm.
