@@ -165,7 +165,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 11/03 | [Hypothesis Testing 2](Lectures/HT2.pdf) | [HT Lab 1](Labs/TestingLab1.html) | - |
 | Wed 11/05 | [Hypothesis Testing 3](Lectures/HT3.pdf) | [HT Lab 2](Labs/TestingLab2.html) | - |
-| Fri 11/07 | [HT Part 4] | TBP | Reading Assignment TBP |
+| Fri 11/07 | [HT 4 -- More Types](Lectures/HT4.pdf) | [HT Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) | - |
 
 ---
 
@@ -177,6 +177,7 @@ Please note: material will not be posted until we've reached that point in the c
 4) [HT Lab 2](Labs/TestingLab2.html) due Sunday 11/09 at 10pm.
 4) See Final Project info posted below.
 5) Exam 2 on Friday 11/14 in class.
+6) [HT Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) will function as HW6 due Friday 11/14 at 10pm. I suggest completing this before the exam.
 
 ---
 
@@ -216,6 +217,10 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 [[Practice Exam 1]](Exams/practice_exam1.pdf)
 
 [[Exam 1 Topics List]](Exams/topic_list_exam1.html)
+
+### Exam 2 Materials
+
+The best thing you can do to prepare for the exam is to go through the confidence interval and hypothesis test labs + homeworks. Extra material will be posted here early in Week 11.
 
 <!-- **Assignments and Deadlines** -->
 
