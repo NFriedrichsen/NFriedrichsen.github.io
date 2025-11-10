@@ -181,6 +181,24 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+### Week 11 (Hypothesis Testing + Exam)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/03 | [Hypothesis Testing 5](Lectures/HT5.pdf) | [HT Lab 4 (Worksheet)](Labs/TestingLab4_Worksheet.pdf) | [ASA P-value Statment](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Wed 11/05 | Review | - | - |
+| Fri 11/07 | Exam | - | - |
+
+**Assignments and Due Dates**
+
+1) Continue to monitor project due dates.
+2) [HT Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) will function as HW6 due Friday 11/14 at 10pm. I suggest completing this before the exam. We will cover Q3 and Q4 in class Monday 11/10 as time permits.
+3) [HT Lab 4 (Worksheet)](Labs/TestingLab4_Worksheet.pdf) due Friday 11/10 at 10pm. DO BEFORE EXAM.
+4) In-class reading quiz over ASA P-value Statement document on Monday 11/17.
+5) Exam 2 on Friday 11/14. Review materials will be posted Tuesday morning.
+
+---
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information.
