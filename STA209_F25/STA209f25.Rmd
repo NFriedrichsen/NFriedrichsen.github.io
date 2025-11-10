@@ -6,6 +6,8 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
+  pdf_document:
+    toc: true
 ---
 
 $~$
@@ -234,6 +236,10 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 
 [[Homework 2 Sol]](Homework/Homework2_Solutions.html)
 
+[[HW4 Sol TBP]]
+
+[[HW5 Sol TBP]]
+
 ### Exam 1 Materials
 
 [[Practice Exam 1]](Exams/practice_exam1.pdf)
@@ -243,6 +249,15 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 ### Exam 2 Materials
 
 The best thing you can do to prepare for the exam is to go through the confidence interval and hypothesis test labs + homeworks. Extra material will be posted here early in Week 11.
+
+[Exam 2 Topics Outline](Exams/topic_list_exam2.html)
+
+[Exam 2 Short Answer Practice](Exams/exam2_shortanswer.html)
+
+[Exam 2 Practice](Exams/practice_exam2.html)
+
+[Exam 2 Practice Extra](Exams/practice_exam2_extra.pdf)
+
 
 <!-- **Assignments and Deadlines** -->
 
