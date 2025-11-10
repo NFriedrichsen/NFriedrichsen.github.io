@@ -46,6 +46,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 10/13 - Monday 10/27 | [Lab 7 -- Stat Techniques](Labs/Lab7_StatisticalTechniques.html) | Tuesday 10/28 at 10pm |
 | Wed 10/29 - Friday 10/31 | [Lab 8 -- Misleading Graphics](Labs/Lab8_MisleadingFigures.html) | Sunday 11/02 at 10pm |
 | Mon 11/03 - Friday 11/07 | [Lab 9 -- SQL Basics](Labs/Lab9_SQLBasics.html) | Sunday 11/09 at 10pm |
+| Mon 11/10 - Friday 11/14 | [Lab 10 -- SQL Part 2](Labs/Lab10_SQL2.html) | due Sunday 11/16 at 10pm |
 
 # Homework Assignments
 
