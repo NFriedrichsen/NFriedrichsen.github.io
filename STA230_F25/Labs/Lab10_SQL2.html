@@ -467,9 +467,10 @@ from last week using this query?</p>
 </div>
 <div id="lab-part-1-more-on-operations" class="section level1">
 <h1>Lab Part 1: More on Operations</h1>
-<p>We will be working with only the following five tables for this
-section, all of which contain information on things for the History
-department here at Grinnell:</p>
+<p>The examples listed below will use the <code>week9...</code> tables
+we saw last week. The questions will refer to the following five tables
+for this section, all of which contain information on things for the
+History department here at Grinnell:</p>
 <p><code>course_offering</code> ,<code>office_hours</code>,
 <code>professor_info</code> ,<code>syllabus_info</code> and
 <code>course</code>.</p>
@@ -552,9 +553,9 @@ dbGetQuery(mydb, &quot;SELECT count(DISTINCT pid) as number_of_unique_professors
 ## 1                          42</code></pre>
 <p><strong>Question 3:</strong> List the name of the professor, the
 number of courses they have taught over the years and their contact
-emails from all departments at Grinnell College. You will first need to
-investigate the tables, and join two appropriate data tables. Use the
-variable names ‘instructor’, ‘email’, and
+emails from the History department at Grinnell College. You will first
+need to investigate the tables, and join two appropriate data tables.
+Use the variable names ‘instructor’, ‘email’, and
 ‘number_of_courses_taught’.</p>
 </div>
 <div id="having-clause" class="section level4">
