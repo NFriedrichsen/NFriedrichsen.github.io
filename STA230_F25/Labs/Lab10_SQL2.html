@@ -675,23 +675,116 @@ dbGetQuery(mydb, &quot;SELECT * FROM week9courses WHERE did IN (&#39;CHM&#39;, &
 ## 8  STA230 Introduction to Data Science STA
 ## 9  STA310         Statistical Modeling STA
 ## 10 STA335   Probability &amp; Statistics I STA</code></pre>
-<p><strong>Question 7:</strong> Classify the instructors and their
-office hour timings in terms of day and start time for the semester
-2024/FA</p>
+<hr />
 </div>
 <div id="like-operator" class="section level4">
 <h4>LIKE Operator</h4>
 <p>The following code shows how the LIKE operator works to match
 patterns in a column. The <code>course_offering</code> table has info on
-professors and the department of courses they have taught.</p>
-<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT * FROM course&quot;)</code></pre>
-<p><strong>Question 5:</strong> Select the Professors whose name starts
+professors and the department of courses they have taught. Notice the
+syntax for how to match things. % serves as a wildcard operator in the
+LIKE clause.</p>
+<pre class="r"><code># pick all stat courses, regardless of number
+dbGetQuery(mydb, &quot;SELECT * from week9courses
+           WHERE cid LIKE &#39;STA%&#39;&quot;)</code></pre>
+<pre><code>##      cid                        cname did
+## 1 STA209           Applied Statistics STA
+## 2 STA230 Introduction to Data Science STA
+## 3 STA310         Statistical Modeling STA
+## 4 STA335   Probability &amp; Statistics I STA</code></pre>
+<pre class="r"><code># pick only 300 level stat courses
+dbGetQuery(mydb, &quot;SELECT * from week9courses
+           WHERE cid LIKE &#39;STA3%&#39;&quot;)</code></pre>
+<pre><code>##      cid                      cname did
+## 1 STA310       Statistical Modeling STA
+## 2 STA335 Probability &amp; Statistics I STA</code></pre>
+<p><strong>Question 7:</strong> Select the Professors whose name starts
 with either ‘A’ or ‘E’ and display their titles and phone numbers</p>
+<p><strong>Question 8:</strong> Using the <code>office_hours</code>
+table, find all professors who have office hours on Fridays. Then narrow
+this down to office hours beginning in the afternoon on Fridays.
+<strong>Hint:</strong> Times can be listed as character objects but
+inequalities (&gt; or &lt;) still work with them.</p>
+<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT * FROM office_hours
+           WHERE day = &#39;FRIDAY&#39; &quot;)
+
+dbGetQuery(mydb, &quot;SELECT * FROM office_hours
+           WHERE day = &#39;FRIDAY&#39; AND start_time &gt; &#39;12:00:00&#39; &quot;)</code></pre>
+</div>
+<div id="renaming-things-using-case-then-and-else" class="section level4">
+<h4>Renaming things using CASE, THEN and ELSE</h4>
+<p>You can rename or categorize values in SQL by using a CASE WHEN …
+THEN … ELSE statement, which checks conditions and assigns new labels
+based on those conditions.</p>
+<p>The following code creates a new variable in our table, classifying
+courses as having a lab or not.</p>
+<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT cid, cname,
+           CASE
+           WHEN LOWER(cname) LIKE &#39;%lab&#39; THEN &#39;Yes&#39;
+           ELSE &#39;No&#39;
+           END AS lab
+           FROM week9courses&quot;)</code></pre>
+<pre><code>##       cid                         cname lab
+## 1  CHM129       General Chemistry w/lab Yes
+## 2  CHM210    Analytical Chemistry w/Lab Yes
+## 3  CHM221     Organic Chemistry I w/lab Yes
+## 4  CHM358   Instrumental Analysis w/lab Yes
+## 5  CHM363    Physical Chemistry I w/lab Yes
+## 6  CHM395      ST: Adv NMR Spectroscopy  No
+## 7  CSC151 Functional Prob Solving w/lab Yes
+## 8  CSC161 Imperative Prob Solving w/lab Yes
+## 9  CSC207  OO Prob Slvg, Data Struc/Alg  No
+## 10 CSC208           Discrete Structures  No
+## 11 CSC213    Oper Sys/Paral Algor w/lab Yes
+## 12 CSC262               Computer Vision  No
+## 13 CSC301        Analysis of Algorithms  No
+## 14 CSC324   Software Design &amp; Dev w/Lab Yes
+## 15 CSC341    Auto, Frm Lng, Cmp Cmplxty  No
+## 16 CSC395  ST: Algorithms, Ethics &amp; Soc  No
+## 17 ECN111     Introduction to Economics  No
+## 18 ECN235             Money and Banking  No
+## 19 ECN240  Resource &amp; Environ Economics  No
+## 20 ECN280        Microeconomic Analysis  No
+## 21 ECN282        Macroeconomic Analysis  No
+## 22 ECN286                  Econometrics  No
+## 23 ECN295      ST: Behavioral Economics  No
+## 24 ECN366   Seminar in Health Economics  No
+## 25 ECN378    Seminar in Law &amp; Economics  No
+## 26 ECN379      Seminar in Econ of Crime  No
+## 27 ECN395  ST: Time Series Econometrics  No
+## 28 MAT100               Math Laboratory  No
+## 29 MAT131                    Calculus I  No
+## 30 MAT133                   Calculus II  No
+## 31 MAT195    ST: Intro to Math Practice  No
+## 32 MAT208           Discrete Structures  No
+## 33 MAT215                Linear Algebra  No
+## 34 MAT218      Elementary Number Theory  No
+## 35 MAT220        Differential Equations  No
+## 36 MAT313            Numerical Analysis  No
+## 37 MAT316       Foundations of Analysis  No
+## 38 MAT317              Fourier Analysis  No
+## 39 MAT321 Foundatns of Abstract Algebra  No
+## 40 MAT335    Probability &amp; Statistics I  No
+## 41 STA209            Applied Statistics  No
+## 42 STA230  Introduction to Data Science  No
+## 43 STA310          Statistical Modeling  No
+## 44 STA335    Probability &amp; Statistics I  No</code></pre>
+<p><strong>Question 9:</strong> Use your query for Question 8 as
+inspiration. Pull the instructor info, day, start_time, and then make a
+new column that shows whether the office hours start in the morning or
+afternoon.</p>
+<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT instructor, day, start_time, 
+        CASE
+          WHEN start_time &gt; &#39;12:00:00&#39; THEN &#39;AFTERNOON&#39;
+          ELSE &#39;MORNING&#39;
+        END AS time_of_day
+        FROM office_hours&quot;)</code></pre>
 <hr />
 </div>
 </div>
-<div id="lab-part-2-writing-tables" class="section level1">
-<h1>Lab Part 2: Writing Tables</h1>
+<div id="lab-part-2-writing-tables-placeholder-will-be-rewritten-for-wednesday-do-not-begin-until-told" class="section level1">
+<h1>Lab Part 2: Writing Tables (PLACEHOLDER, will be rewritten for
+Wednesday+, do not begin until told)</h1>
 <p>In this part of the lab, we will work with the data from last week
 (week9 tables)</p>
 <p><strong>Question 6</strong>: Using your code from last week, save 4
