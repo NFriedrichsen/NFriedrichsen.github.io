@@ -222,6 +222,10 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 
 [(Sampling Distributions Solutions)](Labs/SamplingDistribution_Lab_Solutions.html)
 
+[(CI Lab 1 Solutions)](Labs/CI_Lab1_Sol.html)
+
+[(CI Lab 2 Solutions)](Labs/CI_Lab2_Sol.html)
+
 ---
 
 ### Selected HW Solutions
