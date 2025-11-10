@@ -711,11 +711,6 @@ table, find all professors who have office hours on Fridays. Then narrow
 this down to office hours beginning in the afternoon on Fridays.
 <strong>Hint:</strong> Times can be listed as character objects but
 inequalities (&gt; or &lt;) still work with them.</p>
-<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT * FROM office_hours
-           WHERE day = &#39;FRIDAY&#39; &quot;)
-
-dbGetQuery(mydb, &quot;SELECT * FROM office_hours
-           WHERE day = &#39;FRIDAY&#39; AND start_time &gt; &#39;12:00:00&#39; &quot;)</code></pre>
 <hr />
 </div>
 <div id="renaming-things-using-case-then-and-else" class="section level4">
@@ -743,12 +738,6 @@ courses as having a lab or not.</p>
 inspiration. Pull the instructor info, day, start_time, and then make a
 new column that shows whether the office hours start in the morning or
 afternoon.</p>
-<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT instructor, day, start_time, 
-        CASE
-          WHEN start_time &gt; &#39;12:00:00&#39; THEN &#39;AFTERNOON&#39;
-          ELSE &#39;MORNING&#39;
-        END AS time_of_day
-        FROM office_hours&quot;)</code></pre>
 <hr />
 </div>
 </div>
