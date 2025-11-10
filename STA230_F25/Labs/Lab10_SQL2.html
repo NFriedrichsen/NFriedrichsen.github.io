@@ -439,6 +439,9 @@ mydb &lt;-  dbConnect(MySQL(), user = db_user, password = db_password,
 </div>
 <div id="subqueries" class="section level2">
 <h2>Subqueries</h2>
+<p>A subquery is a query inside of a query that creates a temporary
+result for the main query to use. Subqueries are useful to simplify
+complex joins by breaking them into smaller chunks.</p>
 <pre class="r"><code>dbGetQuery(mydb,&quot; SELECT  tab1.Name, tab1.ProfessorDepartment,
                           tab2.CourseName,tab2.CourseDepartment
                   FROM
@@ -462,7 +465,9 @@ mydb &lt;-  dbConnect(MySQL(), user = db_user, password = db_password,
 ## 6     Molly           Chemistry Analytical Chemistry w/Lab        Chemistry</code></pre>
 <p><strong>Question 1:</strong> Explain how this query works as best you
 can. What information does it provide? What problems could you answer
-from last week using this query?</p>
+from last week using this query? We will talk more about subqueries on
+Wed/Fri.</p>
+<hr />
 </div>
 </div>
 <div id="lab-part-1-more-on-operations" class="section level1">
@@ -474,6 +479,7 @@ History department here at Grinnell:</p>
 <p><code>course_offering</code> ,<code>office_hours</code>,
 <code>professor_info</code> ,<code>syllabus_info</code> and
 <code>course</code>.</p>
+<hr />
 <div id="distinct-operator" class="section level4">
 <h4>DISTINCT Operator</h4>
 <p><code>DISTINCT</code> returns on <em>unique</em> values from a
@@ -505,7 +511,7 @@ dbGetQuery(mydb, &quot;SELECT DISTINCT cid FROM week9profcourses LIMIT 5&quot;)<
 ## 4 ECN295
 ## 5 ECN366</code></pre>
 <p><strong>Note:</strong> The combination of pid and cid in the
-<code>week8profcourses</code> data table is already unique, so the
+<code>week9profcourses</code> data table is already unique, so the
 following DISTINCT does nothing extra.</p>
 <pre class="r"><code>dbGetQuery(mydb, &quot;SELECT DISTINCT pid, cid FROM week9profcourses
            LIMIT 5&quot;)</code></pre>
@@ -557,6 +563,7 @@ emails from the History department at Grinnell College. You will first
 need to investigate the tables, and join two appropriate data tables.
 Use the variable names ‘instructor’, ‘email’, and
 ‘number_of_courses_taught’.</p>
+<hr />
 </div>
 <div id="having-clause" class="section level4">
 <h4>HAVING Clause</h4>
@@ -602,6 +609,7 @@ count(pid) as &#39;number_of_courses&#39;
 <p><strong>Question 4:</strong> Make modifications to your SQL query in
 Question 3, try to list the professor details who have taught more than
 20 courses in the timespan of this data.</p>
+<hr />
 </div>
 <div id="between-clause" class="section level4">
 <h4>BETWEEN CLAUSE:</h4>
@@ -625,13 +633,10 @@ count(pid) as &#39;number_of_courses&#39;
 <p><strong>Question 5:</strong> Write a SQL query to list the name of
 professors and the average number of students enrolled in their
 courses.</p>
-<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT instructor, AVG(num_enrolled) FROM course_offering
-           GROUP BY instructor HAVING AVG(num_enrolled)&quot;)</code></pre>
 <p><strong>Question 6:</strong> Use your answer to Question 5, modify
 the query to show only professors with average enrollment values between
 20 and 24.</p>
-<pre class="r"><code>dbGetQuery(mydb, &quot;SELECT instructor, AVG(num_enrolled) FROM course_offering
-           GROUP BY instructor HAVING AVG(num_enrolled) BETWEEN 20 and 24&quot;)</code></pre>
+<hr />
 </div>
 <div id="where-clause" class="section level4">
 <h4>WHERE CLAUSE:</h4>
@@ -711,6 +716,7 @@ inequalities (&gt; or &lt;) still work with them.</p>
 
 dbGetQuery(mydb, &quot;SELECT * FROM office_hours
            WHERE day = &#39;FRIDAY&#39; AND start_time &gt; &#39;12:00:00&#39; &quot;)</code></pre>
+<hr />
 </div>
 <div id="renaming-things-using-case-then-and-else" class="section level4">
 <h4>Renaming things using CASE, THEN and ELSE</h4>
@@ -724,52 +730,15 @@ courses as having a lab or not.</p>
            WHEN LOWER(cname) LIKE &#39;%lab&#39; THEN &#39;Yes&#39;
            ELSE &#39;No&#39;
            END AS lab
-           FROM week9courses&quot;)</code></pre>
-<pre><code>##       cid                         cname lab
-## 1  CHM129       General Chemistry w/lab Yes
-## 2  CHM210    Analytical Chemistry w/Lab Yes
-## 3  CHM221     Organic Chemistry I w/lab Yes
-## 4  CHM358   Instrumental Analysis w/lab Yes
-## 5  CHM363    Physical Chemistry I w/lab Yes
-## 6  CHM395      ST: Adv NMR Spectroscopy  No
-## 7  CSC151 Functional Prob Solving w/lab Yes
-## 8  CSC161 Imperative Prob Solving w/lab Yes
-## 9  CSC207  OO Prob Slvg, Data Struc/Alg  No
-## 10 CSC208           Discrete Structures  No
-## 11 CSC213    Oper Sys/Paral Algor w/lab Yes
-## 12 CSC262               Computer Vision  No
-## 13 CSC301        Analysis of Algorithms  No
-## 14 CSC324   Software Design &amp; Dev w/Lab Yes
-## 15 CSC341    Auto, Frm Lng, Cmp Cmplxty  No
-## 16 CSC395  ST: Algorithms, Ethics &amp; Soc  No
-## 17 ECN111     Introduction to Economics  No
-## 18 ECN235             Money and Banking  No
-## 19 ECN240  Resource &amp; Environ Economics  No
-## 20 ECN280        Microeconomic Analysis  No
-## 21 ECN282        Macroeconomic Analysis  No
-## 22 ECN286                  Econometrics  No
-## 23 ECN295      ST: Behavioral Economics  No
-## 24 ECN366   Seminar in Health Economics  No
-## 25 ECN378    Seminar in Law &amp; Economics  No
-## 26 ECN379      Seminar in Econ of Crime  No
-## 27 ECN395  ST: Time Series Econometrics  No
-## 28 MAT100               Math Laboratory  No
-## 29 MAT131                    Calculus I  No
-## 30 MAT133                   Calculus II  No
-## 31 MAT195    ST: Intro to Math Practice  No
-## 32 MAT208           Discrete Structures  No
-## 33 MAT215                Linear Algebra  No
-## 34 MAT218      Elementary Number Theory  No
-## 35 MAT220        Differential Equations  No
-## 36 MAT313            Numerical Analysis  No
-## 37 MAT316       Foundations of Analysis  No
-## 38 MAT317              Fourier Analysis  No
-## 39 MAT321 Foundatns of Abstract Algebra  No
-## 40 MAT335    Probability &amp; Statistics I  No
-## 41 STA209            Applied Statistics  No
-## 42 STA230  Introduction to Data Science  No
-## 43 STA310          Statistical Modeling  No
-## 44 STA335    Probability &amp; Statistics I  No</code></pre>
+           FROM week9courses
+           LIMIT 6&quot;)</code></pre>
+<pre><code>##      cid                       cname lab
+## 1 CHM129     General Chemistry w/lab Yes
+## 2 CHM210  Analytical Chemistry w/Lab Yes
+## 3 CHM221   Organic Chemistry I w/lab Yes
+## 4 CHM358 Instrumental Analysis w/lab Yes
+## 5 CHM363  Physical Chemistry I w/lab Yes
+## 6 CHM395    ST: Adv NMR Spectroscopy  No</code></pre>
 <p><strong>Question 9:</strong> Use your query for Question 8 as
 inspiration. Pull the instructor info, day, start_time, and then make a
 new column that shows whether the office hours start in the morning or
