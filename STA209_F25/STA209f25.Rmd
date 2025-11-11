@@ -236,9 +236,9 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 
 [[Homework 2 Sol]](Homework/Homework2_Solutions.html)
 
-[[HW4 Sol TBP]]
+[[Homework 4 Sol]](Homework/Homework4_Solutions.html)
 
-[[HW5 Sol TBP]]
+[[Homework 5 Sol]](Homework/Homework5_Solutions.html)
 
 ### Exam 1 Materials
 
@@ -257,6 +257,8 @@ The best thing you can do to prepare for the exam is to go through the confidenc
 [Exam 2 Practice](Exams/practice_exam2.html)
 
 [Exam 2 Practice Extra](Exams/practice_exam2_extra.pdf)
+
+[Exam 2 Formula Sheet](Exams/exam2_formulas.pdf) All of this will appear as a page at the end of the exam. I may have to format it slightly differently to fit.
 
 
 <!-- **Assignments and Deadlines** -->
