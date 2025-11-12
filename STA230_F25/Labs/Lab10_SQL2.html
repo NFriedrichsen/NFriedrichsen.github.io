@@ -744,12 +744,17 @@ afternoon.</p>
 <div id="lab-part-2-writing-tables-added-wednesday" class="section level1">
 <h1>Lab Part 2: Writing Tables (added Wednesday)</h1>
 <p>In this part of the lab, we will pivot back to working with the
-<code>week9...</code> data tables.</p>
-<p><strong>Question 10</strong>: Using your code from last week, save 4
-dataframes with the week 9 tables.</p>
+<code>week9...</code> data tables. Run the following code to create R
+environment versions of the <code>week9...</code> tables.</p>
+<pre class="r"><code>week9courses = dbGetQuery(mydb, &quot;SELECT * FROM week9courses;&quot;)
+week9departments = dbGetQuery(mydb, &quot;SELECT * FROM week9departments&quot;)
+week9profcourses = dbGetQuery(mydb, &quot;SELECT * FROM week9profcourses&quot;)
+week9professors = dbGetQuery(mydb, &quot;SELECT * FROM week9professors&quot;)</code></pre>
 <div id="creating-a-temporary-database-in-memory" class="section level4">
 <h4>Creating a temporary database in memory</h4>
-<p>After finishing question 9, run the following command:</p>
+<p>The rest of this is mostly for illustrative purposes. After running
+the above code to store the <code>week9...</code> tables in the R
+environment, run the following command:</p>
 <pre class="r"><code>dbDisconnect(mydb)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>mydb &lt;- dbConnect(RSQLite::SQLite(), &quot;:memory:&quot;)</code></pre>
