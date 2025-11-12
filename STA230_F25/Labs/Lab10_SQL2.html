@@ -357,7 +357,7 @@ display: none;
 <ul>
 <li>Subqueries</li>
 <li>Additional Commands and Operations: Many of these questions are from
-Ankur Roy.</li>
+the previous semester’s lab by Prof. Will Rebelsky.</li>
 <li>Writing Tables</li>
 <li>Incorporating feedback: I tried to rewrite many of Prof. Will
 Rebelsky’s lab from last semester to be a bit more illustrative with
@@ -741,16 +741,15 @@ afternoon.</p>
 <hr />
 </div>
 </div>
-<div id="lab-part-2-writing-tables-placeholder-will-be-rewritten-for-wednesday-do-not-begin-until-told" class="section level1">
-<h1>Lab Part 2: Writing Tables (PLACEHOLDER, will be rewritten for
-Wednesday+, do not begin until told)</h1>
-<p>In this part of the lab, we will work with the data from last week
-(week9 tables)</p>
-<p><strong>Question 6</strong>: Using your code from last week, save 4
+<div id="lab-part-2-writing-tables-added-wednesday" class="section level1">
+<h1>Lab Part 2: Writing Tables (added Wednesday)</h1>
+<p>In this part of the lab, we will pivot back to working with the
+<code>week9...</code> data tables.</p>
+<p><strong>Question 10</strong>: Using your code from last week, save 4
 dataframes with the week 9 tables.</p>
 <div id="creating-a-temporary-database-in-memory" class="section level4">
 <h4>Creating a temporary database in memory</h4>
-<p>After finishing question 6, run the following command:</p>
+<p>After finishing question 9, run the following command:</p>
 <pre class="r"><code>dbDisconnect(mydb)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>mydb &lt;- dbConnect(RSQLite::SQLite(), &quot;:memory:&quot;)</code></pre>
@@ -780,9 +779,9 @@ database. We are creating a table called profcourses. It has 2 values, a
 pid that is an integer with at most 11 characters, and a cid which is a
 string of at most 6 characters. Neither of them is allowed to be
 NULL.</p>
-<p><strong>Question 7:</strong> Using similar queries, create tables for
-the other 3 dataframes.</p>
-<p><strong>Question 8:</strong> Investigating Options</p>
+<p><strong>Question 10:</strong> Using similar queries, create tables
+for the other 3 dataframes.</p>
+<p><strong>Question 11:</strong> Investigating Options</p>
 <ul>
 <li>What happens if you try to create a table that already exists?</li>
 <li>What if append=FALSE?</li>
@@ -795,8 +794,8 @@ values?</li>
 <div id="disconnecting-the-sql-connection" class="section level4">
 <h4>Disconnecting the SQL connection</h4>
 <pre class="r"><code>dbDisconnect(mydb)</code></pre>
-<p><strong>Note:</strong> More may be added. Or not. I work
-mysteriously.</p>
+<p><strong>Note:</strong> I may add one small extra bit for Subqueries
+for class on Friday.</p>
 </div>
 </div>
 
