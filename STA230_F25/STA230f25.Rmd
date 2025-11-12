@@ -82,3 +82,5 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[String R Cheat Sheet]](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf)
 
+[[Statistical Model Review]](Projects/ModelGuide.html) written by me.
+
