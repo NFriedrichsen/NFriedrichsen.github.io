@@ -187,9 +187,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 11/03 | [Hypothesis Testing 5](Lectures/HT5.pdf) | [HT Lab 4 (Worksheet)](Labs/TestingLab4_Worksheet.pdf) | [ASA P-value Statment](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
-| Wed 11/05 | Review | - | - |
-| Fri 11/07 | Exam | - | - |
+| Mon 11/10 | [Hypothesis Testing 5](Lectures/HT5.pdf) | [HT Lab 4 (Worksheet)](Labs/TestingLab4_Worksheet.pdf) | [ASA P-value Statment](https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf) |
+| Wed 11/12 | Review | - | - |
+| Fri 11/14 | Exam | - | - |
 
 **Assignments and Due Dates**
 
@@ -227,6 +227,10 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 [(CI Lab 1 Solutions)](Labs/CI_Lab1_Sol.html)
 
 [(CI Lab 2 Solutions)](Labs/CI_Lab2_Sol.html)
+
+[HT Lab 1](Labs/TestingLab1_Sol.html)
+
+[HT Lab 2](Labs/TestingLab2_Sol.html)
 
 ---
 
