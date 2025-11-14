@@ -62,7 +62,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Mid-semester Feedback]](Homework/midsemester_feedback.html) due Friday 11/07 at 10pm. This is not a graded assignment, but will earn you a token for thoughtful completion.
 
-[[Homework 6]](Homework/hw6.html) (PCA / Clustering) due Friday 11/21 at 10pm.
+[[Homework 6]](Homework/hw6.html) (PCA / Clustering) due Friday 11/21 at 10pm. Only one of your choice of Question 2 or 3 must be answered (Questions 1 and 4 still required).
 
 # Midterm Projects
 
