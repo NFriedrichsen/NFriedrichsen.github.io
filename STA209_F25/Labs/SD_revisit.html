@@ -1663,7 +1663,8 @@ Which would have a larger standard deviation? Explain. </p>
 variance are given below. Write an interpration of the <em>standard
 deviation</em> in this context. Modify the code to also get and
 interpret SD for the public group. </p>
-<pre class="r"><code>college &lt;- read.csv(&quot;https://collinn.github.io/data/college2019.csv&quot;)
+<pre class="r"><code>library(dplyr)
+college &lt;- read.csv(&quot;https://collinn.github.io/data/college2019.csv&quot;)
 # code to get values
 college %&gt;% filter(Type==&quot;Private&quot;) %&gt;% pull(Net_Tuition) %&gt;% mean()</code></pre>
 <pre><code>## [1] 17243.76</code></pre>
