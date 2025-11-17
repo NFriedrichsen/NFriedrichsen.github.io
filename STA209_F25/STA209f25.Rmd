@@ -201,6 +201,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+
+## Exam \#3 Content
+
+### Week 12 (Correlation and Regression)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/17 | [More on Standard Deviations](Lectures/StdDevVariance.pdf) | [SD Lab](Labs/SD_revisit.html) | - |
+| Wed 11/19 | [Correlation](Lectures/Correlation.pdf) | - | - |
+| Fri 11/21 | [Simple Linear Regression](Lectures/SLR.pdf) | - | - |
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information.
@@ -231,16 +242,6 @@ See [project link here](Exams/STA209_project.html) for all of the information.
 [HT Lab 1](Labs/TestingLab1_Sol.html)
 
 [HT Lab 2](Labs/TestingLab2_Sol.html)
-
----
-
-### Week 12 (Correlation and Regression)
-
-| Date | Lecture | Lab | Reading |
-|:-----|:-------|:-----|:-----|
-| Mon 11/17 | [More on Standard Deviations](Lectures/StdDevVariance.pdf) | [SD Lab](Labs/SD_revisit.html) | - |
-| Wed 11/19 | [Correlation](Lectures/Correlation.pdf) | - | - |
-| Fri 11/21 | [Simple Linear Regression](Lectures/SLR.pdf) | - | - |
 
 ---
 
