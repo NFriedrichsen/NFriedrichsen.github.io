@@ -47,6 +47,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 10/29 - Friday 10/31 | [Lab 8 -- Misleading Graphics](Labs/Lab8_MisleadingFigures.html) | Sunday 11/02 at 10pm |
 | Mon 11/03 - Friday 11/07 | [Lab 9 -- SQL Basics](Labs/Lab9_SQLBasics.html) | Sunday 11/09 at 10pm |
 | Mon 11/10 - Friday 11/14 | [Lab 10 -- SQL Part 2](Labs/Lab10_SQL2.html) | due Sunday 11/16 at 10pm |
+| Mon 11/17 - Friday 11/21 | [Lab 11 -- R Shiny Apps](Labs/Lab11_RShiny.html) | due Sunday 11/23 at 10pm |
 
 # Homework Assignments
 
