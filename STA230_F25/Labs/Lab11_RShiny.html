@@ -496,18 +496,18 @@ shinyApp(ui, server)</code></pre>
 <p>This approach is more flexible, but also more complicated to
 explain.</p>
 <ul>
-<li>First, fluidRow() sets up a row containing two columns
+<li>First, <code>fluidRow()</code> sets up a row containing two columns
 <ul>
 <li>The first instance of column() creates a 2-unit wide numericInput -
-using the wellPanel style (grey background) at the start of the first
-row.</li>
-<li>The second instance creates an 8-unit wide sliderInput, notice this
-doesn’t extend across the entire 8-unit length (but that space was
-allocated for it).</li>
+using the <code>wellPanel</code> style (grey background) at the start of
+the first row.</li>
+<li>The second instance creates an 8-unit wide <code>sliderInput</code>,
+notice this doesn’t extend across the entire 8-unit length (but that
+space was allocated for it).</li>
 </ul></li>
-<li>Next, fluidRow() is used to set up a second row -Then the third use
-of column() creates an 8-unit wide plotOutput within this second
-row.</li>
+<li>Next, <code>fluidRow()</code> is used to set up a second row -Then
+the third use of <code>column()</code> creates an 8-unit wide
+<code>plotOutput</code> within this second row.</li>
 </ul>
 <p><strong>Question 1</strong>: Using the example app as a template,
 remove the second use of <code>fluidRow()</code> and place the
