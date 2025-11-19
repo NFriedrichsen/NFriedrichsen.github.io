@@ -215,7 +215,8 @@ Please note: material will not be posted until we've reached that point in the c
 **Assignments and Due Dates**
 
 1) [SD Lab](Labs/SD_revisit.html) due Wednesday 11/19 at 10pm.
-2) [Correlation and Regression Lab](Labs/corr_regression_lab.html) due Sunday 11/21 at 10pm. More will be added to this for Friday's class.
+2) [Correlation and Regression Lab](Labs/corr_regression_lab.html) due Sunday 11/23 at 10pm. More will be added to this for Friday's class.
+3) Exam 3 Heads up: 2-5pm Tuesday 12/16. Dictated by the college based on in-class meet time.
 
 ### Project Information
 
