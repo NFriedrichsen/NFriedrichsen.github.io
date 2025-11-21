@@ -210,13 +210,14 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 11/17 | [More on Standard Deviations](Lectures/StdDevVariance.pdf) | [SD Lab](Labs/SD_revisit.html) | - |
 | Wed 11/19 | [Correlation](Lectures/Correlation.pdf) | [Correlation and Regression Lab](Labs/corr_regression_lab.html) | - |
-| Fri 11/21 | [Simple Linear Regression](Lectures/SLR.pdf) | - | - |
+| Fri 11/21 | [Simple Linear Regression](Lectures/SLR.pdf) | [Correlation and Regression Lab](Labs/corr_regression_lab.html) cont'd | - |
 
 **Assignments and Due Dates**
 
 1) [SD Lab](Labs/SD_revisit.html) due Wednesday 11/19 at 10pm.
 2) [Correlation and Regression Lab](Labs/corr_regression_lab.html) due Sunday 11/23 at 10pm. More will be added to this for Friday's class.
 3) Exam 3 Heads up: 2-5pm Tuesday 12/16. Dictated by the college based on in-class meet time.
+4) Project dates revised.
 
 ### Project Information
 
@@ -224,8 +225,8 @@ See [project link here](Exams/STA209_project.html) for all of the information. A
 
 1) Group assignments due Monday 11/10 at 10pm via email. 
 2) Project Proposal due Sunday 11/16 at 10pm. 
-3) Exploratory analysis due Friday 11/28 at 10pm. 
-4) Final project write-up due Friday 12/12 at 10pm.
+3) Exploratory analysis due Friday 12/05 at 10pm (revised from 11/28)
+4) Final project write-up due Friday 12/19 at 5pm (revised from 12/14)
 
 ### Lab Solutions
 
