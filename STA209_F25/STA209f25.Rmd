@@ -219,6 +219,16 @@ Please note: material will not be posted until we've reached that point in the c
 3) Exam 3 Heads up: 2-5pm Tuesday 12/16. Dictated by the college based on in-class meet time.
 4) Project dates revised.
 
+---
+
+### Week 13 (More on Regression)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 11/24 | [Regression -- Categorical Predictors](Lectures/SLR2_Cat.pdf) | [Regression Lab 2](Labs/Regression_Lab2.html) | - |
+| Wed 11/19 | [More Regression] | - |
+| Fri 11/21 | No class | - | - |
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information. At my disgression I may adjust due dates back a bit to allow for more time.
