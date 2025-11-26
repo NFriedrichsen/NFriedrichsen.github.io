@@ -226,14 +226,15 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 11/24 | [Regression -- Categorical Predictors](Lectures/SLR2_Cat.pdf) | [Regression Lab 2](Labs/Regression_Lab2.html) | - |
-| Wed 11/19 | [Multiple Linear Regression 1](Lectures/MLR1.pdf) | [Regression Lab 2](Labs/MLR_Lab.html) cont'd |
+| Wed 11/19 | [Multiple Linear Regression 1](Lectures/MLR1.pdf) | [MLR Lab](Labs/MLR_Lab.html) |
 | Fri 11/21 | No class | - | - |
 
 **Assignments and Due Dates**
 
 1) Start collecting and analyzing data for the exploratory analysis.
-2) [Multiple Linear Regression 1](Lectures/MLR1.pdf) | [Regression Lab 2](Labs/Regression_Lab2.html) due Monday 12/01 at 10pm.
+2) [Multiple Linear Regression 1](Lectures/MLR1.pdf) | [Regression Lab 2](Labs/Regression_Lab2.html) due Sunday 11/3 at 10pm.
 3) A regression homework and reading assignment will be posted early next week.
+4) MLR Lab due date TBD.
 
 ### Project Information
 
