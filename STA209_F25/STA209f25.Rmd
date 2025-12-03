@@ -236,6 +236,16 @@ Please note: material will not be posted until we've reached that point in the c
 3) A regression homework and reading assignment will be posted early next week.
 4) MLR Lab due date TBD.
 
+---
+
+### Week 14 (ANOVA)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/01 | No Class (Weather) | - | - |
+| Wed 12/03 | [ANOVA 1](Lectures/Anova1.pdf) | [ANOVA Lab](Labs/ANOVA_lab.html) | - |
+| Fri 12/05 | [ANOVA 2] | [ANOVA Lab] cont'd | - |
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information. At my disgression I may adjust due dates back a bit to allow for more time.
