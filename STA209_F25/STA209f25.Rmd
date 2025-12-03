@@ -246,6 +246,13 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 12/03 | [ANOVA 1](Lectures/Anova1.pdf) | [ANOVA Lab](Labs/ANOVA_lab.html) | - |
 | Fri 12/05 | [ANOVA 2] | [ANOVA Lab] cont'd | - |
 
+**Assignments and Due Dates**
+
+1) [MLR Lab](Labs/MLR_Lab.html) due Friday 12/05 at 10pm.
+2) Exploratory Analysis for project due Friday 12/05 at 10pm.
+3) Reading will be posted on Friday as well, we will have to cut one of them due to time constraints due to Monday's missed class.
+4) Exam 2 Corrections due Wednesday 12/10 at 10pm. A gradescope submission will be posted.
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information. At my disgression I may adjust due dates back a bit to allow for more time.
