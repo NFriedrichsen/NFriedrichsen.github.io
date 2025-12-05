@@ -74,7 +74,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 [Midterm 2] instructions posted on Gradescope 10/31. You are allowed to choose your own group with 2-3 total students per group. You may work individually, but I would avoid this if possible. Originally Due Sunday 11/16 at 10pm $\rightarrow$ moved to Friday 11/21 at 10pm.
 
-[Midterm 3](Projects/Midterm3.html) instructions linked here. Due Friday 12/05 at 10pm.
+[Midterm 3](Projects/Midterm3.html) instructions linked here. Due Friday 12/05 at 10pm. The gradescope submission is for the pdf file you create. In an email your group needs to send me your data file and all code used in the project.
 
 [Midterm 4](Projects/Midterm4.html) instructions linked here. Due Friday 12/19 at 10pm.
 
