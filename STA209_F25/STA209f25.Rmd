@@ -254,7 +254,7 @@ Please note: material will not be posted until we've reached that point in the c
 3) Exam 2 Corrections due Wednesday 12/10 at 10pm. A gradescope submission will be posted.
 4) [ANOVA Lab](Labs/ANOVA_lab.html) due Sunday 12/07 at 10pm.
 5) Reading assignment 2 posted. In-class quiz will be administered at the start of class on Friday 12/12.
-6) [Homework 7] posted. Due Friday 12/12 at 10pm. Start Early!
+6) [Homework 7](Homework/Homework7.html) posted. Due Friday 12/12 at 10pm. Start Early!
 
 ### Project Information
 
