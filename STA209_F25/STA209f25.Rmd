@@ -235,6 +235,7 @@ Please note: material will not be posted until we've reached that point in the c
 2) [Regression Lab 2](Labs/Regression_Lab2.html) due Monday 12/01 at 10pm.
 3) A regression homework and reading assignment will be posted early next week.
 4) MLR Lab due date TBD.
+5) [Homework 7](Homework/Homework7.html) due Friday 12/12 at 10pm.
 
 ---
 
@@ -244,14 +245,16 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 12/01 | No Class (Weather) | - | - |
 | Wed 12/03 | [ANOVA 1](Lectures/Anova1.pdf) | [ANOVA Lab](Labs/ANOVA_lab.html) | - |
-| Fri 12/05 | [ANOVA 2] | [ANOVA Lab] cont'd | - |
+| Fri 12/05 | [ANOVA 2](Lectures/Anova2.pdf) | [ANOVA Lab](Labs/ANOVA_lab.html) cont'd | [To Explain or To Predict](Homework/ReadingAssign2.html) |
 
 **Assignments and Due Dates**
 
 1) [MLR Lab](Labs/MLR_Lab.html) due Friday 12/05 at 10pm.
 2) Exploratory Analysis for project due Friday 12/05 at 10pm.
-3) Reading will be posted on Friday as well, we will have to cut one of them due to time constraints due to Monday's missed class.
-4) Exam 2 Corrections due Wednesday 12/10 at 10pm. A gradescope submission will be posted.
+3) Exam 2 Corrections due Wednesday 12/10 at 10pm. A gradescope submission will be posted.
+4) [ANOVA Lab](Labs/ANOVA_lab.html) due Sunday 12/07 at 10pm.
+5) Reading assignment 2 posted. In-class quiz will be administered at the start of class on Friday 12/12.
+6) [Homework 7] posted. Due Friday 12/12 at 10pm. Start Early!
 
 ### Project Information
 
