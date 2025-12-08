@@ -256,6 +256,23 @@ Please note: material will not be posted until we've reached that point in the c
 5) [Homework 7](Homework/Homework7.html) posted. Due Friday 12/12 at 10pm. Start Early!
 6) Reading assignment 2 posted. In-class quiz will be administered at the start of class on Friday 12/12.
 
+---
+
+### Week 15 (ANOVA + Regression)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 12/08 | [ANOVA & Regression](Lectures/ANOVA_SLR.html) | Review/Work Time | - |
+| Wed 12/10 | [ANOVA Residuals] | [ANOVA Residuals Lab] | - |
+| Fri 12/12 | [TBD] | - | Reading Quiz |
+
+**Assignments and Due Dates**
+
+1) Exam 2 Corrections due Wednesday 12/10 at 10pm. A gradescope submission will be posted.
+2) [Homework 7](Homework/Homework7.html) posted. Due Friday 12/12 at 10pm. Start Early!
+3) Reading assignment 2 posted. In-class quiz will be administered at the start of class on Friday 12/12.
+
+
 ### Project Information
 
 See [project link here](Exams/STA209_project.html) for all of the information. At my disgression I may adjust due dates back a bit to allow for more time.
