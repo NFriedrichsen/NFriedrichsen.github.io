@@ -263,7 +263,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 12/08 | [ANOVA & Regression](Lectures/ANOVA_SLR.pdf) | Review/Work Time | - |
-| Wed 12/10 | [Regression Residuals](Lectures/Regression_Error.pdf) | [Residuals Lab](Labs/RegressionError.html) | - |
+| Wed 12/10 | [Regression Residuals](Lectures/Regression_Error.pdf) | [Residuals Lab](Labs/RegressionError_lab.html) | - |
 | Fri 12/12 | [TBD] | - | Reading Quiz |
 
 **Assignments and Due Dates**
