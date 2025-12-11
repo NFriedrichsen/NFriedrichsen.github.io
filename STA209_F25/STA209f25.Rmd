@@ -346,6 +346,22 @@ The best thing you can do to prepare for the exam is to go through the confidenc
 
 [Exam 2 Formula Sheet](Exams/exam2_formulas.pdf) All of this will appear as a page at the end of the exam. I may have to format it slightly differently to fit.
 
+### Exam 3 Materials
+
+The best prep you will have for this exam is going through the regression and ANOVA labs + HW7 and spending time to fully understand all parts. Most of the questions will be structured in ways similar to the labs. HW7 solutions will be posted on Saturday morning (after it is due). 
+
+Below is some extra material you may find helpful. There are not extensive formulas for this exam, only those related to ANOVA will be needed. Linear regression concepts will be tested, but formulas for slopes/intercepts are unnecessary.
+
+[Exam 3 Topics List](Exams/Exam_3_Topics_List.pdf)
+
+[Exam 3 Short Answer Practice] (TBP)
+
+[Exam 3 Practice A](Exams/exam3_practice1.pdf) [A snippet from a previous review related to regression concepts]
+
+[Exam 3 Practice B](Exams/exam3_practice2.pdf) [A snippet from a previous review related to regression concepts]
+
+[Exam 3 ANOVA Formulas](Exams/exam3_ANOVA_formulas.pdf)
+
 
 <!-- **Assignments and Deadlines** -->
 
