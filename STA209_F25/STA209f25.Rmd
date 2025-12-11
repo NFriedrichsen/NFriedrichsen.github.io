@@ -304,6 +304,16 @@ See [project link here](Exams/STA209_project.html) for all of the information. A
 
 [HT Lab 2](Labs/TestingLab2_Sol.html)
 
+[Testing Worksheet 3](Labs/TestingLab3_Worksheet_Sol.html)
+
+[Correlation and Regression Lab](Labs/corr_regression_lab_solutions.html)
+
+[Regression Lab 2](Labs/Regression_Lab2_Sol.html)
+
+[MLR Lab](Labs/MLR_Lab_Sol.html)
+
+[ANOVA Lab](Labs/ANOVA_lab_sol.html)
+
 ---
 
 ### Selected HW Solutions
