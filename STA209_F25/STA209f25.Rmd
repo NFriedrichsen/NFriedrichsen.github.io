@@ -364,6 +364,8 @@ Below is some extra material you may find helpful. There are not extensive formu
 
 [Exam 3 ANOVA Formulas](Exams/exam3_ANOVA_formulas.pdf)
 
+[Exam 3 ANOVA Practice](Exams/exam3_anova_practice.pdf) reworked worksheet from an unfortunately cancelled guest-lecture. Unattributed for guest anonymity. 
+
 
 <!-- **Assignments and Deadlines** -->
 
