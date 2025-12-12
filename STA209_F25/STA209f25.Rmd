@@ -282,6 +282,8 @@ See [project link here](Exams/STA209_project.html) for all of the information. A
 3) Exploratory analysis due Friday 12/05 at 10pm (revised from 11/28)
 4) Final project write-up due Friday 12/19 at 5pm (revised from 12/14)
 
+**Bonus:** [Example of a final write-up](Exams/final_writeup.pdf) courtesy of Prof. Nolte. You do not need to follow this exact template (please don't!)
+
 ### Lab Solutions
 
 [(Quantitative Variabls Lab Sol)](Labs/QuantVarLab_Solutions.html)
@@ -354,7 +356,7 @@ Below is some extra material you may find helpful. There are not extensive formu
 
 [Exam 3 Topics List](Exams/Exam_3_Topics_List.pdf)
 
-[Exam 3 Short Answer Practice] (TBP)
+[Exam 3 Short Answer Practice](Exams/exam3_shortanswer.html)
 
 [Exam 3 Practice A](Exams/exam3_practice1.pdf) [A snippet from a previous review related to regression concepts]
 
