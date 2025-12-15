@@ -328,6 +328,8 @@ See [project link here](Exams/STA209_project.html) for all of the information. A
 
 [[Homework 5 Sol]](Homework/Homework5_Solutions.html)
 
+[[Homework 7 Sol]](Homework/Homework7_Solutions.html)
+
 ### Exam 1 Materials
 
 [[Practice Exam 1]](Exams/practice_exam1.pdf)
