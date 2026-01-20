@@ -1,0 +1,101 @@
+---
+title: "STA-230 - Introduction to Data Science (Fall 2025)"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+  pdf_document:
+    toc: true
+---
+
+$~$
+
+Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# Syllabus
+
+Welcome to the course website for STAT 230, Introduction to Data Science. To begin, you can find the course syllabus linked below:
+
+- [Click here](syllabus230s26.html) to view the course syllabus
+
+You can locate course content by scrolling, or by using the navigation bar in the upper left.  
+
+Please note: material will not be posted until we've reached that point in the course.
+
+### Links to R Installations
+
+1) Install R (https://cran.r-project.org/)
+2) Install RStudio (https://posit.co/download/rstudio-desktop/)
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# Lab Agenda
+
+| Date | Lab | Due Date |
+|:-------|:-----|:-----|
+| Wed 1/21 - Fri 1/23 | [Lab 1 -- Intro to R](Labs/Lab1.html) | Sunday 9/7 at 10pm |
+
+
+<!-- | Mon 9/08 - Fri 9/12 | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | Sunday 9/14 at 10pm | -->
+<!-- | Mon 9/15 - Fri 9/19 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 9/21 at 10pm | -->
+<!-- | Mon 9/21 - Fri 9/26 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm | -->
+<!-- | Mon 9/28 - Fri 10/03 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Sunday 10/05 at 10pm | -->
+<!-- | Mon 10/06 - Fri 10/10 | [Lab 6 -- Data Processing (Strings)](Labs/Lab6_DataProcessing.html) | Sunday 10/12 at 10pm | -->
+<!-- | Mon 10/13 - Monday 10/27 | [Lab 7 -- Stat Techniques](Labs/Lab7_StatisticalTechniques.html) | Tuesday 10/28 at 10pm | -->
+<!-- | Wed 10/29 - Friday 10/31 | [Lab 8 -- Misleading Graphics](Labs/Lab8_MisleadingFigures.html) | Sunday 11/02 at 10pm | -->
+<!-- | Mon 11/03 - Friday 11/07 | [Lab 9 -- SQL Basics](Labs/Lab9_SQLBasics.html) | Sunday 11/09 at 10pm | -->
+<!-- | Mon 11/10 - Friday 11/14 | [Lab 10 -- SQL Part 2](Labs/Lab10_SQL2.html) | due Sunday 11/16 at 10pm | -->
+<!-- | Mon 11/17 - Friday 11/21 | [Lab 11 -- R Shiny Apps](Labs/Lab11_RShiny.html) | due Sunday 11/23 at 10pm | -->
+<!-- | Mon 11/24 - Friday 11/28 | [BONUS: Plotly Stuff Courtesty of Prof. Will Rebelsky](https://rebelskyw.cs.grinnell.edu/wp-content/uploads/2024/09/Lab13.html) |  -->
+
+# Homework Assignments
+
+Will be posted here.
+
+<!-- [[Homework 1]](Homework/hw1.html) (Intro R) due Fri 9/12 at 10pm -->
+
+<!-- [[Homework 2]](Homework/hw2.html) (Functions) due Friday 9/19 at 10pm -->
+
+<!-- [[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm -->
+
+<!-- [[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 10/10 at 10pm (extended). -->
+
+<!-- [[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 10/31 at 10pm. -->
+
+<!-- [[Mid-semester Feedback]](Homework/midsemester_feedback.html) due Friday 11/07 at 10pm. This is not a graded assignment, but will earn you a token for thoughtful completion. -->
+
+<!-- [[Homework 6]](Homework/hw6.html) (PCA / Clustering) due Friday 11/21 at 10pm. Only one of your choice of Question 2 or 3 must be answered (Questions 1 and 4 still required). -->
+
+<!-- [[Homework 7]](Homework/hw7.html) (SQL) due Friday 12/05 at 10pm. -->
+
+<!-- # Midterm Projects -->
+
+<!-- [Midterm 1] will be available on Gradescope Monday (10/06) . It is an individual assignment. See the gradescope template for more information when posted. Due Friday 10/17 at 10pm. -->
+
+<!-- [Midterm 2] instructions posted on Gradescope 10/31. You are allowed to choose your own group with 2-3 total students per group. You may work individually, but I would avoid this if possible. Originally Due Sunday 11/16 at 10pm $\rightarrow$ moved to Friday 11/21 at 10pm. -->
+
+<!-- [Midterm 3](Projects/Midterm3.html) instructions linked here. Due Friday 12/05 at 10pm. The gradescope submission is for the pdf file you create. In an email your group needs to send me your data file and all code used in the project. -->
+
+<!-- [Midterm 4](Projects/Midterm4.html) instructions linked here. Due Friday 12/19 at 10pm. -->
+
+
+# Assigned Readings
+
+Will be posted here.
+
+<!-- [Readings for Lab 8](Labs/Lab8_Readings.html) read before class on Wednesday 10/29. -->
+
+<!-- # Helpful Links -->
+
+<!-- [[GGplot Cheat Sheet]](https://rstudio.github.io/cheatsheets/html/data-visualization.html) -->
+
+<!-- [[Matching Plots]](MatchingPlots.html) Courtesy of Instructor Will Rebelsky. -->
+
+<!-- [[String R Cheat Sheet]](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf) -->
+
+<!-- [[Statistical Model Review]](Projects/ModelGuide.html) written by me. -->
+
