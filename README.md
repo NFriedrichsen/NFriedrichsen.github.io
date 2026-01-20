@@ -4,7 +4,7 @@
 ## Teaching (Grinnell)
 ### Current Semester
 
-[Stat 230 (Spring 26)](https://nfriedrichsen.github.io/STA230_S26/STA230s26_page.html)
+[Stat 230 (Spring 26)](https://nfriedrichsen.github.io/STA230_S26/sta230s26_page.html)
 
 
 
