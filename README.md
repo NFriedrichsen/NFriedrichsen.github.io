@@ -4,7 +4,7 @@
 ## Teaching (Grinnell)
 ### Current Semester
 
-TBP
+[Stat 230 (Fall 2025)](https://nfriedrichsen.github.io/STA230_S26/STA230s26_page.html)
 
 
 
