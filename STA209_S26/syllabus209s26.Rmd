@@ -1,5 +1,5 @@
 ---
-title: "Syllabus - STAT-209 (Fall 2025)"
+title: "Syllabus - STAT-209 (Spring 2026)"
 output:
   html_document: default
   pdf_document: default
