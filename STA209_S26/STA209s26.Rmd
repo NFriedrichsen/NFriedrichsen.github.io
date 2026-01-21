@@ -1,0 +1,57 @@
+---
+title: "STA-209 - Applied Statistics (Spring 2026)"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+  pdf_document:
+    toc: true
+---
+
+$~$
+
+Last updated: `r format(Sys.time(), "%a %b %e %Y, %H:%M")`
+
+<hr style="border: none; border-top: 5px solid black;">
+
+# Syllabus
+
+Welcome to the course website for STAT 209, Introduction to Applied Statistics. To begin, you can find the course syllabus linked below:
+
+- [Click here](syllabus209s26.html) to view the course syllabus
+
+You can locate course content by scrolling, or by using the navigation bar in the upper left.  
+
+Please note: material will not be posted until we've reached that point in the course.
+
+<hr style="border: none; border-top: 5px solid black;">
+
+## Exam \#1 Content
+
+### Week 1 (Intro)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Wed 1/21 | [Syllabus](syllabus209s26.html) and [Introduction](Lectures/01_Introduction.pdf) | [Lab](Labs/R_packages.html) | IMS Sections 1.2.1-1.2.3 before Monday |
+| Fri 1/23 | [Intro to R](Lectures/R_Introduction.pdf) | [Intro R Lab](Labs/R_Introduction.html) | - |
+
+**Assignments and Deadlines**
+
+1) Install R (https://cran.r-project.org/) before Friday.
+2) Install RStudio (https://posit.co/download/rstudio-desktop/) before Friday.
+
+---
+
+### Reading Assignments
+
+IMS Sections 1.2.1-1.2.3 before Monday 1/26.
+
+### Lab Assignments
+
+[Intro R Lab](Labs/R_Introduction.html) due on Gradescope Sunday 1/25 at 10pm.
+
+### Homework Assignments
+
+Will be posted here.
