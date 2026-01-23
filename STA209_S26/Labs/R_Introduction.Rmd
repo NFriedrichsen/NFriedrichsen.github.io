@@ -24,7 +24,7 @@ At present, you are reading it formatted as an HTML document, but as we have see
 
 When you Knit an R Markdown file, it will ask you to first save and name your document. I recommend sticking to a consistent format throughout the semester: something like `lastname_firstname_[lab/hwk]#.Rmd`. For example, I would name this `friedrichsen_nathan_lab1.Rmd`. After you knit, this will also be the name of your pdf.
 
-For this lab, we will be following along with this document which we can begin by downloading the .Rmd file associated with it [here](01_introR.Rmd); this is allow us to see side-by-side how the .Rmd file looks compared to the finished output. 
+For this lab, we will be following along with this document which we can begin by downloading the .Rmd file associated with it [here](R_Introduction.Rmd); this is allow us to see side-by-side how the .Rmd file looks compared to the finished output. 
 
 For example, reading this online we see that **this sentence is bold**, while in the .Rmd file we see that the sentence is a plain-text sentence surrounded by two asterisks (**) on each side. This is an example of using [markdown](https://www.markdownguide.org/basic-syntax/) to format our documents. For this lab, we will be following along with the .Rmd file, filling bits in as prompted. Let's begin by introducing some of the more common markdown syntax that we will use in this class.
 
