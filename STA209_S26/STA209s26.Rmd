@@ -50,7 +50,7 @@ IMS Sections 1.2.1-1.2.3 before Monday 1/26.
 
 ### Lab Assignments
 
-[Intro R Lab](Labs/R_Introduction.html) due on Gradescope Sunday 1/25 at 10pm.
+[Intro R Lab](Labs/R_Introduction.html) due on Gradescope Wednesday 1/28 at 10pm. Gradescope info will be given in Class on Monday.
 
 ### Homework Assignments
 
