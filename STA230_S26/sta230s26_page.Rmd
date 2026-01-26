@@ -37,7 +37,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lab | Due Date |
 |:-------|:-----|:-----|
-| Wed 1/21 - Fri 1/23 | [Lab 1 -- Intro to R](Labs/Lab1.html) | Sunday 1/25 at 10pm |
+| Wed 1/21 - Wed 1/28 | [Lab 1 -- Intro to R](Labs/Lab1.html) | Fri 1/30 at 10pm |
 
 
 <!-- | Mon 9/08 - Fri 9/12 | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | Sunday 9/14 at 10pm | -->
