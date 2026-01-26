@@ -44,6 +44,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 1/26 | - | [Intro R Lab](Labs/R_Introduction.html) cont'd | - |
+| Wed 1/28 | Quantitative Variables | TBP | - |
+| Fri 1/30 | Data Visualization | TBP | - |
+
+---
+
 ### Reading Assignments
 
 IMS Sections 1.2.1-1.2.3 before Monday 1/26.
