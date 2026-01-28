@@ -1,0 +1,191 @@
+---
+title: "Quantitative Variables Lab"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Before you begin, make sure to load the following packages, installing if necessary with `install.packages("ggplot2")` and `install.packages("dplyr")`. I tend to put "message=F, warning=F" in the `R` code chunk setup when I load these otherwise you get a bunch of messages that take up your page. Using "echo=F" will prevent the code from showing. Using "eval=F" will prevent the code from running, but will still show what you have written.
+
+```{r, message=F, warning = F}
+library(ggplot2)
+library(dplyr)
+```
+
+We will work through a series of questions in this lab, which will cover some of the topics we went over in the Introduction and Quantitative Variables (Part 1) slides. Fill in answers to the questions presented throughout this document. You may work together with others, but each student will need to submit their own version of this file to Gradescope as a .pdf with all answers filled out.
+
+You may use the template .Rmd file [found here](QuantVarLab.Rmd) to fill in your answers.
+
+---
+
+# Distributions
+
+The *distribution* of a variable is a description of how frequently values of that variable show up. We saw that the way in which we describe the distribution of a variable is different depending on if the variable is categorical or quantitative. 
+
+## Part 1 -- Conceptual Questions
+
+**Question 1:** What things do we need to include to describe the distribution of a quantitative variable?
+
+*Answer*: 
+
+**Question 2:** If I have a symmetric distribution with no (or few) outliers, which measures of center and spread should I use?
+
+*Answer*: 
+
+**Question 3:** If I have a skewed distribution or one with many or big outliers, which measures of center and spread should I use?
+
+*Answer*: 
+
+**Question 4:** *Why* do skew/outliers make mean and standard deviation bad measures of center and spread?
+
+*Answer*: 
+
+## Part 2 -- Histograms
+
+For the next (many) questions we are going to use the College data set presented in the last few sets of slides. Read in the dataset for the College data using the following code. In the R file for this lab you will also see code that creates these graphics (we will talk more about this in a couple of weeks) and a few other code chunks that you may run to get summary statistics for this data. 
+
+```{r}
+colleges <- read.csv("https://remiller1450.github.io/data/Colleges2019_Complete.csv")
+```
+
+### Admission Rates
+
+```{r, echo=F, fig.height=3}
+colleges %>% ggplot(aes(x = Adm_Rate)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
+```
+
+```{r, echo=F, eval=F}
+summary(colleges$Adm_Rate)
+sd(colleges$Adm_Rate)
+```
+**Part A**: Describe the distribution of admission rates for the colleges in our sample (include context).
+
+
+*Answer*: 
+
+### Enrollment
+
+```{r, echo=F, fig.height=3}
+colleges %>% ggplot(aes(x = Enrollment)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
+```
+
+```{r, echo=F, eval=F}
+summary(colleges$Enrollment)
+sd(colleges$Enrollment)
+```
+
+**Part B**: Describe the distribution of enrollment for our sample of colleges.
+
+*Answer*: 
+
+### Percent of Female Students
+
+```{r, echo=F, fig.height=3}
+colleges %>% ggplot(aes(x = PercentFemale)) + geom_histogram(bins = 20, color = 'black', fill = 'gray')
+```
+
+```{r, echo=F, eval=F}
+summary(colleges$PercentFemale)
+sd(colleges$PercentFemale)
+```
+
+**Part C**: Describe the distribution of the percent of female students for colleges in our sample.
+
+*Answer*: 
+
+---
+
+## Part 3 -- Box Plots
+
+### Admission Rates (again)
+
+```{r, echo=F, fig.height=2.7}
+colleges %>% ggplot(aes(x = Adm_Rate)) + geom_boxplot()
+```
+
+**Part A**: Using the box plot of admission rates, give me approximate values for the following:
+
+* Min = 
+* Q1 = 
+* Median = 
+* Q3 = 
+* Max = 
+* IQR = 
+* \# of outliers = 
+
+**Part B**: Compare your answer to the previous question to the `summary()` output for Part 2A above. Are they similar? 
+
+*Answer*:
+
+**Part C**: In 2019, Grinnell had an admission rate of 0.24 (it has since gotten lower to around 0.12). Where does Grinnell fall on this boxplot? Is it an outlier college?
+
+*Answer*:
+
+### Tuition Amount
+
+```{r, echo=F, fig.height=2.7}
+colleges %>% ggplot(aes(x = Net_Tuition)) + geom_boxplot()
+```
+
+**Part D**: Describe the distribution of the `average net tuition` (tuition left to be paid after grants and scholarships) for the colleges.
+
+*Answer*:
+
+# Part 4 - More on Describing Data & Including Context 
+
+We have seen the terms *population, parameter, sample, statistic*, and *observation* in the Introduction slides. These terms are important for helping us describe data and understand what the purpose of a study is. Being able to read a summary of a study and label these individual parts is going to be an important skill we will use all semester. 
+
+When we are describing the *population*, *sample*, and *observations* in a study, we want to provide adequate context to explain the study and data. The following are some things to consider when reading a description of a study.
+
+### 5 W's and H of Data
+* **Who** -- Who collected the data, who is the data collected on? How many observations are there?
+
+* **What** -- What variables were data recorded on?
+
+* **When** -- When was the data collected? Populations can change over time and old data does not always reflect how things are now
+
+* **Where** -- Where was the data collected? Different     geographical areas can have vastly different populations
+
+* **Why** -- Why was the data collected? What research question(s) were the investigators trying to answer?
+
+* **How** -- How was the data physically collected?
+
+We may not always use all of these terms in our own descriptions, but they are useful to add context to our data, and potentially see if there are any issues with the study.
+
+### Describing Studies
+
+**Part A:** (Healthcare Opinions) In 2009, the PEW research group wanted to learn more about public opinion on the idea of the public option for health coverage. One thing that they wanted to know was the percentage of adult U.S. residents who favored a public option for health coverage in October 2009. In a poll of 1500 randomly selected Adult residents in the United States, they found that 55% of adult residents favored a government health insurance plan to compete with private plans. [Source](https://www.pewresearch.org/politics/2009/10/08/section-2-opinions-of-health-care-proposals/) 
+
+* Describe the population in this study:
+
+* Describe the sample in this study:
+
+* Describe an observation in this study: 
+
+* What is the variable of interest in this study? Is it categorical or quantitative?
+
+* Do you think this data is useful for learning about healthcare opinions in 2024?
+
+**Part B:** (National household size) The American Community Survey (ACS) conducts yearly surveys. One thing that is of interest is the average household size. In April 2022, the ACS had surveyed 1,980,550 U.S. households and found the average household size to be 2.50. [Source](https://data.census.gov/table/ACSDP1Y2022.DP02) 
+
+* Describe the population in this study:
+
+* Describe the sample in this study:
+
+* Describe an observation in this study: 
+
+* What is the variable of interest in this study? Is it categorical or quantitative?
+
+**Part C:** (Real Life Engineering Example) Forty prismatic lithium-ion pouch cells were built at the University of Michigan Battery Laboratory. Cells were formed using two different formation protocols: "fast formation" and "baseline formation". After formation, the cells were put under cycle life testing at room temperature and 45degC. Cells were cycled until the discharge capacities dropped below 50% of the initial capacities and the number of cycles was recorded.
+
+* Describe an observation in this study:
+
+* Describe the sample in this study:
+
+* Describe the population in this study:
+
+* What question do you think the researchers were trying to answer?:
