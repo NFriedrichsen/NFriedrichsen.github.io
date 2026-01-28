@@ -47,14 +47,15 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 1/26 | - | [Intro R Lab](Labs/R_Introduction.html) cont'd | - |
-| Wed 1/28 | Quantitative Variables | TBP | - |
-| Fri 1/30 | Data Visualization | TBP | - |
+| Wed 1/28 | [Quantitative Variables -- Part 1](Lectures/QuantVar1.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) | IMS Chapters 5.2-5.5 (pg. 74-82) |
+| Fri 1/30 | [Quantitative Variables -- Part 2] | TBP | - |
 
 ---
 
 ### Reading Assignments
 
-IMS Sections 1.2.1-1.2.3 before Monday 1/26.
+* IMS Sections 1.2.1-1.2.3 before Monday 1/26.
+* IMS Chapters 5.2-5.5 (pg. 74-82) before Monday 2/02
 
 ### Lab Assignments
 
