@@ -48,7 +48,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 1/26 | - | [Intro R Lab](Labs/R_Introduction.html) cont'd | - |
 | Wed 1/28 | [Quantitative Variables -- Part 1](Lectures/QuantVar1.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) | IMS Chapters 5.2-5.5 (pg. 74-82) |
-| Fri 1/30 | [Quantitative Variables -- Part 2] | TBP | - |
+| Fri 1/30 | [Quantitative Variables -- Part 2](Lectures/QuantVar2.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) | - |
 
 ---
 
