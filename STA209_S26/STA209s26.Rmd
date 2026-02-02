@@ -42,6 +42,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Week 2 (Quantiative Variables)
+
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 1/26 | - | [Intro R Lab](Labs/R_Introduction.html) cont'd | - |
@@ -49,6 +51,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Fri 1/30 | [Quantitative Variables -- Part 2](Lectures/QuantVar2.pdf) | [Quant Var Lab](Labs/QuantVarLab.html) | - |
 
 ---
+
+## Week 3 (Categorical Variables)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
@@ -66,6 +70,10 @@ Please note: material will not be posted until we've reached that point in the c
 ### Lab Assignments
 
 [Intro R Lab](Labs/R_Introduction.html) due on Gradescope Wednesday 1/28 at 10pm. Gradescope info will be given in Class on Monday.
+
+[Quant Var Lab](Labs/QuantVarLab.html) due Wednesday 2/04 at 10pm.
+
+[Cat Var Lab](Labs/CatVarLab.html) due Friday 2/06 at 10pm.
 
 ### Homework Assignments
 
