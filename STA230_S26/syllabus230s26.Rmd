@@ -24,19 +24,17 @@ knitr::opts_chunk$set(echo = TRUE)
 This time is purposefully scheduled for you to drop in and ask any questions about the course. Please feel free to stop by. If the time doesn't work for you, message me and we can try to arrange something.
 
 * Location: Noyce 2220
-* Time: TBD
+* Time: Monday 10-11am, Wednesday and Friday 2:30-3:30pm
 
 **Mentor Information**:
 
 This course employs the use of a mentor to aid you in navigating the course. Our course mentor will assist us in class, and host 1 – 2 mentor sessions throughout the week. Mentor Sessions may review course content, provide practice problems, practice interview skills, or provide homework help.
 
-Mentors:
+Mentors Info:
 
-Information TBP
+Rhys Howell (howellrh@grinnell.edu)
 
-Mentor Sessions:
-
-* Information TBP
+Mentor Sessions: Noyce 2401 Thursdays 8-9pm
 
 **Gradescope Course numbers**
 
