@@ -840,14 +840,14 @@ function:</p>
 }</code></pre>
 <p><strong>Question #2</strong> Taken from the reading. Write bothNA(),
 a summary function that takes two vectors of the same length and returns
-the number of positions that have an NA in both vectors.</p>
-<pre><code>## Warning: NAs introduced by coercion
-## Warning: NAs introduced by coercion</code></pre>
-<pre><code>## [1] &quot;Vector1: &quot; &quot;1&quot;         &quot;NA&quot;        &quot;3&quot;         &quot;NA&quot;        &quot;5&quot;        
-## [7] &quot;NA&quot;        &quot;7&quot;         &quot;6&quot;</code></pre>
-<pre><code>## [1] &quot;Vector2: &quot; &quot;3&quot;         &quot;7&quot;         &quot;NA&quot;        &quot;2&quot;         &quot;5&quot;        
-## [7] &quot;NA&quot;        &quot;1&quot;         &quot;2&quot;</code></pre>
-<pre><code>## [1] &quot;Expected Output: &quot; &quot;1&quot;</code></pre>
+the number of positions that have an NA in both vectors. Test your code
+on the following two vectors.</p>
+<pre class="r"><code># 1st vector
+x &lt;- as.numeric(c(1,&quot;a&quot;,3, &quot;four&quot;, 5, &quot;six&quot;, 7, 6))
+# 2nd vector
+x2 &lt;- as.numeric(c(3, 7, &quot;four&quot;, 2,5,&quot;six&quot;, 1, 2))
+bothNA(x,x2)</code></pre>
+<pre><code>## [1] 1</code></pre>
 </div>
 </div>
 <div id="dataframe-functions" class="section level4">
