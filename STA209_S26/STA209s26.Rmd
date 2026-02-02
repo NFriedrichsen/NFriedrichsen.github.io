@@ -30,8 +30,6 @@ Please note: material will not be posted until we've reached that point in the c
 
 ## Exam \#1 Content
 
-### Week 1 (Intro)
-
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Wed 1/21 | [Syllabus](syllabus209s26.html) and [Introduction](Lectures/01_Introduction.pdf) | [Lab](Labs/R_packages.html) | IMS Sections 1.2.1-1.2.3 before Monday |
@@ -52,6 +50,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/02 | [Categorical Variables](Lectures/CategoricalVariables.pdf) | [Cat Var Lab](Labs/CatVarLab.html) [[Template]](Labs/CatVarLab.Rmd) | - |
+| Wed 2/04 | [Tables] | - | - |
+| Fri 2/05 | [GGplot2] | - | - |
+
+---
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
@@ -64,3 +70,13 @@ Please note: material will not be posted until we've reached that point in the c
 ### Homework Assignments
 
 Will be posted here.
+
+
+
+---
+
+<!-- | Date | Lecture | Lab | Reading | -->
+<!-- |:-----|:-------|:-----|:-----| -->
+<!-- | Mon 2/02 | - | - | - | -->
+<!-- | Wed 2/04 | - | - | - | -->
+<!-- | Fri 2/05 | - | - | - | -->
