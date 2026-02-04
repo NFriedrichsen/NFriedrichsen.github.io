@@ -57,7 +57,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 2/02 | [Categorical Variables](Lectures/CategoricalVariables.pdf) | [Cat Var Lab](Labs/CatVarLab.html) [[Template]](Labs/CatVarLab.Rmd) | - |
-| Wed 2/04 | [Tables] | - | - |
+| Wed 2/04 | [Tables (for Categorical Information)](Lectures/Tables.pdf) | - | - |
 | Fri 2/05 | [GGplot2] | - | - |
 
 ---
