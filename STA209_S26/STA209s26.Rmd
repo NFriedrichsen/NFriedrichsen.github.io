@@ -75,6 +75,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [Cat Var Lab](Labs/CatVarLab.html) due Friday 2/06 at 10pm.
 
+[Tables Lab](Labs/TablesLab.html) due Sunday 2/08 at 10pm.
+
 ### Homework Assignments
 
 Will be posted here.
