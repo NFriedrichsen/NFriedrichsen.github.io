@@ -62,6 +62,16 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Week 4
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/09 | - | [ggplot2 Lab](Labs/ggplot2_lab.html) cont'd | - |
+| Wed 2/11 | - | - | - |
+| Fri 2/15 | - | - | - |
+
+---
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
