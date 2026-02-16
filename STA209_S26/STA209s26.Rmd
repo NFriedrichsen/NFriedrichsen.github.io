@@ -77,6 +77,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 2/16 | [Probability 3 -- Odds/Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3](Labs/ProbWorksheet3.pdf) | - |
+| Wed 2/18 | Sampling Methods | - | - |
+| Fri 2/20 | Experiments vs Observational Studies | - | - |
 
 ---
 
@@ -98,6 +100,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 [ggplot2 Lab](Labs/ggplot2_lab.html) due Wednesday 2/11 at 10pm.
 
+Probability Worksheets checked for credit at start of class on Wednesday 2/18.
+
 ### Homework Assignments
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
@@ -105,6 +109,10 @@ Please note: material will not be posted until we've reached that point in the c
 
 
 ---
+
+### Exam Info
+
+Exam 1 will be on Feb 2/27 during normal class time within the classroom. Additional info will be posted next week including review material.
 
 <!-- | Date | Lecture | Lab | Reading | -->
 <!-- |:-----|:-------|:-----|:-----| -->
