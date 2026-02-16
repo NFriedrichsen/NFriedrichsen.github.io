@@ -72,6 +72,14 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
+## Week 5
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/16 | [Probability 3 -- Odds/Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3](Labs/ProbWorksheet3.pdf) | - |
+
+---
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
