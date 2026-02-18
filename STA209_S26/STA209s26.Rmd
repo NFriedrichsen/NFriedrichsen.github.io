@@ -77,8 +77,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 2/16 | [Probability 3 -- Odds/Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3](Labs/ProbWorksheet3.pdf) | - |
-| Wed 2/18 | Sampling Methods | - | - |
-| Fri 2/20 | Experiments vs Observational Studies | - | - |
+| Wed 2/18 | [Study Design -- Sampling Methods](Lectures/StudyDesign1.pdf) | [Study Design Lab](Labs/StudyDesignLab.html) | - |
+| Fri 2/20 | [Study Design -- Experiments] | - | - |
 
 ---
 
