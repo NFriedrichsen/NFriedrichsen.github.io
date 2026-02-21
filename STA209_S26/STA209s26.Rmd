@@ -78,9 +78,19 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 2/16 | [Probability 3 -- Odds/Risk](Lectures/Probability3.pdf) | [Probability Worksheet 3](Labs/ProbWorksheet3.pdf) | - |
 | Wed 2/18 | [Study Design -- Sampling Methods](Lectures/StudyDesign1.pdf) | [Study Design Lab](Labs/StudyDesignLab.html) | - |
-| Fri 2/20 | [Study Design -- Experiments] | - | - |
+| Fri 2/20 | No Class | - | - |
 
 ---
+
+## Week 5
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 2/23 | Homework and Lab Workday | - | - |
+| Wed 2/25 | [Study Design 2] | - | - |
+| Fri 2/27 | Exam 1 | - | - |
+
+
 
 ### Reading Assignments
 
@@ -106,7 +116,9 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18.
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
 
+[Homework 2](Homework/Homework2.html) due Friday 2/27 at 10pm.
 
+[Homework 3](Homework/Homework3.html) due Friday 3/06 at 10pm.** See class announcement email about starting this early.
 
 ---
 
