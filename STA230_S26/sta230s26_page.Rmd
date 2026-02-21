@@ -55,11 +55,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 # Homework Assignments
 
-Will be posted here.
+[[Homework 1]](Homework/hw1.html) (Intro R) due Fri 2/27 at 10pm
 
-<!-- [[Homework 1]](Homework/hw1.html) (Intro R) due Fri 9/12 at 10pm -->
-
-<!-- [[Homework 2]](Homework/hw2.html) (Functions) due Friday 9/19 at 10pm -->
+[[Homework 2]](Homework/hw2.html) (Functions) due Friday 3/06 at 10pm
 
 <!-- [[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm -->
 
