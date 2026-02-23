@@ -102,15 +102,15 @@ Please note: material will not be posted until we've reached that point in the c
 
 [Intro R Lab](Labs/R_Introduction.html) due on Gradescope Wednesday 1/28 at 10pm. Gradescope info will be given in Class on Monday.
 
-[Quant Var Lab](Labs/QuantVarLab.html) due Wednesday 2/04 at 10pm.
+[Quant Var Lab](Labs/QuantVarLab.html) due Wednesday 2/04 at 10pm. [(**Solution**)](Labs/QuantVarLab_Solutions.html)
 
-[Cat Var Lab](Labs/CatVarLab.html) due Friday 2/06 at 10pm.
+[Cat Var Lab](Labs/CatVarLab.html) due Friday 2/06 at 10pm. [(**Solution**)](Labs/CatVarLab_Solutions.html)
 
-[Tables Lab](Labs/TablesLab.html) due Sunday 2/08 at 10pm.
+[Tables Lab](Labs/TablesLab.html) due Sunday 2/08 at 10pm. [(**Solution**)](Labs/TablesLab_Solutions.html)
 
-[ggplot2 Lab](Labs/ggplot2_lab.html) due Wednesday 2/11 at 10pm.
+[ggplot2 Lab](Labs/ggplot2_lab.html) due Wednesday 2/11 at 10pm. 
 
-Probability Worksheets checked for credit at start of class on Wednesday 2/18.
+Probability Worksheets checked for credit at start of class on Wednesday 2/18. [(**Solution**)](Labs/ProbWorksheets_Solutions.pdf)
 
 ### Homework Assignments
 
@@ -124,7 +124,11 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18.
 
 ### Exam Info
 
-Exam 1 will be on Feb 2/27 during normal class time within the classroom. Additional info will be posted next week including review material.
+Exam 1 will be on Feb 2/27 during normal class time within the classroom. **Note:** There may be a few questions asking about random assignment or experiment vocabulary terms in the practice documents -- these topics will not be on the exam due to the missed class on 2/20.
+
+[[Practice Exam 1]](Exams/practice_exam1.pdf)
+
+[[Exam 1 Topics List]](Exams/topic_list_exam1.html)
 
 <!-- | Date | Lecture | Lab | Reading | -->
 <!-- |:-----|:-------|:-----|:-----| -->
