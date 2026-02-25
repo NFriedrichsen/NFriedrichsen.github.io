@@ -6,8 +6,6 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
-  pdf_document:
-    toc: true
 ---
 
 $~$
@@ -82,12 +80,12 @@ Please note: material will not be posted until we've reached that point in the c
 
 ---
 
-## Week 5
+## Week 6
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 2/23 | Homework and Lab Workday | - | - |
-| Wed 2/25 | [Study Design 2] | - | - |
+| Wed 2/25 | [Study Design 2](Lectures/StudyDesign2.pdf) | [Study Design 2 Lab](Labs/StudyDesign2_Lab.html) | - |
 | Fri 2/27 | Exam 1 | - | - |
 
 
