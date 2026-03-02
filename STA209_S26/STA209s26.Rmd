@@ -88,7 +88,13 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 2/25 | [Study Design 2](Lectures/StudyDesign2.pdf) | [Study Design 2 Lab](Labs/StudyDesign2_Lab.html) | - |
 | Fri 2/27 | Exam 1 | - | - |
 
+# Week 7 (Statistical Framework)
 
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/02 | [Random Variables](Lectures/RandomVariables.pdf) | - | - |
+| Wed 3/04 | - | - | - |
+| Fri 3/06 | - | - | - |
 
 ### Reading Assignments
 
