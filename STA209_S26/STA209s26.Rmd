@@ -116,6 +116,8 @@ Please note: material will not be posted until we've reached that point in the c
 
 Probability Worksheets checked for credit at start of class on Wednesday 2/18. [(**Solution**)](Labs/ProbWorksheets_Solutions.pdf)
 
+[Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm.
+
 ### Homework Assignments
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
