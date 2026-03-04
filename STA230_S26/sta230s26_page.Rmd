@@ -41,7 +41,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Fri 1/30 - Fri 2/06 | [Lab 2 -- Functions](Labs/Lab2_Functions.html) | Sunday 2/08 at 10pm |
 | Mon 2/09 - Fri 2/13 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 2/15 at 10pm |
 | Mon 2/16 - Fri 2/20 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 2/22 at 10pm |
-| Wed 2/25 - Mon 3/02 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Wednesday 3/04 at 10pm |
+| Wed 2/25 - Mon 3/02 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Friday 3/06 at 10pm |
+| Wed 3/04 - Fri 3/06 | [Lab 6 -- Data Processing (Strings)](Labs/Lab6_DataProcessing.html) | Sunday 3/22 at 10pm |
 
 <!-- | Mon 2/16 - Fri 2/19 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 9/21 at 10pm | -->
 <!-- | Mon 2/16 - Fri 2/20 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm | -->
@@ -60,9 +61,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Homework 2]](Homework/hw2.html) (Functions) due Friday 3/06 at 10pm
 
-<!-- [[Homework 3]](Homework/hw3.html) (GGplot) due Friday 9/26 at 10pm -->
+[[Homework 3]](Homework/hw3.html) (GGplot) due Friday 3/20 at 10pm
 
-<!-- [[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 10/10 at 10pm (extended). -->
+[[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 3/27 at 10pm (extended).
 
 <!-- [[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 10/31 at 10pm. -->
 
@@ -72,7 +73,9 @@ Please note: material will not be posted until we've reached that point in the c
 
 <!-- [[Homework 7]](Homework/hw7.html) (SQL) due Friday 12/05 at 10pm. -->
 
-<!-- # Midterm Projects -->
+# Midterm Projects
+
+We will start the first project immediately after break.
 
 <!-- [Midterm 1] will be available on Gradescope Monday (10/06) . It is an individual assignment. See the gradescope template for more information when posted. Due Friday 10/17 at 10pm. -->
 
@@ -85,7 +88,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 # Assigned Readings
 
-Will be posted here.
+Extra: [More on Joins](Labs/Joins_Overview.pdf)
 
 <!-- [Readings for Lab 8](Labs/Lab8_Readings.html) read before class on Wednesday 10/29. -->
 
