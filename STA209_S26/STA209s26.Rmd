@@ -93,7 +93,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 3/02 | [Random Variables](Lectures/RandomVariables.pdf) | - | - |
-| Wed 3/04 | - | - | - |
+| Wed 3/04 | [Normal Distributions](Lectures/NormalDistribution.pdf) | [Normal Probability R Guide](Labs/NormalDistribution_Lab_Setup.html) and [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) | - |
 | Fri 3/06 | - | - | - |
 
 ### Reading Assignments
