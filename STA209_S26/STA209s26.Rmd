@@ -118,6 +118,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm.
 
+[Sampling Distributions](Lectures/SamplingDistributions.pdf) | [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm.
+
 ### Homework Assignments
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
@@ -125,6 +127,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [Homework 2](Homework/Homework2.html) due Friday 2/27 at 10pm.
 
 [Homework 3](Homework/Homework3.html) due Friday 3/06 at 10pm.** See class announcement email about starting this early.
+
+[Exam 1 Correction](Exams/exam1_corrections.html) due Friday 3/27 at 10pm. Gradescope submission will be posted.
 
 ---
 
