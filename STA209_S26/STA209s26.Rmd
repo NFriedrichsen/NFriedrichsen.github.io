@@ -96,6 +96,14 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 3/04 | [Normal Distributions](Lectures/NormalDistribution.pdf) | [Normal Probability R Guide](Labs/NormalDistribution_Lab_Setup.html) and [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) | - |
 | Fri 3/06 | [Sampling Distributions](Lectures/SamplingDistributions.pdf) | [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) | - |
 
+## Week 10* (Confidence Intervals)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/23 | [Confidence Intervals Pt. 1 (Means)](Lectures/CI1.pdf) | - | - |
+| Wed 3/25 | CI Review | Confidence Interval Stuff | - |
+| Fri 3/27 | CI Pt. 2 | - | - |
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
@@ -118,7 +126,7 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm.
 
-[Sampling Distributions](Lectures/SamplingDistributions.pdf) | [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm.
+[Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm.
 
 ### Homework Assignments
 
