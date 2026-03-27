@@ -43,6 +43,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Mon 2/16 - Fri 2/20 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 2/22 at 10pm |
 | Wed 2/25 - Mon 3/02 | [Lab 5 -- Joins](Labs/Lab5_Joins.html) | Friday 3/06 at 10pm |
 | Wed 3/04 - Fri 3/06, Mon 3/23 | [Lab 6 -- Data Processing (Strings)](Labs/Lab6_DataProcessing.html) | Sunday 3/22 at 10pm |
+| Fri 3/27 - Mon 3/30 | [Lab 7 -- Misleading Graphics](Labs/Lab7_MisleadingFigures.html) | Wednesday 4/01 at 10pm |
 
 <!-- | Mon 2/16 - Fri 2/19 | [Lab 3 -- DataViz with ggplot2](Labs/Lab3_DataViz.html) | Sunday 9/21 at 10pm | -->
 <!-- | Mon 2/16 - Fri 2/20 | [Lab 4 -- Data Manipulations](Labs/Lab4_DataManip.html) | Sunday 9/28 at 10pm | -->
@@ -65,7 +66,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 [[Homework 4]](Homework/hw4.html) (Data Manipulation) due Friday 3/27 at 10pm (extended).
 
-<!-- [[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 10/31 at 10pm. -->
+[[Homework 5]](Homework/hw5.html) (Data Processing) due Friday 4/10 at 10pm.
 
 <!-- [[Mid-semester Feedback]](Homework/midsemester_feedback.html) due Friday 11/07 at 10pm. This is not a graded assignment, but will earn you a token for thoughtful completion. -->
 
@@ -75,9 +76,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 # Midterm Projects
 
-We will start the first project immediately after break.
-
-<!-- [Midterm 1] will be available on Gradescope Monday (10/06) . It is an individual assignment. See the gradescope template for more information when posted. Due Friday 10/17 at 10pm. -->
+[Midterm 1] will be available on Gradescope Friday 3/27. It is an individual assignment. See the gradescope template for more information when posted. Due Friday 4/03 at 10pm.
 
 <!-- [Midterm 2] instructions posted on Gradescope 10/31. You are allowed to choose your own group with 2-3 total students per group. You may work individually, but I would avoid this if possible. Originally Due Sunday 11/16 at 10pm $\rightarrow$ moved to Friday 11/21 at 10pm. -->
 
@@ -94,11 +93,11 @@ Extra: [More on Joins](Labs/Joins_Overview.pdf)
 
 <!-- # Helpful Links -->
 
-<!-- [[GGplot Cheat Sheet]](https://rstudio.github.io/cheatsheets/html/data-visualization.html) -->
+[[GGplot Cheat Sheet]](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
 
-<!-- [[Matching Plots]](MatchingPlots.html) Courtesy of Instructor Will Rebelsky. -->
+[[Matching Plots]](MatchingPlots.html) Courtesy of Instructor Will Rebelsky.
 
-<!-- [[String R Cheat Sheet]](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf) -->
+[[String R Cheat Sheet]](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf)
 
 <!-- [[Statistical Model Review]](Projects/ModelGuide.html) written by me. -->
 
