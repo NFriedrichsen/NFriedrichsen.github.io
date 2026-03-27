@@ -101,8 +101,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 3/23 | [Confidence Intervals Pt. 1 (Means)](Lectures/CI1.pdf) | - | - |
-| Wed 3/25 | CI Review | Confidence Interval Stuff | - |
-| Fri 3/27 | CI Pt. 2 | - | - |
+| Wed 3/25 | - | - | - |
+| Fri 3/27 | CI Review | [CI Lab 1](Labs/CI_Lab1.html) | - |
 
 ### Reading Assignments
 
@@ -127,6 +127,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm.
 
 [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm.
+
+[CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm.
 
 ### Homework Assignments
 
