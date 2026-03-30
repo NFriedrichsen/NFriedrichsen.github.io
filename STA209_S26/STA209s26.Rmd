@@ -104,6 +104,14 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 3/25 | - | - | - |
 | Fri 3/27 | CI Review | [CI Lab 1](Labs/CI_Lab1.html) | - |
 
+## Week 11 (Confidence Intervals Cont'd)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 3/30 | [Confidence Intervals Pt. 2 (t-Distribution)](Lectures/CI2.pdf) | [CI Lab 1](Labs/CI_Lab1.html) cont'd | - |
+| Wed 4/01 | Project Day | - | - |
+| Fri 4/03 | CI Stuff | - | - |
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
