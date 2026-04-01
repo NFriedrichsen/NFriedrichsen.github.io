@@ -109,7 +109,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 3/30 | [Confidence Intervals Pt. 2 (t-Distribution)](Lectures/CI2.pdf) | [CI Lab 1](Labs/CI_Lab1.html) cont'd | - |
-| Wed 4/01 | Project Day | - | - |
+| Wed 4/01 | [Project Day](Labs/Project1.html) | - | - |
 | Fri 4/03 | CI Stuff | - | - |
 
 ### Reading Assignments
