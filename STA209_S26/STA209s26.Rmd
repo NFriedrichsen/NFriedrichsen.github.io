@@ -104,13 +104,17 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 3/25 | - | - | - |
 | Fri 3/27 | CI Review | [CI Lab 1](Labs/CI_Lab1.html) | - |
 
+
+
 ## Week 11 (Confidence Intervals Cont'd)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 3/30 | [Confidence Intervals Pt. 2 (t-Distribution)](Lectures/CI2.pdf) | [CI Lab 1](Labs/CI_Lab1.html) cont'd | - |
 | Wed 4/01 | [Project Day](Labs/Project1.html) | - | - |
-| Fri 4/03 | CI Stuff | - | - |
+| Fri 4/03 | [Confidence Intervals Pt. 3 (Diff in Means)](Lectures/CI3.pdf) | [CI Lab 2](Labs/CI_Lab2.html) | IMS 19.2.1-19.2.4 (pg. 325-332) |
+
+**Note:** A HW assignment will be posted on Mon 4/06
 
 ### Reading Assignments
 
