@@ -114,13 +114,21 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 4/01 | [Project Day](Labs/Project1.html) | - | - |
 | Fri 4/03 | [Confidence Intervals Pt. 3 (Diff in Means)](Lectures/CI3.pdf) | [CI Lab 2](Labs/CI_Lab2.html) | IMS 19.2.1-19.2.4 (pg. 325-332) |
 
-**Note:** A HW assignment will be posted on Mon 4/06
+## Week 12 (Confidence Intervals)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/06 | [Confidence Intervals Pt. 4 (Proportions)](Lectures/CI4.pdf) | [CI Lab 3](Labs/CI_Lab3.html) | - |
+| Wed 4/08 | CI Stuff | - | - |
+| Fri 4/10 | CI Stuff | - | - |
+
 
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
 * IMS Chapters 5.2-5.5 (pg. 74-82) before Monday 2/02
 * [OpenIntro](https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf) Chapter 3.1 before Friday 2/13
+* IMS Chapters 19.2.1-19.2.4 (pg. 325-332)
 
 ### Lab Assignments
 
@@ -142,6 +150,10 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm.
 
+[CI Lab 2](Labs/CI_Lab2.html) due Tuesday 4/07 at 10pm.
+
+[CI Lab 3](Labs/CI_Lab3.html) due date TBD.
+
 ### Homework Assignments
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
@@ -152,15 +164,19 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Exam 1 Correction](Exams/exam1_corrections.html) due Friday 3/27 at 10pm. Gradescope submission will be posted.
 
+[Homework 4](Homework/Homework4.html) due Wednesday 4/15 at 10pm. Primarily focused on confidence intervals.
+
 ---
 
 ### Exam Info
 
-Exam 1 will be on Feb 2/27 during normal class time within the classroom. **Note:** There may be a few questions asking about random assignment or experiment vocabulary terms in the practice documents -- these topics will not be on the exam due to the missed class on 2/20.
+**Exam 1** will be on Feb 2/27 during normal class time within the classroom. **Note:** There may be a few questions asking about random assignment or experiment vocabulary terms in the practice documents -- these topics will not be on the exam due to the missed class on 2/20.
 
 [[Practice Exam 1]](Exams/practice_exam1.pdf)
 
 [[Exam 1 Topics List]](Exams/topic_list_exam1.html)
+
+**Exam 2** will be on Friday 4/17 during normal class time within the regular classroom.
 
 <!-- | Date | Lecture | Lab | Reading | -->
 <!-- |:-----|:-------|:-----|:-----| -->
