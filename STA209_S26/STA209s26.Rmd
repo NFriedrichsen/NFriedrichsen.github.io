@@ -150,7 +150,7 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm.
 
-[CI Lab 2](Labs/CI_Lab2.html) due Tuesday 4/07 at 10pm.
+[CI Lab 2](Labs/CI_Lab2.html) due Sunday 4/05 at 10pm.
 
 [CI Lab 3](Labs/CI_Lab3.html) due date TBD.
 
