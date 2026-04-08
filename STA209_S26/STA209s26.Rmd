@@ -119,8 +119,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 4/06 | [Confidence Intervals Pt. 4 (Proportions)](Lectures/CI4.pdf) | [CI Lab 3](Labs/CI_Lab3.html) | - |
-| Wed 4/08 | CI Stuff | - | - |
-| Fri 4/10 | CI Stuff | - | - |
+| Wed 4/08 | [More on CI Conditions](Lectures/CI5.pdf) | - | - |
+| Fri 4/10 | New Stuff | - | - |
 
 
 ### Reading Assignments
@@ -165,6 +165,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [Exam 1 Correction](Exams/exam1_corrections.html) due Friday 3/27 at 10pm. Gradescope submission will be posted.
 
 [Homework 4](Homework/Homework4.html) due Wednesday 4/15 at 10pm. Primarily focused on confidence intervals.
+
+[Homework 5](Homework/Homework5.html) due Sunday 4/19 at 10pm. Primarily focused on confidence intervals. *I recommend completing this before the exam -- extremely beneficial.*
 
 ---
 
