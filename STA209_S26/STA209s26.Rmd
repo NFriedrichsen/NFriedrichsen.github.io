@@ -120,7 +120,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 4/06 | [Confidence Intervals Pt. 4 (Proportions)](Lectures/CI4.pdf) | [CI Lab 3](Labs/CI_Lab3.html) | - |
 | Wed 4/08 | [More on CI Conditions](Lectures/CI5.pdf) | - | - |
-| Fri 4/10 | New Stuff | - | - |
+| Fri 4/10 | [Hypothesis Testing Intro] | - | IMS Chapter 11.3 (pg. 188 - 189, DO NOT READ pg.190) |
 
 
 ### Reading Assignments
