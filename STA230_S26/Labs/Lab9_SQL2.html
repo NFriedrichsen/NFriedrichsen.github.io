@@ -741,7 +741,6 @@ afternoon.</p>
 <p><strong>Make sure to sign off when done working.</strong></p>
 <pre class="r"><code>dbDisconnect(mydb)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<pre class="r"><code>mydb &lt;- dbConnect(RSQLite::SQLite(), &quot;:memory:&quot;)</code></pre>
 <!-- --- -->
 <!-- # Lab Part 2: Writing Tables (added Wednesday) -->
 <!-- In this part of the lab, we will pivot back to working with the `week9...` data tables. Run the following code to create R environment versions of the `week9...` tables. -->
@@ -771,28 +770,26 @@ afternoon.</p>
 <!-- ## Check -->
 <!-- dbGetQuery(mydb,"Select * from profcourses LIMIT 5;") -->
 <!-- ``` -->
-<p>This works as follows: we use <code>dbExecute</code> not
-<code>dbGetQuery</code> since we are executing a function on the
-database. We are creating a table called profcourses. It has 2 values, a
-pid that is an integer with at most 11 characters, and a cid which is a
-string of at most 6 characters. Neither of them is allowed to be
-NULL.</p>
-<p><strong>Question 10:</strong> Using similar queries, create and fill
-tables for the other 3 dataframes.</p>
-<p><strong>Question 11:</strong> Investigating Options</p>
-<ul>
-<li>What happens if you try to create a table that already exists with
-append = TRUE?</li>
-<li>What if append=FALSE?</li>
-<li>What if header=TRUE?</li>
-<li>What if you rerun the writetable a second time with the original
-values?</li>
-<li>What if you write a table to a “name” table that doesn’t exist?</li>
-</ul>
-</div>
-<div id="disconnecting-the-sql-connection" class="section level4">
-<h4>Disconnecting the SQL connection</h4>
-<pre class="r"><code>dbDisconnect(mydb)</code></pre>
+<!-- This works as follows: we use `dbExecute` not `dbGetQuery` since we are executing a function on the database. We are creating a table called profcourses. It has 2 values, a pid that is an integer with at most 11 characters, and a cid which is a string of at most 6 characters. Neither of them is allowed to be NULL. -->
+<!-- **Question 10:** Using similar queries, create and fill tables for the other 3 dataframes. -->
+<!-- **Question 11:** Investigating Options -->
+<!-- - What happens if you try to create a table that already exists with append = TRUE? -->
+<!-- - What if append=FALSE? -->
+<!-- - What if header=TRUE? -->
+<!-- - What if you rerun the writetable a second time with the original values? -->
+<!-- - What if you write a table to a “name” table that doesn’t exist? -->
+<!-- ```{r, echo=F, eval=F} -->
+<!-- # new table with same name, append = T -->
+<!-- dbWriteTable(conn = mydb, name = 'profcourses', value = week9profcourses, append = TRUE, header = FALSE, row.names = FALSE) -->
+<!-- dbGetQuery(mydb,"Select * from profcourses;") -->
+<!-- # new table with same name, append = F -->
+<!-- dbWriteTable(conn = mydb, name = 'profcourses', value = week9profcourses, append = FALSE, header = FALSE, row.names = FALSE) -->
+<!-- dbGetQuery(mydb,"Select * from profcourses;") -->
+<!-- ``` -->
+<!-- #### Disconnecting the SQL connection -->
+<!-- ```{r} -->
+<!-- dbDisconnect(mydb) -->
+<!-- ``` -->
 <p><strong>Note:</strong> I will add a bit more to this on Wednesday and
 Friday.</p>
 </div>
