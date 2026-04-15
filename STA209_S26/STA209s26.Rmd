@@ -127,7 +127,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 4/06 | [HT Part 2](Lectures/HT2.pdf) | [Testing Lab 1](Labs/TestingLab1.html) | - |
-| Wed 4/08 | HT Stuff | - | - |
+| Wed 4/08 | [HT Part 3 -- Test Statistics](Lectures/HT3.pdf) | - | - |
 | Fri 4/10 | In-class Exam | - | - |
 
 
@@ -152,15 +152,15 @@ Please note: material will not be posted until we've reached that point in the c
 
 Probability Worksheets checked for credit at start of class on Wednesday 2/18. [(**Solution**)](Labs/ProbWorksheets_Solutions.pdf)
 
-[Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm.
+[Normal Prob Practice](Labs/NormalDistribution_Lab.pdf) uploaded to Gradescope by Thursday 3/05 at 10pm. [(**Solution**)](Labs/NormalDistribution_Lab_Solutions.html)
 
-[Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm.
+[Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm. [(**Solution**)](Labs/SamplingDistribution_Lab_Solutions.html)
 
-[CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm.
+[CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm. [(**Solution**)](Labs/CI_Lab1_Solutions.html)
 
-[CI Lab 2](Labs/CI_Lab2.html) due Sunday 4/05 at 10pm.
+[CI Lab 2](Labs/CI_Lab2.html) due Sunday 4/05 at 10pm. [(**Solution**)](Labs/CI_Lab2_Solutions.html)
 
-[CI Lab 3](Labs/CI_Lab3.html) due Thursday 4/09 at 10pm.
+[CI Lab 3](Labs/CI_Lab3.html) due Thursday 4/09 at 10pm. [(**Solution**)](Labs/CI_Lab3_Solutions.html)
 
 ### Homework Assignments
 
