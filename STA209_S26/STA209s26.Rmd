@@ -156,11 +156,11 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Sampling Distribution Lab](Labs/SamplingDistribution_Lab.html) due Sunday 3/08 at 10pm. [(**Solution**)](Labs/SamplingDistribution_Lab_Solutions.html)
 
-[CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm. [(**Solution**)](Labs/CI_Lab1_Solutions.html)
+[CI Lab 1](Labs/CI_Lab1.html) will have more added to it on Monday 3/30 and be due Wed 4/01 at 10pm. [(**Solution**)](Labs/CI_Lab1_Sol.html)
 
-[CI Lab 2](Labs/CI_Lab2.html) due Sunday 4/05 at 10pm. [(**Solution**)](Labs/CI_Lab2_Solutions.html)
+[CI Lab 2](Labs/CI_Lab2.html) due Sunday 4/05 at 10pm. [(**Solution**)](Labs/CI_Lab2_Sol.html)
 
-[CI Lab 3](Labs/CI_Lab3.html) due Thursday 4/09 at 10pm. [(**Solution**)](Labs/CI_Lab3_Solutions.html)
+[CI Lab 3](Labs/CI_Lab3.html) due Thursday 4/09 at 10pm. [(**Solution**)](Labs/CI_Lab3_Sol.html)
 
 ### Homework Assignments
 
