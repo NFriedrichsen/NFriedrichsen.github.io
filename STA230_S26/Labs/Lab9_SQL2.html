@@ -738,60 +738,69 @@ courses as having a lab or not.</p>
 inspiration. Pull the instructor info, day, start_time, and then make a
 new column that shows whether the office hours start in the morning or
 afternoon.</p>
-<p><strong>Make sure to sign off when done working.</strong></p>
+<hr />
+</div>
+</div>
+<div id="lab-part-2-writing-tables-added-wednesday" class="section level1">
+<h1>Lab Part 2: Writing Tables (added Wednesday)</h1>
+<p>In this part of the lab, we will pivot back to working with the
+<code>week9...</code> data tables. Run the following code to create R
+environment versions of the <code>week9...</code> tables.</p>
+<pre class="r"><code>week9courses = dbGetQuery(mydb, &quot;SELECT * FROM week9courses;&quot;)
+week9departments = dbGetQuery(mydb, &quot;SELECT * FROM week9departments&quot;)
+week9profcourses = dbGetQuery(mydb, &quot;SELECT * FROM week9profcourses&quot;)
+week9professors = dbGetQuery(mydb, &quot;SELECT * FROM week9professors&quot;)</code></pre>
+<div id="creating-a-temporary-database-in-memory" class="section level4">
+<h4>Creating a temporary database in memory</h4>
+<p>The rest of this is mostly for illustrative purposes. After running
+the above code to store the <code>week9...</code> tables in the R
+environment, run the following command:</p>
 <pre class="r"><code>dbDisconnect(mydb)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<!-- --- -->
-<!-- # Lab Part 2: Writing Tables (added Wednesday) -->
-<!-- In this part of the lab, we will pivot back to working with the `week9...` data tables. Run the following code to create R environment versions of the `week9...` tables. -->
-<!-- ```{r} -->
-<!-- week9courses = dbGetQuery(mydb, "SELECT * FROM week9courses;") -->
-<!-- week9departments = dbGetQuery(mydb, "SELECT * FROM week9departments") -->
-<!-- week9profcourses = dbGetQuery(mydb, "SELECT * FROM week9profcourses") -->
-<!-- week9professors = dbGetQuery(mydb, "SELECT * FROM week9professors") -->
-<!-- ``` -->
-<!-- #### Creating a temporary database in memory -->
-<!-- The rest of this is mostly for illustrative purposes. After running the above code to store the `week9...` tables in the R environment, run the following command: -->
-<!-- ```{r} -->
-<!-- dbDisconnect(mydb) -->
-<!-- mydb <- dbConnect(RSQLite::SQLite(), ":memory:") -->
-<!-- ``` -->
-<!-- #### Creating a Table -->
-<!-- ```{r} -->
-<!-- ## Create Table -->
-<!-- dbExecute(mydb, "CREATE TABLE `profcourses` ( -->
-<!--   `pid` int(11) NOT NULL, -->
-<!--   `cid` varchar(6) NOT NULL -->
-<!-- )") -->
-<!-- ``` -->
-<!-- ```{r} -->
-<!-- ## Fill Table -->
-<!-- dbWriteTable(conn = mydb, name = 'profcourses', value = week9profcourses, append = TRUE, header = FALSE, row.names = FALSE) -->
-<!-- ## Check -->
-<!-- dbGetQuery(mydb,"Select * from profcourses LIMIT 5;") -->
-<!-- ``` -->
-<!-- This works as follows: we use `dbExecute` not `dbGetQuery` since we are executing a function on the database. We are creating a table called profcourses. It has 2 values, a pid that is an integer with at most 11 characters, and a cid which is a string of at most 6 characters. Neither of them is allowed to be NULL. -->
-<!-- **Question 10:** Using similar queries, create and fill tables for the other 3 dataframes. -->
-<!-- **Question 11:** Investigating Options -->
-<!-- - What happens if you try to create a table that already exists with append = TRUE? -->
-<!-- - What if append=FALSE? -->
-<!-- - What if header=TRUE? -->
-<!-- - What if you rerun the writetable a second time with the original values? -->
-<!-- - What if you write a table to a “name” table that doesn’t exist? -->
-<!-- ```{r, echo=F, eval=F} -->
-<!-- # new table with same name, append = T -->
-<!-- dbWriteTable(conn = mydb, name = 'profcourses', value = week9profcourses, append = TRUE, header = FALSE, row.names = FALSE) -->
-<!-- dbGetQuery(mydb,"Select * from profcourses;") -->
-<!-- # new table with same name, append = F -->
-<!-- dbWriteTable(conn = mydb, name = 'profcourses', value = week9profcourses, append = FALSE, header = FALSE, row.names = FALSE) -->
-<!-- dbGetQuery(mydb,"Select * from profcourses;") -->
-<!-- ``` -->
-<!-- #### Disconnecting the SQL connection -->
-<!-- ```{r} -->
-<!-- dbDisconnect(mydb) -->
-<!-- ``` -->
-<p><strong>Note:</strong> I will add a bit more to this on Wednesday and
-Friday.</p>
+<pre class="r"><code>mydb &lt;- dbConnect(RSQLite::SQLite(), &quot;:memory:&quot;)</code></pre>
+</div>
+<div id="creating-a-table" class="section level4">
+<h4>Creating a Table</h4>
+<pre class="r"><code>## Create Table
+dbExecute(mydb, &quot;CREATE TABLE `profcourses` (
+  `pid` int(11) NOT NULL,
+  `cid` varchar(6) NOT NULL
+)&quot;)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>## Fill Table
+dbWriteTable(conn = mydb, name = &#39;profcourses&#39;, value = week9profcourses, append = TRUE, header = FALSE, row.names = FALSE)
+
+## Check
+dbGetQuery(mydb,&quot;Select * from profcourses LIMIT 5;&quot;)</code></pre>
+<pre><code>##   pid    cid
+## 1  42 MAT131
+## 2  42 MAT218
+## 3  41 ECN111
+## 4  41 ECN295
+## 5  40 ECN366</code></pre>
+<p>This works as follows: we use <code>dbExecute</code> not
+<code>dbGetQuery</code> since we are executing a function on the
+database. We are creating a table called profcourses. It has 2 values, a
+pid that is an integer with at most 11 characters, and a cid which is a
+string of at most 6 characters. Neither of them is allowed to be
+NULL.</p>
+<p><strong>Question 10:</strong> Using similar queries, create and fill
+tables for the other 3 dataframes.</p>
+<p><strong>Question 11:</strong> Investigating Options</p>
+<ul>
+<li>What happens if you try to create a table that already exists with
+append = TRUE?</li>
+<li>What if append=FALSE?</li>
+<li>What if header=TRUE?</li>
+<li>What if you rerun the writetable a second time with the original
+values?</li>
+<li>What if you write a table to a “name” table that doesn’t exist?</li>
+</ul>
+</div>
+<div id="disconnecting-the-sql-connection" class="section level4">
+<h4>Disconnecting the SQL connection</h4>
+<pre class="r"><code>dbDisconnect(mydb)</code></pre>
+<p><strong>Note:</strong> I will add a bit more to this on Friday.</p>
 </div>
 </div>
 
