@@ -130,7 +130,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 4/15 | [HT Part 3 -- Test Statistics](Lectures/HT3.pdf) | [Testing Lab 2](Labs/TestingLab2.html) | - |
 | Fri 4/17 | In-class Exam | - | - |
 
-## Week 13 (Hypothesis Testing + Dplyr)
+## Week 14 (Hypothesis Testing + Dplyr)
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
@@ -173,6 +173,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [Testing Lab 1](Labs/TestingLab1.html) due Sunday 4/19 at 10pm.
 
 [Testing Lab 2](Labs/TestingLab2.html) due Monday 4/20 at 10pm.
+
+[Dplyr Lab](Labs/dplyr.html) due Wednesday 4/22 at 10pm.
 
 ### Homework Assignments
 
