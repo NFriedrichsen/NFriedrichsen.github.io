@@ -126,9 +126,17 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 4/06 | [HT Part 2](Lectures/HT2.pdf) | [Testing Lab 1](Labs/TestingLab1.html) | - |
-| Wed 4/08 | [HT Part 3 -- Test Statistics](Lectures/HT3.pdf) | [Testing Lab 2](Labs/TestingLab2.html) | - |
-| Fri 4/10 | In-class Exam | - | - |
+| Mon 4/13 | [HT Part 2](Lectures/HT2.pdf) | [Testing Lab 1](Labs/TestingLab1.html) | - |
+| Wed 4/15 | [HT Part 3 -- Test Statistics](Lectures/HT3.pdf) | [Testing Lab 2](Labs/TestingLab2.html) | - |
+| Fri 4/17 | In-class Exam | - | - |
+
+## Week 13 (Hypothesis Testing + Dplyr)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 4/20 | - | [Dplyr](Labs/dplyr_lab.html) | - |
+| Wed 4/23 | [HT Stuff] | - | - |
+| Fri 4/25 | [HT Stuff in R] | - | - |
 
 
 ### Reading Assignments
