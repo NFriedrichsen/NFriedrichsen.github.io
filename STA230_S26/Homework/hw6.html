@@ -429,8 +429,52 @@ match.</p>
 </div>
 <div id="question-5" class="section level3">
 <h3>Question 5</h3>
-<p>To be added on Wednesday or Friday. This question will be meant to
-practice restructuring a query into sub-queries.</p>
+<p>Subqueries are useful when we need to perform multiple operations,
+not all of which can be performed on the original dataset. Here is an
+example of performing operations using the pipe function in R (we’ve
+seen similar stuff to this before). Subqueries operate in much the same
+way, breaking up the operations and perhaps using intermediate data
+tables.</p>
+<p>For this question we will use the 2019 college scorecard data.</p>
+<p>Suppose I wanted to do something like the following: Find all private
+colleges with admission rates below the average admission rate of
+private colleges. The order that the filters are applied matters for
+this question, and I’d want to make sure to use two separate filters so
+R doesn’t accidentally apply them in the wrong order. Notice the
+following produce different outputs when you run them in your R
+console.</p>
+<pre class="r"><code>colleges %&gt;% filter(Type == &quot;Private&quot;) %&gt;%
+            filter(Adm_Rate &lt; mean(Adm_Rate, na.rm = T))
+colleges %&gt;% filter(Adm_Rate &lt; mean(Adm_Rate, na.rm = T)) %&gt;% filter(Type == &quot;Private&quot;)</code></pre>
+<p>How this would work in a SQL command</p>
+<pre class="r"><code>dbGetQuery(mydb, &quot;
+SELECT *
+FROM (
+    SELECT *
+    FROM colleges
+    WHERE Type = &#39;Private&#39;
+      AND Adm_Rate IS NOT NULL
+) AS private_colleges
+WHERE Adm_Rate &lt; (
+    SELECT AVG(Adm_Rate)
+    FROM (
+        SELECT *
+        FROM colleges
+        WHERE Type = &#39;Private&#39;
+          AND Adm_Rate IS NOT NULL
+    ) AS private_for_avg
+);
+&quot;)</code></pre>
+<p><strong>Part A</strong>: Explain how subqueries are breaking up the
+tasks in this question. Your answer should mention how many subqueries
+there are and what each is doing.</p>
+<p><strong>Part B</strong>: Write a SQL query to answer this question:
+Find colleges with graduation rates above the overall average graduation
+rate, using both Male and Female rates.</p>
+<p><strong>Part C</strong>: Write a SQL query using subqueries to answer
+this question: Find all private colleges with admission rates below
+average and graduation rates above average. (It may be helpful to think
+about how this would be performed in R)</p>
 </div>
 
 
