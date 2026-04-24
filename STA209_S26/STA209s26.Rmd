@@ -136,8 +136,9 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 4/20 | - | [Dplyr](Labs/dplyr_lab.html) | - |
 | Wed 4/23 | [HT Part 4 -- Other Scenarios](Lectures/HT4.pdf) | [Testing Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) | - |
-| Fri 4/25 | [HT Stuff in R] | - | - |
+| Fri 4/25 | [HT Part 5](Lectures/HT5.pdf) | [Testing Lab 4 (Worksheet)](Labs/TestingLab4_Worksheet.pdf) | - |
 
+**Note**: HT in R stuff moved to Monday
 
 ### Reading Assignments
 
