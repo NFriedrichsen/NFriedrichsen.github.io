@@ -144,7 +144,7 @@ Please note: material will not be posted until we've reached that point in the c
 
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
-| Mon 4/27 | [Scatterplots and Correlation](Lectures/Correlation.pdf) | [Corr and Tests Lab](Corr_and_Tests_Lab.html) | - |
+| Mon 4/27 | [Scatterplots and Correlation](Lectures/Correlation.pdf) | [Corr and Tests Lab](Labs/Corr_and_Tests_Lab.html) | - |
 | Wed 4/29 | - | - | - |
 | Fri 5/01 | - | - | - }
 
