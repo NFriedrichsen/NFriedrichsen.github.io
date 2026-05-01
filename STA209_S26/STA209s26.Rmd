@@ -187,6 +187,10 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Testing Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) due Friday 4/24 at 10pm.
 
+[Regression Lab 1](Labs/Regression1.html) and Sunday 5/03 at 10pm.
+
+[Regression Lab 2](Labs/Regression2.html) due Monday 5/04 at 10pm.
+
 ### Homework Assignments
 
 [Homework 1](Homework/Homework1.html) due Friday 2/20 at 10pm.
