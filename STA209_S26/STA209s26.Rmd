@@ -146,7 +146,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 4/27 | [Scatterplots and Correlation](Lectures/Correlation.pdf) | [Corr and Tests Lab](Labs/Corr_and_Tests_Lab.html) | - |
 | Wed 4/29 | ['Simple' Linear Regression](Lectures/SLR.pdf) | [Regression Lab 1](Labs/Regression1.html) | - |
-| Fri 5/01 | - | - | - |
+| Fri 5/01 | [SLR2 -- Categorical Predictors](Lectures/SLR2_Cat.pdf) | [Regression Lab 2](Labs/Regression2.html) | - |
 
 ### Reading Assignments
 
@@ -202,6 +202,8 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [Homework 5](Homework/Homework5.html) due Sunday 4/19 at 10pm. Primarily focused on confidence intervals. *I recommend completing this before the exam -- extremely beneficial.*
 
 [Homework 6](Homework/HW6.html) due Wednesday 5/06 at 10pm.
+
+[Homework 7](Homework/homework7.html) due Sunday  5/10 at 10pm.
 
 ---
 
