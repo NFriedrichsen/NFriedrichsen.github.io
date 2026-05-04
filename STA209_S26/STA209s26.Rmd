@@ -148,6 +148,15 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 4/29 | ['Simple' Linear Regression](Lectures/SLR.pdf) | [Regression Lab 1](Labs/Regression1.html) | - |
 | Fri 5/01 | [SLR2 -- Categorical Predictors](Lectures/SLR2_Cat.pdf) | [Regression Lab 2](Labs/Regression2.html) | - |
 
+## Week 16 (Multiple Regression + ANOVA)
+
+| Date | Lecture | Lab | Reading |
+|:-----|:-------|:-----|:-----|
+| Mon 5/04 | [Multiple Regression](Lectures/MLR.pdf) | [MLR Lab](Labs/MLR_Lab.html) | [IMS Chapter 8.1-8.3 (pg. 136-143)] |
+| Wed 5/06 | - | - | - |
+| Fri 5/08 | - | - | - |
+
+
 ### Reading Assignments
 
 * IMS Sections 1.2.1-1.2.3 before Monday 1/26.
