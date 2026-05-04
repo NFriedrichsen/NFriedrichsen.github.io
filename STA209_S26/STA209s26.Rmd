@@ -156,6 +156,8 @@ Please note: material will not be posted until we've reached that point in the c
 | Wed 5/06 | - | - | - |
 | Fri 5/08 | - | - | - |
 
+**Final Exam Info:** Final exam will be on Wednesday 5/13 at 9am in the normal class room. The exam will not be 3 hours in length. Review material will be posted later this week.
+
 
 ### Reading Assignments
 
@@ -196,9 +198,9 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Testing Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) due Friday 4/24 at 10pm.
 
-[Regression Lab 1](Labs/Regression1.html) and Sunday 5/03 at 10pm.
+[Regression Lab 1](Labs/Regression1.html) and Wednesday 5/06 at 10pm. (adjusted gradescope submission date)
 
-[Regression Lab 2](Labs/Regression2.html) due Monday 5/04 at 10pm.
+[Regression Lab 2](Labs/Regression2.html) due Wednesday 5/06 at 10pm. (adjusted gradescope submission date)
 
 ### Homework Assignments
 
