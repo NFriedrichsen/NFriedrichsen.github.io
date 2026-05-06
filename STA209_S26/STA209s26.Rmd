@@ -153,7 +153,7 @@ Please note: material will not be posted until we've reached that point in the c
 | Date | Lecture | Lab | Reading |
 |:-----|:-------|:-----|:-----|
 | Mon 5/04 | [Multiple Regression](Lectures/MLR.pdf) | [MLR Lab](Labs/MLR_Lab.html) | [IMS Chapter 8.1-8.3 (pg. 136-143)] |
-| Wed 5/06 | - | - | - |
+| Wed 5/06 | [Regression Errors](Lectures/Regression_Error.pdf) | [MLR Lab](Labs/MLR_Lab.html) cont'd | [To Explain or To Predict](Reading_ExplainPredict.html) |
 | Fri 5/08 | - | - | - |
 
 **Final Exam Info:** Final exam will be on Wednesday 5/13 at 9am in the normal class room. The exam will not be 3 hours in length. Review material will be posted later this week.
