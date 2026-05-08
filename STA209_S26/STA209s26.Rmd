@@ -154,7 +154,7 @@ Please note: material will not be posted until we've reached that point in the c
 |:-----|:-------|:-----|:-----|
 | Mon 5/04 | [Multiple Regression](Lectures/MLR.pdf) | [MLR Lab](Labs/MLR_Lab.html) | [IMS Chapter 8.1-8.3 (pg. 136-143)] |
 | Wed 5/06 | [Regression Errors](Lectures/Regression_Error.pdf) | [MLR Lab](Labs/MLR_Lab.html) cont'd | [To Explain or To Predict](Reading_ExplainPredict.html) |
-| Fri 5/08 | - | - | - |
+| Fri 5/08 | [ANOVA](Lectures/Anova1.pdf) | [MLR Worksheet](Labs/mlr_funsheet.pdf) | - |
 
 **Final Exam Info:** Final exam will be on Wednesday 5/13 at 9am in the normal class room. The exam will not be 3 hours in length. Review material will be posted later this week.
 
@@ -198,9 +198,14 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Testing Lab 3 (Worksheet)](Labs/TestingLab3_Worksheet.pdf) due Friday 4/24 at 10pm.
 
-[Regression Lab 1](Labs/Regression1.html) and Wednesday 5/06 at 10pm. (adjusted gradescope submission date)
+[Testing Lab 4 (Worksheet) Solutions](Labs/TestingLab4_Worksheet.pdf)
+
+[Corr and Tests Lab Solutions](Labs/Corr_and_Tests_Lab_Sol.html)
+
+[Regression Lab 1](Labs/Regression1.html) and Wednesday 5/06 at 10pm. (adjusted gradescope submission date) [Solutions](regression1_sol.html)
 
 [Regression Lab 2](Labs/Regression2.html) due Wednesday 5/06 at 10pm. (adjusted gradescope submission date)
+
 
 ### Homework Assignments
 
@@ -237,6 +242,20 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 [[Exam 2 Short Answer]](Exams/exam2_shortanswer.html)
 
 [[Exam 2 CI Formulas]](Exams/exam2_formulas.html)
+
+#### Exam 3
+
+[Exam 3 Short Answer Practice](Exams/exam3_shortanswer.html)
+
+[Exam 3 Topics List](Exams/Exam3Topics.pdf)
+
+[Exam 3 Practice 1](Exams/exam3_practice1.pdf) [A snippet from a previous review related to regression concepts]
+
+[Exam 3 Practice 2](Exams/exam3_practice2.pdf) [A snippet from a previous review related to regression concepts]
+
+[Exam 3 Formula Sheet] TBP
+
+**Note:** No solutions will be posted for Testing Worksheet 4 or HW6 or HW7. You may meet with me during office hours to discuss these assignments. MLR Lab solutions and MLR worksheet solutions will be posted Saturday night.
 
 <!-- | Date | Lecture | Lab | Reading | -->
 <!-- |:-----|:-------|:-----|:-----| -->
