@@ -202,7 +202,7 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Corr and Tests Lab Solutions](Labs/Corr_and_Tests_Lab_Sol.html)
 
-[Regression Lab 1](Labs/Regression1.html) and Wednesday 5/06 at 10pm. (adjusted gradescope submission date) [Solutions](Labs/regression1_sol.html)
+[Regression Lab 1](Labs/Regression1.html) and Wednesday 5/06 at 10pm. (adjusted gradescope submission date) [Solutions](Labs/regression1_Sol.html)
 
 [Regression Lab 2](Labs/Regression2.html) due Wednesday 5/06 at 10pm. (adjusted gradescope submission date)
 
@@ -255,7 +255,7 @@ Probability Worksheets checked for credit at start of class on Wednesday 2/18. [
 
 [Exam 3 Formula Sheet] TBP
 
-**Note:** No solutions will be posted for Testing Worksheet 4 or HW6 or HW7. You may meet with me during office hours to discuss these assignments. MLR Lab solutions and MLR worksheet solutions will be posted Saturday night.
+**Note:** No solutions will be posted for Testing Worksheet 4 or HW6 or HW7. You may meet with me during office hours to discuss these assignments. Regression Lab 2, MLR Lab solutions, and MLR worksheet solutions will be posted Saturday night.
 
 <!-- | Date | Lecture | Lab | Reading | -->
 <!-- |:-----|:-------|:-----|:-----| -->
