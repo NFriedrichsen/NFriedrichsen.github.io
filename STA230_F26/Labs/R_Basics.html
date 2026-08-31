@@ -556,7 +556,7 @@ and submitting to the console.</p>
 <pre class="r"><code>?log</code></pre>
 <p>In addition, if you think there should be a function but you don’t
 know what it is called, you can use two ‘??’:</p>
-<pre class="r"><code>??logarithm</code></pre>
+<pre class="r"><code>??mean</code></pre>
 <hr />
 </div>
 <div id="adding-comments" class="section level2">
@@ -604,15 +604,15 @@ mostly a stylistic choice.</li>
 special text character. For example, <code>\n</code> creates a new line
 in a string of text.</li>
 </ol>
-<p><strong>Question 2A</strong>: Add code to your script that uses the
+<p><strong>Question 1A</strong>: Add code to your script that uses the
 <code>read.csv()</code> function to create an object named my_data that
 contains the “Happy Planet” data stored at: <a href="https://remiller1450.github.io/data/HappyPlanet.csv" class="uri">https://remiller1450.github.io/data/HappyPlanet.csv</a></p>
-<p>After running your Question 2A code, an entry named “my_data” should
+<p>After running your Question 1A code, an entry named “my_data” should
 appear in the Environment panel (top right).</p>
 <p>You can click on the small arrow icon to reveal the data’s structure,
 or you can click on the object’s name to <em>view</em> the data in
 spreadsheet format.</p>
-<p><strong>Question 2B</strong>: Inspect the structure of
+<p><strong>Question 1B</strong>: Inspect the structure of
 <code>my_data</code> and view the data set in spreadsheet format. In an
 <code>R</code> comment, briefly describe how this data set is structured
 (ie: what does each row and column represent, what are some of the
@@ -703,7 +703,7 @@ of data.</p>
 <p>Shown below is an example list containing three components, two
 different data frames and the character string “ABC”:</p>
 <pre class="r"><code>my_list &lt;- list(my_data, DF, &quot;ABC&quot;)</code></pre>
-<p><strong>Question 3</strong>: Create a data frame named
+<p><strong>Question 2</strong>: Create a data frame named
 <code>my_DF</code> containing two vectors, <strong>J</strong> and
 <strong>K</strong>, where <strong>J</strong> is created using the
 <code>seq</code> function to be a sequence from 0 to 100 counting by 10
@@ -742,7 +742,7 @@ used to extract an individual component from the list.:</p>
 ## 1 1 1 A
 ## 2 2 2 B
 ## 3 3 3 C</code></pre>
-<p><strong>Question 4</strong>: Use indices to print the Happiness score
+<p><strong>Question 3</strong>: Use indices to print the Happiness score
 (column #3) of Hong Kong (row #57) in the object <code>my_data</code>
 (the Happy Planet data from Question 1). Be sure your code does not
 print any other information about this observation.</p>
@@ -812,12 +812,12 @@ Environment tab.</p>
 ##  $ GDPperCapita  : int  5316 7062 2335 14280 4945 31794 33700 5016 2053 7918 ...
 ##  $ HDI           : num  0.801 0.733 0.446 0.869 0.775 0.962 0.948 0.746 0.547 0.804 ...
 ##  $ Population    : num  3.15 32.85 16.1 38.75 3.02 ...</code></pre>
-<p><strong>Question 5A</strong>: Write code that prints the last ten
+<p><strong>Question 4A</strong>: Write code that prints the last ten
 observations (countries) that appear in the Happy Planet data.</p>
-<p><strong>Question 5B</strong>: Write code that finds the values of the
+<p><strong>Question 4B</strong>: Write code that finds the values of the
 “LifeExpectancy” variable for the last 10 observations in the Happy
 Planet data.</p>
-<p><strong>Question 5C</strong>: Write code that gives me both the
+<p><strong>Question 4C</strong>: Write code that gives me both the
 country names and values of the “LifeExpectancy” variable for the last
 10 observations in the Happy Planet data.</p>
 </div>
@@ -927,7 +927,7 @@ prop.table(student_table, margin = 2)</code></pre>
 <p>Notice that the proportions across each row sum to 1 when
 <code>margin = 1</code>, while the proportions down each column sum to 1
 when <code>margin = 2</code>.</p>
-<p><strong>Question 7</strong>: Find the mean, median, and range
+<p><strong>Question 5</strong>: Find the mean, median, and range
 (maximum - minimum) of the variable <code>LifeExpectancy</code> in the
 Happy Planet data. Without graphing the distribution, Briefly comment on
 whether the distribution of this variable seems to be symmetric or
@@ -957,7 +957,7 @@ x</code></pre>
 <pre><code>## [1]   1  12 123</code></pre>
 <pre class="r"><code>typeof(x)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<p><strong>Question 8</strong>: Coerce the variable “Region” into a
+<p><strong>Question 6</strong>: Coerce the variable “Region” into a
 character variable. Use the <code>typeof</code> function to verify the
 change. <em>Hint</em>: you should overwrite the “Region” vector within
 “my_data” as part of this question.</p>
@@ -1002,11 +1002,14 @@ dim(my_data)</code></pre>
 <pre><code>## [1] 143  11</code></pre>
 <pre class="r"><code>dim(my_data_without_na)</code></pre>
 <pre><code>## [1] 141  11</code></pre>
-<p><strong>Question 9</strong>: Find the median value of the variable
+<p><strong>Question 7</strong>: Find the median value of the variable
 “GDPperCapita” in the Happy Planet data, removing any missing values
 <em>in this variable</em> if necessary. Report the country names
 corresponding to any missing values that you removed (if
 applicable).</p>
+<p><em>After completing Question 7 you are finished witht he lab.
+Instructions for submission will be provided to you at some point by
+Mr. Friedrichsen</em></p>
 </div>
 </div>
 
