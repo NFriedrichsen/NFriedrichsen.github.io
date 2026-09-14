@@ -726,11 +726,257 @@ and use <code>top_cat()</code> to find the number of times the most
 common <code>Region</code> shows up. (Answer should be 400)</p></li>
 </ul>
 <pre class="r"><code>colleges = read.csv(&quot;https://remiller1450.github.io/data/Colleges2019.csv&quot;)</code></pre>
+<hr style="border: none; border-top: 5px solid black;">
 </div>
-<div id="more-will-be-added-on-monday.-come-to-class-with-as-much-of-this-done-as-possible." class="section level3">
-<h3>More will be added on Monday. Come to class with as much of this
-done as possible.</h3>
 </div>
+</div>
+<div id="day-2" class="section level1">
+<h1>Day 2</h1>
+<p>Before moving on to a few additional topics, we will start with some
+brief practice writing functions.</p>
+<div id="function-review" class="section level2">
+<h2>Function Review</h2>
+<p>Recall the general format we have been using:</p>
+<pre class="r"><code>function_name = function(arguments){
+  # Body
+  return(output)
+}</code></pre>
+<p><strong>Question #5A:</strong> Write a function named
+<code>add_ten()</code> that takes a numeric vector <code>x</code> and
+adds 10 to every value. Test your function on the vector below.</p>
+<pre class="r"><code>review_x = c(4, 8, 15, 16, 23, 42)</code></pre>
+<p><strong>Question #5B:</strong> Write a function named
+<code>range_size()</code> that takes a numeric vector <code>x</code> and
+returns the difference between its maximum and minimum values. Test your
+function using <code>review_x</code>.</p>
+<hr />
+</div>
+<div id="functions-with-multiple-arguments" class="section level2">
+<h2>Functions with Multiple Arguments</h2>
+<p>So far, many of the functions we have written have taken a single
+vector as their input. However, functions can accept as many arguments
+as necessary to perform their task.</p>
+<p>For example, suppose we want to count how many values in a vector are
+greater than some cutoff. For a particular example, we could write:</p>
+<pre class="r"><code>x = c(4, 8, 15, 16, 23, 42)
+cutoff = 15
+
+sum(x &gt; cutoff)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p>If we want to turn this into a reusable function, both <code>x</code>
+and <code>cutoff</code> need to be arguments because we may want to
+change either one:</p>
+<pre class="r"><code>count_above = function(x, cutoff){
+  return(sum(x &gt; cutoff))
+}</code></pre>
+<p>We can now use different combinations of inputs:</p>
+<pre class="r"><code>count_above(x = review_x, cutoff = 15)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>count_above(x = review_x, cutoff = 20)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>count_above(x = c(1, 5, 10, 20), cutoff = 7)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>The arguments serve somewhat different purposes. <code>x</code>
+provides the data that the function operates on, while
+<code>cutoff</code> controls how the function operates on those
+data.</p>
+<p>Just like the built-in functions we have used, arguments can be
+supplied by name or by their position:</p>
+<pre class="r"><code>count_above(x = review_x, cutoff = 15)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>count_above(review_x, 15)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>count_above(15, review_x) # this treats 15 as the vector and review_x as our cutoff - BAD!</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p><strong>Question #6:</strong> Write a function named
+<code>between()</code> that takes three arguments: a numeric vector
+<code>x</code>, a lower value <code>low</code>, and an upper value
+<code>high</code>. The function should return the values of
+<code>x</code> that are greater than <code>low</code> and less than
+<code>high</code>.</p>
+<p>Test your function using <code>review_x</code>, with
+<code>low = 10</code> and <code>high = 30</code>.</p>
+<hr />
+</div>
+<div id="default-argument-values" class="section level2">
+<h2>Default Argument Values</h2>
+<p>Sometimes an argument has a value that we expect to use most of the
+time. Rather than requiring the user to provide that value every time
+the function is called, we can give the argument a <strong>default
+value</strong>.</p>
+<p>Consider the <code>count_above()</code> function:</p>
+<pre class="r"><code>count_above = function(x, cutoff){
+  return(sum(x &gt; cutoff))
+}</code></pre>
+<p>Suppose that we usually want to count values greater than zero. We
+can specify <code>0</code> as the default value of <code>cutoff</code>
+when we define the function:</p>
+<pre class="r"><code>count_above = function(x, cutoff = 0){
+  return(sum(x &gt; cutoff))
+}</code></pre>
+<p>Now consider:</p>
+<pre class="r"><code>example_values = c(-5, -2, 3, 8, 12)
+
+count_above(example_values)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>count_above(example_values, cutoff = 5)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>If we do not provide <code>cutoff</code>, <code>R</code> uses the
+default value of <code>0</code>. If we provide our own value, the value
+we supply replaces the default.</p>
+<p>We have already used many built-in functions with default arguments.
+For example:</p>
+<pre class="r"><code>mean(example_values)</code></pre>
+<pre><code>## [1] 3.2</code></pre>
+<p>works without specifying every argument of <code>mean()</code>. We
+only need to specify an optional argument when we want behavior that
+differs from its default.</p>
+<p><strong>Question #7:</strong> The function below calculates the mean
+of a vector:</p>
+<pre class="r"><code>my_mean = function(x){
+  return(mean(x))
+}</code></pre>
+<p>Modify <code>my_mean()</code> so that it has a second argument named
+<code>remove_na</code>. Give <code>remove_na</code> a default value of
+<code>TRUE</code>, and pass this argument to the <code>na.rm</code>
+argument of <code>mean()</code>.</p>
+<p>Test your function on the following vector both with and without
+using the default value.</p>
+<pre class="r"><code>missing_values = c(3, 7, NA, 10, 12)</code></pre>
+<p><strong>Question #8:</strong> Modify the <code>zScore()</code>
+function you created in <em>Question #2</em> so that it includes
+arguments for the mean and standard deviation used in the z-score
+calculation. By default, the function should use the sample mean and
+sample standard deviation of <code>x</code>, but the user should be able
+to specify different values for either argument. Test your function both
+using the defaults and using a specified mean and standard
+deviation.</p>
+<hr />
+</div>
+<div id="local-and-global-objects" class="section level2">
+<h2>Local and Global Objects</h2>
+<p>So far, we have mostly focused on the inputs and outputs of
+functions. However, functions can also create objects internally while
+performing their calculations.</p>
+<p>Consider the following function:</p>
+<pre class="r"><code>square_difference = function(x, y){
+  difference = x - y
+  squared = difference^2
+  
+  return(squared)
+}</code></pre>
+<p>When we use the function:</p>
+<pre class="r"><code>square_difference(10, 4)</code></pre>
+<pre><code>## [1] 36</code></pre>
+<p><code>R</code> temporarily creates the objects <code>x</code>,
+<code>y</code>, <code>difference</code>, and <code>squared</code> while
+the function is running. These objects exist in the function’s
+<strong>local environment</strong>.</p>
+<p>Try running:</p>
+<pre class="r"><code>difference
+squared</code></pre>
+<p>Assuming we have not previously created objects with these names,
+<code>R</code> will tell us that they cannot be found. Objects created
+inside a function do not automatically become objects in our normal, or
+<strong>global</strong>, environment.</p>
+<p>This is useful because we can create intermediate objects that make
+our functions easier to write and understand without filling our global
+environment with objects that we only needed temporarily.</p>
+<div id="local-objects-and-existing-objects" class="section level3">
+<h3>Local Objects and Existing Objects</h3>
+<p>Objects inside and outside a function can even have the same name
+without necessarily referring to the same object.</p>
+<p>For example:</p>
+<pre class="r"><code>number = 10
+
+add_five = function(x){
+  number = x + 5
+  return(number)
+}
+
+add_five(20)</code></pre>
+<pre><code>## [1] 25</code></pre>
+<pre class="r"><code>number</code></pre>
+<pre><code>## [1] 10</code></pre>
+<p>The function returns <code>25</code>, but the original value of
+<code>number</code> is still <code>10</code>. The assignment:</p>
+<pre class="r"><code>number = x + 5</code></pre>
+<p>creates a local object named <code>number</code> while the function
+is running. It does not overwrite the <code>number</code> that already
+exists in our global environment.</p>
+</div>
+<div id="returning-and-saving-objects" class="section level3">
+<h3>Returning and Saving Objects</h3>
+<p>If we want to keep the result of a function, we can return it and
+then assign that output to an object:</p>
+<pre class="r"><code>my_result = square_difference(10, 4)
+
+my_result</code></pre>
+<pre><code>## [1] 36</code></pre>
+<p>Here, <code>difference</code> and <code>squared</code> were created
+locally inside the function, but the value returned by the function was
+assigned to <code>my_result</code> in the global environment.</p>
+<p><strong>Question #9:</strong></p>
+<ul>
+<li><strong>A</strong>: Before running the following code, predict the
+values that will be printed for <code>a</code>, <code>b</code>, and
+<code>result</code>. Then run the code and check your predictions.</li>
+</ul>
+<pre class="r"><code>a = 5
+b = 10
+
+math_function = function(a){
+  b = a^2
+  result = b + 3
+  return(result)
+}
+
+result = math_function(4)
+
+a
+b
+result</code></pre>
+<ul>
+<li><strong>B</strong>: Briefly explain why the values of <code>a</code>
+and <code>b</code> in the global environment were not changed by the
+objects created inside <code>math_function()</code>.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="importing-user-defined-functions" class="section level2">
+<h2>Importing User-Defined Functions</h2>
+<p>One of the advantages of user-defined functions is that we can reuse
+them in future projects. However, copying and pasting our function
+definitions into every new R Markdown file defeats some of the purpose
+of creating reusable functions.</p>
+<p>A useful approach is to save functions that we expect to reuse in an
+<strong>R script</strong> and then import them using
+<code>source()</code>.</p>
+<p>The functions we will use for this example are available <a href="https://nfriedrichsen.github.io/STA230_F26/Labs/Week2functions.R">here</a>.
+Download this file and save it in the same location as your R Markdown
+file. (If you haven’t already done so, now is a good time to make a
+STA230 folder on your computer)</p>
+<p>If the file is in your current working directory, we can run all of
+the R code contained in the file using:</p>
+<pre class="r"><code>source(&quot;Week2functions.R&quot;)</code></pre>
+<p>If the file is stored somewhere else, you will need to provide the
+appropriate file path.</p>
+<p><strong>Question #10:</strong> Import <code>Week2functions.R</code>
+using <code>source()</code>. Demonstrate that you were successful by
+running the following:</p>
+<pre class="r"><code>exampleFunction1(Week2functionsTest)
+exampleFunction2(Week2functionsTest)</code></pre>
+<p><strong>Question #11:</strong> Investigate the
+<code>Week2Functions</code> file. In your own words, describe what
+<code>exampleFunction1()</code> and <code>exampleFunction2()</code>
+do.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>Functions are particularly useful when we want to perform the same
+operation repeatedly on different inputs. In the next lab, we will
+introduce <strong>iteration</strong> (also called <em>loops</em>), which
+provides ways to systematically repeat operations without manually
+running the same code over and over.</p>
 </div>
 </div>
 
