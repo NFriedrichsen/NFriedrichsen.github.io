@@ -544,9 +544,11 @@ changes.</p>
 </div>
 <div id="question-3" class="section level3">
 <h3>Question #3</h3>
-<p><strong>A:</strong> Without running the following code, determine
-what will be stored in <code>output</code> when the loop finishes. Then
-run the code and check your answer.</p>
+<p><strong>A:</strong> Without running the following code for loop,
+investigate what object the <code>output = numeric(length(x))</code>
+line is creating, then determine what will be stored in
+<code>output</code> when the loop finishes. Then run the code and check
+your answer.</p>
 <pre class="r"><code>x = c(3, 6, 9)
 output = numeric(length(x))
 
@@ -633,12 +635,17 @@ printed.</p>
 </div>
 <div id="question-5" class="section level3">
 <h3>Question #5</h3>
-<p>Consider:</p>
-<pre class="r"><code>animals = c(&quot;cat&quot;, &quot;bird&quot;, &quot;dog&quot;, &quot;fish&quot;, &quot;cat&quot;, &quot;rabbit&quot;)
-pets = c(&quot;cat&quot;, &quot;dog&quot;, &quot;rabbit&quot;)</code></pre>
-<p>Write a loop that goes through <code>animals</code> and prints an
-animal only when it is contained in <code>pets</code>.</p>
-<p>Use <code>%in%</code> as part of your condition.</p>
+<p>Consider the following vector of temperatures in degrees
+Fahrenheit:</p>
+<pre class="r"><code>temperatures_f = c(45, 62, 71, 83, 96, 58, 89)</code></pre>
+<p>In the previous lab, you created a function that converts a
+temperature from Fahrenheit to Celsius.</p>
+<p>Write a <code>for</code> loop that goes through
+<code>temperatures_f</code>. If a temperature is below <code>60</code>
+<strong>or</strong> above <code>85</code>, use your conversion function
+to convert the temperature and print the result.</p>
+<p>Before running your loop, determine which temperatures you expect to
+meet the condition.</p>
 <hr />
 </div>
 <div id="looping-through-data" class="section level3">
