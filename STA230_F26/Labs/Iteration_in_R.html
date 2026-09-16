@@ -793,6 +793,24 @@ my_sum(test_values)
 sum(test_values)</code></pre>
 <p>Verify that your function produces the same result as
 <code>sum()</code>.</p>
+</div>
+<div id="question-8" class="section level3">
+<h3>Question #8</h3>
+<p>Write a function named <code>my_max()</code> that takes a numeric
+vector <code>x</code> and finds its maximum value using a
+<code>for</code> loop.</p>
+<p>Begin by treating the first value of <code>x</code> as the largest
+value you have encountered. Then, as your loop moves through
+<code>x</code>, update this value whenever you encounter something
+larger.</p>
+<p><em>Do not use <code>max()</code> inside your function.</em></p>
+<p>Test your function using:</p>
+<pre class="r"><code>test_values = c(-4, 12, 7, 21, 3, 16)
+
+my_max(test_values)
+max(test_values)</code></pre>
+<p>Verify that your function produces the same result as
+<code>max()</code>.</p>
 <hr />
 </div>
 <div id="repeating-functions-across-data" class="section level3">
@@ -858,8 +876,8 @@ approaches. The important idea is that functions such as
 some common types of iteration without explicitly writing the
 <code>for</code> loop ourselves.</p>
 </div>
-<div id="question-8" class="section level3">
-<h3>Question #8</h3>
+<div id="question-9" class="section level3">
+<h3>Question #9</h3>
 <p>Use <code>lapply()</code> to calculate the standard deviation of the
 following variables:</p>
 <pre class="r"><code>columns = c(&quot;Wind&quot;, &quot;Temp&quot;)</code></pre>
@@ -915,8 +933,8 @@ tools in our data analysis. For now, the important thing is to recognize
 how a <code>while</code> loop works and why its condition needs to
 eventually become <code>FALSE</code>.</p>
 </div>
-<div id="question-9" class="section level3">
-<h3>Question #9</h3>
+<div id="question-10" class="section level3">
+<h3>Question #10</h3>
 <p>The following loop was intended to count down from 10 to 1:</p>
 <pre class="r"><code># **Do not run the loop as written.**
 count = 10
@@ -937,8 +955,8 @@ it counts down from 10 to 1 and stops.</p>
 from this lab. Some of these combine several ideas that we worked with
 separately above. If you do not finish these during class, complete them
 before our next class.</p>
-<div id="question-10-building-standard-deviation" class="section level3">
-<h3>Question #10: Building Standard Deviation</h3>
+<div id="question-11-building-standard-deviation" class="section level3">
+<h3>Question #11: Building Standard Deviation</h3>
 <p>Earlier we created <code>my_mean()</code> using a <code>for</code>
 loop. We can use a similar approach to create our own version of
 <code>sd()</code>.</p>
@@ -968,8 +986,8 @@ sd(test_values)</code></pre>
 <p>The results should match.</p>
 <hr />
 </div>
-<div id="question-11-conditions-and-stored-output" class="section level3">
-<h3>Question #11: Conditions and Stored Output</h3>
+<div id="question-12-conditions-and-stored-output" class="section level3">
+<h3>Question #12: Conditions and Stored Output</h3>
 <p>Consider:</p>
 <pre class="r"><code>student_scores = data.frame(
   student = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;),
@@ -1000,8 +1018,8 @@ and return only the students who scored at least <code>70</code> on both
 exams.</p>
 <hr />
 </div>
-<div id="question-12-looping-through-variables" class="section level3">
-<h3>Question #12: Looping Through Variables</h3>
+<div id="question-13-looping-through-variables" class="section level3">
+<h3>Question #13: Looping Through Variables</h3>
 <p>Use the built-in <code>mtcars</code> data set:</p>
 <pre class="r"><code>car_data = mtcars</code></pre>
 <p>We are interested in:</p>
@@ -1016,8 +1034,8 @@ store the mean of each variable.</p>
 ourselves in Part A.</p>
 <hr />
 </div>
-<div id="question-13-combining-functions-and-iteration" class="section level3">
-<h3>Question #13: Combining Functions and Iteration</h3>
+<div id="question-14-combining-functions-and-iteration" class="section level3">
+<h3>Question #14: Combining Functions and Iteration</h3>
 <p>Create a function named <code>range_size()</code> that takes a
 numeric vector and returns the difference between its maximum and
 minimum values.</p>
@@ -1033,8 +1051,8 @@ calculations.</p>
 <p>Verify that the two approaches produce the same values.</p>
 <hr />
 </div>
-<div id="question-14-while-loop-practice" class="section level3">
-<h3>Question #14: While Loop Practice</h3>
+<div id="question-15-while-loop-practice" class="section level3">
+<h3>Question #15: While Loop Practice</h3>
 <p>Without running the loops first, determine whether each loop will
 eventually stop. If it will stop, predict the values it will print. If
 it will not stop, explain why.</p>
