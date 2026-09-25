@@ -473,7 +473,68 @@ region.</li>
 names corresponding to their regions.</p>
 <p>Which regions have the largest and smallest proportions of relatively
 selective colleges?</p>
-<p><strong>A 4th question will be added on Friday 9/25</strong></p>
+</div>
+<div id="question-4" class="section level3">
+<h3>Question #4</h3>
+<p>An <strong>indicator variable</strong> is a numeric variable that
+takes the value <code>1</code> when an observation satisfies some
+condition and <code>0</code> otherwise. Indicator variables are commonly
+used to represent categorical information numerically.</p>
+<p>For example, the following code creates an indicator variable
+identifying colleges located in the Plains region:</p>
+<pre class="r"><code>as.numeric(colleges$Region == &quot;Plains&quot;)</code></pre>
+<p>The logical condition first produces <code>TRUE</code> or
+<code>FALSE</code> for each college. The <code>as.numeric()</code>
+function then converts <code>TRUE</code> to <code>1</code> and
+<code>FALSE</code> to <code>0</code>.</p>
+<p><strong>A:</strong> Create a function named
+<code>make_indicator()</code> that takes two arguments:</p>
+<ul>
+<li><code>x</code>: a categorical variable</li>
+<li><code>category</code>: a particular category of interest</li>
+</ul>
+<p>The function should return a numeric indicator vector that equals
+<code>1</code> when <code>x</code> belongs to <code>category</code> and
+<code>0</code> otherwise.</p>
+<p>Test your function using <code>colleges$Region</code> and
+<code>&quot;Plains&quot;</code>.</p>
+<p><strong>B:</strong> Use <code>unique()</code> to create a vector
+named <code>regions</code> containing the different values of
+<code>Region</code> in the <code>colleges</code> data.</p>
+<p>We would now like to create an indicator variable for
+<strong>every</strong> region rather than writing the same code
+separately for each one.</p>
+<p>Create an empty data frame with the correct number of rows using:</p>
+<pre class="r"><code>region_indicators = data.frame(
+  row_number = 1:nrow(colleges))</code></pre>
+<p>Then use a <code>for</code> loop to apply your
+<code>make_indicator()</code> function to every value in
+<code>regions</code>. Store each resulting indicator as a new column of
+<code>region_indicators</code>.</p>
+<p>You can use the following structure to create a column whose name is
+determined by the current value of <code>region</code>:</p>
+<pre class="r"><code>region_indicators[[region]] = # your code here</code></pre>
+<p>The <code>row_number</code> variable was only used to initialize our
+data frame with the correct number of rows. After your loop, remove it
+using:</p>
+<pre class="r"><code>region_indicators$row_number = NULL</code></pre>
+<p>When you are finished, use <code>head(region_indicators)</code> to
+examine your results.</p>
+<p><strong>C:</strong> The names of these variables currently contain
+only the name of each region. We would like the variable names to make
+it clear that they are indicator variables.</p>
+<p>The <code>paste0()</code> function can be used to combine character
+strings:</p>
+<pre class="r"><code>paste0(&quot;Plains&quot;, &quot;_Ind&quot;)</code></pre>
+<p>which returns <code>&quot;Plains_Ind&quot;</code>.</p>
+<p>First, save the current column names using:</p>
+<pre class="r"><code>region_names = colnames(region_indicators)</code></pre>
+<p>Then use a <code>for</code> loop to rename each column by adding
+<code>&quot;_Ind&quot;</code> to the end of its original name. You can change an
+individual column name using:</p>
+<pre class="r"><code>colnames(region_indicators)[i] = # new name</code></pre>
+<p>Finally, print <code>colnames(region_indicators)</code> to verify
+that your columns have been renamed appropriately.</p>
 </div>
 
 
