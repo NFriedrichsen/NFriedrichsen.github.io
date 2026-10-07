@@ -911,7 +911,104 @@ separately within each group.</p>
 grouping when a later calculation should use the entire data frame.</p>
 <p>As you work with grouped data, periodically ask yourself: <em>Which
 observations should be used together for this calculation?</em></p>
-<p><strong>MORE WILL BE ADDED ON WEDNESDAY</strong></p>
+<hr style="border: none; border-top: 5px solid black;">
+<p><strong>Material added on Wednesday:</strong></p>
+<p><strong>Question 8:</strong></p>
+<p>At the beginning of our first data manipulation lab, we looked at the
+career of Manny Ramirez using the <code>Batting</code> data from the
+<code>Lahman</code> package. Recall that one observation in these data
+represents one player’s statistics for one team during one season. As a
+result, a player who plays for multiple teams during the same season
+will have multiple observations for that year.</p>
+<p>Let’s return to these data and investigate Manny Ramirez’s
+performance over his career.</p>
+<pre class="r"><code>library(Lahman)
+data(Batting)</code></pre>
+<p><strong>A.</strong> Filter the <code>Batting</code> data to contain
+only observations for Manny Ramirez (relevant id is
+<code>&quot;ramirma02&quot;</code>. Then use <code>group_by()</code> and
+<code>summarize()</code> to create a data frame containing one
+observation for each year of his career. For each year, calculate his
+total number of home runs (<code>HR</code>), total number of games
+played (<code>G</code>), and the number of observations that were
+combined to produce each yearly summary.</p>
+<p><strong>B.</strong> What does the number of observations calculated
+in Part A tell us about Manny’s career? Identify any seasons for which
+this number is greater than one and explain why this occurred.</p>
+<p><strong>C.</strong> Add a variable to your summarized data that gives
+Manny’s number of home runs per game for each season. Among seasons in
+which Manny played at least 100 games, in which season did he have the
+highest number of home runs per game?</p>
+<p><strong>D.</strong> In which season did Manny hit the most total home
+runs? Is this the same season that you identified in Part C?</p>
+<p><strong>E.</strong> Suppose instead that we had simply filtered the
+original <code>Batting</code> data to Manny Ramirez and arranged the
+observations from largest to smallest according to <code>HR</code>.
+Explain why this would not necessarily tell us which season Manny hit
+the most home runs.</p>
+<p><strong>Question 9:</strong></p>
+<p>For this question, consider all players in the <code>Batting</code>
+data from 2010 through 2015. We will investigate home runs at several
+different levels by changing how the data are grouped and
+summarized.</p>
+<p>Begin by filtering the <code>Batting</code> data to contain only
+observations from 2010 through 2015.</p>
+<p><strong>A.</strong> Create a data frame containing one observation
+for each player. For each player, calculate the total number of home
+runs they hit from 2010 through 2015. Which player hit the most home
+runs during this period?</p>
+<p><strong>B.</strong> Using the data you created in Part A, determine
+how many players hit at least 100 total home runs from 2010 through
+2015.</p>
+<p><strong>C.</strong> Starting again with the original filtered data,
+create a data frame containing one observation for each year. Calculate
+the total number of home runs hit by all players during each year. Which
+year had the most home runs? Which year had the fewest?</p>
+<p><strong>D.</strong> Starting again with the original filtered data,
+create a data frame containing one observation for each team during each
+year. Calculate the total number of home runs hit by each team during
+each season. Which team-season had the most home runs from 2010 through
+2015?</p>
+<p><strong>E.</strong> Using the team-by-year summaries from Part D,
+calculate the mean and median number of home runs hit by teams during
+each year. Your final data frame should contain one observation for each
+year.</p>
+<p><strong>F.</strong> Think about how the meaning of an observation
+changed throughout this question. What does one observation represent in
+the data you created in Parts A, C, D, and E? Explain how the variables
+supplied to <code>group_by()</code> determine what one observation
+represents after using <code>summarize()</code>.</p>
+<p><strong>Question 10:</strong></p>
+<p>The following dataset details expenditures on K-12 education in the
+U.S. for different years. For this exercise, you are going to play the
+role of a public administrator in Iowa who is interested in comparing
+money spento on education in Iowa to other states.</p>
+<pre class="r"><code>k12expenditures = read.csv(&quot;https://nfriedrichsen.github.io/data/k12expenditures.csv&quot;)</code></pre>
+<p>Data Source: NCES public education finance data. These data were
+reconstructed from the original federal data to match the expenditures
+dataset used in Bradley Boehmke’s Data Wrangling with R.</p>
+<p><strong>A.</strong> Begin by inspecting the
+<code>k12expenditures</code> data. How many observations and variables
+are there? What does one observation represent? Describe what
+information is contained in the variables of this data set.</p>
+<p><strong>B.</strong> Use an appropriate <code>dplyr</code> function to
+investigate the <code>Division</code> variable. Briefly describe the
+part of the country represented by each division.</p>
+<p><strong>C.</strong> Using the 2011 expenditures, investigate how Iowa
+compares with the other states in its division. Use an appropriate
+numerical summary to make this comparison and explain what you find.</p>
+<p><strong>D.</strong> Now compare Iowa’s 2011 expenditure with the
+other 49 states. Create a new data frame containing only the other 49
+states and use an appropriate numerical summary of their 2011
+expenditures to make this comparison. Describe what you find.</p>
+<p><strong>E.</strong> In Part D, you reduced the expenditures of 49
+different states to a single summary value. What information about the
+other states is lost by doing this?</p>
+<p><strong>F.</strong> Let’s investigate the other 49 states in more
+detail. Divide these states into an upper and lower half based on their
+2011 expenditures. Create separate data frames containing the states in
+each half and use appropriate numerical summaries to compare these
+groups with Iowa. Tell me what you find.</p>
 </div>
 
 
