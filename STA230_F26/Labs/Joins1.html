@@ -690,7 +690,157 @@ determine the five most common origin-destination airport pairs. Report
 the names of both airports and the number of flights for each
 pair.</p></li>
 </ul>
+<hr />
 </div>
+</div>
+</div>
+<div id="day-2" class="section level1">
+<h1>Day 2</h1>
+<div id="joining-multiple-tables" class="section level3">
+<h3>Joining Multiple Tables</h3>
+<p>We can also use a series of pipes (<code>|&gt;</code>) to join
+several data frames together without saving intermediate results. When
+using <code>|&gt;</code>, the result of the previous operation is
+automatically passed as the first argument (<code>x</code>) of the next
+function. This means we only need to specify the second data frame
+(<code>y</code>) and the appropriate keys for each join.</p>
+<p>For example, we can add information about both the airline and plane
+to the <code>flights</code> data frame:</p>
+<pre class="r"><code>flights |&gt;
+  left_join(airlines, by = &quot;carrier&quot;) |&gt;
+  left_join(planes, by = &quot;tailnum&quot;) |&gt; head(1) # just to check</code></pre>
+<pre><code>## # A tibble: 1 × 28
+##   year.x month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+## 1   2013     1     1      517            515         2      830            819
+## # ℹ 20 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;, name &lt;chr&gt;, year.y &lt;int&gt;,
+## #   type &lt;chr&gt;, manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;,
+## #   speed &lt;int&gt;, engine &lt;chr&gt;</code></pre>
+<p>Each join adds information to the result of the previous join. We can
+continue adding joins or other <code>dplyr</code> functions to the same
+pipeline.</p>
+</div>
+<div id="filtering-joins" class="section level3">
+<h3>Filtering Joins</h3>
+<p>Filtering joins will match observations in the same way as mutating
+joins, but they <em>will not add any variables</em> from “y” to the “x”
+data frame.</p>
+<ul>
+<li><code>semi_join()</code> will <strong>keep</strong> the observations
+in “x” that have a match in “y”</li>
+<li><code>anti_join()</code> will <strong>drop</strong> the observations
+in “x” that have a match in “y”</li>
+</ul>
+<p>Here are a few examples:</p>
+<pre class="r"><code>semi_join(x = orders, y = customers, by = &quot;id&quot;)</code></pre>
+<pre><code>##   order id   date
+## 1     1  4 Jan-01
+## 2     2  8 Feb-01
+## 3     3 42 Apr-15</code></pre>
+<p>Notice how <code>semi_join()</code> filters out the fourth order
+because there are no customers with an id of 50 in the customers data
+frame.</p>
+<pre class="r"><code>anti_join(x = orders, y = customers, by = &quot;id&quot;)</code></pre>
+<pre><code>##   order id   date
+## 1     4 50 Apr-17</code></pre>
+<p>Conversely, <code>anti_join()</code> will filter out everything
+except for the fourth order because it was the only observation in the
+“x” data file without a match in the “y” data file.</p>
+<p>Filtering joins are particularly useful in finding <em>implicit
+missing values</em>, or values that aren’t recorded as <code>NA</code>
+and instead exist only as an absence. For example, we could find missing
+entries in <code>airports</code> by looking for flights whose
+destination airport doesn’t have a match:</p>
+<pre class="r"><code>anti_join(x = flights, y = airports, by = c(&quot;dest&quot; = &quot;faa&quot;)) |&gt;
+  distinct(dest)  ## Return only the unique values of &quot;dest&quot;</code></pre>
+<pre><code>## # A tibble: 4 × 1
+##   dest 
+##   &lt;chr&gt;
+## 1 BQN  
+## 2 SJU  
+## 3 STT  
+## 4 PSE</code></pre>
+<p>We can see that there are four destination airport codes in
+<code>flights</code> without matching records in
+<code>airports</code>.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Question #6:</strong> The code below creates a data frame,
+<code>top_dest</code>, containing the ten most common flight
+destinations and how many flights arrived at them.</p>
+<pre class="r"><code>top_dest = flights |&gt;
+  count(dest, sort = TRUE) |&gt;
+  head(10)</code></pre>
+<ul>
+<li><p><strong>Part A:</strong> Use <code>semi_join()</code> with
+<code>flights</code> and <code>top_dest</code> to create a new data
+frame containing only flights whose destination is one of the top ten
+airports. Then, use <code>dim()</code> to print the dimensions of the
+resulting data frame.</p></li>
+<li><p><strong>Part B:</strong> Using your result from Part A, use
+<code>anti_join()</code> with the <code>planes</code> data frame to find
+how many <strong>distinct tail numbers</strong> do not have a matching
+record in <code>planes</code>.</p></li>
+</ul>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Question #7:</strong> The <code>airlines</code> data frame
+contains airline names and their carrier codes, while
+<code>flights</code> contains the carrier code for each flight.</p>
+<ul>
+<li><strong>Part A:</strong> Use <code>semi_join()</code> to find which
+airlines in <code>airlines</code> have at least one flight recorded in
+<code>flights</code> during 2013. Display their names.</li>
+<li><strong>Part B:</strong> Use <code>anti_join()</code> to find which
+airlines in <code>airlines</code>, if any, have no matching flights in
+<code>flights</code>. How many are there?</li>
+<li><strong>Part C:</strong> Would reversing the roles of <code>x</code>
+and <code>y</code> in Part B answer the same question? Explain what the
+resulting records would represent instead.</li>
+</ul>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Question #8:</strong> We can also use filtering joins to
+investigate which records are missing from a related table. The
+<code>planes</code> data frame contains information about individual
+planes, identified by <code>tailnum</code>.</p>
+<ul>
+<li><strong>Part A:</strong> Find the distinct tail numbers in
+<code>flights</code> that have no matching record in
+<code>planes</code>. How many distinct tail numbers are there?</li>
+<li><strong>Part B:</strong> Find the records in <code>planes</code>
+whose tail numbers do not appear in <code>flights</code>. How many plane
+records are there?</li>
+<li><strong>Part C:</strong> Explain why the results of Parts A and B
+answer different questions, even though both use the same two data
+frames and the same key.</li>
+</ul>
+<hr />
+</div>
+<div id="challenge-problem-required" class="section level3">
+<h3>Challenge Problem (Required)</h3>
+<p><strong>Question #9:</strong> In Question 5, you used
+<code>left_join()</code> to add the names of the origin and destination
+airports to the <code>flights</code> data frame. You will need to use
+that same approach as part of this problem.</p>
+<p>Without saving intermediate tables, create a data frame containing
+exactly six columns: the plane model, airline name, hour, temperature,
+origin airport name, and destination airport name for all flights on
+October 9, 2013.</p>
+<p>Your solution should use a series of pipes (<code>|&gt;</code>),
+joining the necessary tables and selecting the requested variables. Do
+not save intermediate tables in your final solution.</p>
+<p><em>Hints:</em> Your resulting data frame should have <strong>974
+rows and 6 columns</strong>. You will need to use information from
+several tables in the <code>nycflights13</code> database, and some
+tables may need to be joined more than once.</p>
+<pre><code>## # A tibble: 5 × 6
+##   model    airline     timeOfDepart temperature originAirport destinationAirport
+##   &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;             
+## 1 A321-231 US Airways…            5        51.1 Newark Liber… Charlotte Douglas…
+## 2 757-222  United Air…            5        51.1 Newark Liber… George Bush Inter…
+## 3 737-724  United Air…            5        55.9 La Guardia    George Bush Inter…
+## 4 A320-232 JetBlue Ai…            5        53.1 John F Kenne… &lt;NA&gt;              
+## 5 &lt;NA&gt;     American A…            5        53.1 John F Kenne… Miami Intl</code></pre>
 </div>
 </div>
 
