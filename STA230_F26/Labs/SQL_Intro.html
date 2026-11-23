@@ -422,7 +422,8 @@ WHERE id &lt; 10;</code></pre>
 connection to an existing database. This requires us to specify
 information about the database, including its location and our login
 credentials. Take a look at the following requirements.</p>
-<p>Student (Read only, Campus only) Credentials:</p>
+<p>Student (Read only, Campus only) Credentials, only accessible from
+the Grinnell Wireless internet:</p>
 <pre class="r"><code>db_user = &#39;studentUser&#39;
 db_password = &#39;STAread!&#39;
 db_name = &#39;Test&#39;
@@ -431,6 +432,10 @@ db_port = 3306
 
 mydb = dbConnect(MySQL(), user = db_user, password = db_password,
                  dbname = db_name, host = db_host, port = db_port)</code></pre>
+<p><strong>Note:</strong> If for some reason the <code>mydb</code>
+connect does not work when running the above code, run the following in
+your <code>R</code> console and try again.</p>
+<pre class="r"><code>Sys.setenv(MARIADB_TLS_DISABLE_PEER_VERIFICATION = 1) # only ever seen this necessary on MAC</code></pre>
 <p>The object <code>mydb</code> represents our connection to the
 database. We will use this object whenever we want to interact with the
 database.</p>
